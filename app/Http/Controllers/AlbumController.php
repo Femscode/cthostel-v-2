@@ -82,7 +82,7 @@ class AlbumController extends Controller
         $user->save();
         $number = substr($album->user->phone, 1);
 
-        return redirect()->away('https://wa.me/234' . $number . '?text=Hi%2C%20my%20name%20is%20%28Input%20your%20name%29.%0aHOSTEL%20REQUEST%20FOR%20CTHOSTEL.%0aInstitution:' . $album->school->name . '%0aHostel%20name:%20(' . $album->name . ')%0aHostel%20Price:' . $album->price . '%0aLocation:' . $album->category->name . '%0aAgent%20in%20charge:' . $album->user->name . '%0a(Input%20other%20message%20here)%20');
+        return redirect()->away('https://wa.me/234' . $number . '?text=HOSTEL%20REQUEST%20FOR%20CTHOSTEL.%0aInstitution:' . $album->school->name . '%0aHostel%20name:%20(' . $album->name . ')%0aHostel%20Price:' . $album->price . '%0aLocation:' . $album->category->name . '%0aAgent%20in%20charge:' . $album->user->name . '%0a(Input%20other%20message%20here)%20');
         // return redirect()->away('https://wa.me/234{{substr($album->user->phone,1)}}?text=Hi%2C%20my%20name%20is%20%28Input%20your%20name%29.%0aHOSTEL%20REQUEST%20FOR%20CTHOSTEL.%0aInstitution:{{$album->school->name}}%0aHostel%20name:%20({{$album->name}})%0aHostel%20Price:{{$album->price}}%0aLocation:{{$album->category->name}}%0aAgent%20in%20charge:{{$album->user->name}}%0a(Input%20other%20message%20here)%20');
     }
     public function callcounter($id)
@@ -370,16 +370,26 @@ class AlbumController extends Controller
     {
         try {
             $id = $request->id;
-            $file = $request->profilePic->hashName();
-            $request->profilePic->move(public_path('agent'), $file);
             $user = User::find($id);
+            if($request->has('profilePic')) {
+                $file = $request->profilePic->hashName();
+                $request->profilePic->move(public_path('agent'), $file);
+                $user->profilePic =  $file;
+            }
+            if($request->has('identification')) {
+                 $moi = $request->identification->hashName();
+                $request->identification->move(public_path('identification'), $moi);
+                $user->profilePic =  $moi;
+                $user->identification = $moi;
+            }
+           
 
             $user->name =  $request->name;
             $user->email =  $request->email;
             $user->phone =  $request->phone;
-            $user->profilePic =  $file;
+           
             $user->save();
-            return 'saved';
+            return redirect()->back()->with('message','Profile Updated Successfully!');
         } catch (Exception $e) {
             return $e;
         }

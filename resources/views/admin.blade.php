@@ -1266,6 +1266,9 @@
                 <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
                     <!--begin::Container-->
                     <div id="kt_content_container" class="container">
+                        @if(Session::has('message'))
+                            <div class='alert alert-success'>{{ Session::get('message') }}</div>
+                        @endif
 
                         <div class="card mb-5 mb-xl-10">
                             <div class="card-body pt-9 pb-0">
@@ -1346,12 +1349,12 @@
 
                                                         <!--end::Svg Icon-->{{ $user->school->name }}
                                                     </a>
+                                                    @if($user->plan == "Free Mode")
                                                     <a href="#"
                                                         class="d-flex align-items-center alert alert-danger mb-2">
-                                                        <!--begin::Svg Icon | path: icons/duotone/Communication/Mail-at.svg-->
-                                                       
-                                                        <!--end::Svg Icon-->Upgrade plan to enjoy more benefit!
+                                                        Upgrade plan to enjoy more benefit!
                                                     </a>
+                                                    @endif
                                                 </div>
                                                 <!--end::Info-->
                                             </div>
@@ -1393,7 +1396,7 @@
                                                         <!--begin::Modal body-->
                                                         <div class="modal-body scroll-y px-10 px-lg-15 pt-0 pb-15">
                                                             <!--begin:Form-->
-                                                            <form id="updateProfile" class="form">
+                                                            <form method='post' action='{{ route("updateprofile") }}' enctype="multipart/form-data" class="form">@csrf
                                                                 <!--begin::Heading-->
                                                                 <div class="mb-13 text-center">
                                                                     <!--begin::Title-->
@@ -1407,7 +1410,7 @@
                                                                 <!--begin::Input group-->
 
                                                                 <input type='hidden' id='profileId'
-                                                                    value="{{$user->id}}">
+                                                                    value="{{$user->id}}" name='id'>
                                                                 <div class="d-flex flex-column mb-8 fv-row">
                                                                     <!--begin::Label-->
                                                                     <label
@@ -1415,7 +1418,7 @@
                                                                         <span class="required">Username</span>
                                                                         <i class="fas fa-exclamation-circle ms-2 fs-7"
                                                                             data-bs-toggle="tooltip"
-                                                                            title="Specify a target name for future usage and reference"></i>
+                                                                            title="This field is mandatory"></i>
                                                                     </label>
                                                                     <!--end::Label-->
                                                                     <input type="text" required
@@ -1431,7 +1434,7 @@
                                                                         <span class="required">Email</span>
                                                                         <i class="fas fa-exclamation-circle ms-2 fs-7"
                                                                             data-bs-toggle="tooltip"
-                                                                            title="Specify a target name for future usage and reference"></i>
+                                                                            title="This field is mandatory"></i>
                                                                     </label>
                                                                     <!--end::Label-->
                                                                     <input type="text"
@@ -1446,7 +1449,7 @@
                                                                         <span class="required">Phone Number</span>
                                                                         <i class="fas fa-exclamation-circle ms-2 fs-7"
                                                                             data-bs-toggle="tooltip"
-                                                                            title="Specify a target name for future usage and reference"></i>
+                                                                            title="This field is mandatory"></i>
                                                                     </label>
                                                                     <!--end::Label-->
                                                                     <input required type="text"
@@ -1461,13 +1464,33 @@
                                                                         <span class="required">Profile Picture</span>
                                                                         <i class="fas fa-exclamation-circle ms-2 fs-7"
                                                                             data-bs-toggle="tooltip"
-                                                                            title="Specify a target name for future usage and reference"></i>
+                                                                            title="This field is mandatory"></i>
                                                                     </label>
                                                                     <!--end::Label-->
                                                                     <input accept="image/png,image/jpg, image/jpeg"
-                                                                        required type="file"
+                                                                         type="file"
                                                                         class="form-control form-control-solid"
                                                                         id='profilePic' name="profilePic" />
+                                                                </div>
+                                                               
+
+                                                                <div class="d-flex flex-column mb-8 fv-row">
+                                                                    <!--begin::Label-->
+                                                                    <label
+                                                                        class="d-flex align-items-center fs-6 fw-bold mb-2">
+                                                                        <span class="required">Means Of identification</span>
+                                                                        <i class="fas fa-exclamation-circle ms-2 fs-7"
+                                                                            data-bs-toggle="tooltip"
+                                                                            title="This field is mandatory"></i>
+                                                                    </label>
+                                                                    <div class='alert alert-danger'>
+                                                                        Please note that means of identification is one of the essential criteria for getting verified.
+                                                                    </div>
+                                                                    <!--end::Label-->
+                                                                    <input accept="image/png,image/jpg, image/jpeg"
+                                                                         type="file"
+                                                                        class="form-control form-control-solid"
+                                                                        id='profilePic' name="identification" />
                                                                 </div>
 
                                                                 <div class="text-center">
@@ -1676,7 +1699,7 @@
                                                             <a href="#" class="menu-link flex-stack px-3">Create Payment
                                                                 <i class="fas fa-exclamation-circle ms-2 fs-7"
                                                                     data-bs-toggle="tooltip"
-                                                                    title="Specify a target name for future usage and reference"></i></a>
+                                                                    title="This field is mandatory"></i></a>
                                                         </div>
                                                         <!--end::Menu item-->
                                                         <!--begin::Menu item-->
@@ -3035,44 +3058,6 @@
                             });
                             });
                             });
-
-							$("#profilePic").on('change', function(e) {
-
-var file = e.target.files[0];
-console.log(file);
-
-$("#updateProfile").on('submit', async function(e){
-	e.preventDefault();
-	var id = $("#profileId").val();
-	
-				fd = new FormData();
-				fd.append('profilePic', file);
-				fd.append('id', id);
-				fd.append('name', $("#profilename").val());
-				fd.append('email', $("#profileemail").val());
-				fd.append('phone', $("#profilephone").val());
-				
-				  console.log(fd, 'this is the fd');
-
-				$.ajax({
-					type: 'POST',
-					url: "../updateprofile",
-					data: fd,
-					cache: false,
-					contentType: false,
-					processData: false,
-					success: (data) => {
-						Swal.fire("Success", 'Hostel Updated successfully', 'success');
-						console.log(data)
-						window.location.reload();
-						 },
-					error: function(data) { 
-						console.log(data);
-						Swal.fire('Oops!','Image size is too big','error')
-					}
-				});
-				});
-				});
 
              $('body').on('click', '#edit_hostel', function () {
 

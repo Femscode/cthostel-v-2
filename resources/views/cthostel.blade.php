@@ -18923,17 +18923,17 @@
                     </ul>
                
                     @if($user->plan == 'Premium Mode')
-                    <div class='alert alert-success'>
+                    <div style='color: #155724;background-color: #d4edda;border-color: #c3e6cb;padding: 0.75rem 1.25rem;margin-bottom: 1rem;border: 1px solid transparent;border-radius: 0.25rem;'>
                     <div class="custom-stats">
                       <div class="product-sold"><b>Hostel Approved By CTHostel Team</b></div>
-                      <p>The agent in charge of this hostel is Verified and Approved</p>
+                      <p>The agent in charge of this hostel is <b>verified.</b></p>
                     </div>
                   </div>
                   @else
-                  <div class='alert alert-danger'>
+                  <div style='color: #721c24;background-color: #f8d7da;border-color: #f5c6cb;padding: 0.75rem 1.25rem;margin-bottom: 1rem;border: 1px solid transparent;border-radius: 0.25rem;'>
                     <div class="custom-stats">
                       <div class="product-sold"><b>Hostel Not Yet Approved By CTHostel Team</b></div>
-                      <p>The agent in charge of this hostel is not yet Verified and Approved</p>
+                      <p>The agent in charge of this hostel is not yet <b>verified!</b></p>
                     </div>
                     </div>
                     @endif
@@ -19865,7 +19865,7 @@ wpac_init.push({widget: 'Comment', id: 24531});
 
   </div><!-- .site-wrapper -->
 
-  <div class="popup-wrapper module module-popup module-popup-195"
+  {{-- <div class="popup-wrapper module module-popup module-popup-195"
     data-options='{"showAfter":"2000","hideAfter":"","cookie":"2f8d04d1","doNotShowAgain":true,"doNotShowAgainChecked":false}'>
     <div class="popup-container">
       <button class="btn popup-close"></button>
@@ -19972,7 +19972,7 @@ wpac_init.push({widget: 'Comment', id: 24531});
       </div>
     </div>
     <div class="popup-bg popup-bg-closable"></div>
-  </div>
+  </div> --}}
 
   <!--
   <div class="notification-wrapper notification-wrapper-bottom">

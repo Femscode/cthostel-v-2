@@ -23,13 +23,12 @@ class FrontendCOntroller extends Controller
        $data['albumImage'] = Album::where('user_id',$album['user_id'])->where('status',1)->get();
        $data['category'] = Category::where('school_id', $album->school_id)->get();
        $data['school_id'] = $album->school_id;
-      if(Auth::check()){
+     
         $data['userId'] = $userId  = Album::where('id',$id)->first()->user_id;
            $follows = 'kokanmi';
-       }
-       
+     
        $data['follows'] = 'good';
-       $data['userId'] = 1;
+    //    $data['userId'] = 1;
        $data['user'] = User::find($userId);
        //(new User)->amIfollowing($userId);
        $data['roommate'] = $roommate= Roommate::where('hostel_id',$id)->get();
