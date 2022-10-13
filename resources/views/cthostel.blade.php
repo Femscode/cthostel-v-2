@@ -18474,16 +18474,16 @@
                       @foreach($album->albumimages as $img)
 
                       <div class="swiper-slide" data-gallery=".lightgallery-product-images" data-index="0">
-                        <img src="{{asset('hostelimage/'.$album->image)}}"
-                          srcset="{{asset('hostelimage/'.$album->image)}}" data-largeimg="{{$album->image}}"
+                        <img src="https://cthostel.com/cthostel_files/public/hostelimage/{{$album->image  }}"
+                          srcset="https://cthostel.com/cthostel_files/public/hostelimage/{{$album->image  }}" data-largeimg="{{$album->image}}"
                           alt="CTHostel" title="CTHostel" width="550" height="550" />
 
                       </div>
                       @endforeach
                       <div class="swiper-slide" data-gallery=".lightgallery-product-images" data-index="1">
-                        <img src="{{asset('hostelimage/'.$album->image)}}"
-                          srcset="{{asset('hostelimage/'.$album->image)}}"
-                          data-largeimg="{{asset('hostelimage/'.$album->image)}}" alt="CTHostel" title="CTHostel"
+                        <img src="https://cthostel.com/cthostel_files/public/hostelimage/{{$album->image  }}"
+                          srcset="https://cthostel.com/cthostel_files/public/hostelimage/{{$album->image  }}"
+                          data-largeimg="https://cthostel.com/cthostel_files/public/hostelimage/{{$album->image  }}" alt="CTHostel" title="CTHostel"
                           width="550" height="550" loading="lazy" />
                       </div>
                     </div>
@@ -18502,7 +18502,7 @@
                     <div class="swiper-wrapper">
                       @foreach($album->albumimages as $img)
                       <div class="swiper-slide additional-image" data-index="0">
-                        <img src="{{asset('images/'.$img->image)}}" srcset="{{asset('images/'.$img->image)}}"
+                        <img src="https://cthostel.com/cthostel_files/public/images/{{$img->image  }}" srcset="https://cthostel.com/cthostel_files/public/images/{{$img->image  }}"
                           alt="Hostel Images" title="Sti Heel Shoes" width="80" height="80" />
                       </div>
                       @endforeach
@@ -18569,29 +18569,29 @@
                   <div class="swiper-container">
                     <div class="swiper-wrapper">
                       <div class="swiper-slide" data-gallery=".lightgallery-product-images" data-index="0">
-                        <img src="{{asset('hostelimage/'.$album->image)}}"
-                          srcset="{{asset('hostelimage/'.$album->image)}}"
-                          data-largeimg="{{asset('hostelimage/'.$album->image)}}" alt="{{$album->name}}"
+                        <img src="https://cthostel.com/cthostel_files/public/hostelimage/{{$album->image  }}"
+                          srcset="https://cthostel.com/cthostel_files/public/hostelimage/{{$album->image  }}"
+                          data-largeimg="https://cthostel.com/cthostel_files/public/hostelimage/{{$album->image  }}" alt="{{$album->name}}"
                           title="{{$album->name}}" width="550" height="550" />
                       </div>
                       @foreach($album->albumimages as $img)
                       <div class="swiper-slide" data-gallery=".lightgallery-product-images" data-index="1">
-                        <img src="{{asset('images/'.$img->image)}}" srcset="{{asset('images/'.$img->image)}}"
-                          data-largeimg="{{asset('images/'.$img->image)}}" alt="{{$img->name}}" title="{{$img->name}}"
+                        <img src="https://cthostel.com/cthostel_files/public/images/{{$img->image  }}" srcset="https://cthostel.com/cthostel_files/public/images/{{$img->image  }}"
+                          data-largeimg="https://cthostel.com/cthostel_files/public/images/{{$img->image  }}" alt="{{$img->name}}" title="{{$img->name}}"
                           width="550" height="550" />
                       </div>
                       @endforeach
                       @foreach($album->albumimages as $img)
                       <div class="swiper-slide" data-gallery=".lightgallery-product-images" data-index="2">
-                        <img src="{{asset('images/'.$img->image)}}" srcset="{{asset('images/'.$img->image)}}"
-                          data-largeimg="{{asset('images/'.$img->image)}}" alt="{{$img->name}}" title="{{$img->name}}"
+                        <img src="https://cthostel.com/cthostel_files/public/images/{{$img->image  }}" srcset="https://cthostel.com/cthostel_files/public/images/{{$img->image  }}"
+                          data-largeimg="https://cthostel.com/cthostel_files/public/images/{{$img->image  }}" alt="{{$img->name}}" title="{{$img->name}}"
                           width="550" height="550" loading="lazy" />
                       </div>
                       @endforeach
                       @foreach($album->albumimages as $img)
                       <div class="swiper-slide" data-gallery=".lightgallery-product-images" data-index="3">
-                        <img src="{{asset('images/'.$img->image)}}" srcset="{{asset('images/'.$img->image)}}"
-                          data-largeimg="{{asset('images/'.$img->image)}}" alt="{{$img->name}}" title="{{$img->name}}"
+                        <img src="https://cthostel.com/cthostel_files/public/images/{{$img->image  }}" srcset="https://cthostel.com/cthostel_files/public/images/{{$img->image  }}"
+                          data-largeimg="https://cthostel.com/cthostel_files/public/images/{{$img->image  }}" alt="{{$img->name}}" title="{{$img->name}}"
                           width="550" height="550" loading="lazy" />
                       </div>
                       @endforeach
@@ -18613,13 +18613,13 @@
                   <div class="swiper-container">
                     <div class="swiper-wrapper">
                       <div class="swiper-slide additional-image" data-index="0">
-                        <img src="{{asset('hostelimage/'.$album->image)}}"
-                          srcset="{{asset('hostelimage/'.$album->image)}}" alt="hostel" title="hostel" width="80"
+                        <img src="https://cthostel.com/cthostel_files/public/hostelimage/{{$album->image  }}"
+                          srcset="https://cthostel.com/cthostel_files/public/hostelimage/{{$album->image  }}" alt="hostel" title="hostel" width="80"
                           height="80" />
                       </div>
                       @foreach($album->albumimages as $key => $img)
                       <div class="swiper-slide additional-image" data-index="{{++$key}}">
-                        <img src="{{asset('images/'.$img->image)}}" srcset="{{asset('images/'.$img->image)}}"
+                        <img src="https://cthostel.com/cthostel_files/public/images/{{$img->image  }}" srcset="https://cthostel.com/cthostel_files/public/images/{{$img->image  }}"
                           alt="{{$img->name}}" title="{{$img->name}}" width="80" height="80" />
                       </div>
 
@@ -18636,9 +18636,9 @@
               </div>
               <div class="lightgallery lightgallery-product-images" data-images='[
                   {&quot;src&quot;:&quot;{{asset(' hostelimage/'.$album->
-                image)}}&quot;,&quot;thumb&quot;:&quot;{{asset('hostelimage/'.$album->image)}}&quot;,&quot;subHtml&quot;:&quot;&quot;},
+                image)}}&quot;,&quot;thumb&quot;:&quot;https://cthostel.com/cthostel_files/public/hostelimage/{{$album->image  }}&quot;,&quot;subHtml&quot;:&quot;&quot;},
                 @foreach($album->albumimages as $key => $img)
-                {&quot;src&quot;:&quot;{{asset('images/'.$img->image)}}&quot;,&quot;thumb&quot;:&quot;{{asset('images/'.$img->image)}}&quot;,&quot;subHtml&quot;:&quot;&quot;},
+                {&quot;src&quot;:&quot;https://cthostel.com/cthostel_files/public/images/{{$img->image  }}&quot;,&quot;thumb&quot;:&quot;https://cthostel.com/cthostel_files/public/images/{{$img->image  }}&quot;,&quot;subHtml&quot;:&quot;&quot;},
                 @endforeach
                 {}
                 ]'
@@ -19546,23 +19546,23 @@ wpac_init.push({widget: 'Comment', id: 24531});
                                     <div class="quickview-button">
                                       <a href="{{route('cthostel',[$album->slug,$album->id])}}"
                                         class="btn btn-quickview" data-toggle="tooltip"
-                                        data-tooltip-class="{{asset('hostelimage/'.$album->image)}}"
+                                        data-tooltip-class="https://cthostel.com/cthostel_files/public/hostelimage/{{$album->image  }}"
                                         data-placement="top" title="Quickview"
-                                        onclick="{{asset('hostelimage/'.$album->image)}}"><span
+                                        onclick="https://cthostel.com/cthostel_files/public/hostelimage/{{$album->image  }}"><span
                                           class="btn-text">Quickview</span></a>
                                     </div>
 
                                     <a class="product-img has-second-image">
                                       <div>
-                                        <img src="{{asset('hostelimage/'.$album->image)}}"
-                                          data-src="{{asset('hostelimage/'.$album->image)}}"
-                                          data-srcset="{{asset('hostelimage/'.$album->image)}}" width="250" height="250"
+                                        <img src="https://cthostel.com/cthostel_files/public/hostelimage/{{$album->image  }}"
+                                          data-src="https://cthostel.com/cthostel_files/public/hostelimage/{{$album->image  }}"
+                                          data-srcset="https://cthostel.com/cthostel_files/public/hostelimage/{{$album->image  }}" width="250" height="250"
                                           alt="Black High Heels" title="Black High Heels"
                                           class="img-responsive img-first lazyload" />
 
-                                        <img src="{{asset('hostelimage/'.$album->image)}}"
-                                          data-src="{{asset('hostelimage/'.$album->image)}}"
-                                          data-srcset="{{asset('hostelimage/'.$album->image)}}" width="250" height="250"
+                                        <img src="https://cthostel.com/cthostel_files/public/hostelimage/{{$album->image  }}"
+                                          data-src="https://cthostel.com/cthostel_files/public/hostelimage/{{$album->image  }}"
+                                          data-srcset="https://cthostel.com/cthostel_files/public/hostelimage/{{$album->image  }}" width="250" height="250"
                                           alt="Black High Heels" title="Black High Heels"
                                           class="img-responsive img-second lazyload" />
 
@@ -19666,15 +19666,15 @@ wpac_init.push({widget: 'Comment', id: 24531});
                                     <a href="{{route("cthostel",[$album->slug,$album->id])}}" class="product-img
                                       has-second-image">
                                       <div>
-                                        <img src="{{asset('hostelimage/'.$album->image)}}"
-                                          data-src="{{asset('hostelimage/'.$album->image)}}"
-                                          data-srcset="{{asset('hostelimage/'.$album->image)}}" width="250" height="250"
+                                        <img src="https://cthostel.com/cthostel_files/public/hostelimage/{{$album->image  }}"
+                                          data-src="https://cthostel.com/cthostel_files/public/hostelimage/{{$album->image  }}"
+                                          data-srcset="https://cthostel.com/cthostel_files/public/hostelimage/{{$album->image  }}" width="250" height="250"
                                           alt="Hostel Image " title="Hostel Image "
                                           class="img-responsive img-first lazyload" />
 
-                                        <img src="{{asset('hostelimage/'.$album->image)}}"
-                                          data-src="{{asset('hostelimage/'.$album->image)}}"
-                                          data-srcset="{{asset('hostelimage/'.$album->image)}}" width="250" height="250"
+                                        <img src="https://cthostel.com/cthostel_files/public/hostelimage/{{$album->image  }}"
+                                          data-src="https://cthostel.com/cthostel_files/public/hostelimage/{{$album->image  }}"
+                                          data-srcset="https://cthostel.com/cthostel_files/public/hostelimage/{{$album->image  }}" width="250" height="250"
                                           alt="Hostel Image " title="Hostel Image "
                                           class="img-responsive img-second lazyload" />
 

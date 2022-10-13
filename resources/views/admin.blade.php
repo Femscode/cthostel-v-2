@@ -2215,7 +2215,7 @@
                                             @foreach ($album as $index => $album)
                                             <th scope="row">{{ $index + 1 }}</th>
                                             <td>
-                                                <img src="{{asset('hostelimage/'.$album->image)}}"
+                                                <img src="https://cthostel.com/cthostel_files/public/hostelimage/{{$album->image  }}"
                                                     style='height:100px;width:100px'>
                                             </td>
                                             <td> {{ $album->name }}<a href=""></a> </td>
@@ -2948,7 +2948,7 @@
 					for(i = 0;i<= data.length-1;i++) {
 			console.log(data[i].image,'the image')
                     
-                    $("#uploadedimagediv").append("<a style='position:absolute;background:red;display: inline-block;border:2px solid white;padding:5px;' class='deleteuploaded btn btn-danger btn-sm' data-id='"+data[i].id+"'>&times;</a><img class='imgpreview' style='width:100px;height:100px;margin:5px;box-shadow: 5px 5px 2px #888888' src='/images/"+data[i].image+"'>")
+                    $("#uploadedimagediv").append("<a style='position:absolute;background:red;display: inline-block;border:2px solid white;padding:5px;' class='deleteuploaded btn btn-danger btn-sm' data-id='"+data[i].id+"'>&times;</a><img class='imgpreview' style='width:100px;height:100px;margin:5px;box-shadow: 5px 5px 2px #888888' src='https://cthostel.com/cthostel_files/public/images/"+data[i].image+"'>")
 					
                     }
 			
