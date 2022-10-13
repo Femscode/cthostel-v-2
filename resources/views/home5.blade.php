@@ -307,7 +307,7 @@
                                                       
                                                         <select required class='nice-select' style='color:red' name='school_id' tabindex="0">
                                                             <option value=''>Select Institution</option>
-                                                            @foreach(App\Models\schools::all() as $school)
+                                                            @foreach($schools as $school)
                                                             <option value='{{$school->id}}'>{{$school->name}}</option>
                                                             @endforeach
                                                         </select><br>
@@ -333,7 +333,7 @@
                                                     <h4>Pick Institution</h4>   
                                                     <select required class='nice-select' style='color:red' name='school_id' tabindex="0">
                                                             <option value=''>Select Institution</option>
-                                                            @foreach(App\Models\schools::all() as $school)
+                                                            @foreach($schools as $school)
                                                             <option value='{{$school->id}}'>{{$school->name}}</option>
                                                             @endforeach
                                                         </select><br><br>

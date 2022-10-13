@@ -241,6 +241,7 @@ class AlbumController extends Controller
     {
 
         $data['category'] = Category::all();
+        $data['schools'] = schools::all();
         return view('home5', $data);
         return view('selectinstitution', $data);
     }
