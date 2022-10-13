@@ -119,7 +119,7 @@
                               
                                
                                 <div class="d-grid mb-10 mt-4">
-									<button type="submit" id="kt_sign_in_submit" class="btn btn-primary">
+									<button type="submit" id="kt_sign_in_submit" class="btn btn-success">
 										<!--begin::Indicator label-->
 										<span class="indicator-label">Reset</span>
 										<!--end::Indicator label-->
