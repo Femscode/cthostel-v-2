@@ -2855,7 +2855,7 @@
                        
 				   $("#create_hostel_form").submit(async function(e) {
                        e.preventDefault()
-                       Swal.fire('Creating property, please wait...')
+                       Swal.fire('Creating hostel, please wait...')
                             //  $("#create_hostel").attr('disabled',true);
                             var fd = new FormData();
 
@@ -2879,7 +2879,7 @@
                                 contentType: false,
                                 processData: false,
                                 success: (data) => {
-                                    swal.close()
+                                    Swal.close()
                                     Swal.fire("Success", 'Hostel created successfully', 'success');
                                     console.log(data)
 									window.location.reload();
@@ -2887,7 +2887,7 @@
                                 },
                                 error: function(data) {
                                     console.log(data);
-                                    swal.close()
+                                    Swal.close()
                                     Swal.fire('Oops', 'Hostel not created','error')
                                 }
                             });
@@ -2922,7 +2922,7 @@
                                 contentType: false,
                                 processData: false,
                                 success: (data) => {
-                                    swal.close()
+                                    Swal.close()
                                     Swal.fire("Success", 'Hostel Updated successfully', 'success');
                                     console.log(data)
 									window.location.reload();
