@@ -18919,7 +18919,7 @@
                   <div class="product-stats">
                     <ul class="list-unstyled">
                       <li class="product-stock in-stock"><b>Location:</b> <span>{{$album->category->name}}</span></li>
-                      <li class="product-model"><b>Agent:</b> <span>{{$album->user->name}}</span></li>
+                      <li class="product-model"><b>Agent In Charge:</b> <span>{{$album->user->name}}</span></li>
                     </ul>
                
                     {{-- @if($user->plan == 'Premium Mode')
