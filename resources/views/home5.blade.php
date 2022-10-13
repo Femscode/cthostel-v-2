@@ -348,7 +348,7 @@
                                                             <option value='Kitchen Technician'>Kitchen Appliances Technician</option>
                                                             <option value='Painter'>Painter</option>
 															<option value='Phone'>Phone/Laptop Engineer</option>
-                                                            <option value='Electrician'>Washing Machine Specialist</option>
+                                                            <option value='Cleaning Service'>Cleaning Service</option>
 
 
                                                            

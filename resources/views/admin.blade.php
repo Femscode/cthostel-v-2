@@ -1031,7 +1031,7 @@
                                         <div class="cursor-pointer symbol symbol-30px symbol-md-40px"
                                             data-kt-menu-trigger="click" data-kt-menu-attach="parent"
                                             data-kt-menu-placement="bottom-end" data-kt-menu-flip="bottom">
-                                            <img src="public/agent/{{$user->profilePic}}" alt="profilePic" />
+                                            <img src="https://cthostel.com/cthostel_files/public/agent/{{$user->profilePic}}" alt="profilePic" />
                                         </div>
                                         <!--begin::Menu-->
                                         <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg menu-state-primary fw-bold py-4 fs-6 w-275px"
@@ -1063,164 +1063,30 @@
                                             <div class="separator my-2"></div>
                                             <!--end::Menu separator-->
                                             <!--begin::Menu item-->
-                                            <div class="menu-item px-5">
-                                                <a href='{{route("logout")}}' class="menu-link px-5">Logout</a>
-                                            </div>
+                                            
+                                            <!--end::Menu item-->
+                                            <!--begin::Menu item-->
+                                           
+                                            <!--end::Menu item-->
+                                    
                                             <!--end::Menu item-->
                                             <!--begin::Menu item-->
                                             <div class="menu-item px-5">
-                                                <a href="pages/projects/list.html" class="menu-link px-5">
-                                                    <span class="menu-text">My Projects</span>
-                                                    <span class="menu-badge">
-                                                        <span
-                                                            class="badge badge-light-danger badge-circle fw-bolder fs-7">3</span>
-                                                    </span>
-                                                </a>
-                                            </div>
-                                            <!--end::Menu item-->
-                                            <!--begin::Menu item-->
-                                            <div class="menu-item px-5" data-kt-menu-trigger="hover"
-                                                data-kt-menu-placement="left-start" data-kt-menu-flip="bottom, top">
-                                                <a href="#" class="menu-link px-5">
-                                                    <span class="menu-title">My Subscription</span>
-                                                    <span class="menu-arrow"></span>
-                                                </a>
-                                                <!--begin::Menu sub-->
-                                                <div class="menu-sub menu-sub-dropdown w-175px py-4">
-                                                    <!--begin::Menu item-->
-                                                    <div class="menu-item px-3">
-                                                        <a href="account/referrals.html"
-                                                            class="menu-link px-5">Referrals</a>
-                                                    </div>
-                                                    <!--end::Menu item-->
-                                                    <!--begin::Menu item-->
-                                                    <div class="menu-item px-3">
-                                                        <a href="account/billing.html"
-                                                            class="menu-link px-5">Billing</a>
-                                                    </div>
-                                                    <!--end::Menu item-->
-                                                    <!--begin::Menu item-->
-                                                    <div class="menu-item px-3">
-                                                        <a href="account/statements.html"
-                                                            class="menu-link px-5">Payments</a>
-                                                    </div>
-                                                    <!--end::Menu item-->
-                                                    <!--begin::Menu item-->
-                                                    <div class="menu-item px-3">
-                                                        <a href="account/statements.html"
-                                                            class="menu-link d-flex flex-stack px-5">Statements
-                                                            <i class="fas fa-exclamation-circle ms-2 fs-7"
-                                                                data-bs-toggle="tooltip"
-                                                                title="View your statements"></i></a>
-                                                    </div>
-                                                    <!--end::Menu item-->
-                                                    <!--begin::Menu separator-->
-                                                    <div class="separator my-2"></div>
-                                                    <!--end::Menu separator-->
-                                                    <!--begin::Menu item-->
-                                                    <div class="menu-item px-3">
-                                                        <div class="menu-content px-3">
-                                                            <label
-                                                                class="form-check form-switch form-check-custom form-check-solid">
-                                                                <input class="form-check-input w-30px h-20px"
-                                                                    type="checkbox" value="1" checked="checked"
-                                                                    name="notifications" />
-                                                                <span
-                                                                    class="form-check-label text-muted fs-7">Notifications</span>
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                    <!--end::Menu item-->
-                                                </div>
-                                                <!--end::Menu sub-->
-                                            </div>
-                                            <!--end::Menu item-->
-                                            <!--begin::Menu item-->
-                                            <div class="menu-item px-5">
-                                                <a href="account/statements.html" class="menu-link px-5">My
-                                                    Statements</a>
+                                                <a href="https://cthostel.com/{{ $user->name }}" class="menu-link px-5">My
+                                                    Page</a>
                                             </div>
                                             <!--end::Menu item-->
                                             <!--begin::Menu separator-->
                                             <div class="separator my-2"></div>
-                                            <!--end::Menu separator-->
-                                            <!--begin::Menu item-->
-                                            <div class="menu-item px-5" data-kt-menu-trigger="hover"
-                                                data-kt-menu-placement="left-start" data-kt-menu-flip="bottom, top">
-                                                <a href="#" class="menu-link px-5">
-                                                    <span class="menu-title position-relative">Language
-                                                        <span
-                                                            class="fs-8 rounded bg-light px-3 py-2 position-absolute translate-middle-y top-50 end-0">English
-                                                            <img class="w-15px h-15px rounded-1 ms-2"
-                                                                src="public/agent/{{$user->profilePic}}"
-                                                                alt="profilePic" /></span></span>
-                                                </a>
-                                                <!--begin::Menu sub-->
-                                                <div class="menu-sub menu-sub-dropdown w-175px py-4">
-                                                    <!--begin::Menu item-->
-                                                    <div class="menu-item px-3">
-                                                        <a href="account/settings.html"
-                                                            class="menu-link d-flex px-5 active">
-                                                            <span class="symbol symbol-20px me-4">
-                                                                <img class="rounded-1"
-                                                                    src="public/agent/{{$user->profilePic}}"
-                                                                    alt="metronic" />
-                                                            </span>English</a>
-                                                    </div>
-                                                    <!--end::Menu item-->
-                                                    <!--begin::Menu item-->
-                                                    <div class="menu-item px-3">
-                                                        <a href="account/settings.html" class="menu-link d-flex px-5">
-                                                            <span class="symbol symbol-20px me-4">
-                                                                <img class="rounded-1"
-                                                                    src="public/agent/{{$user->profilePic}}"
-                                                                    alt="metronic" />
-                                                            </span>Spanish</a>
-                                                    </div>
-                                                    <!--end::Menu item-->
-                                                    <!--begin::Menu item-->
-                                                    <div class="menu-item px-3">
-                                                        <a href="account/settings.html" class="menu-link d-flex px-5">
-                                                            <span class="symbol symbol-20px me-4">
-                                                                <img class="rounded-1"
-                                                                    src="/agent/{{$user->profilePic}}"
-                                                                    alt="metronic" />
-                                                            </span>German</a>
-                                                    </div>
-                                                    <!--end::Menu item-->
-                                                    <!--begin::Menu item-->
-                                                    <div class="menu-item px-3">
-                                                        <a href="account/settings.html" class="menu-link d-flex px-5">
-                                                            <span class="symbol symbol-20px me-4">
-                                                                <img class="rounded-1"
-                                                                    src="/agent/{{$user->profilePic}}"
-                                                                    alt="metronic" />
-                                                            </span>Japanese</a>
-                                                    </div>
-                                                    <!--end::Menu item-->
-                                                    <!--begin::Menu item-->
-                                                    <div class="menu-item px-3">
-                                                        <a href="account/settings.html" class="menu-link d-flex px-5">
-                                                            <span class="symbol symbol-20px me-4">
-                                                                <img class="rounded-1"
-                                                                    src="public/agent/{{$user->profilePic}}"
-                                                                    alt="metronic" />
-                                                            </span></a>
-                                                    </div>
-                                                    <!--end::Menu item-->
-                                                </div>
-                                                <!--end::Menu sub-->
-                                            </div>
-                                            <!--end::Menu item-->
+                                      
                                             <!--begin::Menu item-->
                                             <div class="menu-item px-5 my-1">
-                                                <a href="account/settings.html" class="menu-link px-5">Account
-                                                    Settings</a>
+                                                <a href="upgrade_account" class="menu-link px-5">Upgrade Plan</a>
                                             </div>
                                             <!--end::Menu item-->
                                             <!--begin::Menu item-->
                                             <div class="menu-item px-5">
-                                                <a href="authentication/flows/basic/sign-in.html"
+                                                <a onclick='return confirm("Are you sure you want to logout?")' href='{{route("logout")}}'
                                                     class="menu-link px-5">Sign Out</a>
                                             </div>
                                             <!--end::Menu item-->
@@ -1282,7 +1148,7 @@
                                     <!--begin: Pic-->
                                     <div class="me-7 mb-4">
                                         <div class="symbol symbol-100px symbol-lg-160px symbol-fixed position-relative">
-                                            <img src="public/agent/{{$user->profilePic}}" alt="image" />
+                                            <img src="https://cthostel.com/cthostel_files/public/agent/{{$user->profilePic}}" alt="image" />
                                             <div
                                                 class="position-absolute translate-middle bottom-0 start-100 mb-6 bg-success rounded-circle border border-4 border-white h-20px w-20px">
                                             </div>
@@ -1437,7 +1303,7 @@
                                                                             title="This field is mandatory"></i>
                                                                     </label>
                                                                     <!--end::Label-->
-                                                                    <input type="text"
+                                                                    <input type="text" readonly
                                                                         class="form-control form-control-solid"
                                                                         id='profileemail'
                                                                         value='{{$user->email}}' name="email" />
@@ -2224,24 +2090,9 @@
                                             <td>{{ $album->category->name }}</td>
                                             <td>@if($album->status == 1)
 
-                                                <a title='View Hostel' href='/cthostel/{{$album->slug}}/{{$album->id}}'
-                                                    class="btn btn-icon btn-bg-light btn-active-color-secondary btn-sm me-1">
-                                                    <span class="svg-icon svg-icon-3">
-                                                        <svg xmlns="http://www.w3.org/2000/svg"
-                                                            xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
-                                                            height="24px" viewBox="0 0 24 24" version="1.1">
-                                                            <g stroke="none" stroke-width="1" fill="none"
-                                                                fill-rule="evenodd">
-                                                                <rect x="0" y="0" width="24" height="24" />
-                                                                <path
-                                                                    d="M7,3 L17,3 C19.209139,3 21,4.790861 21,7 C21,9.209139 19.209139,11 17,11 L7,11 C4.790861,11 3,9.209139 3,7 C3,4.790861 4.790861,3 7,3 Z M7,9 C8.1045695,9 9,8.1045695 9,7 C9,5.8954305 8.1045695,5 7,5 C5.8954305,5 5,5.8954305 5,7 C5,8.1045695 5.8954305,9 7,9 Z"
-                                                                    fill="#000000" />
-                                                                <path
-                                                                    d="M7,13 L17,13 C19.209139,13 21,14.790861 21,17 C21,19.209139 19.209139,21 17,21 L7,21 C4.790861,21 3,19.209139 3,17 C3,14.790861 4.790861,13 7,13 Z M17,19 C18.1045695,19 19,18.1045695 19,17 C19,15.8954305 18.1045695,15 17,15 C15.8954305,15 15,15.8954305 15,17 C15,18.1045695 15.8954305,19 17,19 Z"
-                                                                    fill="#000000" opacity="0.3" />
-                                                            </g>
-                                                        </svg>
-                                                    </span>
+                                                <a title='View Hostel' href='/cthostel/{{$album->name}}/{{$album->id}}'
+                                                    class="btn btn-info btn-sm me-1">
+                                                   View
                                                 </a>
                                                 @endif
 
@@ -2250,26 +2101,12 @@
                                                 <a id='upload_image_id' title='Upload Hostel Additional Images'
                                                     data-bs-toggle="modal" data-id='{{$album->id}}'
                                                     data-bs-target="#kt_modal_create_api_key"
-                                                    class="btn btn-icon btn-bg-dark btn-color-primary btn-sm me-1">
+                                                    class="btn btn-primary btn-sm">
                                                     {{-- <a href="{{ Route('upload.album', [$album->id]) }}"
                                                         class="btn btn-icon btn-bg-light btn-color-info btn-sm me-1">
                                                         --}}
-                                                        <span class="svg-icon svg-icon-3">
-                                                            <svg xmlns="http://www.w3.org/2000/svg"
-                                                                xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
-                                                                height="24px" viewBox="0 0 24 24" version="1.1">
-                                                                <g stroke="none" stroke-width="1" fill="none"
-                                                                    fill-rule="evenodd">
-                                                                    <rect x="0" y="0" width="24" height="24" />
-                                                                    <path
-                                                                        d="M7,3 L17,3 C19.209139,3 21,4.790861 21,7 C21,9.209139 19.209139,11 17,11 L7,11 C4.790861,11 3,9.209139 3,7 C3,4.790861 4.790861,3 7,3 Z M7,9 C8.1045695,9 9,8.1045695 9,7 C9,5.8954305 8.1045695,5 7,5 C5.8954305,5 5,5.8954305 5,7 C5,8.1045695 5.8954305,9 7,9 Z"
-                                                                        fill="#000000" />
-                                                                    <path
-                                                                        d="M7,13 L17,13 C19.209139,13 21,14.790861 21,17 C21,19.209139 19.209139,21 17,21 L7,21 C4.790861,21 3,19.209139 3,17 C3,14.790861 4.790861,13 7,13 Z M17,19 C18.1045695,19 19,18.1045695 19,17 C19,15.8954305 18.1045695,15 17,15 C15.8954305,15 15,15.8954305 15,17 C15,18.1045695 15.8954305,19 17,19 Z"
-                                                                        fill="#000000" opacity="0.3" />
-                                                                </g>
-                                                            </svg>
-                                                        </span>
+                                                       
+                                                        Upload Additional Images
                                                     </a>
                                             </td>
                                             <div class="modal fade" id="kt_modal_create_api_key" tabindex="-1"

@@ -125,7 +125,7 @@
                                             value="{{ old('email') }}" required autocomplete="email" autofocus>
                                             <option value=''>Select Service You Render</option>
                                             <option value='agent'>Agent</option>
-                                            <option value='Vendor'>Vendor</option>
+                                            <option value='Cleaning Service'>Cleaning Service</option>
                                             <option value='Electrician'>Electrician</option>
                                             <option value='Painter'>Painter</option>
                                             <option value='Plumber'>Plumber</option>
@@ -158,7 +158,7 @@
                                             class="sch_id form-control pl-15" name="school_id"
                                             value="{{ old('email') }}" required autocomplete="email" autofocus>
                                             <option value=''>Select School</option>
-                                            @foreach (App\schools::all() as $school)
+                                            @foreach (App\Models\schools::all() as $school)
                                                 <option value='{{ $school->id }}'>{{ $school->name }}</option>
                                             @endforeach
                                           

@@ -56,7 +56,7 @@ class AlbumController extends Controller
     {
 
         $id = User::where('username', $slug)->pluck('id')->first();
-        $data['albums'] = Album::where('user_id', $id)->where('status', 1)->where('soft_delete',0)->latest()->paginate(20);
+        $data['albums'] = Album::where('user_id', $id)->where('status', 1)->where('soft_delete', 0)->latest()->paginate(20);
         $data['agent'] = $user = User::where('id', $id)->first();
         $data['school_id'] = $user->school_id;
 
@@ -136,7 +136,7 @@ class AlbumController extends Controller
 
         $data['locations'] = Category::where('school_id', $good)->get();
         $data['school_id'] = $good;
-        $data['searched'] = Album::where('category_id', $id)->where('status', 1)->where('soft_delete',0)->inRandomOrder()->paginate(20);
+        $data['searched'] = Album::where('category_id', $id)->where('status', 1)->where('soft_delete', 0)->inRandomOrder()->paginate(20);
 
         return view('search', $data);
     }
@@ -182,15 +182,14 @@ class AlbumController extends Controller
     {
         $id = $request->id;
         $category = Image::find($id);
-        $path = public_path().'/images/'.$category->image;
-      if(file_exists($path)) {
-          unlink($path);
-          $category->delete();
-      } 
-      else {
+        $path = public_path() . '/images/' . $category->image;
+        if (file_exists($path)) {
+            unlink($path);
+            $category->delete();
+        } else {
 
-          $category->delete();
-      }
+            $category->delete();
+        }
 
         return 'deleted';
     }
@@ -269,20 +268,20 @@ class AlbumController extends Controller
     public function store(Request $request)
     {
 
-        $this->validate($request,[
-            'name'=>'required|min:3|max:35',
-            'description'=>'required|min:3|max:500',
-            'category_id'=>'required',
-          	'school_id' => 'required',
-            'image'=>'required|mimes:jpeg,jpg,png',
-            'price'=>'required',
-            'hostel_type'=>'required'
+        $this->validate($request, [
+            'name' => 'required|min:3|max:35',
+            'description' => 'required|min:3|max:500',
+            'category_id' => 'required',
+            'school_id' => 'required',
+            'image' => 'required|mimes:jpeg,jpg,png',
+            'price' => 'required',
+            'hostel_type' => 'required'
 
         ]);
-     
+
         $image = $request->image;
         $rand = Str::random(5);
-        $imageName = time(). $rand . '.'. $image->extension();
+        $imageName = time() . $rand . '.' . $image->extension();
         $img = Compressor::make($image->path());
         $good = $img->resize(500, 300, function ($constraint) {
             $constraint->aspectRatio();
@@ -309,7 +308,7 @@ class AlbumController extends Controller
     {
         $image = $request->image;
         $rand = Str::random(5);
-        $imageName = time() . $rand. '.' .$image->extension();
+        $imageName = time() . $rand . '.' . $image->extension();
         $img = Compressor::make($image->path());
         $good = $img->resize(500, 300, function ($constraint) {
             $constraint->aspectRatio();
@@ -374,25 +373,25 @@ class AlbumController extends Controller
         try {
             $id = $request->id;
             $user = User::find($id);
-            if($request->has('profilePic')) {
+            if ($request->has('profilePic')) {
                 $file = $request->profilePic->hashName();
                 $request->profilePic->move(public_path('agent'), $file);
                 $user->profilePic =  $file;
             }
-            if($request->has('identification')) {
-                 $moi = $request->identification->hashName();
+            if ($request->has('identification')) {
+                $moi = $request->identification->hashName();
                 $request->identification->move(public_path('identification'), $moi);
                 $user->profilePic =  $moi;
                 $user->identification = $moi;
             }
-           
+
 
             $user->name =  $request->name;
             $user->email =  $request->email;
             $user->phone =  $request->phone;
-           
+
             $user->save();
-            return redirect()->back()->with('message','Profile Updated Successfully!');
+            return redirect()->back()->with('message', 'Profile Updated Successfully!');
         } catch (Exception $e) {
             return $e;
         }
@@ -409,14 +408,14 @@ class AlbumController extends Controller
 
             $album = Album::where('id', $id)->first();
             foreach ($request->file('file') as $file) {
-            $rand = Str::random(5);
-            $imageName = time(). $rand . '.' .  $file->extension();
-            $img = Compressor::make($file->path());
-            $good = $img->resize(500, 300, function ($constraint) {
-                $constraint->aspectRatio();
-            })->save(public_path('images') . '/' . $imageName);
-               
-              
+                $rand = Str::random(5);
+                $imageName = time() . $rand . '.' .  $file->extension();
+                $img = Compressor::make($file->path());
+                $good = $img->resize(500, 300, function ($constraint) {
+                    $constraint->aspectRatio();
+                })->save(public_path('images') . '/' . $imageName);
+
+
 
                 $file = new Image;
                 $file->album_id = $album->id;
@@ -450,13 +449,13 @@ class AlbumController extends Controller
 
     public function update(Request $request)
     {
-        $this->validate($request,[
-        'name'=>'required',
-        'description'=>'required|min:3|max:200',
-        'category_id'=>'required',
-        'image'=>'required|mimes:jpg,jpeg,png',
-        'price'=>'required',
-        'hostel_type'=>'required'
+        $this->validate($request, [
+            'name' => 'required',
+            'description' => 'required|min:3|max:200',
+            'category_id' => 'required',
+            'image' => 'required|mimes:jpg,jpeg,png',
+            'price' => 'required',
+            'hostel_type' => 'required'
 
         ]);
         // dd($request->all());
@@ -468,13 +467,13 @@ class AlbumController extends Controller
             $photo = $findAlbum->image;
             $file = $request->file('image');
             $file_name = $file->hashName();
-            $current_image = public_path().'/hostelimage/'.$albums->image;
-            if(file_exists($current_image)) {
-             
+            $current_image = public_path() . '/hostelimage/' . $albums->image;
+            if (file_exists($current_image)) {
+
                 unlink($current_image);
                 $file->move(public_path('hostelimage'), $file_name);
             } else {
-              
+
                 $file->move(public_path('hostelimage'), $file_name);
             }
 
@@ -572,7 +571,7 @@ class AlbumController extends Controller
     {
 
         $data['locations'] = Category::where('school_id', $request->school_id)->get();
-        $data['searched'] = $searched = Album::where('status', 1)->orderBy('rank')->where('soft_delete',0)->where('name', 'like', '%' . $request->searchinput . '%')
+        $data['searched'] = $searched = Album::where('status', 1)->orderBy('rank')->where('soft_delete', 0)->where('name', 'like', '%' . $request->searchinput . '%')
             ->orWhere('description', 'like', '%' . $request->searchinput . '%')
             ->orWhere('price', 'like', '%' . $request->searchinput . '%')
             ->orWhere('category_name', 'like', '%' . $request->searchinput . '%')
@@ -656,7 +655,7 @@ class AlbumController extends Controller
     }
     public function super_admin()
     {
-       
+
         if (Auth::user()->email == 'fasanyafemi@gmail.com') {
             $data['users'] = User::latest()->get();
             $data['locations'] = Category::latest()->get();
@@ -673,16 +672,16 @@ class AlbumController extends Controller
             $user = User::find($id);
             $user->plan = 'Premium Mode';
             $user->save();
-            $hostels = Album::where('user_id',$id)->get();
-            foreach($hostels as $hostel) {
+            $hostels = Album::where('user_id', $id)->get();
+            foreach ($hostels as $hostel) {
                 $hostel->plan = 'Premium Mode';
                 $hostel->save();
             }
-           
-          return redirect()->back()->with('message','Rank Set Successfully');
-       } else {
-           return redirect()->back();
-       }
+
+            return redirect()->back()->with('message', 'Rank Set Successfully');
+        } else {
+            return redirect()->back();
+        }
     }
     public function degrade_user($id)
     {
@@ -690,31 +689,31 @@ class AlbumController extends Controller
             $user = User::find($id);
             $user->plan = 'Free Mode';
             $user->save();
-            $hostels = Album::where('user_id',$id)->get();
-            foreach($hostels as $hostel) {
+            $hostels = Album::where('user_id', $id)->get();
+            foreach ($hostels as $hostel) {
                 $hostel->plan = 'Free Mode';
                 $hostel->save();
             }
-           
-          return redirect()->back()->with('message','Rank Set Successfully');
-       } else {
-           return redirect()->back();
-       }
+
+            return redirect()->back()->with('message', 'Rank Set Successfully');
+        } else {
+            return redirect()->back();
+        }
     }
 
     public function set_rank(Request $request, $id)
     {
-     
+
         if (Auth::user()->email == 'fasanyafemi@gmail.com') {
-             $user = User::find($id);
-             $user->rank = $request->rank;
-             $user->save();
-             $hostels = Album::where('user_id',$id)->get();
-             foreach($hostels as $hostel) {
+            $user = User::find($id);
+            $user->rank = $request->rank;
+            $user->save();
+            $hostels = Album::where('user_id', $id)->get();
+            foreach ($hostels as $hostel) {
                 $hostel->rank = $request->rank;
                 $hostel->save();
             }
-           return redirect()->back()->with('message','Rank Set Successfully');
+            return redirect()->back()->with('message', 'Rank Set Successfully');
         } else {
             return redirect()->back();
         }
@@ -796,7 +795,7 @@ class AlbumController extends Controller
     }
     public function egbamirequest(Request $request)
     {
-        $users = User::where('email',env("ADMIN_EMAIL"))->get();
+        $users = User::where('email', env("ADMIN_EMAIL"))->get();
         // $users = DB::table('students')->get();
 
 
@@ -875,8 +874,9 @@ class AlbumController extends Controller
         }
         return redirect()->back()->with('success', 'Messages Sent Successfully');
     }
-    public function additionalinfo(Request $request) {
-    
+    public function additionalinfo(Request $request)
+    {
+
         Egbami::create([
             'hostel_name' => $request->hostel_name,
             'phone' => $request->phone,
@@ -1101,7 +1101,7 @@ class AlbumController extends Controller
             'Content-type: text/html; charset=iso-8859-1' .
             'X-Mailer: PHP/' . phpversion();
 
-        mail($to, $subject, $message, $headers);
+        // mail($to, $subject, $message, $headers);
 
         return redirect()->route('dashboard');
     }

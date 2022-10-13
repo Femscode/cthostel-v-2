@@ -134,6 +134,7 @@
                                             <option value='Kitchen Appliances Engineer'>Kitchen Appliances Engineer</option>
                                             <option value='TV/Playstation Engineer'>TV/Playstation Engineer</option>
                                             <option value='Washing Machine Specialist'>Washing Machine Specialist</option>
+                                            <option value='Cleaning Service'>Cleaning Service</option>
                                            
 
 
@@ -156,7 +157,7 @@
                                             class="sch_id form-control pl-15" name="school_id"
                                             value="{{ old('email') }}" required autocomplete="email" autofocus>
                                             <option value=''>Select School</option>
-                                            @foreach (App\schools::all() as $school)
+                                            @foreach (App\Models\schools::all() as $school)
                                                 <option value='{{ $school->id }}'>{{ $school->name }}</option>
                                             @endforeach
                                           

@@ -10,7 +10,6 @@ use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\FrontendCOntroller;
 use App\Http\Controllers\roommateController;
-use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 
 /*
@@ -68,7 +67,7 @@ Route::any('counter/{id}',[AlbumController::class,'counter'])->name('counter');
 Route::any('callcounter/{id}',[AlbumController::class,'callcounter'])->name('callcounter');
 Route::view('launching','counter');
 Route::get('send_mail',[AlbumController::class,'send_mail'])->name('send_mail');
-Route::get('/logout',[LoginController::class,'logout'])->name("logout");
+Route::get('/logout',[RegisteredUserController::class,'logout'])->name("logout");
 Route::view('faq','faq');
 Route::any('subscription',[AlbumController::class,'subscription'])->name('subscription');
 Route::any('locationdisplay/{id}',[AlbumController::class,'locationdisplay'])->name('locationdisplay');

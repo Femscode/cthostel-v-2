@@ -153,6 +153,7 @@
                                                             <option value='Kitchen Appliances Engineer'>Kitchen Appliances Engineer</option>
                                                             <option value='TV/Playstation Engineer'>TV/Playstation Engineer</option>
                                                             <option value='Washing Machine Specialist'>Washing Machine Specialist</option>
+                                                            <option value='Cleaning Service'>Cleaning Service</option>
                                                            
                                                         </select>
                                                     </div>
@@ -329,7 +330,7 @@
             $(document).ready(function() {
              
               $("#school_id").on('change',function() {
-				  swal('fetching location...')
+				  Swal.fire('fetching location...')
              var id = $(".sch_id").val();
                 $("#school_location").empty();
                     $.get('{{ route('getlocation') }}?id=' + id, function (data) {
@@ -352,7 +353,7 @@
 				   $("#search_technician").submit(async function(e) {
                        e.preventDefault()
 					   var technician = $("#service_type").val()
-					   swal('Fetching '+technician+' closer to you, please wait...')
+					   Swal.fire('Fetching '+technician+' closer to you, please wait...')
                              $("#search_btn").attr('disabled',true);
                             var fd = new FormData();
 
@@ -386,15 +387,15 @@ console.log(count, data)
 '<tr><td>'+count+'</td><td><div class="d-flex align-items-center"><div class="d-flex justify-content-start flex-column"><a href="#" class="text-dark fw-bolder text-hover-primary fs-6">'+value.name+'</a></div></div></td><td><div class="d-flex justify-content-end flex-shrink-0"><a href="/messagetechnician/'+value.phone+'" style="color:white" class="btn btn-bg-success btn-active-color-success btn-sm">Message</a></div></td><td><div class="d-flex justify-content-end flex-shrink-0"><a href="/calltechnician/'+value.phone+'" style="color:white" class="btn btn-bg-info btn-active-color-primary btn-sm">Call</a></div></td></tr>'												
      );
   });
-                                   // swal("Success", 'Scroll down to see technicians found', 'success');
+                                   // Swal.fire("Success", 'Scroll down to see technicians found', 'success');
                                     console.log(data)
 									//window.location.reload();
 
                                 },
                                 error: function(data) {
-									swal('error','Opps, unable to fetch technicians','error')
+									Swal.fire('error','Opps, unable to fetch technicians','error')
                                     console.log(data);
-                                  //  swal('Oops', 'Something went wrong','error')
+                                  //  Swal.fire('Oops', 'Something went wrong','error')
                                 }
                             });
 						});
