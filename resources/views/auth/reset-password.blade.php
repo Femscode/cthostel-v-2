@@ -121,11 +121,19 @@
                             </div>
 
                             <input type="hidden" name="token" value="{{ $request->route('token') }}">
-
-
-                            <input id="email" type="hidden" class="form-control @error('email') is-invalid @enderror"
-                                name="email" value="{{ $email ?? old('email') }}" required autocomplete="email"
-                                autofocus>
+                            <div class="row mb-3">
+                                <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('E-Mail Address') }}</label>
+    
+                                <div class="col-md-6">
+                                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ $email ?? old('email') }}" required autocomplete="email" autofocus>
+    
+                                    @error('email')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
 
 
                             <div class="row mb-3">
@@ -156,7 +164,7 @@
                             </div>
 
                             <div class="d-grid mb-10">
-                                <button type="submit" id="kt_sign_in_submit" class="btn btn-primary">
+                                <button type="submit" id="kt_sign_in_submit" class="btn btn-success">
                                     <!--begin::Indicator label-->
                                     <span class="indicator-label">Reset Password</span>
                                     <!--end::Indicator label-->
