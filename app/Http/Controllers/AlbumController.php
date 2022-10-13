@@ -282,7 +282,7 @@ class AlbumController extends Controller
      
         $image = $request->image;
         $rand = Str::random(5);
-        $imageName = time() . '.' . $rand. $image->extension();
+        $imageName = time(). $rand . '.'. $image->extension();
         $img = Compressor::make($image->path());
         $good = $img->resize(500, 300, function ($constraint) {
             $constraint->aspectRatio();
@@ -309,7 +309,7 @@ class AlbumController extends Controller
     {
         $image = $request->image;
         $rand = Str::random(5);
-        $imageName = time() . '.' . $rand.$image->extension();
+        $imageName = time() . $rand. '.' .$image->extension();
         $img = Compressor::make($image->path());
         $good = $img->resize(500, 300, function ($constraint) {
             $constraint->aspectRatio();
@@ -410,7 +410,7 @@ class AlbumController extends Controller
             $album = Album::where('id', $id)->first();
             foreach ($request->file('file') as $file) {
             $rand = Str::random(5);
-            $imageName = time() . '.' . $rand.  $file->extension();
+            $imageName = time(). $rand . '.' .  $file->extension();
             $img = Compressor::make($file->path());
             $good = $img->resize(500, 300, function ($constraint) {
                 $constraint->aspectRatio();
