@@ -241,7 +241,7 @@
                         <!--end::Aside mobile toggle-->
                         <!--begin::Mobile logo-->
                         <div class="d-flex align-items-center flex-grow-1 flex-lg-grow-0">
-                            <a href="index.html" class="d-lg-none">
+                            <a href="/" class="d-lg-none">
                                 <img alt="Logo" src="{{ asset('myimages/fav.png') }}" class="h-30px" />
                             </a>
                         </div>
@@ -3009,6 +3009,6 @@
 </body>
 <!--end::Body-->
 
-<!-- Mirrored from preview.keenthemes.com/metronic8/demo6/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 20 Aug 2021 07:33:32 GMT -->
+<!-- Mirrored from preview.keenthemes.com/metronic8/demo6// by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 20 Aug 2021 07:33:32 GMT -->
 
 </html>
