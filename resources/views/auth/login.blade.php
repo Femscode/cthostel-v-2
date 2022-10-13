@@ -1,62 +1,96 @@
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
- 
-
-    <title>CTH - Log in </title>
-	<link href="myimages/fav.png" src='myimages/fav.png' rel="icon" />
-
-    <!-- Bootstrap 4.0-->
-	<link rel="stylesheet" href="{{ asset('assets/vendor_components/bootstrap/dist/css/bootstrap.min.css')}}">
-	
-	<!-- Bootstrap extend-->
-	<link rel="stylesheet" href="{{ asset('assets/css/bootstrap-extend.css')}}">
-	
-	<!-- Theme style -->
-	<link rel="stylesheet" href="{{ asset('assets/css/master_style.css')}}">
-
-	<!-- Superieur Admin skins -->
-	<link rel="stylesheet" href="{{ asset('assets/css/skins/_all-skins.css')}}">
-
-    <link rel="stylesheet" href="{{ asset('assets/css/custom.css')}}">
-
-</head>
-<body class="hold-transition bg-img" style="background-image: url('/myimages/CTH-bg.jpg')" data-overlay="4">
-	
-	<div class="container h-p100">
-		<div class="row align-items-center justify-content-md-center h-p100">			
-			<div class="col-12">
-				<div class="row no-gutters justify-content-md-center">
-					<div class="col-lg-4 col-md-5 col-12">
-						<div class="content-top-agile h-p100 skin-blue">
-							<img src='{{asset('myimages/logo_header.png')}}' style='height:50px; height:50px; margin:20px;background:#fff; border-radius:5px;padding:4px' href='{{asset('myimages/logo_header.PNG')}}'/>
-							<p class="text-white">Sign in to access your hostels</p>
-
-							<div class="text-center text-white">
-							  <p class="mt-20">- Sign With -</p>
-							  <p class="gap-items-2 mb-20">
-								  <a class="btn btn-social-icon btn-outline btn-white" href="#"><i class="fa fa-facebook"></i></a>
-								  <a class="btn btn-social-icon btn-outline btn-white" href="#"><i class="fa fa-twitter"></i></a>
-								  <a class="btn btn-social-icon btn-outline btn-white" href="#"><i class="fa fa-google-plus"></i></a>
-								  <a class="btn btn-social-icon btn-outline btn-white" href="#"><i class="fa fa-instagram"></i></a>
-								</p>	
-							</div>
-							
-						</div>				
+	<!--begin::Head-->
+	<head>
+        <title>CTHostel | Login</title>
+        <meta name="description"
+            content="...the safest place to get it cheaper without getting scammed." />
+        <meta name="keywords"
+            content="...the safest place to get it cheaper without getting scammed." />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta charset="utf-8" />
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:type" content="article" />
+        <meta name="csrf-token" content="{{ csrf_token() }}">
+        <meta property="og:title"
+            content="...the safest place to get it cheaper without getting scammed." />
+        <meta property="og:url" content="https://cthostel.com" />
+        <meta property="og:site_name" content="CTHostel | Dashboard" />
+        <link rel="canonical" href="https://cthostel.com" />
+        <link href="{{ asset('myimages/fav.png') }}" src='{{ asset(' myimages/fav.png') }}' rel="icon" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
+        <!--end::Fonts-->
+        <!--begin::Page Vendor Stylesheets(used by this page)-->
+        <link href="{{ asset('backend/plugins/custom/fullcalendar/fullcalendar.bundle.css" rel="stylesheet') }}"
+            type="text/css" />
+        <!--end::Page Vendor Stylesheets-->
+        <!--begin::Global Stylesheets Bundle(used by all pages)-->
+        <link href="{{ asset('backend/plugins/global/plugins.bundle.css') }}" rel="stylesheet" type="text/css" />
+        <link href="{{ asset('backend/css/style.bundle.css') }}" rel="stylesheet" type="text/css" />
+        @livewireStyles
+        <!--end::Global Stylesheets Bundle-->
+        <!--Begin::Google Tag Manager -->
+        <script>
+            (function(w, d, s, l, i) {
+                w[l] = w[l] || [];
+                w[l].push({
+                    'gtm.start': new Date().getTime(),
+                    event: 'gtm.js'
+                });
+                var f = d.getElementsByTagName(s)[0],
+                    j = d.createElement(s),
+                    dl = l != 'dataLayer' ? '&amp;l=' + l : '';
+                j.async = true;
+                j.src = '../../../www.googletagmanager.com/gtm5445.html?id=' + i + dl;
+                f.parentNode.insertBefore(j, f);
+            })(window, document, 'script', 'dataLayer', 'GTM-5FS8GGP');
+        </script>
+        <!--End::Google Tag Manager -->
+    </head>
+	<!--end::Head-->
+	<!--begin::Body-->
+	<body id="kt_body"  class="app-blank app-blank bgi-size-cover bgi-position-center bgi-no-repeat">
+		<!--begin::Theme mode setup on page load-->
+		<script>var defaultThemeMode = "light"; var themeMode; if ( document.documentElement ) { if ( document.documentElement.hasAttribute("data-theme-mode")) { themeMode = document.documentElement.getAttribute("data-theme-mode"); } else { if ( localStorage.getItem("data-theme") !== null ) { themeMode = localStorage.getItem("data-theme"); } else { themeMode = defaultThemeMode; } } if (themeMode === "system") { themeMode = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"; } document.documentElement.setAttribute("data-theme", themeMode); }</script>
+		<!--end::Theme mode setup on page load-->
+		<!--Begin::Google Tag Manager (noscript) -->
+		<noscript>
+			<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5FS8GGP" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+		</noscript>
+		<!--End::Google Tag Manager (noscript) -->
+		<!--begin::Root-->
+		<div class="d-flex flex-column flex-root" id="kt_app_root">
+			<!--begin::Page bg image-->
+			<style>body { background-image: url('/backend/media/bg4.jpg'); } [data-theme="dark"] body { background-image: url('/metronic8/demo1/assets/media/auth/bg4-dark.jpg'); }</style>
+			<!--end::Page bg image-->
+			<!--begin::Authentication - Sign-in -->
+			<div class="d-flex flex-column flex-column-fluid flex-lg-row">
+				<!--begin::Aside-->
+				<div class="d-flex flex-center w-lg-50 pt-15 pt-lg-0 px-10">
+					<!--begin::Aside-->
+					<div class="d-flex flex-center flex-lg-start flex-column">
+						<!--begin::Logo-->
+						<a href="/metronic8/demo1/../demo1/index.html" class="mb-7">
+							<img alt="Logo" src="{{asset('myimages/logo_header.png')}}" style='height:50px; height:50px; margin:20px; border-radius:5px;padding:4px' />
+						</a>
+						<!--end::Logo-->
+						<!--begin::Title-->
+							<!--end::Title-->
 					</div>
-					<div class="col-lg-5 col-md-5 col-12">
-						<div class="p-40 bg-white content-bottom h-p100">
-							
-
-                        <form action="{{ route('login') }}" class="form-horizontal" method="post" class="form-element">
-                            @csrf
-
-                              @if (count($errors) > 0)
+					<!--begin::Aside-->
+				</div>
+				<!--begin::Aside-->
+				<!--begin::Body-->
+				<div class="d-flex flex-center w-lg-50 p-10">
+					<!--begin::Card-->
+					<div class="card rounded-3 w-md-550px">
+						<!--begin::Card body-->
+						<div class="card-body p-10 p-lg-20">
+							<!--begin::Form-->
+							<form action="{{ route('login') }}" class="form w-100" method="post" class="form-element">@csrf
+                       
+								@if (count($errors) > 0)
                                     <div class="alert alert-danger">
                                         <strong>Whoops!</strong> There were some problems with your input.
                                         <ul>
@@ -66,66 +100,79 @@
                                         </ul>
                                     </div>
                                 @endif
-
-								<div class="form-group">
-									<div class="input-group mb-3">
-										<div class="input-group-prepend">
-											<span class="input-group-text bg-info border-info"><i class="ti-user"></i></span>
-										</div>
-										<input type="text" name="email" id="email" class="form-control pl-15" placeholder="Email">
-									</div>
+								<!--begin::Heading-->
+								<div class="text-center mb-11">
+									<!--begin::Title-->
+									<h1 class="text-dark fw-bolder mb-3">Sign In</h1>
+									<!--end::Title-->
+									<!--begin::Subtitle-->
+									<div class="text-gray-500 fw-semibold fs-6">Signin to your account</div>
+									<!--end::Subtitle=-->
 								</div>
-								<div class="form-group">
-									<div class="input-group mb-3">
-										<div class="input-group-prepend">
-											<span class="input-group-text bg-info border-info"><i class="ti-lock"></i></span>
-										</div>
-										<input type="password" name="password" id="password" class="form-control pl-15" placeholder="Password">
-									</div>
-								</div>
-								  <div class="row">
-									<div class="col-6">
-									  <div class="checkbox">
-										<input type="checkbox" id="basic_checkbox_1" >
-										<label for="basic_checkbox_1">Remember Me</label>
-									  </div>
-									</div>
-									<!-- /.col -->
-									<div class="col-6">
-									 <div class="fog-pwd text-right">
-									
-										<a href="{{route('password.request')}}"><i class="ion ion-locked"></i> Forgot password?</a><br>
-									  </div>
-									  </div>
-									</div>
-									<!-- /.col -->
-									<div class="col-12 text-center">
-									  <button type="submit"  class="btn btn-info btn-block margin-top-10">SIGN IN</button>
-									</div>
-                                    <div class="text-center">
-								<p class="mt-15 mb-0">Don't have an account? <a href="/register" class="text-info ml-5">Sign Up</a></p>
-							</div>
-									<!-- /.col -->
-								  </div>
-							</form>		
-
+								<!--begin::Heading-->
+								<!--begin::Login options-->
 							
+								<!--end::Separator-->
+								<!--begin::Input group=-->
+								<div class="fv-row mb-8">
+									<!--begin::Email-->
+									<input type="text" placeholder="Email" name="email" autocomplete="off" class="form-control bg-transparent" />
+									<!--end::Email-->
+								</div>
+								<!--end::Input group=-->
+								<div class="fv-row mb-3">
+									<!--begin::Password-->
+									<input type="password" placeholder="Password" name="password" autocomplete="off" class="form-control bg-transparent" />
+									<!--end::Password-->
+								</div>
+								<!--end::Input group=-->
+								<!--begin::Wrapper-->
+								<div class="d-flex flex-stack flex-wrap gap-3 fs-base fw-semibold mb-8">
+									<div></div>
+									<!--begin::Link-->
+									<a href="{{route('password.request')}}" class="link-primary">Forgot Password ?</a>
+									<!--end::Link-->
+								</div>
+								<!--end::Wrapper-->
+								<!--begin::Submit button-->
+								<div class="d-grid mb-10">
+									<button type="submit" id="kt_sign_in_submit" class="btn btn-primary">
+										<!--begin::Indicator label-->
+										<span class="indicator-label">Sign In</span>
+										<!--end::Indicator label-->
+										<!--begin::Indicator progress-->
+										<span class="indicator-progress">Please wait... 
+										<span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
+										<!--end::Indicator progress-->
+									</button>
+								</div>
+								<!--end::Submit button-->
+								<!--begin::Sign up-->
+								<div class="text-gray-500 text-center fw-semibold fs-6">Not a Member yet? 
+								<a href="/register" class="link-primary">Sign up</a></div>
+								<!--end::Sign up-->
+							</form>
+							<!--end::Form-->
 						</div>
+						<!--end::Card body-->
 					</div>
+					<!--end::Card-->
 				</div>
+				<!--end::Body-->
 			</div>
+			<!--end::Authentication - Sign-in-->
 		</div>
-	</div>
-
-
-	<!-- jQuery 3 -->
-	<script src="{{ asset('assets/vendor_components/jquery-3.3.1/jquery-3.3.1.js')}}"></script>
-	
-	<!-- popper -->
-	<script src="{{ asset('assets/vendor_components/popper/dist/popper.min.js')}}"></script>
-	
-	<!-- Bootstrap 4.0-->
-	<script src="{{ asset('assets/vendor_components/bootstrap/dist/js/bootstrap.min.js')}}"></script>
-
-</body>
+		<!--end::Root-->
+		<!--begin::Javascript-->
+		<script>var hostUrl = "/metronic8/demo1/assets/";</script>
+		<!--begin::Global Javascript Bundle(mandatory for all pages)-->
+		<script src="/metronic8/demo1/assets/plugins/global/plugins.bundle.js"></script>
+		<script src="/metronic8/demo1/assets/js/scripts.bundle.js"></script>
+		<!--end::Global Javascript Bundle-->
+		<!--begin::Custom Javascript(used for this page only)-->
+		<script src="/metronic8/demo1/assets/js/custom/authentication/sign-in/general.js"></script>
+		<!--end::Custom Javascript-->
+		<!--end::Javascript-->
+	</body>
+	<!--end::Body-->
 </html>

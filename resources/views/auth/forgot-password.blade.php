@@ -1,33 +1,95 @@
+
 <!DOCTYPE html>
+
 <html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
-    <title>Login Veenode SME</title>
-    <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
-    <!-- BEGIN GLOBAL MANDATORY STYLES -->
-    <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
-    <link href="{{ asset('adminasset/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('adminasset/assets/css/plugins.css')}}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('adminasset/assets/css/authentication/form-1.css')}}" rel="stylesheet" type="text/css" />
-    <!-- END GLOBAL MANDATORY STYLES -->
-    <link rel="stylesheet" type="text/css" href="{{ asset('adminasset/assets/css/forms/theme-checkbox-radio.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('adminasset/assets/css/forms/switches.css')}}">
-</head>
-
-<body class="form">
-
-    <div class="form-container">
-        <div class="form-form">
-            <div class="form-form-wrap">
-                <div class="form-container">
-                    <div class="form-content">
-
-                        <h1 class="">Password Recovery</h1>
-                        <p class="signup-link">Follow the instructions that will be sent to your mail to reset your password</a></p>
-                        <form class="text-left" action='{{ route("password.email") }}' method='post'>@csrf
+	<!--begin::Head-->
+	<head>
+        <title>CTHostel | Password Reset</title>
+        <meta name="description"
+            content="...the safest place to get it cheaper without getting scammed." />
+        <meta name="keywords"
+            content="...the safest place to get it cheaper without getting scammed." />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta charset="utf-8" />
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:type" content="article" />
+        <meta name="csrf-token" content="{{ csrf_token() }}">
+        <meta property="og:title"
+            content="...the safest place to get it cheaper without getting scammed." />
+        <meta property="og:url" content="https://cthostel.com" />
+        <meta property="og:site_name" content="CTHostel | Dashboard" />
+        <link rel="canonical" href="https://cthostel.com" />
+        <link href="{{ asset('myimages/fav.png') }}" src='{{ asset(' myimages/fav.png') }}' rel="icon" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
+        <!--end::Fonts-->
+        <!--begin::Page Vendor Stylesheets(used by this page)-->
+        <link href="{{ asset('backend/plugins/custom/fullcalendar/fullcalendar.bundle.css" rel="stylesheet') }}"
+            type="text/css" />
+        <!--end::Page Vendor Stylesheets-->
+        <!--begin::Global Stylesheets Bundle(used by all pages)-->
+        <link href="{{ asset('backend/plugins/global/plugins.bundle.css') }}" rel="stylesheet" type="text/css" />
+        <link href="{{ asset('backend/css/style.bundle.css') }}" rel="stylesheet" type="text/css" />
+        @livewireStyles
+        <!--end::Global Stylesheets Bundle-->
+        <!--Begin::Google Tag Manager -->
+        <script>
+            (function(w, d, s, l, i) {
+                w[l] = w[l] || [];
+                w[l].push({
+                    'gtm.start': new Date().getTime(),
+                    event: 'gtm.js'
+                });
+                var f = d.getElementsByTagName(s)[0],
+                    j = d.createElement(s),
+                    dl = l != 'dataLayer' ? '&amp;l=' + l : '';
+                j.async = true;
+                j.src = '../../../www.googletagmanager.com/gtm5445.html?id=' + i + dl;
+                f.parentNode.insertBefore(j, f);
+            })(window, document, 'script', 'dataLayer', 'GTM-5FS8GGP');
+        </script>
+        <!--End::Google Tag Manager -->
+    </head>
+	<!--end::Head-->
+	<!--begin::Body-->
+	<body id="kt_body"  class="app-blank app-blank bgi-size-cover bgi-position-center bgi-no-repeat">
+		<!--begin::Theme mode setup on page load-->
+		<script>var defaultThemeMode = "light"; var themeMode; if ( document.documentElement ) { if ( document.documentElement.hasAttribute("data-theme-mode")) { themeMode = document.documentElement.getAttribute("data-theme-mode"); } else { if ( localStorage.getItem("data-theme") !== null ) { themeMode = localStorage.getItem("data-theme"); } else { themeMode = defaultThemeMode; } } if (themeMode === "system") { themeMode = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"; } document.documentElement.setAttribute("data-theme", themeMode); }</script>
+		<!--end::Theme mode setup on page load-->
+		<!--Begin::Google Tag Manager (noscript) -->
+		<noscript>
+			<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5FS8GGP" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+		</noscript>
+		<!--End::Google Tag Manager (noscript) -->
+		<!--begin::Root-->
+		<div class="d-flex flex-column flex-root" id="kt_app_root">
+			<!--begin::Page bg image-->
+			<style>body { background-image: url('/backend/media/bg4.jpg'); } [data-theme="dark"] body { background-image: url('/metronic8/demo1/assets/media/auth/bg4-dark.jpg'); }</style>
+			<!--end::Page bg image-->
+			<!--begin::Authentication - Sign-in -->
+			<div class="d-flex flex-column flex-column-fluid flex-lg-row">
+				<!--begin::Aside-->
+				<div class="d-flex flex-center w-lg-50 pt-15 pt-lg-0 px-10">
+					<!--begin::Aside-->
+					<div class="d-flex flex-center flex-lg-start flex-column">
+						<!--begin::Logo-->
+						<a href="/metronic8/demo1/../demo1/index.html" class="mb-7">
+							<img alt="Logo" src="{{asset('myimages/logo_header.png')}}" style='height:50px; height:50px; margin:20px; border-radius:5px;padding:4px' />
+						</a>
+						<!--end::Logo-->
+						<!--begin::Title-->
+							<!--end::Title-->
+					</div>
+					<!--begin::Aside-->
+				</div>
+				<!--begin::Aside-->
+				<!--begin::Body-->
+				<div class="d-flex flex-center w-lg-50 p-10">
+					<!--begin::Card-->
+					<div class="card rounded-3 w-md-550px">
+						<!--begin::Card body-->
+						<div class="card-body p-10 p-lg-20">
+							<!--begin::Form-->
+                            <form class="text-left" action='{{ route("password.email") }}' method='post'>@csrf
                             <div class="form">
                                 @if($errors->any())
                                 <div class="alert alert-danger">
@@ -39,51 +101,58 @@
                                     </ul>
                                 </div>
                                 @endif
+                                <div class="text-center mb-11 ">
+									<!--begin::Title-->
+									<h1 class="text-dark fw-bolder mb-3">Reset Password</h1>
+									<!--end::Title-->
+									<!--begin::Subtitle-->
+									<div class="alert alert-warning fw-semibold fs-6">Input your email address below, a mail will be sent to you, follow the instruction of the mail to reset your password</div>
+									<!--end::Subtitle=-->
+								</div>
 
 
                              
                                 <div id="email-field" class="field-wrapper input">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round" class="feather feather-at-sign">
-                                        <circle cx="12" cy="12" r="4"></circle>
-                                        <path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-3.92 7.94"></path>
-                                    </svg>
-                                    <input id="email" name="email" type="text" value="" placeholder="Email">
+                                 
+                                    <input id="email" name="email" class='form-control' type="text" value="" placeholder="Email Address">
                                 </div>
                               
                                
-                                <div class="d-sm-flex justify-content-between">
-                                    <div class="field-wrapper toggle-pass">
-                                    
-                                    </div>
-                                    <div class="field-wrapper">
-                                        <button type="submit" class="btn btn-primary" value="">Reset</button>
-                                    </div>
-                                </div>
+                                <div class="d-grid mb-10 mt-4">
+									<button type="submit" id="kt_sign_in_submit" class="btn btn-primary">
+										<!--begin::Indicator label-->
+										<span class="indicator-label">Reset</span>
+										<!--end::Indicator label-->
+										<!--begin::Indicator progress-->
+										<span class="indicator-progress">Please wait... 
+										<span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
+										<!--end::Indicator progress-->
+									</button>
+								</div>
 
                             </div>
                         </form>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="form-image">
-            <div class="l-image">
-            </div>
-        </div>
-    </div>
-
-
-    <!-- BEGIN GLOBAL MANDATORY SCRIPTS -->
-    <script src="{{ asset('adminasset/assets/js/libs/jquery-3.1.1.min.js')}}"></script>
-    <script src="{{ asset('adminasset/bootstrap/js/popper.min.js')}}"></script>
-    <script src="{{ asset('adminasset/bootstrap/js/bootstrap.min.js')}}"></script>
-
-    <!-- END GLOBAL MANDATORY SCRIPTS -->
-    <script src="{{ asset('adminasset/assets/js/authentication/form-1.js')}}"></script>
-
-</body>
-
+							<!--end::Form-->
+						</div>
+						<!--end::Card body-->
+					</div>
+					<!--end::Card-->
+				</div>
+				<!--end::Body-->
+			</div>
+			<!--end::Authentication - Sign-in-->
+		</div>
+		<!--end::Root-->
+		<!--begin::Javascript-->
+		<script>var hostUrl = "/metronic8/demo1/assets/";</script>
+		<!--begin::Global Javascript Bundle(mandatory for all pages)-->
+		<script src="/metronic8/demo1/assets/plugins/global/plugins.bundle.js"></script>
+		<script src="/metronic8/demo1/assets/js/scripts.bundle.js"></script>
+		<!--end::Global Javascript Bundle-->
+		<!--begin::Custom Javascript(used for this page only)-->
+		<script src="/metronic8/demo1/assets/js/custom/authentication/sign-in/general.js"></script>
+		<!--end::Custom Javascript-->
+		<!--end::Javascript-->
+	</body>
+	<!--end::Body-->
 </html>
