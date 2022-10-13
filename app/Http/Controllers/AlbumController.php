@@ -281,7 +281,8 @@ class AlbumController extends Controller
         ]);
      
         $image = $request->image;
-        $imageName = time() . '.' . $image->extension();
+        $rand = Str::random(5);
+        $imageName = time() . '.' . $rand. $image->extension();
         $img = Compressor::make($image->path());
         $good = $img->resize(500, 300, function ($constraint) {
             $constraint->aspectRatio();
@@ -307,7 +308,8 @@ class AlbumController extends Controller
     public function storewithroute(Request $request)
     {
         $image = $request->image;
-        $imageName = time() . '.' . $image->extension();
+        $rand = Str::random(5);
+        $imageName = time() . '.' . $rand.$image->extension();
         $img = Compressor::make($image->path());
         $good = $img->resize(500, 300, function ($constraint) {
             $constraint->aspectRatio();
@@ -407,13 +409,12 @@ class AlbumController extends Controller
 
             $album = Album::where('id', $id)->first();
             foreach ($request->file('file') as $file) {
-
-              
-        $imageName = time() . '.' . $file->extension();
-        $img = Compressor::make($file->path());
-        $good = $img->resize(500, 300, function ($constraint) {
-            $constraint->aspectRatio();
-        })->save(public_path('images') . '/' . $imageName);
+            $rand = Str::random(5);
+            $imageName = time() . '.' . $rand.  $file->extension();
+            $img = Compressor::make($file->path());
+            $good = $img->resize(500, 300, function ($constraint) {
+                $constraint->aspectRatio();
+            })->save(public_path('images') . '/' . $imageName);
                
               
 
