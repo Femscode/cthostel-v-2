@@ -1375,7 +1375,7 @@
 													<tr>
 														<td>{{$user->name}}</td>
 														<td>{{$user->email}}</td>
-														<td>{{$user->clicks}}</td>
+														<td>{{$user->new_clicks}} / {{$user->clicks}}</td>
 														<td>{{$user->type}}</td>
 														<td><a href='https://wa.me/234{{substr($user->phone,1)}}' class='btn btn-sm btn-success'>Message</a>
 														<td><a href='tel:{{ $user->phone }}' class='btn btn-sm btn-info'>Call</a></td>

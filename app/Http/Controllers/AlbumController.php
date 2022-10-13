@@ -78,7 +78,7 @@ class AlbumController extends Controller
 
         $album = Album::find($id);
         $user = User::find($album->user_id);
-        $user->clicks += 1;
+        $user->new_clicks += 1;
         $user->save();
         $number = substr($album->user->phone, 1);
 
@@ -89,7 +89,7 @@ class AlbumController extends Controller
     {
         $album = Album::find($id);
         $user = User::find($album->user_id);
-        $user->clicks += 1;
+        $user->new_clicks += 1;
         $user->save();
         $number = substr($album->user->phone, 1);
         return redirect()->away('tel:' . $album->user->phone);
