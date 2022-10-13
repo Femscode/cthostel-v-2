@@ -8,8 +8,8 @@
                                     <a href="{{route("cthostel",[$album->slug,$album->id])}}"
                                       class="product-img ">
                                       <div>
-                                        <img src="https://cthostel.com/public/{{$album->image  }}" data-src="https://cthostel.com/public/{{$album->image  }}"
-                                        data-srcset="https://cthostel.com/public/{{$album->image  }}" width="250" height="250" alt="Hostel Image" title=""
+                                        <img src="https://cthostel.com/cthostel_files/public/{{$album->image  }}" data-src="https://cthostel.com/cthostel_files/public/{{$album->image  }}"
+                                        data-srcset="https://cthostel.com/cthostel_files/public/{{$album->image  }}" width="250" height="250" alt="Hostel Image" title=""
                                         class="img-responsive" />
                                         {{-- <img
                                           src="{{asset('hostelimage/'.$album->image)}}"
