@@ -18922,7 +18922,7 @@
                       <li class="product-model"><b>Agent:</b> <span>{{$album->user->name}}</span></li>
                     </ul>
                
-                    @if($user->plan == 'Premium Mode')
+                    {{-- @if($user->plan == 'Premium Mode')
                     <div style='color: #155724;background-color: #d4edda;border-color: #c3e6cb;padding: 0.75rem 1.25rem;margin-bottom: 1rem;border: 1px solid transparent;border-radius: 0.25rem;'>
                     <div class="custom-stats">
                       <div class="product-sold"><b>Hostel Approved By CTHostel Team</b></div>
@@ -18936,7 +18936,7 @@
                       <p>The agent in charge of this hostel is not yet <b>verified!</b></p>
                     </div>
                     </div>
-                    @endif
+                    @endif --}}
                   </div>
 
                   <div class="rating rating-page">
