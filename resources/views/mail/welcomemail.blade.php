@@ -25,7 +25,7 @@
 											<p style="margin-bottom: 10px;">My Dashboard:</p>
 											<a href="https://cthostel.com/admin" rel="noopener" target="_blank" style="text-decoration:none;color: #009EF7">https://cthostel.com/admin</a>
 											<p style="margin-bottom: 10px;">My Webpage:</p>
-											<a href="https://cthostel.com/{{$name}}/{{$id}}" rel="noopener" target="_blank" style="text-decoration:none;color: #009EF7">https://cthostel.com/{{$name}}/{{$id}}</a>
+											<a href="https://cthostel.com/{{$name}}" rel="noopener" target="_blank" style="text-decoration:none;color: #009EF7">https://cthostel.com/{{$name}}</a>
 										</div>
 										<!--end:Email content-->
 										<div style="padding-bottom: 10px">Kind regards,
