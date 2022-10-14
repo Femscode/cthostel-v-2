@@ -55,7 +55,7 @@ class RegisteredUserController extends Controller
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
         $uuid = Str::uuid();
-        $username =  preg_replace('/\s+/', '', $request->name);
+        $username = ucwords(str_replace(' ','',$request->name));
         $user = User::create([
             'name' => $request->name,
             'username' => $username,

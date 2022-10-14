@@ -1020,7 +1020,7 @@ class AlbumController extends Controller
             'type' => 'required'
         ]);
 
-        $data['username'] = $username =  preg_replace('/\s+/', '', $request->name);
+        $data['username'] = $username =  ucwords(str_replace(' ','',$request->name));
 
         $register = User::create([
             'name' => $request->name,
