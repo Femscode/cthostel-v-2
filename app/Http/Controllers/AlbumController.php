@@ -1106,8 +1106,8 @@ class AlbumController extends Controller
 </div>
 
 ';
-        $headers = 'From: cthostel@cthostel.com' . "\r\n" .
-            'Reply-To: webmaster@cthostel.com' . "\r\n" .
+        $headers = 'From: support@cthostel.com' . "\r\n" .
+            'Reply-To: support@cthostel.com' . "\r\n" .
             'Content-type: text/html; charset=iso-8859-1' .
             'X-Mailer: PHP/' . phpversion();
 
