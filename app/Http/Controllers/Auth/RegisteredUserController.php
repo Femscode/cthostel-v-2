@@ -55,9 +55,10 @@ class RegisteredUserController extends Controller
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
         $uuid = Str::uuid();
-
+        $username =  preg_replace('/\s+/', '', $request->name);
         $user = User::create([
             'name' => $request->name,
+            'username' => $username,
             'email' => $request->email,
             'uuid' => $uuid,
             'type' => 'agent',
