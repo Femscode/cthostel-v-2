@@ -60,7 +60,7 @@ class RegisteredUserController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'uuid' => $uuid,
-            'user_type' => 'user',
+            'type' => 'agent',
             'phone' => $request->phone,
             'school_id' => $request->school_id,
             'password' => Hash::make($request->password),
@@ -70,11 +70,11 @@ class RegisteredUserController extends Controller
         $email = $request->email;
 
         $data = array('name' => $request->name);
-        // Mail::send('mail.welcome', $data, function($message) use($email) {
-        //     $message->to($email, '')->subject
-        //        ('Welcome to CTtaste');
-        //     $message->from('support@cttaste.com','Pelumi');
-        //  });
+        Mail::send('mail.welcome', $data, function($message) use($email) {
+            $message->to($email, '')->subject
+               ('Welcome to CTtaste');
+            $message->from('support@cttaste.com','Pelumi');
+         });
         Auth::login($user);
 
 

@@ -195,7 +195,16 @@ class AlbumController extends Controller
     }
     public function admin()
     {
-        $id = Auth::user()->id;
+        $data['user'] = $user = Auth::user();
+        $id = $user->id;
+      
+        if($user->type !== 'agent') {
+           return view('technician',$data);
+        }
+        else {
+
+    
+
         $data['school_id'] = $school_id = Auth::user()->school_id;
         $data['category'] = Category::where('school_id', $school_id)->get();
         $data['category2'] = Category::where('school_id', $school_id)->get();
@@ -206,6 +215,7 @@ class AlbumController extends Controller
         $data['project'] = Services::where('user_id', Auth::user()->id)->get();
         $data['hostelimage'] = Image::where('album_id', $id)->get();
         return view('admin', $data);
+        }
     }
     public function edit(Request $request)
     {
@@ -1101,7 +1111,8 @@ class AlbumController extends Controller
             'Content-type: text/html; charset=iso-8859-1' .
             'X-Mailer: PHP/' . phpversion();
 
-        // mail($to, $subject, $message, $headers);
+        mail($to, $subject, $message, $headers);
+        Auth::login($register);
 
         return redirect()->route('dashboard');
     }
