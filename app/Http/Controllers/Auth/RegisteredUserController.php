@@ -70,7 +70,7 @@ class RegisteredUserController extends Controller
         $email = $request->email;
 
         $data = array('name' => $request->name);
-        Mail::send('mail.welcome', $data, function($message) use($email) {
+        Mail::send('mail.welcomemail', $data, function($message) use($email) {
             $message->to($email, '')->subject
                ('Welcome to CTtaste');
             $message->from('support@cttaste.com','Pelumi');
