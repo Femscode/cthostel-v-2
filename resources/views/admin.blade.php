@@ -2232,7 +2232,7 @@
 
                                                         </div>
 
-                                                        <form id='update_hostel' method="POST"
+                                                        <form id='update_hostel' action='{{ route("update.album") }}' method="POST"
                                                             enctype="multipart/form-data">@csrf
                                                             {{ method_field('PUT') }}
 
@@ -2301,7 +2301,8 @@
                                                                                 id='edit_name'
                                                                                 class="form-control form-control-solid"
                                                                                 placeholder="" />
-                                                                            <input type='hidden' id='type' value='hostel'/>
+                                                                               
+                                                                            <input type='hidden' name='type' id='type' value='hostel'/>
                                                                             <!--end::Input-->
                                                                         </div>
                                                                         <!--end::Col-->
@@ -2400,7 +2401,7 @@
                                                                         </select>
                                                                         <!--end::Select-->
                                                                     </div>
-                                                                    <input type='hidden' id='id' value=''>
+                                                                    <input type='hidden' name='id' id='id' value=''>
                                                                     <!--end::Input group-->
                                                                     <!--begin::Input group-->
 
@@ -2682,6 +2683,7 @@
                             });
                             });
             });
+         
 				$('body').on('click', '#upload_image_id', function () {
 				var id = $(this).data('id');
 				$("#hostelimage").val(id);

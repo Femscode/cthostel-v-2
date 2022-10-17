@@ -459,16 +459,16 @@ class AlbumController extends Controller
 
     public function update(Request $request)
     {
+        // dd($request->all());
         $this->validate($request, [
             'name' => 'required',
-            'description' => 'required|min:3|max:200',
+            // 'description' => 'required|min:3|max:200',
             'category_id' => 'required',
             // 'image' => 'required|mimes:jpg,jpeg,png',
             'price' => 'required',
             // 'hostel_type' => 'required'
 
         ]);
-        // dd($request->all());
         try {
             $id = $request->id;
             $findAlbum = Album::find($id);
@@ -493,7 +493,10 @@ class AlbumController extends Controller
 
 
             $albums->name = $request->name;
-            $albums->description = $request->description;
+            if($request->has('description')) {
+                $albums->description = $request->description;
+
+            }
             $albums->category_id = $request->category_id;
             $albums->price = $request->price;
             $albums->hostel_type = $request->hostel_type;
@@ -502,8 +505,9 @@ class AlbumController extends Controller
 
             $success =  $albums->save();
             if ($success) {
+                return redirect()->back()->with('message','Updated successfully!');
                 return redirect()->route('good', [Auth::user()->id]);
-                return view('album.index', compact('album'));
+            
                 return response()->json($this->getAlbums());
             } else {
                 return "not saved";
