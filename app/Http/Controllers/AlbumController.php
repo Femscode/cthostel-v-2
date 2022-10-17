@@ -463,9 +463,9 @@ class AlbumController extends Controller
             'name' => 'required',
             'description' => 'required|min:3|max:200',
             'category_id' => 'required',
-            'image' => 'required|mimes:jpg,jpeg,png',
+            // 'image' => 'required|mimes:jpg,jpeg,png',
             'price' => 'required',
-            'hostel_type' => 'required'
+            // 'hostel_type' => 'required'
 
         ]);
         // dd($request->all());
@@ -475,17 +475,21 @@ class AlbumController extends Controller
 
             $albums = Album::find($id);
             $photo = $findAlbum->image;
-            $file = $request->file('image');
-            $file_name = $file->hashName();
-            $current_image = public_path() . '/hostelimage/' . $albums->image;
-            if (file_exists($current_image)) {
-
-                unlink($current_image);
-                $file->move(public_path('hostelimage'), $file_name);
-            } else {
-
-                $file->move(public_path('hostelimage'), $file_name);
+            if($request->has('image')) {
+                $file = $request->file('image');
+                $file_name = $file->hashName();
+                $current_image = public_path() . '/hostelimage/' . $albums->image;
+                if (file_exists($current_image)) {
+    
+                    unlink($current_image);
+                    $file->move(public_path('hostelimage'), $file_name);
+                } else {
+    
+                    $file->move(public_path('hostelimage'), $file_name);
+                }
+                $albums->image = $file_name;
             }
+         
 
 
             $albums->name = $request->name;
@@ -493,7 +497,6 @@ class AlbumController extends Controller
             $albums->category_id = $request->category_id;
             $albums->price = $request->price;
             $albums->hostel_type = $request->hostel_type;
-            $albums->image = $file_name;
 
             $album = Album::where('user_id', Auth::user()->id)->get();
 
