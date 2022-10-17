@@ -344,6 +344,7 @@
                                                     {{-- <div class="ltn__home-2-dealer-form-item ltn__custom-icon ltn__icon-home-2 col-lg-12 col-md-12"> --}}
                                                          <h6>Select Technician</h6>
                                                         <select required class='nice-select' name='school_id' style='color:red' tabindex="0">
+                                                            <option value='Cleaning Service'>Cleaning Service</option>
                                                             <option value='Electrician'>Electrician</option>
                                                             <option value='Mechanic'>Mechanic</option>
                                                             <option value='Plumber'>Plumber</option>
@@ -351,7 +352,6 @@
                                                             <option value='Kitchen Technician'>Kitchen Appliances Technician</option>
                                                             <option value='Painter'>Painter</option>
 															<option value='Phone'>Phone/Laptop Engineer</option>
-                                                            <option value='Cleaning Service'>Cleaning Service</option>
 
 
                                                            

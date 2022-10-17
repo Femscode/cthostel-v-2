@@ -183,6 +183,7 @@
 														class="form-select form-select-solid form-select-lg fw-bold">
 														<option value="">Your Location</option>
 														<option value=''>Select Service You Render</option>
+														<option value='Cleaning Service'>Cleaning Service</option>
 														<option value='Electrician'>Electrician</option>
 														<option value='Painter'>Painter</option>
 														<option value='Plumber'>Plumber</option>
@@ -196,7 +197,6 @@
 														</option>
 														<option value='Washing Machine Specialist'>Washing Machine
 															Specialist</option>
-														<option value='Cleaning Service'>Cleaning Service</option>
 
 													</select>
 												</div>
