@@ -2327,7 +2327,7 @@
                                                                             Type</label>
                                                                         <!--end::Label-->
                                                                         <!--begin::Input-->
-                                                                        <select name="edit_hostel_type" required
+                                                                        <select name="edit_hostel_type"
                                                                             id='edit_hostel_type' class='form-control'
                                                                             tabindex="-1" aria-hidden="true">
 
@@ -2359,7 +2359,7 @@
                                                                             data-placeholder="Select Resources Available..."
                                                                             class="form-select mb-2 select2-hidden-accessible"
                                                                             data-select2-id="select2-data-10-t0j8"
-                                                                            tabindex="-1" aria-hidden="true" required>
+                                                                            tabindex="-1" aria-hidden="true">
 
 
                                                                             <option value='Water Supply'>Water Supply
@@ -2391,7 +2391,7 @@
                                                                         <!--end::Label-->
                                                                         <!--begin::Select-->
                                                                         <select name="category_id" id='edit_category_id'
-                                                                            data-control="select2" required
+                                                                            data-control="select2"
                                                                             data-placeholder="Select hostel location"
                                                                             class="form-select form-select-solid">
                                                                             <option value=''>Select Hostel Location
@@ -2413,7 +2413,7 @@
                                                                         <!--end::Label-->
                                                                         <!--begin::Input-->
                                                                         <input accept="image/png,image/jpg, image/jpeg"
-                                                                            required
+                                                                        
                                                                             class="form-control form-control-solid"
                                                                             type='file' id='edit_image'
                                                                             placeholder="Display image of hostel"
