@@ -21308,12 +21308,15 @@
                                     <a href="{{route('cthostel',[$album->slug,$album->id])}}"
                                       class="product-img ">
                                       <div>
-                                        <img
+                                        <img src="https://cthostel.com/cthostel_files/public/hostelimage/{{$album->image  }}" data-src="https://cthostel.com/cthostel_files/public/hostelimage/{{$album->image  }}"
+                                        data-srcset="https://cthostel.com/cthostel_files/public/hostelimage/{{$album->image  }}" width="250" height="250" alt="Hostel Image" title=""
+                                        class="img-responsive" />
+                                        {{-- <img
                                         src="{{asset('hostelimage/'.$album->image)}}"
                                         data-src="{{asset('hostelimage/'.$album->image)}}"
                                         data-srcset="{{asset('hostelimage/'.$album->image)}}"
                                         width="250" height="250" alt="{{$album->name}}"
-                                        title="{{$album->name}}" class="img-responsive img-first" />
+                                        title="{{$album->name}}" class="img-responsive img-first" /> --}}
                                       </div>
                                     </a>
 
