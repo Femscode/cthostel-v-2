@@ -1031,7 +1031,11 @@
                                         <div class="cursor-pointer symbol symbol-30px symbol-md-40px"
                                             data-kt-menu-trigger="click" data-kt-menu-attach="parent"
                                             data-kt-menu-placement="bottom-end" data-kt-menu-flip="bottom">
+                                            @if($user->profilePic !== null)
                                             <img src="https://cthostel.com/cthostel_files/public/agent/{{$user->profilePic}}" alt="profilePic" />
+                                            @else 
+                                            <img src="https://cthostel.com/myimages/cbanner.jpg" style='height:20px' alt="image" />
+                                           @endif
                                         </div>
                                         <!--begin::Menu-->
                                         <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg menu-state-primary fw-bold py-4 fs-6 w-275px"
@@ -1072,7 +1076,7 @@
                                             <!--end::Menu item-->
                                             <!--begin::Menu item-->
                                             <div class="menu-item px-5">
-                                                <a href="https://cthostel.com/{{ $user->name }}" class="menu-link px-5">My
+                                                <a href="https://cthostel.com/{{ $user->username }}" class="menu-link px-5">My
                                                     Page</a>
                                             </div>
                                             <!--end::Menu item-->
@@ -1148,7 +1152,12 @@
                                     <!--begin: Pic-->
                                     <div class="me-7 mb-4">
                                         <div class="symbol symbol-100px symbol-lg-160px symbol-fixed position-relative">
+                                            @if($user->profilePic !== null)
                                             <img src="https://cthostel.com/cthostel_files/public/agent/{{$user->profilePic}}" alt="image" />
+                                            @else 
+                                            
+                                            <img src="https://cthostel.com/myimages/cbanner.jpg" style='height:100px' alt="image" />
+                                            @endif
                                             <div
                                                 class="position-absolute translate-middle bottom-0 start-100 mb-6 bg-success rounded-circle border border-4 border-white h-20px w-20px">
                                             </div>

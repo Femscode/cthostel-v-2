@@ -195,6 +195,7 @@ class AlbumController extends Controller
     }
     public function admin()
     {
+      
         $data['user'] = $user = Auth::user();
         $id = $user->id;
       
