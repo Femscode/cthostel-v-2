@@ -1656,7 +1656,7 @@
                                                 <!--begin::Modal content-->
                                                 <div class="modal-content">
 
-                                                    <form method='post' id='create_hostel_form'
+                                                    <form method='post' id='create_hostel_for' action='{{ route("album.store") }}'
                                                         enctype="multipart/form-data">@csrf
                                                         {{-- <form method='post'
                                                             action="{{route('album.storewithroute')}}"
@@ -1772,6 +1772,8 @@
                                                                                 name='price'
                                                                                 class="form-control form-control-solid"
                                                                                 placeholder="" />
+                                                                                <input name='school_id' type='hidden' value='{{$user->school_id}}'
+                                                                                id='sch_id' />
                                                                             <!--end::Input-->
                                                                         </div>
                                                                         <!--end::Col-->
@@ -1865,9 +1867,9 @@
                                                                         <!--begin::Input-->
                                                                         <input accept="image/*" required
                                                                             class="form-control form-control-solid"
-                                                                            id='image' type='file'
+                                                                            id='image' type='file' multiple
                                                                             placeholder="Display image of hostel"
-                                                                            name="image" />
+                                                                            name="image[]" />
                                                                         <!--end::Input-->
                                                                     </div>
 
@@ -2008,7 +2010,7 @@
                                             <td>{{ $album->category->name }}</td>
                                             <td>@if($album->status == 1)
 
-                                                <a title='View Hostel' href='/cthostel/{{$album->name}}/{{$album->id}}'
+                                                <a title='View Hostel' href='/cthostel/{{$album->slug}}/{{$album->id}}'
                                                     class="btn btn-info btn-sm me-1">
                                                    View
                                                 </a>
@@ -2198,7 +2200,7 @@
                                                             </svg>
                                                         </span>
                                                     </a>
-                                                    <input type='hidden' value='{{$user->school_id}}'
+                                                    <input name='school_id' type='hidden' value='{{$user->school_id}}'
                                                         id='sch_id' />
                                             </td>
                                             <div class="modal fade" id="kt_modal_new_target2" tabindex="-1"
@@ -2326,6 +2328,7 @@
                                                                                 id='edit_price' name='price'
                                                                                 class="form-control form-control-solid"
                                                                                 placeholder="" />
+                                                                             
                                                                             <!--end::Input-->
                                                                         </div>
                                                                         <!--end::Col-->

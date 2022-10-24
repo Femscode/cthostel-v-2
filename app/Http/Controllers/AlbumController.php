@@ -284,23 +284,26 @@ class AlbumController extends Controller
             'description' => 'required|min:3|max:500',
             'category_id' => 'required',
             'school_id' => 'required',
-            'image' => 'required|mimes:jpeg,jpg,png',
+            'image' => 'required',
             'price' => 'required',
             'hostel_type' => 'required'
-
+            
         ]);
-
-        $image = $request->image;
+        
+        $image = $request->image[0];
         $rand = Str::random(5);
         $imageName = time() . $rand . '.' . $image->extension();
         $img = Compressor::make($image->path());
         $good = $img->resize(500, 300, function ($constraint) {
             $constraint->aspectRatio();
         })->save(public_path('hostelimage') . '/' . $imageName);
+        
         $category_name = Category::where('id', $request->category_id)->pluck('name')->first();
+        $description = implode(',',$request->description);
+        // dd($request->all(),$request->image,count($request->image),$imageName,Str::slug('Fas Pel Is'));
         $album = Album::create([
             'name' => $request->name,
-            'description' => $request->description,
+            'description' => $description,
             'school_id' => $request->school_id,
             'category_id' => $request->category_id,
             'category_name' => $category_name,
@@ -310,10 +313,23 @@ class AlbumController extends Controller
             'image' => $imageName,
             'school_id' => Auth::user()->school_id,
             'hostel_type' => $request->hostel_type
-
-
-        ]);
-        return 'created successfully';
+          ]);
+        //   foreach ($request->file('image') as $file) {
+          for ($i = 1; $i< count($request->image); $i++) {
+            $file = $request->image[$i];
+              $rand = Str::random(5);
+              $imageName = time() . $rand . '.' .  $file->extension();
+              $img = Compressor::make($file->path());
+              $good = $img->resize(500, 300, function ($constraint) {
+                  $constraint->aspectRatio();
+              })->save(public_path('images') . '/' . $imageName);
+              $file = new Image;
+              $file->album_id = $album->id;
+              $file->image = $imageName;
+              // dd($file);
+              $file->save();
+          }
+        return redirect()->back()->with('message','Hostel Created Successfully');
     }
     public function storewithroute(Request $request)
     {
@@ -425,9 +441,6 @@ class AlbumController extends Controller
                 $good = $img->resize(500, 300, function ($constraint) {
                     $constraint->aspectRatio();
                 })->save(public_path('images') . '/' . $imageName);
-
-
-
                 $file = new Image;
                 $file->album_id = $album->id;
                 $file->image = $imageName;
