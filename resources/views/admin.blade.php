@@ -1865,11 +1865,13 @@
                                                                             Image</label>
                                                                         <!--end::Label-->
                                                                         <!--begin::Input-->
+                                                                        <div class='alert alert-danger'>Select three(3) or more images of hostel</div>
                                                                         <input accept="image/*" required
                                                                             class="form-control form-control-solid"
                                                                             id='image' type='file' multiple
                                                                             placeholder="Display image of hostel"
                                                                             name="image[]" />
+
                                                                         <!--end::Input-->
                                                                     </div>
 
@@ -2370,8 +2372,8 @@
                                                                             aria-label="Select Resources Available"
                                                                             data-control="select2"
                                                                             data-placeholder="Select Resources Available..."
-                                                                            class="form-select mb-2 select2-hidden-accessible"
-                                                                            data-select2-id="select2-data-10-t0j8"
+                                                                            class="form-select mb-2 select-hidden-accessible"
+                                                                            data-select-id="select-data-10-t0j8"
                                                                             tabindex="-1" aria-hidden="true">
 
 
