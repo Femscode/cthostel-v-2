@@ -1199,7 +1199,7 @@
                             <h6>Register your name, level, phone number, email and hostel name at the Egbami registration page </h6>
                             {{-- <h4><a href="product-details.html">Mission District Area</a></h4> --}}
                             <div class="search-by-place-btn">
-                                <a href="/egbamiregistration">Register <i class="flaticon-right-arrow"></i></a>
+                                <a href="https://egbami.tech">Register <i class="flaticon-right-arrow"></i></a>
                             </div>
                         </div>
                     </div>
