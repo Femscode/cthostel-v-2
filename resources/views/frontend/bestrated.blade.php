@@ -835,7 +835,7 @@
                                                                 </div>
                                                             </div>
                                                             @endforeach
-                                                            <div class='col-md-12' style='justify-content:center;align-items:center;display:flex;'>
+                                                            <div class='col-md-12' style='justify-content:center;align-items:center;display:flex;margin:auto'>
                               
                                                                 <div style='background-color:white;font-size:15px;padding:5px;border-bottom:3px solid #033533;border-top:1px solid #033533'>
                                                                         {{ $highest->links('pagination::bootstrap-4') }}
