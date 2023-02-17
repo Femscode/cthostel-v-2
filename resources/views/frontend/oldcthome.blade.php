@@ -788,6 +788,7 @@
           </div>
         </div>
       </div>
+      
       <div class="grid-row grid-row-bottom-5">
         <div class="grid-cols">
           <div class="grid-col grid-col-bottom-5-1">
@@ -1008,65 +1009,64 @@ lazyload();
     $(document).ready(function(){
   
    $("#submit").click(function() {
-             var fd = new FormData();
+        var fd = new FormData();
 
-                            // Append data 
-                            fd.append('email', $("#email").val());
-                            fd.append('phone', $("#phone").val());
+        // Append data 
+        fd.append('email', $("#email").val());
+        fd.append('phone', $("#phone").val());
                           
-                           
-           				$.ajax({
-                                type: 'POST',
-                                url: "{{route('saveegbami')}}",
-                                data: fd,
-                                cache: false,
-                                contentType: false,
-                                processData: false,
-                                success: (data) => {
-                                    
-                                   alert('Well done, successfully subscribed to Egbami!, click on the checkbox below and close the tab')
-                                    console.log(data)
+          $.ajax({
+              type: 'POST',
+              url: "{{route('saveegbami')}}",
+              data: fd,
+              cache: false,
+              contentType: false,
+              processData: false,
+              success: (data) => {
+                  
+                 alert('Well done, successfully subscribed to Egbami!, click on the checkbox below and close the tab')
+                  console.log(data)
 									
 
-                                },
-                                error: function(data) {
-                                    console.log(data);
-                                  alert('Opps, we have some techinical issues and you are unable to subscribe')
-                                 
-                                   
-                                }
-                            });
+              },
+              error: function(data) {
+                  console.log(data);
+                alert('Opps, we have some techinical issues and you are unable to subscribe')
+               
+                 
+              }
+          });
 
            
           })
    })
                    
- $(document).on('click', '.pagination a', function(event){
+//  $(document).on('click', '.pagination a', function(event){
  
-  event.preventDefault(); 
-  var page = $(this).attr('href').split('page=')[1];
-   var id = $("#getid").val();
-   console.log(id,page);
-  fetch_data(page);
- });
+//         event.preventDefault(); 
+//         var page = $(this).attr('href').split('page=')[1];
+//         var id = $("#getid").val();
+//         console.log(id,page);
+//         fetch_data(page);
+//  });
 
- function fetch_data(page)
- {
-    var id = $("#getid").val();
+//  function fetch_data(page)
+//  {
+//     var id = $("#getid").val();
     
-   
-  $.ajax({
-   url:"/pagination/fetch_data/"+id+"/?page="+page,
-   success:function(data)
-   {
-   
-   console.log(data,'this sata')
-    $('#table_data').html(data);
-   }
-  });
- }
+        
+//         $.ajax({
+//         url:"/pagination/fetch_data/"+id+"/?page="+page,
+//         success:function(data)
+//         {
+        
+//         console.log(data,'this sata')
+//           $('#table_data').html(data);
+//         }
+//         });
+//  }
  
-		   $("#special_request").submit(async function(e) {
+$("#special_request").submit(async function(e) {
                        e.preventDefault()
                              $("#request").attr('disabled',true);
                             var fd = new FormData();

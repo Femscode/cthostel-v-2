@@ -10,6 +10,7 @@ use App\Models\Services;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class FrontendCOntroller extends Controller
 {
@@ -33,7 +34,7 @@ class FrontendCOntroller extends Controller
        //(new User)->amIfollowing($userId);
        $data['roommate'] = $roommate= Roommate::where('hostel_id',$id)->get();
        
-       return view('cthostel',$data);
+       return view('frontend.cthostel',$data);
     //    return view('album.show',$data);
     }
 
@@ -69,25 +70,43 @@ class FrontendCOntroller extends Controller
     }
     public function cthome(Request $request)
     {
-
-      
+        // dd($request->all());
         $data['school_id'] = $school_id = $request->school_id;
-        // if($school_id == 1) {
-        //     return view('counter');
-        // } else {
-
-        
-        $data['school'] = $school = Schools::where('id', $data['school_id'])->get();
-        // dd($school_id, $school);
-        $data['albums'] = $albums = Album::where('school_id', $data['school_id'])->orderBy('rank')->where('type', null)->where('status',1)->latest()->paginate(20);
-        // dd($albums);
-        $data['locations'] = Category::where('school_id', $data['school_id'])->get();
-        $data['latest'] = Album::where('school_id', $data['school_id'])->orderBy('rank')->where('type', null)->where('status',1)->where('soft_delete',0)->latest()->paginate(20);
-        $data['cheapest'] = Album::orderBy('rank')->where('status',1)->where('type', null)->where('school_id', $data['school_id'])->where('price', '<', 100000)->where('soft_delete',0)->take(20)->get();
-        $data['highest'] = Album::orderBy('rank')->where('school_id', $data['school_id'])->where('type', null)->where('status',1)->where('price', '>', 100000)->where('soft_delete',0)->take(20)->get();
-        $data['random'] = Album::inRandomOrder()->where('status',1)->orderBy('rank')->where('type', null)->where('school_id', $data['school_id'])->where('price', '>', 150000)->where('soft_delete',0)->paginate(20);
-        // $data['random'] = Album::inRandomOrder()->where('status',1)->where('type', null)->where('school_id', $data['school_id'])->where('price', '>', 150000)->where('soft_delete',0)->paginate(20);
-        return view('cthome', $data);
+     
+     
+        $data['school'] = $school = Schools::where('id', $school_id)->get();
+        $data['locations'] = Category::where('school_id', $school_id)->get();
+        $data['latest'] = Album::where('school_id', $school_id)->orderBy('rank')->where('type', null)->where('status',1)->where('soft_delete',0)->latest()->paginate(20)->withQueryString();
+        // $data['random'] = Album::inRandomOrder()->where('status',1)->orderBy('rank')->where('type', null)->where('school_id', $school_id)->where('price', '>', 150000)->where('soft_delete',0)->paginate(20)->withQueryString();
+        return view('frontend.cthome', $data);
+    }
+    public function latest(Request $request)
+    {
+        // dd($request->all());
+        $data['school_id'] = $school_id = $request->school_id;
+     
+     
+        $data['school'] = $school = Schools::where('id', $school_id)->get();
+        $data['locations'] = Category::where('school_id', $school_id)->get();
+        $data['latest'] = Album::where('school_id', $school_id)->orderBy('rank')->where('type', null)->where('status',1)->where('soft_delete',0)->latest()->paginate(20)->withQueryString();
+        // $data['random'] = Album::inRandomOrder()->where('status',1)->orderBy('rank')->where('type', null)->where('school_id', $school_id)->where('price', '>', 150000)->where('soft_delete',0)->paginate(20)->withQueryString();
+        return view('frontend.cthome', $data);
+    }
+    public function cheapest($school_id) {
+        $data['school'] = $school = Schools::where('id', $school_id)->get();
+        $data['locations'] = Category::where('school_id', $school_id)->get();
+        $data['school_id'] = $school_id;
+      
+        $data['cheapest'] = Album::orderBy('rank')->where('status',1)->where('type', null)->where('school_id', $school_id)->where('price', '<', 100000)->where('soft_delete',0)->paginate(20)->withQueryString();
+        // dd($data['cheapest']);
+        return view('frontend.cheapest', $data);  
+    }
+    public function bestrated($school_id) {
+        $data['school'] = $school = Schools::where('id', $school_id)->get();
+        $data['locations'] = Category::where('school_id', $school_id)->get();
+        $data['school_id'] = $school_id;
+        $data['highest'] = Album::orderBy('rank')->where('school_id', $school_id)->where('type', null)->where('status',1)->where('price', '>', 100000)->where('soft_delete',0)->paginate(20)->withQueryString();
+        return view('frontend.bestrated', $data);  
     }
     // }
  

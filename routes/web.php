@@ -80,6 +80,9 @@ Route::any('/updateprofile',[AlbumController::class,'updateprofile'])->name('upd
 Route::get('/',[AlbumController::class,'selectinstitution'])->name('selectinstitution');
 
 Route::any('/cthome',[FrontendCOntroller::class,'cthome'])->name('cthome');
+Route::any('/latest/{school_id}',[FrontendCOntroller::class,'latest'])->name('latest');
+Route::any('/cheapest/{school_id}',[FrontendCOntroller::class,'cheapest'])->name('cheapest');
+Route::any('/bestrated/{school_id}',[FrontendCOntroller::class,'bestrated'])->name('bestrated');
 Route::any('cthostel/{slug}/{id}',[FrontendCOntroller::class,'cthostel'])->name('cthostel');
 Route::any('agentpage/{id}',[FrontendCOntroller::class,'agentpage'])->name('agentpage');
 // Route::any('{slug}/{id}',[FrontendCOntroller::class,'agentpage'])->name('agentpage');
