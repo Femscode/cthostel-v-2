@@ -16,10 +16,12 @@
   <link rel="preload" href="catalog/view/theme/journal3/icons/fonts/icomoon6654.woff2?v1" as="font" crossorigin>
   <link rel="preconnect" href="https://fonts.googleapis.com/" crossorigin>
   <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
-  
+
   <link rel="stylesheet" href="{{asset('userpage/css/jquery-ui.min.css')}}" type="text/css">
   <meta name="twitter:description" content="Journal 3 - Most Advanced Opencart Framework" />
-  <script>window['Journal'] = { "isPopup": false, "isPhone": false, "isTablet": false, "isDesktop": true, "filterScrollTop": false, "filterUrlValuesSeparator": ",", "countdownDay": "Day", "countdownHour": "Hour", "countdownMin": "Min", "countdownSec": "Sec", "globalPageColumnLeftTabletStatus": false, "globalPageColumnRightTabletStatus": false, "scrollTop": true, "scrollToTop": false, "notificationHideAfter": "2000", "quickviewPageStyleCloudZoomStatus": true, "quickviewPageStyleAdditionalImagesCarousel": false, "quickviewPageStyleAdditionalImagesCarouselStyleSpeed": "500", "quickviewPageStyleAdditionalImagesCarouselStyleAutoPlay": false, "quickviewPageStyleAdditionalImagesCarouselStylePauseOnHover": true, "quickviewPageStyleAdditionalImagesCarouselStyleDelay": "3000", "quickviewPageStyleAdditionalImagesCarouselStyleLoop": false, "quickviewPageStyleAdditionalImagesHeightAdjustment": "5", "quickviewPageStyleProductStockUpdate": false, "quickviewPageStylePriceUpdate": false, "quickviewPageStyleOptionsSelect": "none", "quickviewText": "Quickview", "mobileHeaderOn": "tablet", "subcategoriesCarouselStyleSpeed": "500", "subcategoriesCarouselStyleAutoPlay": false, "subcategoriesCarouselStylePauseOnHover": true, "subcategoriesCarouselStyleDelay": "3000", "subcategoriesCarouselStyleLoop": false, "productPageStyleCloudZoomStatus": true, "productPageStyleCloudZoomPosition": "inner", "productPageStyleAdditionalImagesCarousel": false, "productPageStyleAdditionalImagesCarouselStyleSpeed": "500", "productPageStyleAdditionalImagesCarouselStyleAutoPlay": true, "productPageStyleAdditionalImagesCarouselStylePauseOnHover": true, "productPageStyleAdditionalImagesCarouselStyleDelay": "3000", "productPageStyleAdditionalImagesCarouselStyleLoop": false, "productPageStyleAdditionalImagesHeightAdjustment": "5", "productPageStyleProductStockUpdate": false, "productPageStylePriceUpdate": false, "productPageStyleOptionsSelect": "none", "infiniteScrollStatus": true, "infiniteScrollOffset": "2", "infiniteScrollLoadPrev": "Load Previous Products", "infiniteScrollLoadNext": "Load Next Products", "infiniteScrollLoading": "Loading...", "infiniteScrollNoneLeft": "You have reached the end of the list.", "checkoutUrl": "https:\/\/www.journal-theme.com\/5\/index.php?route=checkout\/checkout", "headerHeight": "100", "headerCompactHeight": "60", "mobileMenuOn": "", "searchStyleSearchAutoSuggestStatus": true, "searchStyleSearchAutoSuggestDescription": true, "searchStyleSearchAutoSuggestSubCategories": true, "headerMiniSearchDisplay": "default", "stickyStatus": true, "stickyFullHomePadding": false, "stickyFullwidth": true, "stickyAt": "300", "stickyHeight": "45", "headerTopBarHeight": "35", "topBarStatus": true, "headerType": "classic", "headerMobileHeight": "60", "headerMobileStickyStatus": true, "headerMobileTopBarVisibility": true, "headerMobileTopBarHeight": "45", "notification": [{ "m": 137, "c": "1a2039cc" }], "headerNotice": [{ "m": 56, "c": "bddc5671" }], "columnsCount": 2 };</script>
+  <script>
+    window['Journal'] = { "isPopup": false, "isPhone": false, "isTablet": false, "isDesktop": true, "filterScrollTop": false, "filterUrlValuesSeparator": ",", "countdownDay": "Day", "countdownHour": "Hour", "countdownMin": "Min", "countdownSec": "Sec", "globalPageColumnLeftTabletStatus": false, "globalPageColumnRightTabletStatus": false, "scrollTop": true, "scrollToTop": false, "notificationHideAfter": "2000", "quickviewPageStyleCloudZoomStatus": true, "quickviewPageStyleAdditionalImagesCarousel": false, "quickviewPageStyleAdditionalImagesCarouselStyleSpeed": "500", "quickviewPageStyleAdditionalImagesCarouselStyleAutoPlay": false, "quickviewPageStyleAdditionalImagesCarouselStylePauseOnHover": true, "quickviewPageStyleAdditionalImagesCarouselStyleDelay": "3000", "quickviewPageStyleAdditionalImagesCarouselStyleLoop": false, "quickviewPageStyleAdditionalImagesHeightAdjustment": "5", "quickviewPageStyleProductStockUpdate": false, "quickviewPageStylePriceUpdate": false, "quickviewPageStyleOptionsSelect": "none", "quickviewText": "Quickview", "mobileHeaderOn": "tablet", "subcategoriesCarouselStyleSpeed": "500", "subcategoriesCarouselStyleAutoPlay": false, "subcategoriesCarouselStylePauseOnHover": true, "subcategoriesCarouselStyleDelay": "3000", "subcategoriesCarouselStyleLoop": false, "productPageStyleCloudZoomStatus": true, "productPageStyleCloudZoomPosition": "inner", "productPageStyleAdditionalImagesCarousel": false, "productPageStyleAdditionalImagesCarouselStyleSpeed": "500", "productPageStyleAdditionalImagesCarouselStyleAutoPlay": true, "productPageStyleAdditionalImagesCarouselStylePauseOnHover": true, "productPageStyleAdditionalImagesCarouselStyleDelay": "3000", "productPageStyleAdditionalImagesCarouselStyleLoop": false, "productPageStyleAdditionalImagesHeightAdjustment": "5", "productPageStyleProductStockUpdate": false, "productPageStylePriceUpdate": false, "productPageStyleOptionsSelect": "none", "infiniteScrollStatus": true, "infiniteScrollOffset": "2", "infiniteScrollLoadPrev": "Load Previous Products", "infiniteScrollLoadNext": "Load Next Products", "infiniteScrollLoading": "Loading...", "infiniteScrollNoneLeft": "You have reached the end of the list.", "checkoutUrl": "https:\/\/www.journal-theme.com\/5\/index.php?route=checkout\/checkout", "headerHeight": "100", "headerCompactHeight": "60", "mobileMenuOn": "", "searchStyleSearchAutoSuggestStatus": true, "searchStyleSearchAutoSuggestDescription": true, "searchStyleSearchAutoSuggestSubCategories": true, "headerMiniSearchDisplay": "default", "stickyStatus": true, "stickyFullHomePadding": false, "stickyFullwidth": true, "stickyAt": "300", "stickyHeight": "45", "headerTopBarHeight": "35", "topBarStatus": true, "headerType": "classic", "headerMobileHeight": "60", "headerMobileStickyStatus": true, "headerMobileTopBarVisibility": true, "headerMobileTopBarHeight": "45", "notification": [{ "m": 137, "c": "1a2039cc" }], "headerNotice": [{ "m": 56, "c": "bddc5671" }], "columnsCount": 2 };
+  </script>
   <script>
     if (window.NodeList && !NodeList.prototype.forEach) { NodeList.prototype.forEach = Array.prototype.forEach; }
     (function () {
@@ -65,9 +67,10 @@
       if (Journal['notification']) { for (var i in Journal['notification']) { if (cookies['n-' + Journal['notification'][i]['c']]) { style.sheet.insertRule('.module-notification-' + Journal['notification'][i]['m'] + '{ display:none }'); } } }
       if (Journal['headerNotice']) { for (var i in Journal['headerNotice']) { if (cookies['hn-' + Journal['headerNotice'][i]['c']]) { style.sheet.insertRule('.module-header_notice-' + Journal['headerNotice'][i]['m'] + '{ display:none }'); } } }
       if (Journal['layoutNotice']) { for (var i in Journal['layoutNotice']) { if (cookies['ln-' + Journal['layoutNotice'][i]['c']]) { style.sheet.insertRule('.module-layout_notice-' + Journal['layoutNotice'][i]['m'] + '{ display:none }'); } } }
-    })();</script>
-  <link href="{{asset('catalog/view/theme/journal3/assets/557d6dddb6f8478c54683a2c9063a2194b50.css?v=b1c2c768')}}" type="text/css"
-    rel="stylesheet" media="all" />
+    })();
+  </script>
+  <link href="{{asset('catalog/view/theme/journal3/assets/557d6dddb6f8478c54683a2c9063a2194b50.css?v=b1c2c768')}}"
+    type="text/css" rel="stylesheet" media="all" />
   <link href="myimages/fav.png" src='myimages/fav.png' rel="icon" />
 
   <style>
@@ -20867,7 +20870,8 @@
       }
     }
   </style>
-  <script src="{{asset('catalog/view/theme/journal3/assets/8b6f997aeeb7244df3e8e7405450b5924b50.js?v=b1c2c768')}}" defer></script>
+  <script src="{{asset('catalog/view/theme/journal3/assets/8b6f997aeeb7244df3e8e7405450b5924b50.js?v=b1c2c768')}}"
+    defer></script>
 </head>
 
 <body class="">
@@ -21037,19 +21041,18 @@
     </div> -->
 
 
-   
+
     <header class="header-classic">
       <div class="header header-classic header-lg">
         <div class="top-bar navbar-nav" style='background:#033553;border-bottom:2px solid #089A49'>
-        
+
         </div>
         <div class="mid-bar navbar-nav" style='background:#033553'>
           <div class="desktop-logo-wrapper">
             <div id="logo">
-              <a >
-                <img src="/myimages/logo_header.png"
-                  srcset="/myimages/logo_header.png"
-                  width="220" height="63" alt="CTHostel" title="Journal 3 Demo 5" />
+              <a>
+                <img src="/myimages/logo_header.png" srcset="/myimages/logo_header.png" width="220" height="63"
+                  alt="CTHostel" title="Journal 3 Demo 5" />
               </a>
             </div>
           </div>
@@ -21058,42 +21061,50 @@
               <button class="dropdown-toggle search-trigger" data-toggle="dropdown"></button>
               <div class="dropdown-menu j-dropdown">
                 <div class="header-search">
-                                   <div style='background:red;animation:1s infinite example;animation-duration: 1s infinite;' class="search-categories dropdown drop-menu">
-      <div class="search-categories-button dropdown-toggle" data-toggle="dropdown">Emergency!</div>
+                  <div style='background:red;animation:1s infinite example;animation-duration: 1s infinite;'
+                    class="search-categories dropdown drop-menu">
+                    <div class="search-categories-button dropdown-toggle" data-toggle="dropdown">Emergency!</div>
                     <style>
-                    @keyframes example {
-  from {background-color: red;}
-  to {background-color: yellow;}
-}
+                      @keyframes example {
+                        from {
+                          background-color: red;
+                        }
+
+                        to {
+                          background-color: yellow;
+                        }
+                      }
                     </style>
-               
+
                     <div class="dropdown-menu j-dropdown">
                       <ul class="j-menu">
-                  <li class="menu-item top-menu-item top-menu-item-1">
-                    <a href="/faq"><span
-                        class="links-text">FAQ</span></a>
-                  </li>
+                        <li class="menu-item top-menu-item top-menu-item-1">
+                          <a href="/faq"><span class="links-text">FAQ</span></a>
+                        </li>
 
-                  <li class="menu-item top-menu-item top-menu-item-2">
-                    <a href="/welcomepage"><span class="links-text">About Us</span></a>
-                  </li>
+                        <li class="menu-item top-menu-item top-menu-item-2">
+                          <a href="/welcomepage"><span class="links-text">About Us</span></a>
+                        </li>
 
-                  <li class="menu-item top-menu-item top-menu-item-3">
-                    <a href="https://wa.me/2349058744473?text=Hi%20,%20my%20name%20is%20(%20Input%20%20your%20name%20)%20,%20from%20CTHostel%20.%20(%20Type%20your%20message%20here%20)%20."><span class="links-text">Contact Us</span></a>
-                  </li>
+                        <li class="menu-item top-menu-item top-menu-item-3">
+                          <a
+                            href="https://wa.me/2349058744473?text=Hi%20,%20my%20name%20is%20(%20Input%20%20your%20name%20)%20,%20from%20CTHostel%20.%20(%20Type%20your%20message%20here%20)%20."><span
+                              class="links-text">Contact Us</span></a>
+                        </li>
 
-                </ul>
-                     <form method='post' action='{{route("search")}}'>@csrf
-                  <input name='school_id' type='hidden' value='{{$school_id}}'>
+                      </ul>
+                      <form method='post' action='{{route("search")}}'>@csrf
+                        <input name='school_id' type='hidden' value='{{$school_id}}'>
                     </div>
                   </div>
-                  
-                  <input required type="text" name="searchinput" value="" placeholder="Search here..." class="search-input"
-                    data-category_id="0" />
+
+                  <input required type="text" name="searchinput" value="" placeholder="Search here..."
+                    class="search-input" data-category_id="0" />
                   <button type="submit" class="search-button">
-                   
-                    </button>
-                    </form></div>
+
+                  </button>
+                  </form>
+                </div>
               </div>
             </div>
 
@@ -21103,8 +21114,7 @@
               <div class="top-menu top-menu-14">
                 <ul class="j-menu">
                   <li class="menu-item top-menu-item top-menu-item-1">
-                    <a href="#"><span
-                        class="links-text">FAQ</span></a>
+                    <a href="#"><span class="links-text">FAQ</span></a>
                   </li>
 
                   <li class="menu-item top-menu-item top-menu-item-2">
@@ -21138,7 +21148,7 @@
                 <div class="dropdown-menu j-dropdown " id="collapse-611eaae61a0ba">
                   <div id="flyout-menu-611817a64dfd2" class="flyout-menu flyout-menu-7">
                     <ul class="j-menu">
-                    
+
                       @foreach($locations as $location)
                       <li class="menu-item flyout-menu-item flyout-menu-item-6 multi-level ">
                         <a href="{{route('locationdisplay',[$location->id])}}">
@@ -21155,7 +21165,7 @@
             </ul>
           </div>
 
-      
+
 
         </div>
       </div>
@@ -21213,18 +21223,20 @@
       <div class="row">
         <aside id="column-left" class="side-column">
           <div class="grid-rows">
-    
+
           </div>
 
         </aside>
 
-      
+
       </div>
     </div>
-    <script
-      type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"WebSite","url":"https:\/\/www.journal-theme.com\/5\/","name":"Journal 3 Demo 5","description":"Journal 3 - Most Advanced Opencart Framework","potentialAction":{"@type":"SearchAction","target":"https:\/\/www.journal-theme.com\/5\/index.php?route=product\/search&amp;search={search}","query-input":"required name=search"}}</script>
-    <script
-      type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"Organization","url":"https:\/\/www.journal-theme.com\/5\/","logo":"https:\/\/www.journal-theme.com\/5\/image\/cache\/catalog\/journal3\/logo\/logo6-white-2x-405x116.png"}</script>
+    <script type="application/ld+json">
+      {"@context":"http:\/\/schema.org","@type":"WebSite","url":"https:\/\/www.journal-theme.com\/5\/","name":"Journal 3 Demo 5","description":"Journal 3 - Most Advanced Opencart Framework","potentialAction":{"@type":"SearchAction","target":"https:\/\/www.journal-theme.com\/5\/index.php?route=product\/search&amp;search={search}","query-input":"required name=search"}}
+    </script>
+    <script type="application/ld+json">
+      {"@context":"http:\/\/schema.org","@type":"Organization","url":"https:\/\/www.journal-theme.com\/5\/","logo":"https:\/\/www.journal-theme.com\/5\/image\/cache\/catalog\/journal3\/logo\/logo6-white-2x-405x116.png"}
+    </script>
     <div id="bottom" class="bottom top-row">
       <div class="grid-rows">
         <div class="grid-row grid-row-bottom-1">
@@ -21255,7 +21267,7 @@
             <div class="grid-col grid-col-bottom-2-1">
               <div class="grid-items">
                 <div class="grid-item grid-item-bottom-2-1-1">
-              
+
                 </div>
                 <!-- <div class="grid-item grid-item-bottom-2-1-2">
                   <div id="banners-61181fcd3ba8d" class="module module-banners module-banners-204">
@@ -21297,7 +21309,7 @@
                         <div class="tab-content">
                           <div class="module-item module-item-1 tab-pane active" id="products-61181fcd4109f-tab-1">
                             <div class="product-grid" id='table_data'>
-                           
+
                               @foreach($searched as $album)
                               <div class="product-layout  has-extra-button">
                                 <div class="product-thumb">
@@ -21305,19 +21317,18 @@
                                     <div class="quickview-button">
                                     </div>
 
-                                    <a href="{{route('cthostel',[$album->slug,$album->id])}}"
-                                      class="product-img ">
+                                    <a href="{{route('cthostel',[$album->slug,$album->id])}}" class="product-img ">
                                       <div>
-                                        <img src="https://cthostel.com/cthostel_files/public/hostelimage/{{$album->image  }}" data-src="https://cthostel.com/cthostel_files/public/hostelimage/{{$album->image  }}"
-                                        data-srcset="https://cthostel.com/cthostel_files/public/hostelimage/{{$album->image  }}" width="250" height="250" alt="Hostel Image" title=""
-                                        class="img-responsive" />
-                                        {{-- <img
-                                          src="{{asset('hostelimage/'.$album->image)}}"
+                                        <img
+                                          src="https://cthostel.com/cthostel_files/public/hostelimage/{{$album->image  }}"
+                                          data-src="https://cthostel.com/cthostel_files/public/hostelimage/{{$album->image  }}"
+                                          data-srcset="https://cthostel.com/cthostel_files/public/hostelimage/{{$album->image  }}"
+                                          width="250" height="250" alt="Hostel Image" title="" class="img-responsive" />
+                                        {{-- <img src="{{asset('hostelimage/'.$album->image)}}"
                                           data-src="{{asset('hostelimage/'.$album->image)}}"
-                                          data-srcset="{{asset('hostelimage/'.$album->image)}}"
-                                          width="250" height="250" alt="{{$album->name}}"
-                                          title="{{$album->name}}" class="img-responsive img-first" /> --}}
-
+                                          data-srcset="{{asset('hostelimage/'.$album->image)}}" width="250" height="250"
+                                          alt="{{$album->name}}" title="{{$album->name}}"
+                                          class="img-responsive img-first" /> --}}
                                       </div>
                                     </a>
 
@@ -21329,34 +21340,48 @@
                                   </div>
 
                                   <div class="caption">
-                                    <div class="stats" >
-                                      <span class="stat-2" style='color:red' ><span class="stats-label text-red"></span><strike > ₦<span>
-                                        {{number_format($album->price + ($album->price * 0.1))}}</span></strike></span>
-                                      <span class="stat-2" style='color:green;font-size:18px'><span class="stats-label"></span> <span>
-                                        ₦{{number_format($album->price)}}</span></span>
+                                    <div class="stats">
+                                      <span class="stat-2" style='color:red'><span
+                                          class="stats-label text-red"></span><strike> ₦<span>
+                                            {{number_format($album->price + ($album->price *
+                                            0.1))}}</span></strike></span>
+                                      <span class="stat-2" style='color:green;font-size:18px'><span
+                                          class="stats-label"></span> <span>
+                                          ₦{{number_format($album->price)}}</span></span>
                                     </div>
 
-                                    <div class="name"><a href='{{route("cthostel",[$album->slug,$album->id])}}'>{!!Str::limit($album->name,25)!!} , {!!Str::limit($album->category->name,25)!!}</a></div>
-                                    
-                                    <div class="name"><a href="{{route('cthostel',[$album->slug,$album->id])}}" style='background:#003544;color:white;border-radius:4px' class='btn btn-success'>View Hostel</a></div>
+
+                                    <div class="name"><a
+                                        href='{{route("cthostel",[$album->slug,$album->id])}}'>{!!Str::limit($album->name,25)!!}
+                                        , {!!Str::limit($album->category->name ?? '',25)!!}</a></div>
+
+                                    <div class="name"><a href="{{route('cthostel',[$album->slug,$album->id])}}"
+                                        style='background:#003544;color:white;border-radius:4px'
+                                        class='btn btn-success'>View Hostel</a></div>
 
 
 
-                                  
+
                                     <div class="extra-group">
                                       <div>
-                                       
-                                          <input id='getid' type='hidden' value='{{$school_id}}'>
-                                       
+
+                                        <input id='getid' type='hidden' value='{{$school_id}}'>
+
                                       </div>
                                     </div>
                                   </div>
                                 </div>
                               </div>
                               @endforeach
-                              <div class='col-md-6'>
-                              <h6>{!! $searched->links() !!}</h6>
-                          </div>
+                              <div class='col-md-12'
+                                style='justify-content:center;align-items:center;display:flex;margin:auto'>
+
+                                <div
+                                  style='background-color:white;font-size:15px;padding:5px;border-bottom:3px solid #033533;border-top:1px solid #033533'>
+                                  {{ $searched->links('pagination::bootstrap-4') }}
+                                </div>
+
+                              </div>
 
 
 
@@ -21402,14 +21427,15 @@
                           <div class="product-layout  ">
                             <div class="side-product">
                               <div class="col-md-12">
-                               <form method='post' action='{{route("filter")}}'>@csrf
-                               <input name='school_id' type='hidden' value='{{$school_id}}'>
-                                 @foreach($locations as $category)
-                                 <input type='checkbox'  value="{{$category->id}}"  name='location[]'> {{$category->name}}
-                                  
-                                  
-                                   @endforeach 
-                                </select>
+                                <form method='post' action='{{route("filter")}}'>@csrf
+                                  <input name='school_id' type='hidden' value='{{$school_id}}'>
+                                  @foreach($locations as $category)
+                                  <input type='checkbox' value="{{$category->id}}" name='location[]'>
+                                  {{$category->name}}
+
+
+                                  @endforeach
+                                  </select>
 
                               </div>
 
@@ -21424,11 +21450,11 @@
                           <div class="product-layout  ">
                             <div class="side-product">
                               <center>
-                              <div class="col-md-6">
-                                <input required type='number' name='min_price' class='form-control'>
-                              </div>
-                            </center>
-                              
+                                <div class="col-md-6">
+                                  <input required type='number' name='min_price' class='form-control'>
+                                </div>
+                              </center>
+
                             </div>
                           </div>
                         </div>
@@ -21440,124 +21466,130 @@
                           <div class="product-layout">
                             <div class="side-product">
                               <center>
-                              <div class="col-md-12">
-                                <input required type='number' name='max_price' class='form-control'>
-                              </div>
+                                <div class="col-md-12">
+                                  <input required type='number' name='max_price' class='form-control'>
+                                </div>
                               </center>
-                              
-                            </div>
-                            <button class='btn btn-success' type='submit' >Filter</button>
-                        </div>
 
+                            </div>
+                            <button class='btn btn-success' type='submit'>Filter</button>
+                          </div>
+
+                        </div>
                       </div>
                     </div>
-                  </div>
 
+                  </div>
                 </div>
               </div>
             </div>
           </div>
+
         </div>
-    
+
       </div>
 
-    </div>
 
 
+      <footer>
+        <div class="grid-rows">
 
-    <footer>
-      <div class="grid-rows">
-        
-        <div class="grid-row grid-row-2" style='background:#033553'>
-          <div class="grid-cols">
-            <div class="grid-col grid-col-1">
-              <div class="grid-items">
-                <div class="grid-item grid-item-1">
-                  <div class="icons-menu icons-menu-61">
-                    <h3 class="title module-title">Follow Us</h3>
-                    <ul>
-                      <li class="menu-item icons-menu-item icons-menu-item-1 icon-menu-icon">
-                        <a data-toggle="tooltip" data-tooltip-class="icons-menu-tooltip-61" data-placement="top" title="Facebook" href="">
-                          <span class="links-text">Facebook</span>
-                        </a>
-                      </li>
-                      <li class="menu-item icons-menu-item icons-menu-item-2 icon-menu-icon">
-                        <a data-toggle="tooltip" data-tooltip-class="icons-menu-tooltip-61" data-placement="top" title="Twitter" >
-                          <span class="links-text">Twitter</span>
-                        </a>
-                      </li>
-                      <li class="menu-item icons-menu-item icons-menu-item-3 icon-menu-icon">
-                        <a data-toggle="tooltip" data-tooltip-class="icons-menu-tooltip-61" data-placement="top" title="Instagram" href="https://instagram.com/the_caretech?utm_medium=copy_link">
-                          <span class="links-text">Instagram</span>
-                        </a>
-                      </li>
-                      <li class="menu-item icons-menu-item icons-menu-item-4 icon-menu-icon">
-                        <a data-toggle="tooltip" data-tooltip-class="icons-menu-tooltip-61" data-placement="top" title="LinkedIn" href="https://linkedin.com/in/fasanya-oluwapelumi-1b7343157">
-                          <span class="links-text">LinkedIn</span>
-                        </a>
-                      </li>
-                      <li class="menu-item icons-menu-item icons-menu-item-8 icon-menu-icon">
-                        <a data-toggle="tooltip" data-tooltip-class="icons-menu-tooltip-61" data-placement="top" title="Whatsapp" href="https://wa.me/2349058744473?text=Type%2C%20your%20message%20here">
-                          <span class="links-text">Whatsapp</span>
-                        </a>
-                      </li>
-                    </ul>
+          <div class="grid-row grid-row-2" style='background:#033553'>
+            <div class="grid-cols">
+              <div class="grid-col grid-col-1">
+                <div class="grid-items">
+                  <div class="grid-item grid-item-1">
+                    <div class="icons-menu icons-menu-61">
+                      <h3 class="title module-title">Follow Us</h3>
+                      <ul>
+                        <li class="menu-item icons-menu-item icons-menu-item-1 icon-menu-icon">
+                          <a data-toggle="tooltip" data-tooltip-class="icons-menu-tooltip-61" data-placement="top"
+                            title="Facebook" href="">
+                            <span class="links-text">Facebook</span>
+                          </a>
+                        </li>
+                        <li class="menu-item icons-menu-item icons-menu-item-2 icon-menu-icon">
+                          <a data-toggle="tooltip" data-tooltip-class="icons-menu-tooltip-61" data-placement="top"
+                            title="Twitter">
+                            <span class="links-text">Twitter</span>
+                          </a>
+                        </li>
+                        <li class="menu-item icons-menu-item icons-menu-item-3 icon-menu-icon">
+                          <a data-toggle="tooltip" data-tooltip-class="icons-menu-tooltip-61" data-placement="top"
+                            title="Instagram" href="https://instagram.com/the_caretech?utm_medium=copy_link">
+                            <span class="links-text">Instagram</span>
+                          </a>
+                        </li>
+                        <li class="menu-item icons-menu-item icons-menu-item-4 icon-menu-icon">
+                          <a data-toggle="tooltip" data-tooltip-class="icons-menu-tooltip-61" data-placement="top"
+                            title="LinkedIn" href="https://linkedin.com/in/fasanya-oluwapelumi-1b7343157">
+                            <span class="links-text">LinkedIn</span>
+                          </a>
+                        </li>
+                        <li class="menu-item icons-menu-item icons-menu-item-8 icon-menu-icon">
+                          <a data-toggle="tooltip" data-tooltip-class="icons-menu-tooltip-61" data-placement="top"
+                            title="Whatsapp" href="https://wa.me/2349058744473?text=Type%2C%20your%20message%20here">
+                            <span class="links-text">Whatsapp</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+
+                  </div>
+                  <div class="grid-item grid-item-2">
+                    <div class="links-menu links-menu-77">
+                      <ul class="module-body">
+                        <li class="menu-item links-menu-item links-menu-item-1">
+                          <a>
+                            <span class="links-text">Copyright © <?php echo Date('Y');?>, CTHostel, All Rights Reserved</span>
+                          </a>
+                        </li>
+
+                      </ul>
+                    </div>
+
                   </div>
 
                 </div>
-                <div class="grid-item grid-item-2">
-                  <div class="links-menu links-menu-77">
-                    <ul class="module-body">
-                      <li class="menu-item links-menu-item links-menu-item-1">
-                        <a>
-                          <span class="links-text">Copyright © 2021, CTHostel, All Rights Reserved</span>
-                        </a>
-                      </li>
-
-                    </ul>
-                  </div>
-
-                </div>
-              
               </div>
+
             </div>
-           
           </div>
         </div>
-      </div>
 
-    </footer>
-  </div><!-- .site-wrapper -->
-
+      </footer>
+    </div><!-- .site-wrapper -->
 
 
 
 
-  <div class="notification-wrapper notification-wrapper-bottom">
-    <div class="module module-notification module-notification-137 notification"
-      data-options='{"position":null,"title":"Notification Module","cookie":"1a2039cc"}'>
-      <button class="btn notification-close"></button>
-      <div class="notification-content">
-       <!-- <div>
+
+    <div class="notification-wrapper notification-wrapper-bottom">
+      <div class="module module-notification module-notification-137 notification"
+        data-options='{"position":null,"title":"Notification Module","cookie":"1a2039cc"}'>
+        <button class="btn notification-close"></button>
+        <div class="notification-content">
+          <!-- <div>
           <div class="notification-title">Notification Module</div>
           <div class="notification-text">This is the sticky Notification module. You can use it for any sticky messages
             such as cookie notices or special promotions, etc.</div>
         </div>-->
+        </div>
       </div>
     </div>
-  </div>
 
 
-  <script src="{{asset('catalog/view/theme/journal3/assets/0973f77e85a99a7c004f28b2b906bcf44b50.js?v=b1c2c768')}}" defer></script>
+    <script src="{{asset('catalog/view/theme/journal3/assets/0973f77e85a99a7c004f28b2b906bcf44b50.js?v=b1c2c768')}}"
+      defer></script>
 
 
 
 
-  <div class="scroll-top">
-    <i class="fa fa-angle-up"></i>
-  </div>
-  
-<script src="{{asset('userpage/js/jquery-3.3.1.min.js')}}"></script>
+    <div class="scroll-top">
+      <i class="fa fa-angle-up"></i>
+    </div>
+
+    <script src="{{asset('userpage/js/jquery-3.3.1.min.js')}}"></script>
     <script src="{{asset('userpage/js/bootstrap.min.js')}}"></script>
     <script src="{{asset('userpage/js/jquery.nice-select.min.js')}}"></script>
     <script src="{{asset('userpage/js/jquery-ui.min.js')}}"></script>
@@ -21566,37 +21598,38 @@
     <script src="{{asset('userpage/js/owl.carousel.min.js')}}"></script>
     <script src="{{asset('userpage/js/main.js')}}"></script>
 
-<script>
-$(document).ready(function(){
+    <script>
+      $(document).ready(function(){
 
- $(document).on('click', '.pagination a', function(event){
-  event.preventDefault(); 
-  var page = $(this).attr('href').split('page=')[1];
-   var id = $("#getid").val();
-   console.log(id);
-  fetch_data(page);
- });
+        // $(document).on('click', '.pagination a', function(event){
+        //   event.preventDefault(); 
+        //   var page = $(this).attr('href').split('page=')[1];
+        //   var id = $("#getid").val();
+        //   console.log(id);
+        //   fetch_data(page);
+        // });
 
- function fetch_data(page)
- {
-    var id = $("#getid").val();
-    
-   
-  $.ajax({
-   url:"/pagination/fetch_data/"+id+"/?page="+page,
-   success:function(data)
-   {
-   
-    $('#table_data').html(data);
-   }
-  });
- }
+      function fetch_data(page)
+          {
+              var id = $("#getid").val();
+              
+            
+            $.ajax({
+            url:"/pagination/fetch_data/"+id+"/?page="+page,
+            success:function(data)
+            {
+            
+              $('#table_data').html(data);
+            }
+            });
+          }
  
-});
-</script>
- <script src="{{asset('assets/professionallocker.js')}}"></script>
-  <script defer src="../../static.cloudflareinsights.com/beacon.min.js"
-    data-cf-beacon='{"rayId":"6815a3bcb8c1bbd0","version":"2021.8.1","r":1,"token":"08f347fa5c4f4ca684e763b9ca7b9d68","si":10}'></script>
+        });
+    </script>
+    <script src="{{asset('assets/professionallocker.js')}}"></script>
+    <script defer src="../../static.cloudflareinsights.com/beacon.min.js"
+      data-cf-beacon='{"rayId":"6815a3bcb8c1bbd0","version":"2021.8.1","r":1,"token":"08f347fa5c4f4ca684e763b9ca7b9d68","si":10}'>
+    </script>
 </body>
 
 <!-- Mirrored from www.journal-theme.com/5/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 19 Aug 2021 19:04:39 GMT -->

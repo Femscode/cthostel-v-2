@@ -179,33 +179,45 @@ class FrontendCOntroller extends Controller
     }
     public function filter(Request $request)
     {
-        // dd($request->all());
-        $this->validate($request, [
-            'location' => 'required',
-        ]);
-        $data['locations'] = Category::where('school_id', $request->school_id)->get();
-        $id = $request->location;
-        $minprice = $request->min_price;
-        $maxprice = $request->max_price;
-        $minimum = (array_map('intval', [$minprice]));
-        $maximum = (array_map('intval', [$maxprice]));
+        if($request->has('school_id') && $request->has('location')) {
+            session()->put('filter_school_id', $request->school_id);
+            session()->put('filter_location', $request->location);
+            session()->put('filter_min_price', $request->min_price);
+            session()->put('filter_max_price', $request->max_price);
+            $school_id = $request->school_id;
+            $location = $request->location;
+            $min_price = $request->min_price;
+            $max_price = $request->max_price;
+        }
+        else {
+            $school_id = session()->get('filter_school_id');
+            $location = session()->get('filter_location');
+            $min_price = session()->get('filter_min_price');
+            $max_price = session()->get('filter_max_price');
+        }
+        if($school_id == null || $location == null ) {
+            return redirect()->back()->with('message','Please fill the filter form appropriately');
+        }
+        $data['locations'] = Category::where('school_id', $school_id)->get();
+        $id = $location;
+       
+        $minimum = (array_map('intval', [$min_price]));
+        $maximum = (array_map('intval', [$max_price]));
         $location = (array_map('intval', $id));
         $locate = count($location);
         $slider = Album::where('status',1)->where('soft_delete',0)->orderBy('rank')->latest()->paginate(20);
-        // dd($minimum,$id,$request->location);
-        $data['school_id'] = $request->school_id;
+        // dd($minimum,$id,$location);
+        $data['school_id'] = $school_id;
         $filter = [];
-        // $location = $request->location;
-        // $minimum = $request->min_price;
-        // $maximum = $request->max_price;
+      
         $subcategory = DB::table('albums')->where('status',1)->where('soft_delete',0)->whereIn('category_id', $location)->get();
         foreach ($location as $sub) {
             array_push($filter, $sub);
         }
-        $data['filtered'] = $filtered = Album::where('status',1)->orderBy('rank')->where('soft_delete',0)->whereIn('category_id', $filter)->where('price', '>=', $minimum[0])->where('price', '<=', $maximum[0])->paginate(20);
-        $data['searched'] = $filtered = Album::where('status',1)->orderBy('rank')->where('soft_delete',0)->whereIn('category_id', $filter)->where('price', '>=', $minimum[0])->where('price', '<=', $maximum[0])->paginate(20);
+        $data['filtered'] = $filtered = Album::where('status',1)->orderBy('rank')->where('soft_delete',0)->whereIn('category_id', $filter)->where('price', '>=', $minimum[0])->where('price', '<=', $maximum[0])->paginate(20)->withQueryString();
+        $data['searched'] = $filtered = Album::where('status',1)->orderBy('rank')->where('soft_delete',0)->whereIn('category_id', $filter)->where('price', '>=', $minimum[0])->where('price', '<=', $maximum[0])->paginate(20)->withQueryString();
         
-        return view('filtered', $data);
+        return view('frontend.filtered', $data);
 
 
 

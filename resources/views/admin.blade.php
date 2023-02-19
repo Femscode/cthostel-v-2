@@ -5,6 +5,8 @@
 
 <head>
     <title>CTHostel | Dashboard</title>
+    <meta name="CTHostel"
+        content="...the safest place to get it cheaper without getting scammed." />
     <meta name="description"
         content="...the safest place to get it cheaper without getting scammed." />
     <meta name="keywords"
@@ -1031,6 +1033,7 @@
                                         <div class="cursor-pointer symbol symbol-30px symbol-md-40px"
                                             data-kt-menu-trigger="click" data-kt-menu-attach="parent"
                                             data-kt-menu-placement="bottom-end" data-kt-menu-flip="bottom">
+                                            
                                             @if($user->profilePic !== null)
                                             <img src="https://cthostel.com/cthostel_files/public/agent/{{$user->profilePic}}" alt="profilePic" />
                                             @else 
@@ -1189,9 +1192,9 @@
                                                             </svg>
                                                         </span>
                                                         <!--end::Svg Icon-->
-                                                    </a>
-                                                    <a href="/{{$user->username}}"
-                                                        class="btn btn-sm btn-light-success fw-bolder ms-2 fs-8 py-1 px-3">cthostel.com/{{$user->username}}</a>
+                                                    </a><br>
+                                                    {{-- <a href="/{{$user->username}}"
+                                                        class="btn btn-sm btn-light-success fw-bolder ms-2 fs-8 py-1 px-3">cthostel.com/{{$user->username}}</a> --}}
                                                 </div>
                                                 <!--end::Name-->
                                                 <!--begin::Info-->
@@ -1224,13 +1227,15 @@
 
                                                         <!--end::Svg Icon-->{{ $user->school->name }}
                                                     </a>
-                                                    @if($user->plan == "Free Mode")
-                                                    <a href="#"
-                                                        class="d-flex align-items-center alert alert-danger mb-2">
-                                                        Upgrade plan to enjoy more benefit!
-                                                    </a>
-                                                    @endif
+                                                   
                                                 </div>
+                                                @if($user->plan == "Free Mode")
+                                                <a data-bs-toggle="modal"
+                                                data-bs-target="#kt_modal_offer_a_deal" 
+                                                    class="d-flex align-items-center alert alert-danger mb-2">
+                                                    Click here to upgrade plan to enjoy more benefit!
+                                                </a>
+                                                @endif
                                                 <!--end::Info-->
                                             </div>
                                             <!--end::User-->
@@ -1450,51 +1455,9 @@
                                                                             </div>
                                                                             <!--end::Badge-->
                                                                             <!--begin::Text-->
-                                                                            <div class="fw-semibold timeline-content text-grey ps-3">Get at least ten(10) hostel requests in a day.</div>
+                                                                            <div class="fw-semibold timeline-content text-grey ps-3">Make your hostels appear first in our homepage.</div>
                                                                             <!--end::Text-->
                                                                         </div>
-                                                                        <!--end::Item-->
-                                                                        <!--begin::Item-->
-                                                                        <div class="timeline-item">
-                                                                           
-                                                                            <!--begin::Badge-->
-                                                                            <div class="timeline-badge">
-                                                                                <i class="fa fa-genderless text-success fs-1"></i>
-                                                                            </div>
-                                                                            <!--end::Badge-->
-                                                                            <!--begin::Content-->
-                                                                            <div class="timeline-content d-flex">
-                                                                                <span class="fw-semibold text-gray-800 ps-3">All hostels by you will have the CTHostel-Verified Badge.</span>
-                                                                            </div>
-                                                                            <!--end::Content-->
-                                                                        </div>
-                                                                        <!--end::Item-->
-                                                                        <!--begin::Item-->
-                                                                        <div class="timeline-item">
-                                                                           
-                                                                            <!--begin::Badge-->
-                                                                            <div class="timeline-badge">
-                                                                                <i class="fa fa-genderless text-danger fs-1"></i>
-                                                                            </div>
-                                                                            <!--end::Badge-->
-                                                                            <!--begin::Desc-->
-                                                                            <div class="timeline-content fw-semibold text-gray-800 ps-3">All your hostels enjoy premium ads.</div>
-                                                                            <!--end::Desc-->
-                                                                        </div>
-                                                                        <!--end::Item-->
-                                                                        <!--begin::Item-->
-                                                                        <div class="timeline-item">
-                                                                           <!--begin::Badge-->
-                                                                            <div class="timeline-badge">
-                                                                                <i class="fa fa-genderless text-primary fs-1"></i>
-                                                                            </div>
-                                                                            <!--end::Badge-->
-                                                                            <!--begin::Text-->
-                                                                            <div class="timeline-content fw-semibold text-grey ps-3">You can post as much as 100 Hostels on our platform.</div>
-                                                                            <!--end::Text-->
-                                                                        </div>
-                                                                        <!--end::Item-->
-                                                                        <!--begin::Item-->
                                                                         <div class="timeline-item">
                                                                            
                                                                             <!--begin::Badge-->
@@ -1512,13 +1475,56 @@
                                                                            
                                                                             <!--begin::Badge-->
                                                                             <div class="timeline-badge">
+                                                                                <i class="fa fa-genderless text-success fs-1"></i>
+                                                                            </div>
+                                                                            <!--end::Badge-->
+                                                                            <!--begin::Content-->
+                                                                            <div class="timeline-content d-flex">
+                                                                                <span class="fw-semibold text-gray-800 ps-3">Make all your hostels have the CTHostel-Verified Badge.</span>
+                                                                            </div>
+                                                                            <!--end::Content-->
+                                                                        </div>
+                                                                        <!--end::Item-->
+                                                                        <!--begin::Item-->
+                                                                        <div class="timeline-item">
+                                                                           
+                                                                            <!--begin::Badge-->
+                                                                            <div class="timeline-badge">
+                                                                                <i class="fa fa-genderless text-danger fs-1"></i>
+                                                                            </div>
+                                                                            <!--end::Badge-->
+                                                                            <!--begin::Desc-->
+                                                                            <div class="timeline-content fw-semibold text-gray-800 ps-3">All your hostels enjoy premium advertisement.</div>
+                                                                            <!--end::Desc-->
+                                                                        </div>
+                                                                        <!--end::Item-->
+                                                                        <!--begin::Item-->
+                                                                        <div class="timeline-item">
+                                                                           <!--begin::Badge-->
+                                                                            <div class="timeline-badge">
+                                                                                <i class="fa fa-genderless text-primary fs-1"></i>
+                                                                            </div>
+                                                                            <!--end::Badge-->
+                                                                            <!--begin::Text-->
+                                                                            <div class="timeline-content fw-semibold text-grey ps-3">You can post as much as 100 Hostels on our platform.</div>
+                                                                            <!--end::Text-->
+                                                                        </div>
+                                                                        <!--end::Item-->
+                                                                        <!--begin::Item-->
+                                                                       
+                                                                        <!--end::Item-->
+                                                                        <!--begin::Item-->
+                                                                        {{-- <div class="timeline-item">
+                                                                           
+                                                                            <!--begin::Badge-->
+                                                                            <div class="timeline-badge">
                                                                                 <i class="fa fa-genderless text-primary fs-1"></i>
                                                                             </div>
                                                                             <!--end::Badge-->
                                                                             <!--begin::Text-->
                                                                             <div class="timeline-content fw-semibold text-grey ps-3">Enjoy free access to the CTHostel Market Space.</div>
                                                                             <!--end::Text-->
-                                                                        </div>
+                                                                        </div> --}}
                                                                         <!--end::Item-->
                                                                         <!--begin::Item-->
                                                                        <!--end::Item-->
@@ -1532,7 +1538,7 @@
                                                                     <a href="upgrade_account"
                                                                         id="kt_modal_new_target_submit"
                                                                         class="btn btn-primary">
-                                                                        <span class="indicator-label">Upgrade</span>
+                                                                        <span class="indicator-label">Upgrade Now</span>
                                                                                </a>
                                                                 </div>
                                                                 <!--end::Actions-->
@@ -1547,10 +1553,11 @@
                                             </div>
                                             <div class="d-flex my-4">
 
+                                                <a href="https://cthostel.com/{{ $user->username }}" class="btn btn-sm btn-info me-3">My Page</a>
                                                 <a href="/" class="btn btn-sm btn-dark me-3" data-bs-toggle="modal"
                                                     data-bs-target="#kt_modal_new_target">My Profile</a>
-                                                <a class="btn btn-sm btn-primary me-3" data-bs-toggle="modal"
-                                                    data-bs-target="#kt_modal_offer_a_deal">Upgrade Plan</a>
+                                                {{-- <a class="btn btn-sm btn-primary me-3" data-bs-toggle="modal"
+                                                    data-bs-target="#kt_modal_offer_a_deal">Upgrade Plan</a> --}}
                                                 <!--begin::Menu-->
                                           
                                                 <!--end::Menu-->
@@ -1731,11 +1738,9 @@
                                                                                     Warning</h4>
                                                                                 <div class="fs-6 text-gray-700">Please
                                                                                     input a
-                                                                                    very friendly price while creating
-                                                                                    hostel,
-                                                                                    this will help us for getting you
-                                                                                    customers
-                                                                                    frequently
+                                                                                    very friendly price(last price) while creating
+                                                                                    hostel.
+                                                                                   
                                                                                     <a href="#"></a>
                                                                                 </div>
                                                                             </div>
@@ -2289,9 +2294,8 @@
                                                                                     Warning</h4>
                                                                                 <div class="fs-6 text-gray-700">
                                                                                     Please input a very friendly
-                                                                                    price while creating hostel,
-                                                                                    this will help us in getting
-                                                                                    you customers frequently
+                                                                                    price(last price) while creating hostel.
+                                                                                    
                                                                                     <a href="#"></a>
                                                                                 </div>
                                                                             </div>
@@ -2609,6 +2613,9 @@
                             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                         }
                     });
+                    @if (session('message'))
+                        Swal.fire('',"{{ session('message') }}",'success');
+                    @endif
                     $("#image").on('change', function(e) {
 
                             var file = e.target.files[0];

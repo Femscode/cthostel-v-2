@@ -189,6 +189,7 @@ Route::any('editlocation',[AlbumController::class,'editlocation'])->name('editlo
 Route::any('deletelocation',[AlbumController::class,'deletelocation'])->name('deletelocation');
 Route::any('editschool',[AlbumController::class,'editschool'])->name('editschool');
 Route::any('deleteschool',[AlbumController::class,'deleteschool'])->name('deleteschool');
+Route::any('deleteuser/{id}',[AlbumController::class,'deleteuser'])->name('deleteuser');
 
 Route::any('{slug}',[AlbumController::class,'agentpage'])->name('agentpage');
 

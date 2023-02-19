@@ -19821,7 +19821,7 @@ wpac_init.push({widget: 'Comment', id: 24531});
                     <ul class="module-body">
                       <li class="menu-item links-menu-item links-menu-item-1">
                         <a>
-                          <span class="links-text">Copyright © 2021, CTHostel, All Rights Reserved</span>
+                          <span class="links-text">Copyright © <?php echo Date('Y');?>, CTHostel, All Rights Reserved</span>
                         </a>
                       </li>
 

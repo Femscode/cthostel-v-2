@@ -600,17 +600,29 @@ class AlbumController extends Controller
     }
     public function search(Request $request)
     {
+        // dd($request->all());
+        if($request->has('school_id') && $request->has('searchinput')) {
+            session()->put('search_school_id',$request->school_id);
+            session()->put('search_searchinput',$request->searchinput);
+            $school_id = $request->school_id;
+            $searchinput = $request->searchinput;
+        }
+        else {
+            $school_id = session()->get('search_school_id');
+            $searchinput = session()->get('search_searchinput');
+        }
 
-        $data['locations'] = Category::where('school_id', $request->school_id)->get();
-        $data['searched'] = $searched = Album::where('status', 1)->orderBy('rank')->where('soft_delete', 0)->where('name', 'like', '%' . $request->searchinput . '%')
-            ->orWhere('description', 'like', '%' . $request->searchinput . '%')
-            ->orWhere('price', 'like', '%' . $request->searchinput . '%')
-            ->orWhere('category_name', 'like', '%' . $request->searchinput . '%')
+        $data['locations'] = Category::where('school_id', $school_id)->get();
+        $data['searched'] = $searched = Album::where('status', 1)->orderBy('rank')->where('soft_delete', 0)->where('name', 'like', '%' . $searchinput . '%')
+            ->orWhere('description', 'like', '%' . $searchinput . '%')
+            ->orWhere('price', 'like', '%' . $searchinput . '%')
+            ->orWhere('category_name', 'like', '%' . $searchinput . '%')
 
-            ->paginate(20);
-        $data['school_id'] = $request->school_id;
+            ->paginate(20)->withQueryString();
+            
+        $data['school_id'] = $school_id;
 
-        return view('search', $data);
+        return view('frontend.search', $data);
     }
     public function send_mail()
     {
@@ -692,7 +704,7 @@ class AlbumController extends Controller
             $data['locations'] = Category::latest()->get();
             $data['schools'] = schools::latest()->get();
             $data['albums'] = Album::latest()->get();
-            return view('super_admin', $data);
+            return view('super.super_admin', $data);
         } else {
             return redirect()->back();
         }
@@ -1026,6 +1038,13 @@ class AlbumController extends Controller
         $data['latest'] = Album::where('school_id', $data['school_id'])->where('status', 1)->inRandomOrder()->paginate(5);
 
         return view('shs', $data);
+    }
+    public function deleteuser($id) {
+        $user = User::find($id);
+        $album = Album::where('user_id',$id)->delete();
+       
+        $user->delete();
+        return redirect()->back()->with('message',"User successfully deleted!");
     }
 
     public function saveservice(Request $request)
