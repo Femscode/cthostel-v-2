@@ -748,7 +748,7 @@
                                 <div class="grid-item grid-item-bottom-2-1-1">
 
                                 </div>
-                                <div class="grid-item grid-item-bottom-2-1-2">
+                                {{-- <div class="grid-item grid-item-bottom-2-1-2">
                                     <div id="banners-61181fcd3ba8d" class="module module-banners module-banners-204">
                                         <div class="module-body">
                                           <div class="module-item module-item-1">
@@ -762,7 +762,7 @@
                                         </div>
                                       </div>
 
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
                         <div class="grid-col grid-col-bottom-2-2">
