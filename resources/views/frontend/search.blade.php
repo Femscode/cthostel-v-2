@@ -21083,7 +21083,7 @@
                         </li>
 
                         <li class="menu-item top-menu-item top-menu-item-2">
-                          <a href="/welcomepage"><span class="links-text">About Us</span></a>
+                          <a href="/"><span class="links-text">About Us</span></a>
                         </li>
 
                         <li class="menu-item top-menu-item top-menu-item-3">
@@ -21114,15 +21114,15 @@
               <div class="top-menu top-menu-14">
                 <ul class="j-menu">
                   <li class="menu-item top-menu-item top-menu-item-1">
-                    <a href="#"><span class="links-text">FAQ</span></a>
+                    <a href="/faq"><span class="links-text">FAQ</span></a>
                   </li>
 
                   <li class="menu-item top-menu-item top-menu-item-2">
-                    <a href="/welcomepage"><span class="links-text">Blog</span></a>
+                    <a href="/"><span class="links-text">Blog</span></a>
                   </li>
 
                   <li class="menu-item top-menu-item top-menu-item-3">
-                    <a href="/welcomepage"><span class="links-text">Contact Us</span></a>
+                    <a href="/"><span class="links-text">Contact Us</span></a>
                   </li>
 
                 </ul>
@@ -21319,7 +21319,7 @@
 
                                     <a href="{{route('cthostel',[$album->slug,$album->id])}}" class="product-img ">
                                       <div>
-                                        <img
+                                        <img loading="lazy"
                                           src="https://cthostel.com/cthostel_files/public/hostelimage/{{$album->image  }}"
                                           data-src="https://cthostel.com/cthostel_files/public/hostelimage/{{$album->image  }}"
                                           data-srcset="https://cthostel.com/cthostel_files/public/hostelimage/{{$album->image  }}"

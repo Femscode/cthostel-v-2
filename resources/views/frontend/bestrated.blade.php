@@ -448,96 +448,130 @@
                                     </div>
                                     <div class="grid-col grid-col-content-top-1-2">
                                         <div class="grid-items">
-                                          <div class="grid-item grid-item-content-top-1-2-1">
-                                            <div class="module module-master_slider module-master_slider-232"
-                                              style="background-image:url('myimages/slider_02.jpg')">
-                                              <div class="journal-loading"><i class="fa fa-spinner fa-spin"></i></div>
-                                              <img data-src="{{ asset('myimages/silder_03.jpg')}}" srcset="myimages/slider_03.jpg" alt="" width="880"
-                                                height="440" />
-                    
-                                              <div class="master-slider ms-skin-minimal"
-                                                data-options='{"width":880,"height":440,"layout":"fillwidth","smoothHeight":false,"centerControls":false,"parallaxMode":"swipe","instantStartLayers":true,"loop":true,"dir":"h","autoHeight":true,"rtl":false,"startOnAppear":false,"autoplay":true,"overPause":true,"shuffle":false,"view":"fadeFlow","speed":"30","swipe":true,"mouse":true,"controls":{"arrows":{"autohide":false},"bullets":{"autohide":false},"timebar":{"autohide":false,"inset":true,"align":"top"}}}'>
-                                                <div class="module-item module-item-1 ms-slide">
-                                                  <img class='lazyload' data-src="/myimages/slider_02.jpg" src="/myimages/slider_02.jpg"
-                                                    srcset="{{ asset('myimages/slider_02.jpg')}}" alt="" width="880" height="440" />
-                    
-                                                  <div class="module-subitem module-subitem-1 ms-layer ms-layer-text ms-caption"
-                                                    data-resize="true" data-origin="mc" data-parallax="0" data-type="text"
-                                                    data-position="normal" data-offset-y="-50" data-effect="skewright(60,200)" data-delay=""
-                                                    data-duration="500" data-ease="easeOutQuart" data-hide-effect="fade" data-hide-delay="0"
-                                                    data-hide-duration="0" style='color:#033553'></div>
-                                                  <div class="module-subitem module-subitem-2 ms-layer ms-layer-text ms-caption"
-                                                    data-resize="true" data-origin="mc" data-parallax="0" data-type="text"
-                                                    data-position="normal" data-offset-y="20" data-effect="skewright(60,200)"
-                                                    data-delay="100" data-duration="500" data-ase="easeOutQuart" data-hide-effect="fade"
-                                                    data-hide-delay="0" data-hide-duration="0" style='color:#033553'></div>
-                                                  <a href='#latesthostel'
-                                                    class="module-subitem module-subitem-3 ms-layer ms-layer-button btn" data-resize="true"
-                                                    data-origin="mc" data-parallax="0" data-type="button" data-position="normal"
-                                                    data-offset-y="90" data-effect="skewleft(60,200)" data-delay="200" data-duration="500"
-                                                    data-ease="easeOutQuart" data-hide-effect="fade" data-hide-delay="0"
-                                                    data-hide-duration="0"><span>Get Now</span></a>
+                                            <div class="grid-item grid-item-content-top-1-2-1">
+                                                <div class="module module-master_slider module-master_slider-232"
+                                                    style="background-image:url('myimages/slider_02.jpg')">
+                                                    <div class="journal-loading"><i class="fa fa-spinner fa-spin"></i>
+                                                    </div>
+                                                    <img data-src="{{ asset('myimages/silder_03.jpg')}}"
+                                                        srcset="myimages/slider_03.jpg" alt="" width="880"
+                                                        height="440" />
+
+                                                    <div class="master-slider ms-skin-minimal"
+                                                        data-options='{"width":880,"height":440,"layout":"fillwidth","smoothHeight":false,"centerControls":false,"parallaxMode":"swipe","instantStartLayers":true,"loop":true,"dir":"h","autoHeight":true,"rtl":false,"startOnAppear":false,"autoplay":true,"overPause":true,"shuffle":false,"view":"fadeFlow","speed":"30","swipe":true,"mouse":true,"controls":{"arrows":{"autohide":false},"bullets":{"autohide":false},"timebar":{"autohide":false,"inset":true,"align":"top"}}}'>
+                                                        <div class="module-item module-item-1 ms-slide">
+                                                            <img class='lazyload' data-src="/myimages/slider_02.jpg"
+                                                                src="/myimages/slider_02.jpg"
+                                                                srcset="{{ asset('myimages/slider_02.jpg')}}" alt=""
+                                                                width="880" height="440" />
+
+                                                            <div class="module-subitem module-subitem-1 ms-layer ms-layer-text ms-caption"
+                                                                data-resize="true" data-origin="mc" data-parallax="0"
+                                                                data-type="text" data-position="normal"
+                                                                data-offset-y="-50" data-effect="skewright(60,200)"
+                                                                data-delay="" data-duration="500"
+                                                                data-ease="easeOutQuart" data-hide-effect="fade"
+                                                                data-hide-delay="0" data-hide-duration="0"
+                                                                style='color:#033553'></div>
+                                                            <div class="module-subitem module-subitem-2 ms-layer ms-layer-text ms-caption"
+                                                                data-resize="true" data-origin="mc" data-parallax="0"
+                                                                data-type="text" data-position="normal"
+                                                                data-offset-y="20" data-effect="skewright(60,200)"
+                                                                data-delay="100" data-duration="500"
+                                                                data-ase="easeOutQuart" data-hide-effect="fade"
+                                                                data-hide-delay="0" data-hide-duration="0"
+                                                                style='color:#033553'></div>
+                                                            <a href='#latesthostel'
+                                                                class="module-subitem module-subitem-3 ms-layer ms-layer-button btn"
+                                                                data-resize="true" data-origin="mc" data-parallax="0"
+                                                                data-type="button" data-position="normal"
+                                                                data-offset-y="90" data-effect="skewleft(60,200)"
+                                                                data-delay="200" data-duration="500"
+                                                                data-ease="easeOutQuart" data-hide-effect="fade"
+                                                                data-hide-delay="0" data-hide-duration="0"><span>Get
+                                                                    Now</span></a>
+                                                        </div>
+                                                        <div class="module-item module-item-2 ms-slide">
+                                                            <img data-src="{{ asset('myimages/slider_01.jpg')}}"
+                                                                src="/myimages/slider_01.jpg"
+                                                                srcset="{{ asset('myimages/slider_01.jpg')}}" alt=""
+                                                                width="880" height="440" />
+
+
+
+
+                                                            <div style='color:#033553'
+                                                                class="module-subitem module-subitem-1 ms-layer ms-layer-text ms-caption"
+                                                                data-resize="true" data-origin="ml" data-parallax="0"
+                                                                data-type="text" data-position="normal"
+                                                                data-offset-x="30" data-offset-y="-30"
+                                                                data-effect="skewright(60,200)" data-delay=""
+                                                                data-duration="500" data-ease="easeOutQuart"
+                                                                data-hide-effect="fade" data-hide-delay="0"
+                                                                data-hide-duration="0">A Very Reliable Hostel With No
+                                                                Stress</div>
+                                                            <div class="module-subitem module-subitem-2 ms-layer ms-layer-text ms-caption"
+                                                                data-resize="true" data-origin="ml" data-parallax="0"
+                                                                data-type="text" data-position="normal"
+                                                                data-offset-x="30" data-offset-y="20"
+                                                                data-effect="skewright(60,200)" data-delay=""
+                                                                data-duration="500" data-ease="easeOutQuart"
+                                                                data-hide-effect="fade" data-hide-delay="0"
+                                                                data-hide-duration="0"></div>
+                                                            <a href='#latesthostel'
+                                                                class="module-subitem module-subitem-3 ms-layer ms-layer-button btn"
+                                                                data-resize="true" data-origin="ml" data-parallax="0"
+                                                                data-type="button" data-position="normal"
+                                                                data-offset-x="65" data-offset-y="75"
+                                                                data-effect="skewleft(60,200)" data-delay="100"
+                                                                data-duration="500" data-ease="easeOutQuart"
+                                                                data-hide-effect="fade" data-hide-delay="0"
+                                                                data-hide-duration="0"><span>Get Now</span></a>
+
+                                                        </div>
+                                                        <div class="module-item module-item-3 ms-slide"
+                                                            data-delay="2.5">
+                                                            <img data-src="{{ asset('myimages/slider_03.jpg')}}"
+                                                                src="{{ asset('myimages/slider_03.jpg')}}"
+                                                                srcset="{{ asset('myimages/slider_03.jpg')}}" alt=""
+                                                                width="880" height="440" />
+
+
+
+
+                                                            <div class="module-subitem module-subitem-1 ms-layer ms-layer-text ms-caption"
+                                                                data-resize="true" data-origin="ml" data-parallax="0"
+                                                                data-type="text" data-position="normal"
+                                                                data-offset-x="30" data-offset-y="-30"
+                                                                data-effect="skewright(60,200)" data-delay=""
+                                                                data-duration="500" data-ease="easeOutQuart"
+                                                                data-hide-effect="fade" data-hide-delay="0"
+                                                                data-hide-duration="0">Choose The Best Out Of The Best
+                                                            </div>
+                                                            <div class="module-subitem module-subitem-2 ms-layer ms-layer-text ms-caption"
+                                                                data-resize="true" data-origin="ml" data-parallax="0"
+                                                                data-type="text" data-position="normal"
+                                                                data-offset-x="30" data-offset-y="20"
+                                                                data-effect="skewright(60,200)" data-delay=""
+                                                                data-duration="500" data-ease="easeOutQuart"
+                                                                data-hide-effect="fade" data-hide-delay="0"
+                                                                data-hide-duration="0"></div>
+                                                            <a href='#latesthostel'
+                                                                class="module-subitem module-subitem-3 ms-layer ms-layer-button btn"
+                                                                data-resize="true" data-origin="ml" data-parallax="0"
+                                                                data-type="button" data-position="normal"
+                                                                data-offset-x="65" data-offset-y="75"
+                                                                data-effect="skewleft(60,200)" data-delay="100"
+                                                                data-duration="500" data-ease="easeOutQuart"
+                                                                data-hide-effect="fade" data-hide-delay="0"
+                                                                data-hide-duration="0"><span>Get Now</span></a>
+                                                        </div>
+                                                    </div>
                                                 </div>
-                                                <div class="module-item module-item-2 ms-slide">
-                                                  <img data-src="{{ asset('myimages/slider_01.jpg')}}" src="/myimages/slider_01.jpg"
-                                                    srcset="{{ asset('myimages/slider_01.jpg')}}" alt="" width="880" height="440" />
-                    
-                    
-                    
-                    
-                                                  <div style='color:#033553'
-                                                    class="module-subitem module-subitem-1 ms-layer ms-layer-text ms-caption"
-                                                    data-resize="true" data-origin="ml" data-parallax="0" data-type="text"
-                                                    data-position="normal" data-offset-x="30" data-offset-y="-30"
-                                                    data-effect="skewright(60,200)" data-delay="" data-duration="500"
-                                                    data-ease="easeOutQuart" data-hide-effect="fade" data-hide-delay="0"
-                                                    data-hide-duration="0">A Very Reliable Hostel With No Stress</div>
-                                                  <div class="module-subitem module-subitem-2 ms-layer ms-layer-text ms-caption"
-                                                    data-resize="true" data-origin="ml" data-parallax="0" data-type="text"
-                                                    data-position="normal" data-offset-x="30" data-offset-y="20"
-                                                    data-effect="skewright(60,200)" data-delay="" data-duration="500"
-                                                    data-ease="easeOutQuart" data-hide-effect="fade" data-hide-delay="0"
-                                                    data-hide-duration="0"></div>
-                                                  <a href='#latesthostel'
-                                                    class="module-subitem module-subitem-3 ms-layer ms-layer-button btn" data-resize="true"
-                                                    data-origin="ml" data-parallax="0" data-type="button" data-position="normal"
-                                                    data-offset-x="65" data-offset-y="75" data-effect="skewleft(60,200)" data-delay="100"
-                                                    data-duration="500" data-ease="easeOutQuart" data-hide-effect="fade" data-hide-delay="0"
-                                                    data-hide-duration="0"><span>Get Now</span></a>
-                    
-                                                </div>
-                                                <div class="module-item module-item-3 ms-slide" data-delay="2.5">
-                                                  <img data-src="{{ asset('myimages/slider_03.jpg')}}" src="{{ asset('myimages/slider_03.jpg')}}"
-                                                    srcset="{{ asset('myimages/slider_03.jpg')}}" alt="" width="880" height="440" />
-                    
-                    
-                    
-                    
-                                                  <div class="module-subitem module-subitem-1 ms-layer ms-layer-text ms-caption"
-                                                    data-resize="true" data-origin="ml" data-parallax="0" data-type="text"
-                                                    data-position="normal" data-offset-x="30" data-offset-y="-30"
-                                                    data-effect="skewright(60,200)" data-delay="" data-duration="500"
-                                                    data-ease="easeOutQuart" data-hide-effect="fade" data-hide-delay="0"
-                                                    data-hide-duration="0">Choose The Best Out Of The Best</div>
-                                                  <div class="module-subitem module-subitem-2 ms-layer ms-layer-text ms-caption"
-                                                    data-resize="true" data-origin="ml" data-parallax="0" data-type="text"
-                                                    data-position="normal" data-offset-x="30" data-offset-y="20"
-                                                    data-effect="skewright(60,200)" data-delay="" data-duration="500"
-                                                    data-ease="easeOutQuart" data-hide-effect="fade" data-hide-delay="0"
-                                                    data-hide-duration="0"></div>
-                                                  <a href='#latesthostel'
-                                                    class="module-subitem module-subitem-3 ms-layer ms-layer-button btn" data-resize="true"
-                                                    data-origin="ml" data-parallax="0" data-type="button" data-position="normal"
-                                                    data-offset-x="65" data-offset-y="75" data-effect="skewleft(60,200)" data-delay="100"
-                                                    data-duration="500" data-ease="easeOutQuart" data-hide-effect="fade" data-hide-delay="0"
-                                                    data-hide-duration="0"><span>Get Now</span></a>
-                                                </div>
-                                              </div>
+
                                             </div>
-                    
-                                          </div>
                                         </div>
-                                      </div>
+                                    </div>
                                     <div class="grid-col grid-col-content-top-1-3">
                                         <div class="grid-items">
                                             <div class="grid-item grid-item-content-top-1-3-1">
@@ -714,21 +748,21 @@
                                 <div class="grid-item grid-item-bottom-2-1-1">
 
                                 </div>
-                                <!-- <div class="grid-item grid-item-bottom-2-1-2">
-                  <div id="banners-61181fcd3ba8d" class="module module-banners module-banners-204">
-                    <div class="module-body">
-                      <div class="module-item module-item-1">
-                        <a href="indexf110.html?route=product/special">
-                          <img src="image/cache/catalog/journal3/banners/15-210x210.jpg"
-                            srcset="https://www.journal-theme.com/5/image/cache/catalog/journal3/banners/15-210x210.jpg 1x, https://www.journal-theme.com/5/image/cache/catalog/journal3/banners/15-420x420.jpg 2x"
-                            alt="" width="210" height="210" />
-                        </a>
-                      </div>
+                                <div class="grid-item grid-item-bottom-2-1-2">
+                                    <div id="banners-61181fcd3ba8d" class="module module-banners module-banners-204">
+                                        <div class="module-body">
+                                          <div class="module-item module-item-1">
+                                            <a href="https://cttaste.com">
+                                              <img src="{{ asset('myimages/black_friday.jpeg') }}"
+                                                srcset="{{ asset('myimages/black_friday.jpeg') }} 1x, {{ asset('myimages/black_friday.jpeg') }} 2x"
+                                                alt="" width="210" height="210" />
+                                            </a>
+                                          </div>
+                    
+                                        </div>
+                                      </div>
 
-                    </div>
-                  </div>
-
-                </div> -->
+                                </div>
                             </div>
                         </div>
                         <div class="grid-col grid-col-bottom-2-2">
@@ -739,7 +773,7 @@
                                             <div class="tab-container">
                                                 <ul class="nav nav-tabs">
                                                     <li class="tab-1">
-                                                        <a href="/cthome/{{ $school_id }}">Latest</a>
+                                                        <a href="/latest/{{ $school_id }}">Latest</a>
                                                     </li>
                                                     <li class="tab-2">
                                                         <a href="/cheapest/{{ $school_id }}">Cheapest</a>
@@ -777,7 +811,7 @@
                                                                         <a href="{{route("cthostel",[$album->slug,$album->id])}}"
                                                                             class="product-img ">
                                                                             <div>
-                                                                                <img src="https://cthostel.com/cthostel_files/public/hostelimage/{{$album->image  }}"
+                                                                                <img loading="lazy" src="https://cthostel.com/cthostel_files/public/hostelimage/{{$album->image  }}"
                                                                                     data-src="https://cthostel.com/cthostel_files/public/hostelimage/{{$album->image  }}"
                                                                                     data-srcset="https://cthostel.com/cthostel_files/public/hostelimage/{{$album->image  }}"
                                                                                     width="250" height="250"
@@ -835,13 +869,15 @@
                                                                 </div>
                                                             </div>
                                                             @endforeach
-                                                            <div class='col-md-12' style='justify-content:center;align-items:center;display:flex;margin:auto'>
-                              
-                                                                <div style='background-color:white;font-size:15px;padding:5px;border-bottom:3px solid #033533;border-top:1px solid #033533'>
-                                                                        {{ $highest->links('pagination::bootstrap-4') }}
+                                                            <div class='col-md-12'
+                                                                style='justify-content:center;align-items:center;display:flex;margin:auto'>
+
+                                                                <div
+                                                                    style='background-color:white;font-size:15px;padding:5px;border-bottom:3px solid #033533;border-top:1px solid #033533'>
+                                                                    {{ $highest->links('pagination::bootstrap-4') }}
                                                                 </div>
-                                                              
-                                                              </div>
+
+                                                            </div>
                                                         </div>
 
                                                     </div>

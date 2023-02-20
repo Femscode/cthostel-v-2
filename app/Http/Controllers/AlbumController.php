@@ -2,29 +2,30 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\File;
-use Illuminate\Support\Facades\Storage;
-use Illuminate\Http\Request;
-use Illuminate\Support\Str;
-use Illuminate\Support\Facades\Auth;
-use App\Models\roommate;
-use App\Models\Services;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Redirect;
-use Illuminate\Support\Facades\Mail;
-use App\Http\Resources\AlbumResource;
+use Compressor;
+use App\Exception;
+use App\Models\User;
 use App\Models\Album;
 use App\Models\Image;
-use Compressor;
-use App\Models\SpecialRequest;
+use App\Models\Egbami;
+use App\Models\schools;
 use App\Models\Category;
 use App\Models\Feedback;
-use App\Models\Egbami;
-use App\Models\User;
-use App\Models\schools;
-use App\Exception;
+use App\Models\roommate;
+use App\Models\Services;
+use Illuminate\Support\Str;
+use Illuminate\Http\Request;
+use App\Models\SpecialRequest;
 use Nexmo\Laravel\Facade\Nexmo;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Pagination\Paginator;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
+use App\Http\Resources\AlbumResource;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Redirect;
 
 class AlbumController extends Controller
 {
@@ -133,17 +134,14 @@ class AlbumController extends Controller
     public function locationdisplay(Request $request, $id)
     {
         $good = Album::where('category_id', $id)->pluck('school_id')->first();
-
         $data['locations'] = Category::where('school_id', $good)->get();
         $data['school_id'] = $good;
-        $data['searched'] = Album::where('category_id', $id)->where('status', 1)->where('soft_delete', 0)->inRandomOrder()->paginate(20);
-
-        return view('search', $data);
+        $data['searched'] = Album::where('category_id', $id)->where('status', 1)->where('soft_delete', 0)->inRandomOrder()->paginate(16);
+        return view('frontend.search', $data);
     }
 
     public function index($id)
     {
-
         return view('album.index');
     }
     public function bad()
@@ -195,27 +193,26 @@ class AlbumController extends Controller
     }
     public function admin()
     {
-      
+
         $data['user'] = $user = Auth::user();
         $id = $user->id;
-      
-        if($user->type !== 'agent') {
-           return view('technician',$data);
-        }
-        else {
 
-    
-
-        $data['school_id'] = $school_id = Auth::user()->school_id;
-        $data['category'] = Category::where('school_id', $school_id)->get();
-        $data['category2'] = Category::where('school_id', $school_id)->get();
+        if ($user->type !== 'agent') {
+            return view('technician', $data);
+        } else {
 
 
-        $data['user'] = User::find($id);
-        $data['album'] = Album::where('user_id', $id)->where('soft_delete', 0)->get();
-        $data['project'] = Services::where('user_id', Auth::user()->id)->get();
-        $data['hostelimage'] = Image::where('album_id', $id)->get();
-        return view('admin', $data);
+
+            $data['school_id'] = $school_id = Auth::user()->school_id;
+            $data['category'] = Category::where('school_id', $school_id)->get();
+            $data['category2'] = Category::where('school_id', $school_id)->get();
+
+
+            $data['user'] = User::find($id);
+            $data['album'] = Album::where('user_id', $id)->where('soft_delete', 0)->get();
+            $data['project'] = Services::where('user_id', Auth::user()->id)->get();
+            $data['hostelimage'] = Image::where('album_id', $id)->get();
+            return view('admin', $data);
         }
     }
     public function edit(Request $request)
@@ -287,9 +284,9 @@ class AlbumController extends Controller
             'image' => 'required',
             'price' => 'required',
             'hostel_type' => 'required'
-            
+
         ]);
-        
+
         $image = $request->image[0];
         $rand = Str::random(5);
         $imageName = time() . $rand . '.' . $image->extension();
@@ -297,9 +294,9 @@ class AlbumController extends Controller
         $good = $img->resize(500, 300, function ($constraint) {
             $constraint->aspectRatio();
         })->save(public_path('hostelimage') . '/' . $imageName);
-        
+
         $category_name = Category::where('id', $request->category_id)->pluck('name')->first();
-        $description = implode(',',$request->description);
+        $description = implode(',', $request->description);
         // dd($request->all(),$request->image,count($request->image),$imageName,Str::slug('Fas Pel Is'));
         $album = Album::create([
             'name' => $request->name,
@@ -313,23 +310,23 @@ class AlbumController extends Controller
             'image' => $imageName,
             'school_id' => Auth::user()->school_id,
             'hostel_type' => $request->hostel_type
-          ]);
+        ]);
         //   foreach ($request->file('image') as $file) {
-          for ($i = 1; $i< count($request->image); $i++) {
+        for ($i = 1; $i < count($request->image); $i++) {
             $file = $request->image[$i];
-              $rand = Str::random(5);
-              $imageName = time() . $rand . '.' .  $file->extension();
-              $img = Compressor::make($file->path());
-              $good = $img->resize(500, 300, function ($constraint) {
-                  $constraint->aspectRatio();
-              })->save(public_path('images') . '/' . $imageName);
-              $file = new Image;
-              $file->album_id = $album->id;
-              $file->image = $imageName;
-              // dd($file);
-              $file->save();
-          }
-        return redirect()->back()->with('message','Hostel Created Successfully');
+            $rand = Str::random(5);
+            $imageName = time() . $rand . '.' .  $file->extension();
+            $img = Compressor::make($file->path());
+            $good = $img->resize(500, 300, function ($constraint) {
+                $constraint->aspectRatio();
+            })->save(public_path('images') . '/' . $imageName);
+            $file = new Image;
+            $file->album_id = $album->id;
+            $file->image = $imageName;
+            // dd($file);
+            $file->save();
+        }
+        return redirect()->back()->with('message', 'Hostel Created Successfully');
     }
     public function storewithroute(Request $request)
     {
@@ -489,27 +486,26 @@ class AlbumController extends Controller
 
             $albums = Album::find($id);
             $photo = $findAlbum->image;
-            if($request->has('image')) {
+            if ($request->has('image')) {
                 $file = $request->file('image');
                 $file_name = $file->hashName();
                 $current_image = public_path() . '/hostelimage/' . $albums->image;
                 if (file_exists($current_image)) {
-    
+
                     unlink($current_image);
                     $file->move(public_path('hostelimage'), $file_name);
                 } else {
-    
+
                     $file->move(public_path('hostelimage'), $file_name);
                 }
                 $albums->image = $file_name;
             }
-         
+
 
 
             $albums->name = $request->name;
-            if($request->has('description')) {
+            if ($request->has('description')) {
                 $albums->description = $request->description;
-
             }
             $albums->category_id = $request->category_id;
             $albums->price = $request->price;
@@ -519,9 +515,9 @@ class AlbumController extends Controller
 
             $success =  $albums->save();
             if ($success) {
-                return redirect()->back()->with('message','Updated successfully!');
+                return redirect()->back()->with('message', 'Updated successfully!');
                 return redirect()->route('good', [Auth::user()->id]);
-            
+
                 return response()->json($this->getAlbums());
             } else {
                 return "not saved";
@@ -601,27 +597,50 @@ class AlbumController extends Controller
     public function search(Request $request)
     {
         // dd($request->all());
-        if($request->has('school_id') && $request->has('searchinput')) {
-            session()->put('search_school_id',$request->school_id);
-            session()->put('search_searchinput',$request->searchinput);
+        if ($request->has('school_id') && $request->has('searchinput')) {
+            session()->put('search_school_id', $request->school_id);
+            session()->put('search_searchinput', $request->searchinput);
             $school_id = $request->school_id;
             $searchinput = $request->searchinput;
-        }
-        else {
+        } else {
             $school_id = session()->get('search_school_id');
             $searchinput = session()->get('search_searchinput');
         }
 
         $data['locations'] = Category::where('school_id', $school_id)->get();
-        $data['searched'] = $searched = Album::where('status', 1)->orderBy('rank')->where('soft_delete', 0)->where('name', 'like', '%' . $searchinput . '%')
-            ->orWhere('description', 'like', '%' . $searchinput . '%')
-            ->orWhere('price', 'like', '%' . $searchinput . '%')
-            ->orWhere('category_name', 'like', '%' . $searchinput . '%')
+        // $data['searched'] = $searched = Album::where('status', 1)->orderBy('rank')->where('soft_delete', 0)->where('name', 'like', '%' . $searchinput . '%')
+        //     ->orWhere('description', 'like', '%' . $searchinput . '%')
+        //     ->orWhere('price', 'like', '%' . $searchinput . '%')
+        //     ->orWhere('category_name', 'like', '%' . $searchinput . '%')
 
-            ->paginate(20)->withQueryString();
-            
+        //     ->paginate(20)->withQueryString();
+        $search_array = [];
+        $name_search = Album::where('status', 1)->orderBy('rank')->where('soft_delete', 0)->where('name', 'like', '%' . $searchinput . '%')->get();
+        $description_search = Album::where('status', 1)->orderBy('rank')->where('soft_delete', 0)->where('description', 'like', '%' . $searchinput . '%')->get();
+        $price_search = Album::where('status', 1)->orderBy('rank')->where('soft_delete', 0)->where('price', 'like', '%' . $searchinput . '%')->get();
+        $category_search = Album::where('status', 1)->orderBy('rank')->where('soft_delete', 0)->where('category_name', 'like', '%' . $searchinput . '%')->get();
+      
+
+        foreach ($name_search as $sub) {
+            array_push($search_array, $sub);
+        }
+        foreach ($description_search as $sub) {
+            array_push($search_array, $sub);
+        }
+        foreach ($price_search as $sub) {
+            array_push($search_array, $sub);
+        }
+        foreach ($category_search as $sub) {
+            array_push($search_array, $sub);
+        }
+        $search_object = collect($search_array);
+
+        // dd($collection,collect($collection), $search_object);
+        $data['searched'] = $search_object->paginate(20);
+      
+
+      
         $data['school_id'] = $school_id;
-
         return view('frontend.search', $data);
     }
     public function send_mail()
@@ -1039,12 +1058,13 @@ class AlbumController extends Controller
 
         return view('shs', $data);
     }
-    public function deleteuser($id) {
+    public function deleteuser($id)
+    {
         $user = User::find($id);
-        $album = Album::where('user_id',$id)->delete();
-       
+        $album = Album::where('user_id', $id)->delete();
+
         $user->delete();
-        return redirect()->back()->with('message',"User successfully deleted!");
+        return redirect()->back()->with('message', "User successfully deleted!");
     }
 
     public function saveservice(Request $request)
@@ -1060,7 +1080,7 @@ class AlbumController extends Controller
             'type' => 'required'
         ]);
 
-        $data['username'] = $username =  ucwords(str_replace(' ','',$request->name));
+        $data['username'] = $username =  ucwords(str_replace(' ', '', $request->name));
 
         $register = User::create([
             'name' => $request->name,

@@ -676,13 +676,13 @@
                 <div class="grid-item grid-item-bottom-2-1-1">
 
                 </div>
-                <!-- <div class="grid-item grid-item-bottom-2-1-2">
+                <div class="grid-item grid-item-bottom-2-1-2">
                   <div id="banners-61181fcd3ba8d" class="module module-banners module-banners-204">
                     <div class="module-body">
                       <div class="module-item module-item-1">
-                        <a href="indexf110.html?route=product/special">
-                          <img src="image/cache/catalog/journal3/banners/15-210x210.jpg"
-                            srcset="https://www.journal-theme.com/5/image/cache/catalog/journal3/banners/15-210x210.jpg 1x, https://www.journal-theme.com/5/image/cache/catalog/journal3/banners/15-420x420.jpg 2x"
+                        <a href="https://cttaste.com">
+                          <img src="{{ asset('myimages/black_friday.jpeg') }}"
+                            srcset="{{ asset('myimages/black_friday.jpeg') }} 1x, {{ asset('myimages/black_friday.jpeg') }} 2x"
                             alt="" width="210" height="210" />
                         </a>
                       </div>
@@ -690,7 +690,7 @@
                     </div>
                   </div>
 
-                </div> -->
+                </div>
               </div>
             </div>
             <div class="grid-col grid-col-bottom-2-2">
@@ -730,7 +730,7 @@
                                     <a href="{{route("cthostel",[$album->slug,$album->id])}}"
                                       class="product-img ">
                                       <div>
-                                        <img src="https://cthostel.com/cthostel_files/public/hostelimage/{{$album->image  }}" data-src="https://cthostel.com/cthostel_files/public/hostelimage/{{$album->image  }}"
+                                        <img loading="lazy" src="https://cthostel.com/cthostel_files/public/hostelimage/{{$album->image  }}" data-src="https://cthostel.com/cthostel_files/public/hostelimage/{{$album->image  }}"
                                         data-srcset="https://cthostel.com/cthostel_files/public/hostelimage/{{$album->image  }}" width="250" height="250" alt="Hostel Image" title=""
                                         class="img-responsive" />
                                         {{-- <img src="{{asset('hostelimage/'.$album->image)}}" data-src="{{asset('hostelimage/'.$album->image)}}"

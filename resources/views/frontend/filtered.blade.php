@@ -21319,7 +21319,7 @@
 
                                     <a href="{{route('cthostel',[$album->slug,$album->id])}}" class="product-img ">
                                       <div>
-                                        <img
+                                        <img loading="lazy"
                                           src="https://cthostel.com/cthostel_files/public/hostelimage/{{$album->image  }}"
                                           data-src="https://cthostel.com/cthostel_files/public/hostelimage/{{$album->image  }}"
                                           data-srcset="https://cthostel.com/cthostel_files/public/hostelimage/{{$album->image  }}"

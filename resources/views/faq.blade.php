@@ -4,22 +4,24 @@
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 
 <head>
-    <title>CTHostel</title>
+    <title>CTHostel | FAQ</title>
+    <meta name="CTHostel"
+        content="...the safest place to get it cheaper without getting scammed." />
     <meta name="description"
-        content="The most advanced Bootstrap Admin Theme on Themeforest trusted by 94,000 beginners and professionals. Multi-demo, Dark Mode, RTL support and complete React, Angular, Vue &amp; Laravel versions. Grab your copy now and get life-time updates for free." />
+        content="...the safest place to get it cheaper without getting scammed." />
     <meta name="keywords"
-        content="Metronic, bootstrap, bootstrap 5, Angular, VueJs, React, Laravel, admin themes, web design, figma, web development, free templates, free admin themes, bootstrap theme, bootstrap template, bootstrap dashboard, bootstrap dak mode, bootstrap button, bootstrap datepicker, bootstrap timepicker, fullcalendar, datatables, flaticon" />
+        content="...the safest place to get it cheaper without getting scammed." />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta charset="utf-8" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:type" content="article" />
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta property="og:title"
-        content="Metronic - Bootstrap 5 HTML, VueJS, React, Angular &amp; Laravel Admin Dashboard Theme" />
-    <meta property="og:url" content="https://keenthemes.com/metronic" />
-    <meta property="og:site_name" content="Keenthemes | Metronic" />
-    <link rel="canonical" href="https://preview.keenthemes.com/metronic8" />
-    <link href="{{ asset('myimages/fav.png') }}" src='{{ asset('myimages/fav.png') }}' rel="icon" />
+        content="...the safest place to get it cheaper without getting scammed." />
+    <meta property="og:url" content="https://cthostel.com" />
+    <meta property="og:site_name" content="CTHostel | Dashboard" />
+    <link rel="canonical" href="https://cthostel.com" />
+    <link href="{{ asset('myimages/fav.png') }}" src='{{ asset(' myimages/fav.png') }}' rel="icon" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
     <!--end::Fonts-->
     <!--begin::Page Vendor Stylesheets(used by this page)-->
@@ -29,6 +31,7 @@
     <!--begin::Global Stylesheets Bundle(used by all pages)-->
     <link href="{{ asset('backend/plugins/global/plugins.bundle.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('backend/css/style.bundle.css') }}" rel="stylesheet" type="text/css" />
+    @livewireStyles
     <!--end::Global Stylesheets Bundle-->
     <!--Begin::Google Tag Manager -->
     <script>
@@ -113,101 +116,7 @@
                 </div>
                 <!--end::Aside menu-->
                 <!--begin::Footer-->
-                <div class="aside-footer flex-column-auto" id="kt_aside_footer">
-                    <!--begin::Menu-->
-                    <div class="d-flex justify-content-center">
-                        <button type="button" class="btn btm-sm btn-icon btn-active-color-primary"
-                            data-kt-menu-trigger="click" data-kt-menu-overflow="true" data-kt-menu-placement="top-start"
-                            data-kt-menu-flip="top-end" data-bs-toggle="tooltip" data-bs-placement="right"
-                            data-bs-dismiss="click" title="Quick actions">
-                            <!--begin::Svg Icon | path: icons/duotone/Communication/Dial-numbers.svg-->
-                            <span class="svg-icon svg-icon-1">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24"
-                                    version="1.1">
-                                    <rect fill="#000000" opacity="0.3" x="4" y="4" width="4" height="4" rx="2" />
-                                    <rect fill="#000000" x="4" y="10" width="4" height="4" rx="2" />
-                                    <rect fill="#000000" x="10" y="4" width="4" height="4" rx="2" />
-                                    <rect fill="#000000" x="10" y="10" width="4" height="4" rx="2" />
-                                    <rect fill="#000000" x="16" y="4" width="4" height="4" rx="2" />
-                                    <rect fill="#000000" x="16" y="10" width="4" height="4" rx="2" />
-                                    <rect fill="#000000" x="4" y="16" width="4" height="4" rx="2" />
-                                    <rect fill="#000000" x="10" y="16" width="4" height="4" rx="2" />
-                                    <rect fill="#000000" x="16" y="16" width="4" height="4" rx="2" />
-                                </svg>
-                            </span>
-                            <!--end::Svg Icon-->
-                        </button>
-                        <!--begin::Menu 2-->
-                        <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg-light-primary fw-bold w-200px"
-                            data-kt-menu="true">
-                            <!--begin::Menu item-->
-                            <div class="menu-item px-3">
-                                <div class="menu-content fs-6 text-dark fw-bolder px-3 py-4">Quick Actions</div>
-                            </div>
-                            <!--end::Menu item-->
-                            <!--begin::Menu separator-->
-                            <div class="separator mb-3 opacity-75"></div>
-                            <!--end::Menu separator-->
-                            <!--begin::Menu item-->
-                            <div class="menu-item px-3">
-                                <a href="#" class="menu-link px-3">New Ticket</a>
-                            </div>
-                            <!--end::Menu item-->
-                            <!--begin::Menu item-->
-                            <div class="menu-item px-3">
-                                <a href="#" class="menu-link px-3">New Customer</a>
-                            </div>
-                            <!--end::Menu item-->
-                            <!--begin::Menu item-->
-                            <div class="menu-item px-3" data-kt-menu-trigger="hover"
-                                data-kt-menu-placement="right-start" data-kt-menu-flip="bottom, top">
-                                <!--begin::Menu item-->
-                                <a href="#" class="menu-link px-3">
-                                    <span class="menu-title">New Group</span>
-                                    <span class="menu-arrow"></span>
-                                </a>
-                                <!--end::Menu item-->
-                                <!--begin::Menu sub-->
-                                <div class="menu-sub menu-sub-dropdown w-175px py-4">
-                                    <!--begin::Menu item-->
-                                    <div class="menu-item px-3">
-                                        <a href="#" class="menu-link px-3">Admin Group</a>
-                                    </div>
-                                    <!--end::Menu item-->
-                                    <!--begin::Menu item-->
-                                    <div class="menu-item px-3">
-                                        <a href="#" class="menu-link px-3">Staff Group</a>
-                                    </div>
-                                    <!--end::Menu item-->
-                                    <!--begin::Menu item-->
-                                    <div class="menu-item px-3">
-                                        <a href="#" class="menu-link px-3">Member Group</a>
-                                    </div>
-                                    <!--end::Menu item-->
-                                </div>
-                                <!--end::Menu sub-->
-                            </div>
-                            <!--end::Menu item-->
-                            <!--begin::Menu item-->
-                            <div class="menu-item px-3">
-                                <a href="#" class="menu-link px-3">New Contact</a>
-                            </div>
-                            <!--end::Menu item-->
-                            <!--begin::Menu separator-->
-                            <div class="separator mt-3 opacity-75"></div>
-                            <!--end::Menu separator-->
-                            <!--begin::Menu item-->
-                            <div class="menu-item px-3">
-                                <div class="menu-content px-3 py-3">
-                                    <a class="btn btn-primary btn-sm px-4" href="#">Generate Reports</a>
-                                </div>
-                            </div>
-                            <!--end::Menu item-->
-                        </div>
-                        <!--end::Menu 2-->
-                    </div>
-                    <!--end::Menu-->
-                </div>
+               
                 <!--end::Footer-->
             </div>
             <!--end::Aside-->
@@ -1382,7 +1291,7 @@
 													<!--begin::Body-->
 													<div id="kt_job_4_2" class="collapse fs-6 ms-1">
 														<!--begin::Text-->
-														<div class="mb-4 text-gray-600 fw-bold fs-6 ps-10">To register as an agent, visit <a href='https://cthostel.com'>www.cthostel.com/register</a> and start creating hostels.</div>
+														<div class="mb-4 text-gray-600 fw-bold fs-6 ps-10">To register as an agent, visit <a href='https://cthostel.com'>www.cthostel.com/register</a>. Upload a means of identity (School ID Card, Voter's Card or NIN) and start creating hostels.</div>
 														<!--end::Text-->
 													</div>
 													<!--end::Content-->
@@ -1423,7 +1332,7 @@
 													<!--begin::Body-->
 													<div id="kt_job_4_3" class="collapse fs-6 ms-1">
 														<!--begin::Text-->
-														<div class="mb-4 text-gray-600 fw-bold fs-6 ps-10">CTHostels provide adequate marketing techniques to help increase the publicity of your hostel. First, we make your hostel globally visible and available, we run ads on other popular websites, and we connect to the most popular influencers in each school to help with publicity.</div>
+														<div class="mb-4 text-gray-600 fw-bold fs-6 ps-10">CTHostels provide adequate marketing techniques to help increase the publicity of your hostel. First, we make your hostel globally visible and available, we run ads on other popular websites, and we connect to the most popular influencers in each school to help reach a greater audience.</div>
 														<!--end::Text-->
 													</div>
 													<!--end::Content-->
@@ -1464,7 +1373,7 @@
 													<!--begin::Body-->
 													<div id="kt_job_4_4" class="collapse fs-6 ms-1">
 														<!--begin::Text-->
-														<div class="mb-4 text-gray-600 fw-bold fs-6 ps-10">CTHostels provide each agent with their own personal page that comprises of hostel only created by them.</div>
+														<div class="mb-4 text-gray-600 fw-bold fs-6 ps-10">Yes, CTHostels provide each agent with their own personal page that comprises of hostels only created by them. This could serve as a personal portfolio or website to showcase all hostels created by you.</div>
 														<!--end::Text-->
 													</div>
 													<!--end::Content-->
@@ -1511,7 +1420,7 @@
 													<!--begin::Body-->
 													<div id="kt_job_5_1" class="collapse show fs-6 ms-1">
 														<!--begin::Text-->
-														<div class="mb-4 text-gray-600 fw-bold fs-6 ps-10">All agents from CTHostel are reliable, but mind you, always access your hostel before making payments or find someone you know to do it for you.</div>
+														<div class="mb-4 text-gray-600 fw-bold fs-6 ps-10">All agents from CTHostel are reliable,it is advisable to always access your hostel before making payments or find someone you know to do it for you in case you are not available.</div>
 														<!--end::Text-->
 													</div>
 													<!--end::Content-->
@@ -1593,7 +1502,7 @@
 													<!--begin::Body-->
 													<div id="kt_job_5_3" class="collapse fs-6 ms-1">
 														<!--begin::Text-->
-														<div class="mb-4 text-gray-600 fw-bold fs-6 ps-10">CTHostel provides you an option to get any hostel of your choice even if you have half of the hostel fee,all you need to do is to request for roommate for that particular hostel on our portal, your request will be kept with us and we will notify you immediatley once we get a roommate for you.</div>
+														<div class="mb-4 text-gray-600 fw-bold fs-6 ps-10">CTHostel provides you an option to get any hostel of your choice even if you have half of the hostel fee,all you need to do is to request for roommate for that particular hostel on our portal, your request will be kept with us and we will notify you immediatley we get a roommate for you.</div>
 														<!--end::Text-->
 													</div>
 													<!--end::Content-->
@@ -1634,7 +1543,7 @@
 													<!--begin::Body-->
 													<div id="kt_job_5_4" class="collapse fs-6 ms-1">
 														<!--begin::Text-->
-														<div class="mb-4 text-gray-600 fw-bold fs-6 ps-10">CTHostel helps in hostel price regulation, we make sure that you are not getting overcharged for any hostel of your choice, otherwise, we suggest a better hostel for you that you can get with that same amount.</div>
+														<div class="mb-4 text-gray-600 fw-bold fs-6 ps-10">CTHostel helps in hostel price regulation, we display the best prices of every hostel and we suggest better alternative hostels for you that you can get with almost same amount.</div>
 														<!--end::Text-->
 													</div>
 													<!--end::Content-->
@@ -1937,7 +1846,7 @@
 													<!--begin::Body-->
 													<div id="kt_job_7_3" class="collapse fs-6 ms-1">
 														<!--begin::Text-->
-														<div class="mb-4 text-gray-600 fw-bold fs-6 ps-10">First, the hostel which you are looking a room mate for must be in our website, you can then search the hostel name on our website and click on request for roommate in the room mate section, you will also be able to see list of students looking for room mates for that same hostel and you can either call or message them directly.</div>
+														<div class="mb-4 text-gray-600 fw-bold fs-6 ps-10">First, search the hostel name you are looking for a room mate for on our website, then click on request for roommate in the room mate section. You will be able to see list of students looking for room mates for that same hostel and you can either call or message them directly, or make a new request.</div>
 														<!--end::Text-->
 													</div>
 													<!--end::Content-->
@@ -2053,7 +1962,7 @@
                         class="container-fluid d-flex flex-column flex-md-row align-items-center justify-content-between">
                         <!--begin::Copyright-->
                         <div class="text-dark order-2 order-md-1">
-                            <span class="text-muted fw-bold me-1">2021©</span>
+                            <span class="text-muted fw-bold me-1">Copyright © <?php echo Date('Y');?></span>
                             <a target="_blank"
                                 class="text-gray-800 text-hover-primary">CTHostel</a>
                         </div>
