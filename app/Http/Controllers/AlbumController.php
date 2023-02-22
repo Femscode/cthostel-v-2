@@ -63,7 +63,7 @@ class AlbumController extends Controller
 
         $data['locations'] = Category::where('school_id', $data['school_id'])->get();
         if ($user->type == 'agent') {
-            return view('agentpage', $data);
+            return view('frontend.agentpage', $data);
         } else {
             $data['projects'] = Services::where('user_id', $id)->get();
             $data['projectimages'] = DB::table('serviceimages')->where('user_id', $id)->get();

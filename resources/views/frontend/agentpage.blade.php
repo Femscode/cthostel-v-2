@@ -2,8 +2,7 @@
 <html dir="ltr" lang="en"
   class="desktop win mozilla oc30 is-guest route-common-home store-0 skin-1 desktop-header-active mobile-sticky layout-1 two-column column-left column-right"
   data-jb="b1c2c768" data-jv="3.1.8" data-ov="3.0.3.7">
-<!-- Mirrored from www.journal-theme.com/5/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 19 Aug 2021 19:03:01 GMT -->
-<!-- Added by HTTrack -->
+
 <meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
 
 <head typeof="og:website">
@@ -845,10 +844,12 @@
 
                                     <a href='{{route("cthostel",[$album->slug,$album->id])}}' class="product-img ">
                                       <div>
-                                        <img src="{{asset('hostelimage/'.$album->image)}}"
-                                          data-src="{{asset('hostelimage/'.$album->image)}}"
-                                          data-srcset="{{asset('hostelimage/'.$album->image)}}" width="250" height="250"
-                                          alt="CTHostel" title="" class="img-responsive" />
+                                        <img loading="lazy" src="https://cthostel.com/cthostel_files/public/hostelimage/{{$album->image  }}"
+                                        data-src="https://cthostel.com/cthostel_files/public/hostelimage/{{$album->image  }}"
+                                        data-srcset="https://cthostel.com/cthostel_files/public/hostelimage/{{$album->image  }}"
+                                        width="250" height="250"
+                                        alt="Hostel Image" title=""
+                                        class="img-responsive" />
 
                                       </div>
                                     </a>
