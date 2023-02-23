@@ -4,24 +4,28 @@
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 
 <head>
-    <title>CTHostel</title>
+    <title>CTHostel | Admin</title>
     <meta name="description"
-        content="The most advanced Bootstrap Admin Theme on Themeforest trusted by 94,000 beginners and professionals. Multi-demo, Dark Mode, RTL support and complete React, Angular, Vue &amp; Laravel versions. Grab your copy now and get life-time updates for free." />
+        content="CTHostel | SuperAdmin" />
     <meta name="keywords"
-        content="Metronic, bootstrap, bootstrap 5, Angular, VueJs, React, Laravel, admin themes, web design, figma, web development, free templates, free admin themes, bootstrap theme, bootstrap template, bootstrap dashboard, bootstrap dak mode, bootstrap button, bootstrap datepicker, bootstrap timepicker, fullcalendar, datatables, flaticon" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+	content="CTHostel | SuperAdmin" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta charset="utf-8" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:type" content="article" />
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta property="og:title"
-        content="Metronic - Bootstrap 5 HTML, VueJS, React, Angular &amp; Laravel Admin Dashboard Theme" />
-    <meta property="og:url" content="https://keenthemes.com/metronic" />
-    <meta property="og:site_name" content="Keenthemes | Metronic" />
-    <link rel="canonical" href="https://preview.keenthemes.com/metronic8" />
+        content="CTHostel | SuperAdmin" />
+    <meta property="og:url" content="https://cthostel.com" />
+        <link href="/plugins/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css">
+    <link href="/plugins/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css">
+    <!-- Responsive datatable examples -->
+    <link href="/plugins/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css">
+
+    <meta property="og:site_name" content="CTHostel | Admin" />
+    <link rel="canonical" href="https://cthostel.com" />
     <link href="{{ asset('myimages/fav.png') }}" src='{{ asset(' myimages/fav.png') }}' rel="icon" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
-    
     <!--end::Fonts-->
     <!--begin::Page Vendor Stylesheets(used by this page)-->
     <link href="{{ asset('backend/plugins/custom/fullcalendar/fullcalendar.bundle.css" rel="stylesheet') }}"
@@ -1241,7 +1245,7 @@
                                     <!--begin::Wrapper-->
                                     <div class="d-flex flex-column align-items-start justift-content-center flex-equal me-5">
                                         <!--begin::Title-->
-                                        <h1 class="fw-bolder fs-4 fs-lg-1 text-gray-800 mb-5 mb-lg-10">SUG DASHBOARD</h1>
+                                        <h1 class="fw-bolder fs-4 fs-lg-1 text-gray-800 mb-5 mb-lg-10">ADMIN DASHBOARD</h1>
                                         <!--end::Title-->
                                         <!--begin::Input group-->
                                         <div class="position-relative w-100">
@@ -1256,7 +1260,7 @@
                                                 </svg>
                                             </span>
                                             <!--end::Svg Icon-->
-                                            <input type="text" class="form-control fs-4 py-4 ps-14 text-gray-700 placeholder-gray-400 mw-500px" name="search" value="" placeholder="Search" />
+                                            <input type="text" class="form-control fs-4 py-4 ps-14 text-gray-700 placeholder-gray-400 mw-500px" name="search" value="" placeholder="Search..." />
                                         </div>
                                         <!--end::Input group-->
                                     </div>
@@ -1264,7 +1268,7 @@
                                     <!--begin::Wrapper-->
                                     <div class="flex-equal d-flex justify-content-center align-items-end ms-5">
                                         <!--begin::Illustration-->
-                                        <img src="myimages/funaablogo.jpg" alt="" class="mw-100 mh-125px mh-lg-275px mb-lg-n12" />
+                                        <img src="/myimages/funaablogo.jpg" alt="" class="mw-100 mh-125px mh-lg-275px mb-lg-n12" />
                                         <!--end::Illustration-->
                                     </div>
                                     <!--end::Wrapper-->
@@ -1276,30 +1280,28 @@
                                     <ul class="nav flex-wrap border-transparent fw-bolder">
                                         <!--begin::Nav item-->
                                         <li class="nav-item my-1">
-                                            <a class="btn btn-color-gray-600 btn-active-white btn-active-color-primary fw-boldest fs-8 fs-lg-base nav-link px-3 px-lg-8 mx-1 text-uppercase" href='sug' >Student Complains</a>
+                                            <a class="btn btn-color-gray-600 btn-active-white btn-active-color-primary fw-boldest fs-8 fs-lg-base nav-link px-3 px-lg-8 mx-1 text-uppercase " href='/sug' >Student Complains</a>
                                         </li>
                                         <!--end::Nav item-->
                                         <!--begin::Nav item-->
                                         <li class="nav-item my-1">
-                                            <a class="btn btn-color-gray-600 btn-active-white btn-active-color-primary fw-boldest fs-8 fs-lg-base nav-link px-3 px-lg-8 mx-1 text-uppercase" href="/agents">All Agents</a>
+                                            <a class="btn btn-color-gray-600 btn-active-white btn-active-color-primary fw-boldest fs-8 fs-lg-base nav-link px-3 px-lg-8 mx-1 text-uppercase @if($active == 'agent') active @endif" href="/agents">All Agents</a>
                                         </li>
                                         <!--end::Nav item-->
                                         <!--begin::Nav item-->
                                         <li class="nav-item my-1">
-                                            <a class="btn btn-color-gray-600 btn-active-white btn-active-color-primary fw-boldest fs-8 fs-lg-base nav-link px-3 px-lg-8 mx-1 text-uppercase active" href="/hostels">All Hostels</a>
+                                            <a class="btn btn-color-gray-600 btn-active-white btn-active-color-primary fw-boldest fs-8 fs-lg-base nav-link px-3 px-lg-8 mx-1 text-uppercase @if($active == 'hostel') active @endif" href="/hostels">All Hostels</a>
                                         </li>
                                         <!--end::Nav item-->
                                         <!--begin::Nav item-->
                                         <li class="nav-item my-1">
-                                            <a class="btn btn-color-gray-600 btn-active-white btn-active-color-primary fw-boldest fs-8 fs-lg-base nav-link px-3 px-lg-8 mx-1 text-uppercase" href="/students">All Students</a>
+                                            <a class="btn btn-color-gray-600 btn-active-white btn-active-color-primary fw-boldest fs-8 fs-lg-base nav-link px-3 px-lg-8 mx-1 text-uppercase @if($active == 'student') active @endif" href="/students">All Students</a>
                                         </li>
                                         <!--end::Nav item-->
                                         <!--end::Nav item-->
                                     </ul>
                                     <!--end::Nav-->
                                     <!--begin::Action-->
-                                    <a href="#" data-bs-toggle="modal" data-bs-target="#kt_modal_new_ticket" class="btn btn-primary fw-bolder fs-8 fs-lg-base">Message Agents</a>
-                                    <a href="#" data-bs-toggle="modal" data-bs-target="#kt_modal_new_ticket2" class="btn btn-success fw-bolder fs-8 fs-lg-base">Message Students</a>
                                     <!--end::Action-->
                                 </div>
                                 <!--end::Hero nav-->
@@ -1314,91 +1316,7 @@
                                     <!--begin::Intro-->
                                     <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
                                         <!--begin::Container-->
-                                        <div id="kt_content_container" class="container">
-                                            <!--begin::Row-->
-                                            <div class="g-5 gx-xxl-8">
-                                                <!--begin::Tables Widget 10-->
-                                                <div class="card">
-                                                    <!--begin::Header-->
-                                                    <div class="card-header border-0 pt-5">
-                                                        <h4>All Hostels</h4>
-                                                        <div class="card-toolbar">
-                                                            <!--begin::Menu-->
-                                                            <button type="button"
-                                                                class="btn btn-sm btn-icon btn-color-primary btn-active-light-primary"
-                                                                data-kt-menu-trigger="click"
-                                                                data-kt-menu-placement="bottom-end"
-                                                                data-kt-menu-flip="top-end">
-                                                                <!--begin::Svg Icon | path: icons/duotone/Layout/Layout-4-blocks-2.svg-->
-                                                                <span class="svg-icon svg-icon-2">
-                                                                    <svg xmlns="http://www.w3.org/2000/svg"
-                                                                        xmlns:xlink="http://www.w3.org/1999/xlink"
-                                                                        width="24px" height="24px" viewBox="0 0 24 24"
-                                                                        version="1.1">
-                                                                        <g stroke="none" stroke-width="1" fill="none"
-                                                                            fill-rule="evenodd">
-                                                                            <rect x="5" y="5" width="5" height="5"
-                                                                                rx="1" fill="#000000" />
-                                                                            <rect x="14" y="5" width="5" height="5"
-                                                                                rx="1" fill="#000000" opacity="0.3" />
-                                                                            <rect x="5" y="14" width="5" height="5"
-                                                                                rx="1" fill="#000000" opacity="0.3" />
-                                                                            <rect x="14" y="14" width="5" height="5"
-                                                                                rx="1" fill="#000000" opacity="0.3" />
-                                                                        </g>
-                                                                    </svg>
-                                                                </span>
-                                                                <!--end::Svg Icon-->
-                                                            </button>
-
-                                                        </div>
-                                                    </div>
-                                                    <!--end::Header-->
-                                                    <!--begin::Body-->
-
-                                                    <!--begin::Table container-->
-                                                    <div class="table-responsive">
-                                                        <!--begin::Table-->
-                                                        <table id='datatable' class="table table-row-dashed table-row-gray-300 align-middle gs-0 gy-4">
-                                                            <!--begin::Table head-->
-                                                            <thead>
-                                                                <tr class="border-0">
-
-                                                                    <th><b>Hostel Name</b></th>
-                                                                    <th><b>Price</b></th>
-                                                                    <th><b>location</b></th>
-                                                                    <th><b>Complaint</b></th>
-                                                                    <th><b>Call Agent</b></th>
-                                                                </tr>
-                                                            </thead>
-                                                            <!--end::Table head-->
-                                                            <!--begin::Table body-->
-                                                            <tbody>
-                                                                @foreach($hostels as $user)
-                                                                <tr>
-                                                                    <td>{{$user->name}}</td>
-                                                                    <td>₦{{number_format($user->price,2)}}</td>
-                                                                    <td>{{$user->category->name ?? ""}}</td>
-                                                                    <td>0</td>
-                                                                    <td><a class='btn btn-success'
-                                                                            href='tel:{{$user->user->phone}}'>Call</a></td>
-                                                                </tr>
-                                                                @endforeach
-
-                                                            </tbody>
-                                                            <!--end::Table body-->
-                                                        </table>
-                                                        <!--end::Table-->
-                                                    </div>
-                                                    <!--end::Table container-->
-
-                                                    <!--begin::Body-->
-                                                </div>
-                                                <!--end::Tables Widget 10-->
-                                            </div>
-
-                                            <!--end::Row-->
-                                        </div>
+                                      @yield('content')
                                         <!--end::Container-->
                                     </div>
                                 </div>
@@ -1512,8 +1430,6 @@
     <!--begin::Javascript-->
     <!--begin::Global Javascript Bundle(used by all pages)-->
 
-    <script src='https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js'></script>
-    <link rel='stylesheet' href='https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css'/>
 
     <script src="{{ asset('backend/plugins/global/plugins.bundle.js') }}"></script>
     <script src="{{ asset('backend/js/scripts.bundle.js') }}"></script>
@@ -1537,6 +1453,15 @@
         <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5FS8GGP" height="0" width="0"
             style="display:none;visibility:hidden"></iframe>
     </noscript>
+    <script src='https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js'></script>
+<link rel='stylesheet' href='https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css'/>
+
+    <script>
+        var oTable = $('#datatable').DataTable();   //using Capital D, which is mandatory to retrieve "api" datatables' object, latest jquery Datatable
+       $('#myInput').keyup(function(){
+             oTable.search($(this).val()).draw() ;
+       });
+           </script>
     <!--End::Google Tag Manager (noscript) -->
 </body>
 <!--end::Body-->

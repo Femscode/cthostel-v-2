@@ -1580,17 +1580,17 @@
                                                     <!--begin::Table container-->
                                                     <div class="table-responsive">
                                                         <!--begin::Table-->
-                                                        <table
+                                                        <table id='datatable'
                                                             class="table table-row-dashed table-row-gray-300 align-middle gs-0 gy-4">
                                                             <!--begin::Table head-->
                                                             <thead>
                                                                 <tr class="border-0">
 
                                                                     <th><b>Student Name</b></th>
-                                                                    <th><b>Phone</b></th>
                                                                     <th><b>Hostel Name</b></th>
                                                                     <th><b>Complaint</b></th>
                                                                     <th><b>Call Student</b></th>
+                                                                    <th><b>Message Student</b></th>
                                                                 </tr>
                                                             </thead>
                                                             <!--end::Table head-->
@@ -1599,11 +1599,12 @@
                                                                 @foreach($feedbacks as $user)
                                                                 <tr>
                                                                     <td>{{$user->name}}</td>
-                                                                    <td>{{$user->phone}}</td>
                                                                     <td>{{$user->hostel_name}}</td>
                                                                     <td>{{$user->comment}}</td>
-                                                                    <td><a class='btn btn-success'
+                                                                    <td><a class='btn btn-info btn-sm'
                                                                             href='tel:{{$user->phone}}'>Call</a></td>
+                                                                    <td><a class='btn btn-success btn-sm'
+                                                                            href='https://wa.me/234{{substr($user->phone,1)}}'>Message</a></td>
                                                                 </tr>
                                                                 @endforeach
 
@@ -1757,6 +1758,15 @@
         <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5FS8GGP" height="0" width="0"
             style="display:none;visibility:hidden"></iframe>
     </noscript>
+    <script src='https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js'></script>
+<link rel='stylesheet' href='https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css'/>
+
+    <script>
+        var oTable = $('#datatable').DataTable();   //using Capital D, which is mandatory to retrieve "api" datatables' object, latest jquery Datatable
+       $('#myInput').keyup(function(){
+             oTable.search($(this).val()).draw() ;
+       });
+           </script>
     <!--End::Google Tag Manager (noscript) -->
 </body>
 <!--end::Body-->

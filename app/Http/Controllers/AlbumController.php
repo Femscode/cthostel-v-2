@@ -280,18 +280,39 @@ class AlbumController extends Controller
     }
     public function students()
     {
-        $data['students'] = Feedback::latest()->get();
-        return view('students', $data);
+        $data['active'] = 'student';
+        $user = Auth::user();
+        if($user->email == 'fasanyafemi@gmail.com') {
+            $data['students'] = saveUser::latest()->get();
+        }
+        else {
+            $data['students'] = saveUser::where('school_id',$user->school_id)->latest()->get();
+        }
+        return view('admin.students', $data);
     }
     public function hostels()
     {
-        $data['hostels'] = Album::inRandomOrder()->where('school_id', 1)->get();
-        return view('hostels', $data);
+        $user = Auth::user();
+        $data['active'] = 'hostel';
+        if($user->email == 'fasanyafemi@gmail.com') {
+            $data['hostels'] = Album::inRandomOrder()->get();
+        }
+        else {
+            $data['hostels'] = Album::inRandomOrder()->where('school_id', $user->school_id)->get();
+        }
+        return view('admin.hostels', $data);
     }
     public function agents()
     {
-        $data['agents'] = User::where('school_id', 1)->latest()->get();
-        return view('agents', $data);
+        $user = Auth::user();
+        $data['active'] = 'agent';
+        if($user->email == 'fasanyafemi@gmail.com') {
+            $data['agents'] = User::where('type','agent')->latest()->get();
+        }
+        else {
+            $data['agents'] = User::where('school_id', $user->school_id)->where('type','agent')->latest()->get();
+        }
+        return view('admin.agents', $data);
     }
 
     public function store(Request $request)
