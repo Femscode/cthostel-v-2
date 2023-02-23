@@ -2,8 +2,10 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Album;
+use App\Models\schools;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class saveUser extends Model
 {
@@ -15,6 +17,6 @@ class saveUser extends Model
         return $this->belongsTo(Album::class);
     }
     public function school() {
-        return $this->belongsTo(Schools::class);
+        return $this->belongsTo(schools::class);
     }
 }
