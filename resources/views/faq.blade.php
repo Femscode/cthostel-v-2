@@ -1635,7 +1635,7 @@
 													<!--begin::Body-->
 													<div id="kt_job_6_2" class="collapse fs-6 ms-1">
 														<!--begin::Text-->
-														<div class="mb-4 text-gray-600 fw-bold fs-6 ps-10">No, CTHostel do not support that, you can only create an hostel in your institution, but if there is need to create an hostel for another institution, you will need to register a new account and select the new institution.</div>
+														<div class="mb-4 text-gray-600 fw-bold fs-6 ps-10">Yes, CTHostel now support creation of hostels in other institutions, so far you in charge of that hostel.</div>
 														<!--end::Text-->
 													</div>
 													<!--end::Content-->

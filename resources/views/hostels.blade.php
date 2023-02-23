@@ -1378,7 +1378,7 @@
                                                                 <tr>
                                                                     <td>{{$user->name}}</td>
                                                                     <td>₦{{number_format($user->price,2)}}</td>
-                                                                    <td>{{$user->category->name}}</td>
+                                                                    <td>{{$user->category->name ?? ""}}</td>
                                                                     <td>0</td>
                                                                     <td><a class='btn btn-success'
                                                                             href='tel:{{$user->user->phone}}'>Call</a></td>

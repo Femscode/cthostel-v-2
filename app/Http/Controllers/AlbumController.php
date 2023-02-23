@@ -12,6 +12,7 @@ use App\Models\schools;
 use App\Models\Category;
 use App\Models\Feedback;
 use App\Models\roommate;
+use App\Models\saveUser;
 use App\Models\Services;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
@@ -74,16 +75,33 @@ class AlbumController extends Controller
         //    dd($agent);
     }
 
-    public function counter($id)
+    public function counter(Request $request)
     {
-
-        $album = Album::find($id);
+        // dd($request->all());
+        $this->validate($request, [
+            'album_id' => 'required',
+            'type' => 'required',
+            'name' => 'required',
+            'phone' => 'required|min:10|max:14',
+        ]);
+        $album = Album::find($request->album_id);
         $user = User::find($album->user_id);
         $user->new_clicks += 1;
         $user->save();
+        saveUser::create([
+            'name' => $request->name,
+            'phone' => $request->phone,
+            'school_id' => $user->school_id,
+            'hostel_id' => $request->album_id,
+        ]);
         $number = substr($album->user->phone, 1);
+        if($request->type == 'message') {
+            return redirect()->away('https://wa.me/234' . $number . '?text=HOSTEL%20REQUEST%20FOR%20CTHOSTEL.%0aInstitution:' . $album->school->name . '%0aHostel%20name:%20(' . $album->name . ')%0aHostel%20Price:' . $album->price . '%0aLocation:' . $album->category->name . '%0aAgent%20in%20charge:' . $album->user->name . '%0a(Input%20other%20message%20here)%20');
+        }
+        else {
+            return redirect()->away('tel:' . $album->user->phone);
+        }
 
-        return redirect()->away('https://wa.me/234' . $number . '?text=HOSTEL%20REQUEST%20FOR%20CTHOSTEL.%0aInstitution:' . $album->school->name . '%0aHostel%20name:%20(' . $album->name . ')%0aHostel%20Price:' . $album->price . '%0aLocation:' . $album->category->name . '%0aAgent%20in%20charge:' . $album->user->name . '%0a(Input%20other%20message%20here)%20');
         // return redirect()->away('https://wa.me/234{{substr($album->user->phone,1)}}?text=Hi%2C%20my%20name%20is%20%28Input%20your%20name%29.%0aHOSTEL%20REQUEST%20FOR%20CTHOSTEL.%0aInstitution:{{$album->school->name}}%0aHostel%20name:%20({{$album->name}})%0aHostel%20Price:{{$album->price}}%0aLocation:{{$album->category->name}}%0aAgent%20in%20charge:{{$album->user->name}}%0a(Input%20other%20message%20here)%20');
     }
     public function callcounter($id)
@@ -198,7 +216,7 @@ class AlbumController extends Controller
         $id = $user->id;
 
         if ($user->type !== 'agent') {
-            return view('technician', $data);
+            return view('technician.index', $data);
         } else {
 
 
@@ -206,6 +224,7 @@ class AlbumController extends Controller
             $data['school_id'] = $school_id = Auth::user()->school_id;
             $data['category'] = Category::where('school_id', $school_id)->get();
             $data['category2'] = Category::where('school_id', $school_id)->get();
+            $data['schools'] = Schools::all();
 
 
             $data['user'] = User::find($id);
@@ -220,6 +239,8 @@ class AlbumController extends Controller
         $id = $request->id;
 
         $album = Album::find($id);
+        $album['category_name'] = $album->category->name;
+        // dd($album);
 
         return $album;
         // return view('album.edit',compact('album'));
@@ -278,13 +299,13 @@ class AlbumController extends Controller
 
         $this->validate($request, [
             'name' => 'required|min:3|max:35',
+            'school_id' => 'required',
             'description' => 'required|min:3|max:500',
             'category_id' => 'required',
             'school_id' => 'required',
             'image' => 'required',
             'price' => 'required',
             'hostel_type' => 'required'
-
         ]);
 
         $image = $request->image[0];
@@ -308,7 +329,7 @@ class AlbumController extends Controller
             'user_id' => auth()->user()->id,
             'price' => $request->price,
             'image' => $imageName,
-            'school_id' => Auth::user()->school_id,
+            'school_id' => $request->school_id,
             'hostel_type' => $request->hostel_type
         ]);
         //   foreach ($request->file('image') as $file) {
@@ -507,11 +528,10 @@ class AlbumController extends Controller
             if ($request->has('description')) {
                 $albums->description = $request->description;
             }
+            $albums->school_id = $request->school_id;
             $albums->category_id = $request->category_id;
             $albums->price = $request->price;
             $albums->hostel_type = $request->hostel_type;
-
-            $album = Album::where('user_id', Auth::user()->id)->get();
 
             $success =  $albums->save();
             if ($success) {
@@ -608,17 +628,12 @@ class AlbumController extends Controller
         }
 
         $data['locations'] = Category::where('school_id', $school_id)->get();
-        // $data['searched'] = $searched = Album::where('status', 1)->orderBy('rank')->where('soft_delete', 0)->where('name', 'like', '%' . $searchinput . '%')
-        //     ->orWhere('description', 'like', '%' . $searchinput . '%')
-        //     ->orWhere('price', 'like', '%' . $searchinput . '%')
-        //     ->orWhere('category_name', 'like', '%' . $searchinput . '%')
-
-        //     ->paginate(20)->withQueryString();
+       
         $search_array = [];
-        $name_search = Album::where('status', 1)->orderBy('rank')->where('soft_delete', 0)->where('name', 'like', '%' . $searchinput . '%')->get();
-        $description_search = Album::where('status', 1)->orderBy('rank')->where('soft_delete', 0)->where('description', 'like', '%' . $searchinput . '%')->get();
-        $price_search = Album::where('status', 1)->orderBy('rank')->where('soft_delete', 0)->where('price', 'like', '%' . $searchinput . '%')->get();
-        $category_search = Album::where('status', 1)->orderBy('rank')->where('soft_delete', 0)->where('category_name', 'like', '%' . $searchinput . '%')->get();
+        $name_search = Album::where('status', 1)->orderBy('rank')->where('soft_delete', 0)->where('school_id',$request->school_id)->where('name', 'like', '%' . $searchinput . '%')->get();
+        $description_search = Album::where('status', 1)->orderBy('rank')->where('soft_delete', 0)->where('school_id',$request->school_id)->where('description', 'like', '%' . $searchinput . '%')->get();
+        $price_search = Album::where('status', 1)->orderBy('rank')->where('soft_delete', 0)->where('school_id',$request->school_id)->where('price', 'like', '%' . $searchinput . '%')->get();
+        $category_search = Album::where('status', 1)->orderBy('rank')->where('soft_delete', 0)->where('school_id',$request->school_id)->where('category_name', 'like', '%' . $searchinput . '%')->get();
       
 
         foreach ($name_search as $sub) {

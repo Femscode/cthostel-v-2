@@ -142,11 +142,11 @@
 									<!--begin::Form-->
 									<form id="search_technician" class="form">
 										<!--begin::Card body-->
-										<div class="card-body border-top p-9">
+										<div class="card-body border-top">
 
-											<div class="row mb-6">
+											<div class="row">
 
-												<div class="col-lg-8 fv-row">
+												<div class="col-md-6">
 													<select id="school_id" required name="country"
 														aria-label="Select Institution" data-control="select2"
 														data-placeholder="Select your institution..."
@@ -157,32 +157,14 @@
 														@endforeach
 													</select>
 												</div>
-												<!--end::Col-->
-											</div>
-											<div class="row mb-6">
 
-												<div class="col-lg-8 fv-row">
-													<select id="school_location" name="location"
-														aria-label="Select Location" data-control="select2"
-														data-placeholder="Select your location..."
-														class="form-select form-select-solid form-select-lg fw-bold">
-														<option value="">Select your location...</option>
-														<option data-kt-flag="flags/afghanistan.svg" value="AF">Location
-														</option>
-													</select>
-												</div>
-												<!--end::Col-->
-											</div>
-
-											<div class="row mb-6">
-
-												<div class="col-lg-8 fv-row">
+												<div class="col-md-6">
 													<select name="service" aria-label="Select Service"
 														data-control="select2" id='service_type'
 														data-placeholder="Select service..."
 														class="form-select form-select-solid form-select-lg fw-bold">
-														<option value="">Your Location</option>
-														<option value=''>Select Service You Render</option>
+														
+														<option value=''>--Select Service--</option>
 														<option value='Cleaning Service'>Cleaning Service</option>
 														<option value='Electrician'>Electrician</option>
 														<option value='Painter'>Painter</option>
@@ -202,16 +184,38 @@
 												</div>
 												<!--end::Col-->
 											</div>
+											{{-- The location  --}}
+											{{-- <div class="row mb-6">
+
+												<div class="col-lg-6 fv-row">
+													<select id="school_location" name="location"
+														aria-label="Select Location" data-control="select2"
+														data-placeholder="Select your location..."
+														class="form-select form-select-solid form-select-lg fw-bold">
+														<option value="">Select your location...</option>
+														<option data-kt-flag="flags/afghanistan.svg" value="AF">Location
+														</option>
+													</select>
+												</div>
+												<!--end::Col-->
+											</div> --}}
+
+											<div class="row mb-6">
+
+											
+												<!--end::Col-->
+											</div>
 										</div>
 
 										<!--end::Card body-->
 										<!--begin::Actions-->
-										<div class="card-footer d-flex justify-content-end py-6 px-9">
+										{{-- Search button and discard  --}}
+										{{-- <div class="card-footer d-flex justify-content-end py-6 px-9">
 											<button type="reset"
 												class="btn btn-light btn-active-light-primary me-2">Discard</button>
 											<button type="submit" id='search_btn' class="btn btn-primary"
 												id="kt_account_profile_details_submit">Search</button>
-										</div>
+										</div> --}}
 										<!--end::Actions-->
 									</form>
 									<!--end::Form-->
@@ -295,21 +299,21 @@
 						<!--begin::Copyright-->
 						<div class="text-dark order-2 order-md-1">
 							<span class="text-muted fw-bold me-1">2021©</span>
-							<a href="https://cthostel.com" target="_blank"
+							<a href="/" target="_blank"
 								class="text-gray-800 text-hover-primary">CTHostel</a>
 						</div>
 						<!--end::Copyright-->
 						<!--begin::Menu-->
 						<ul class="menu menu-gray-600 menu-hover-primary fw-bold order-1">
 							<li class="menu-item">
-								<a href="https://cthostel.com/welcomepage" target="_blank"
+								<a href="/" target="_blank"
 									class="menu-link px-2">About</a>
 							</li>
 							<li class="menu-item">
-								<a href="https://cthostel.com/faq" target="_blank" class="menu-link px-2">FAQ</a>
+								<a href="/faq" target="_blank" class="menu-link px-2">FAQ</a>
 							</li>
 							<li class="menu-item">
-								<a href="https://cthostel.com/faq" target="_blank" class="menu-link px-2">Suppport</a>
+								<a href="/faq" target="_blank" class="menu-link px-2">Suppport</a>
 							</li>
 						</ul>
 						<!--end::Menu-->
@@ -372,34 +376,21 @@
 	<script src="{{ asset('assets2/js/scripts.bundle.js') }}"></script>
 	<script src="{{ asset('js/sweetalert/dist/sweetalert.min.js') }}"></script>
 
-	<script src="{{ asset('js/sweetalert/dist/sweetalert.min.js') }}"></script>
-	<script src="{{ asset('js\requestController.js') }}"></script>
-	<script src="{{ asset('js\formController.js') }}"></script>
-
-
-
-	<script src="{{ asset('assets2/js/custom/widgets.js') }}"></script>
-	<script src="{{ asset('assets2/js/custom/apps/chat/chat.js') }}"></script>
-	<script src="{{ asset('assets2/js/custom/modals/create-app.js') }}"></script>
-	<script src="{{ asset('assets2/js/custom/modals/upgrade-plan.js') }}"></script>
-	<script src="{{ asset('assets2/js/custom/intro.js') }}"></script>
 	<script>
 		$(document).ready(function() {
-             
-              $("#school_id").on('change',function() {
-				  Swal.fire('fetching location...')
-             var id = $(".sch_id").val();
-                $("#school_location").empty();
-                    $.get('{{ route('getlocation') }}?id=' + id, function (data) {
-						swal.close()
-                    console.log(data,'the locations')
-           for (var index = 0; index <= data.length - 1; index++) {
-              $('#school_location').append('<option value="' + data[index].id + '">' + data[index].name + '</option>');
-           }
-              
-            })
-            })
-
+            //  GET LOCATION AFTER CHANGE SCHOOL 
+            //   $("#school_id").on('change',function() {
+			// 	  Swal.fire('fetching location...')
+            //  var id = $(".sch_id").val();
+            //     $("#school_location").empty();
+            //         $.get('{{ route('getlocation') }}?id=' + id, function (data) {
+			// 			swal.close()
+            //         console.log(data,'the locations')
+           	// 		for (var index = 0; index <= data.length - 1; index++) {
+            //   			$('#school_location').append('<option value="' + data[index].id + '">' + data[index].name + '</option>');
+           	// 		}
+            //     })
+            // })
             $.ajaxSetup({
                         headers: {
                             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -438,16 +429,16 @@
                                     $("#search_btn").attr('disabled',false);
                                     $('#table_name').empty();
                                     $.each(data, function (key, value) 
-  {
-	var count = key + 1 
-console.log(count, data)
-     $('#table_name').append(
-         
-    //   '<tr> <td>' + value.name + '</td>  <td>' + value.phone + '</td>  </tr>'
-
-'<tr><td>'+count+'</td><td><div class="d-flex align-items-center"><div class="d-flex justify-content-start flex-column"><a href="#" class="text-dark fw-bolder text-hover-primary fs-6">'+value.name+'</a></div></div></td><td><div class="d-flex justify-content-end flex-shrink-0"><a href="/messagetechnician/'+value.phone+'" style="color:white" class="btn btn-bg-success btn-active-color-success btn-sm">Message</a></div></td><td><div class="d-flex justify-content-end flex-shrink-0"><a href="/calltechnician/'+value.phone+'" style="color:white" class="btn btn-bg-info btn-active-color-primary btn-sm">Call</a></div></td></tr>'												
-     );
-  });
+									  {
+										var count = key + 1 
+									console.log(count, data)
+									     $('#table_name').append(
+									
+									    //   '<tr> <td>' + value.name + '</td>  <td>' + value.phone + '</td>  </tr>'
+									
+									'<tr><td>'+count+'</td><td><div class="d-flex align-items-center"><div class="d-flex justify-content-start flex-column"><a href="#" class="text-dark fw-bolder text-hover-primary fs-6">'+value.name+'</a></div></div></td><td><div class="d-flex justify-content-end flex-shrink-0"><a href="/messagetechnician/'+value.phone+'" style="color:white" class="btn btn-bg-success btn-active-color-success btn-sm">Message</a></div></td><td><div class="d-flex justify-content-end flex-shrink-0"><a href="/calltechnician/'+value.phone+'" style="color:white" class="btn btn-bg-info btn-active-color-primary btn-sm">Call</a></div></td></tr>'												
+									     );
+									  });
                                    // Swal.fire("Success", 'Scroll down to see technicians found', 'success');
                                     console.log(data)
 									//window.location.reload();
@@ -460,6 +451,68 @@ console.log(count, data)
                                 }
                             });
 						});
+
+
+						//search technician when school changes
+						$("#school_id").on('change',async function(e) {
+                       e.preventDefault()
+					   if($("#service_type").val().length == 0){
+						Swal.fire('Please kindly select a service')
+						
+					   }
+					   else {
+
+					   
+					   var technician = $("#service_type").val()
+					   Swal.fire('Fetching '+technician+' closer to you, please wait...')
+                             $("#search_btn").attr('disabled',true);
+                            var fd = new FormData();
+
+                            // Append data 
+                            fd.append('school_id', $("#school_id").val());
+                           
+                            fd.append('location_id', $("#school_location").val());
+                            fd.append('service_type', $("#service_type").val());
+
+                            console.log(fd, 'this is the fd');
+
+                            $.ajax({
+                                type: 'POST',
+                                url: "{{route('searchtechnician')}}",
+                                data: fd,
+                                cache: false,
+                                contentType: false,
+                                processData: false,
+                                success: (data) => {
+									swal.close()
+                                    $("#search_btn").attr('disabled',false);
+                                    $('#table_name').empty();
+                                    $.each(data, function (key, value) 
+									  {
+										var count = key + 1 
+									console.log(count, data)
+									     $('#table_name').append(
+									
+									    //   '<tr> <td>' + value.name + '</td>  <td>' + value.phone + '</td>  </tr>'
+									
+									'<tr><td>'+count+'</td><td><div class="d-flex align-items-center"><div class="d-flex justify-content-start flex-column"><a href="#" class="text-dark fw-bolder text-hover-primary fs-6">'+value.name+'</a></div></div></td><td><div class="d-flex justify-content-end flex-shrink-0"><a href="/messagetechnician/'+value.phone+'" style="color:white" class="btn btn-bg-success btn-active-color-success btn-sm">Message</a></div></td><td><div class="d-flex justify-content-end flex-shrink-0"><a href="/calltechnician/'+value.phone+'" style="color:white" class="btn btn-bg-info btn-active-color-primary btn-sm">Call</a></div></td></tr>'												
+									     );
+									  });
+                                   // Swal.fire("Success", 'Scroll down to see technicians found', 'success');
+                                    console.log(data)
+									//window.location.reload();
+
+                                },
+                                error: function(data) {
+									Swal.fire('error','Opps, unable to fetch technicians','error')
+                                    console.log(data);
+                                  //  Swal.fire('Oops', 'Something went wrong','error')
+                                }
+                            });
+
+						}
+						});
+
 
                        
 

@@ -328,13 +328,13 @@ class FrontendCOntroller extends Controller
   public function servicepage()  {
     $data['schools'] = schools::get();
     
-  	return view('servicepage',$data);
+  	return view('technician.servicepage',$data);
   }
   public function searchtechnician(Request $request) {
     
   //  $users = User::where('school_id', $request->school_id)->where('category_id',$request->location_id)->where('type',$request->service_type)->get();
      $users = User::where('school_id', $request->school_id)->where('type',$request->service_type)->get();
-
+        
     return $users;
     
   }

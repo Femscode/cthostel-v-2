@@ -116,101 +116,7 @@
                 </div>
                 <!--end::Aside menu-->
                 <!--begin::Footer-->
-                <div class="aside-footer flex-column-auto" id="kt_aside_footer">
-                    <!--begin::Menu-->
-                    <div class="d-flex justify-content-center">
-                        <button type="button" class="btn btm-sm btn-icon btn-active-color-primary"
-                            data-kt-menu-trigger="click" data-kt-menu-overflow="true" data-kt-menu-placement="top-start"
-                            data-kt-menu-flip="top-end" data-bs-toggle="tooltip" data-bs-placement="right"
-                            data-bs-dismiss="click" title="Quick actions">
-                            <!--begin::Svg Icon | path: icons/duotone/Communication/Dial-numbers.svg-->
-                            <span class="svg-icon svg-icon-1">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24"
-                                    version="1.1">
-                                    <rect fill="#000000" opacity="0.3" x="4" y="4" width="4" height="4" rx="2" />
-                                    <rect fill="#000000" x="4" y="10" width="4" height="4" rx="2" />
-                                    <rect fill="#000000" x="10" y="4" width="4" height="4" rx="2" />
-                                    <rect fill="#000000" x="10" y="10" width="4" height="4" rx="2" />
-                                    <rect fill="#000000" x="16" y="4" width="4" height="4" rx="2" />
-                                    <rect fill="#000000" x="16" y="10" width="4" height="4" rx="2" />
-                                    <rect fill="#000000" x="4" y="16" width="4" height="4" rx="2" />
-                                    <rect fill="#000000" x="10" y="16" width="4" height="4" rx="2" />
-                                    <rect fill="#000000" x="16" y="16" width="4" height="4" rx="2" />
-                                </svg>
-                            </span>
-                            <!--end::Svg Icon-->
-                        </button>
-                        <!--begin::Menu 2-->
-                        <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg-light-primary fw-bold w-200px"
-                            data-kt-menu="true">
-                            <!--begin::Menu item-->
-                            <div class="menu-item px-3">
-                                <div class="menu-content fs-6 text-dark fw-bolder px-3 py-4">Quick Actions</div>
-                            </div>
-                            <!--end::Menu item-->
-                            <!--begin::Menu separator-->
-                            <div class="separator mb-3 opacity-75"></div>
-                            <!--end::Menu separator-->
-                            <!--begin::Menu item-->
-                            <div class="menu-item px-3">
-                                <a href="#" class="menu-link px-3">New Ticket</a>
-                            </div>
-                            <!--end::Menu item-->
-                            <!--begin::Menu item-->
-                            <div class="menu-item px-3">
-                                <a href="#" class="menu-link px-3">New Customer</a>
-                            </div>
-                            <!--end::Menu item-->
-                            <!--begin::Menu item-->
-                            <div class="menu-item px-3" data-kt-menu-trigger="hover"
-                                data-kt-menu-placement="right-start" data-kt-menu-flip="bottom, top">
-                                <!--begin::Menu item-->
-                                <a href="#" class="menu-link px-3">
-                                    <span class="menu-title">New Group</span>
-                                    <span class="menu-arrow"></span>
-                                </a>
-                                <!--end::Menu item-->
-                                <!--begin::Menu sub-->
-                                <div class="menu-sub menu-sub-dropdown w-175px py-4">
-                                    <!--begin::Menu item-->
-                                    <div class="menu-item px-3">
-                                        <a href="#" class="menu-link px-3">Admin Group</a>
-                                    </div>
-                                    <!--end::Menu item-->
-                                    <!--begin::Menu item-->
-                                    <div class="menu-item px-3">
-                                        <a href="#" class="menu-link px-3">Staff Group</a>
-                                    </div>
-                                    <!--end::Menu item-->
-                                    <!--begin::Menu item-->
-                                    <div class="menu-item px-3">
-                                        <a href="#" class="menu-link px-3">Member Group</a>
-                                    </div>
-                                    <!--end::Menu item-->
-                                </div>
-                                <!--end::Menu sub-->
-                            </div>
-                            <!--end::Menu item-->
-                            <!--begin::Menu item-->
-                            <div class="menu-item px-3">
-                                <a href="#" class="menu-link px-3">New Contact</a>
-                            </div>
-                            <!--end::Menu item-->
-                            <!--begin::Menu separator-->
-                            <div class="separator mt-3 opacity-75"></div>
-                            <!--end::Menu separator-->
-                            <!--begin::Menu item-->
-                            <div class="menu-item px-3">
-                                <div class="menu-content px-3 py-3">
-                                    <a class="btn btn-primary btn-sm px-4" href="#">Generate Reports</a>
-                                </div>
-                            </div>
-                            <!--end::Menu item-->
-                        </div>
-                        <!--end::Menu 2-->
-                    </div>
-                    <!--end::Menu-->
-                </div>
+              
                 <!--end::Footer-->
             </div>
             <!--end::Aside-->
@@ -1735,12 +1641,9 @@
                                                                             <!--begin::Content-->
                                                                             <div class="fw-bold">
                                                                                 <h4 class="text-gray-900 fw-bolder">
-                                                                                    Warning</h4>
-                                                                                <div class="fs-6 text-gray-700">Please
-                                                                                    input a
-                                                                                    very friendly price(last price) while creating
-                                                                                    hostel.
-                                                                                   
+                                                                                    Not in {{ $user->school->name }}?</h4>
+                                                                                <div class="fs-6 text-gray-700">
+                                                                                    You can now create hostels for other schools
                                                                                     <a href="#"></a>
                                                                                 </div>
                                                                             </div>
@@ -1748,9 +1651,46 @@
                                                                         </div>
                                                                         <!--end::Wrapper-->
                                                                     </div>
-                                                                    <!--end::Notice-->
-                                                                    <!--end::Notice-->
-                                                                    <!--begin::Input group-->
+                                                                   
+                                                                    <div class="row mb-5">
+                                                                        <!--begin::Col-->
+                                                                        <div class="col-md-6 fv-row">
+                                                                            
+                                                                            <label
+                                                                                class="required fs-5 fw-bold mb-2">School</label>
+                                                                           
+                                                                            <select required type="text" id='sch_id'
+                                                                                name='school_id'
+                                                                                class="form-control form-control-solid">
+                                                                                <option value=''>--Select School--</option>
+                                                                                @foreach($schools as $sch)
+                                                                                <option value='{{ $sch->id }}'>{{ $sch->name }}</option>
+                                                                                @endforeach
+
+                                                                            </select>
+                                                                          
+                                                                        </div>
+                                                                       
+                                                                        <div class="col-md-6 fv-row">
+                                                                            <!--end::Label-->
+                                                                            <label
+                                                                                class="required fs-5 fw-bold mb-2">Location</label>
+                                                                           
+                                                                                <select required name="category_id"
+                                                                                id='category_id' data-control="select2"
+                                                                                data-dropdown-parent="#kt_modal_new_address"
+                                                                                data-placeholder="Select hostel location"
+                                                                                class="form-select form-select-solid">
+                                                                                <option value=''>Select Hostel Location</option>
+                                                                                  
+    
+                                                                            </select>
+                                                                              
+                                                                           
+                                                                        </div>
+                                                                       
+                                                                    </div>
+
                                                                     <div class="row mb-5">
                                                                         <!--begin::Col-->
                                                                         <div class="col-md-6 fv-row">
@@ -1777,8 +1717,7 @@
                                                                                 name='price'
                                                                                 class="form-control form-control-solid"
                                                                                 placeholder="" />
-                                                                                <input name='school_id' type='hidden' value='{{$user->school_id}}'
-                                                                                id='sch_id' />
+                                                                               
                                                                             <!--end::Input-->
                                                                         </div>
                                                                         <!--end::Col-->
@@ -1835,29 +1774,6 @@
                                                                             </option>
                                                                         </select>
 
-                                                                    </div>
-                                                                    <div class="d-flex flex-column mb-5 fv-row">
-                                                                        <!--begin::Label-->
-                                                                        <label
-                                                                            class="d-flex align-items-center fs-5 fw-bold mb-2">
-                                                                            <span class="required">Location</span>
-
-                                                                        </label>
-                                                                        <!--end::Label-->
-                                                                        <!--begin::Select-->
-                                                                        <select required name="category_id"
-                                                                            id='category_id' data-control="select2"
-                                                                            data-dropdown-parent="#kt_modal_new_address"
-                                                                            data-placeholder="Select hostel location"
-                                                                            class="form-select form-select-solid">
-                                                                            <option value=''>Select Hostel Location
-                                                                                @foreach ($category as $category)
-                                                                            <option value='{{ $category->id }}'>
-                                                                                {{ $category->name }}</option>
-                                                                            @endforeach
-
-                                                                        </select>
-                                                                        <!--end::Select-->
                                                                     </div>
                                                                     <!--end::Input group-->
                                                                     <!--begin::Input group-->
@@ -2014,7 +1930,7 @@
                                             <td> {{ $album->name }}<a href=""></a> </td>
                                             <td> {{ $album->description }}</td>
                                             <td> #{{ $album->price }}</td>
-                                            <td>{{ $album->category->name }}</td>
+                                            <td>{{ $album->school->name }} | {{ $album->category->name }}</td>
                                             <td>@if($album->status == 1)
 
                                                 <a title='View Hostel' href='/cthostel/{{$album->slug}}/{{$album->id}}'
@@ -2207,8 +2123,7 @@
                                                             </svg>
                                                         </span>
                                                     </a>
-                                                    <input name='school_id' type='hidden' value='{{$user->school_id}}'
-                                                        id='sch_id' />
+                                                   
                                             </td>
                                             <div class="modal fade" id="kt_modal_new_target2" tabindex="-1"
                                                 aria-hidden="true">
@@ -2218,10 +2133,12 @@
                                                     <!--begin::Modal content-->
                                                     <div class="modal-content rounded">
                                                         <!--begin::Modal header-->
-                                                        <div class="modal-header pb-0 border-0 justify-content-end">
+                                                        
+                                                        <div class="modal-header pb-0 border-0 justify-content-center">
+                                                            <h2>Edit Hostel</h2>
                                                             <!--begin::Close-->
-                                                            <div class="btn btn-sm btn-icon btn-active-color-primary"
-                                                                data-bs-dismiss="modal">
+                                                            <div class="btn btn-sm btn-icon btn-active-color-primary justify-content-end"
+                                                                data-bs-dismiss="modal" style='margin-right:0px;right:0px'>
                                                                 <!--begin::Svg Icon | path: icons/duotone/Navigation/Close.svg-->
                                                                 <span class="svg-icon svg-icon-1">
                                                                     <svg xmlns="http://www.w3.org/2000/svg"
@@ -2243,12 +2160,7 @@
                                                             </div>
                                                             <!--end::Close-->
                                                         </div>
-                                                        <div class="modal-header" style
-                                                            id="kt_modal_new_address_header">
-                                                            <!--begin::Modal title-->
-                                                            <h2>Edit Hostel</h2>
-
-                                                        </div>
+                                                       
 
                                                         <form id='update_hostel' action='{{ route("update.album") }}' method="POST"
                                                             enctype="multipart/form-data">@csrf
@@ -2267,45 +2179,47 @@
                                                                     data-kt-scroll-offset="300px">
                                                                     <!--begin::Notice-->
                                                                     <!--begin::Notice-->
-                                                                    <div
-                                                                        class="notice d-flex bg-light-warning rounded border-warning border border-dashed mb-9 p-6">
-                                                                        <!--begin::Icon-->
-                                                                        <!--begin::Svg Icon | path: icons/duotone/Code/Warning-1-circle.svg-->
-                                                                        <span
-                                                                            class="svg-icon svg-icon-2tx svg-icon-warning me-4">
-                                                                            <svg xmlns="http://www.w3.org/2000/svg"
-                                                                                width="24px" height="24px"
-                                                                                viewBox="0 0 24 24" version="1.1">
-                                                                                <circle fill="#000000" opacity="0.3"
-                                                                                    cx="12" cy="12" r="10" />
-                                                                                <rect fill="#000000" x="11" y="7"
-                                                                                    width="2" height="8" rx="1" />
-                                                                                <rect fill="#000000" x="11" y="16"
-                                                                                    width="2" height="2" rx="1" />
-                                                                            </svg>
-                                                                        </span>
-                                                                        <!--end::Svg Icon-->
-                                                                        <!--end::Icon-->
-                                                                        <!--begin::Wrapper-->
-                                                                        <div class="d-flex flex-stack flex-grow-1">
-                                                                            <!--begin::Content-->
-                                                                            <div class="fw-bold">
-                                                                                <h4 class="text-gray-900 fw-bolder">
-                                                                                    Warning</h4>
-                                                                                <div class="fs-6 text-gray-700">
-                                                                                    Please input a very friendly
-                                                                                    price(last price) while creating hostel.
-                                                                                    
-                                                                                    <a href="#"></a>
-                                                                                </div>
-                                                                            </div>
-                                                                            <!--end::Content-->
-                                                                        </div>
-                                                                        <!--end::Wrapper-->
-                                                                    </div>
+                                                                   
                                                                     <!--end::Notice-->
                                                                     <!--end::Notice-->
                                                                     <!--begin::Input group-->
+                                                                    <div class="row mb-5">
+                                                                        <!--begin::Col-->
+                                                                        <div class="col-md-6 fv-row">
+                                                                            
+                                                                            <label
+                                                                                class="required fs-5 fw-bold mb-2">School</label>
+                                                                           
+                                                                            <select required type="text" id='edit_sch_id'
+                                                                                name='school_id'
+                                                                                class="form-control form-control-solid">
+                                                                                <option value=''>--Select School--</option>
+                                                                                @foreach($schools as $sch)
+                                                                                <option value='{{ $sch->id }}'>{{ $sch->name }}</option>
+                                                                                @endforeach
+
+                                                                            </select>
+                                                                          
+                                                                        </div>
+                                                                       
+                                                                        <div class="col-md-6 fv-row">
+                                                                            <!--end::Label-->
+                                                                            <label
+                                                                                class="required fs-5 fw-bold mb-2">Location</label>
+                                                                           
+                                                                                <select required type="text" id='edit_category_id'
+                                                                                name='category_id'
+                                                                                class="form-control form-control-solid">
+                                                                                <option value=''>--Select Location--</option>
+                                                                               
+
+                                                                            </select>
+                                                                              
+                                                                           
+                                                                        </div>
+                                                                       
+                                                                    </div>
+
                                                                     <div class="row mb-5">
                                                                         <!--begin::Col-->
                                                                         <div class="col-md-6 fv-row">
@@ -2390,35 +2304,8 @@
                                                                             <option value='Hostel Fence'>Hostel Fence
                                                                             </option>
                                                                         </select>
+                                                                     </div>
 
-
-
-                                                                    </div>
-
-
-
-
-                                                                    <div class="d-flex flex-column mb-5 fv-row">
-                                                                        <!--begin::Label-->
-                                                                        <label
-                                                                            class="d-flex align-items-center fs-5 fw-bold mb-2">
-                                                                            <span class="required">Location</span>
-                                                                            <i class="fas fa-exclamation-circle ms-2 fs-7"
-                                                                                data-bs-toggle="tooltip"
-                                                                                title="Your payment statements may very based on selected country"></i>
-                                                                        </label>
-                                                                        <!--end::Label-->
-                                                                        <!--begin::Select-->
-                                                                        <select name="category_id" id='edit_category_id'
-                                                                            data-control="select2"
-                                                                            data-placeholder="Select hostel location"
-                                                                            class="form-select form-select-solid">
-                                                                            <option value=''>Select Hostel Location
-                                                                            </option>
-
-                                                                        </select>
-                                                                        <!--end::Select-->
-                                                                    </div>
                                                                     <input type='hidden' name='id' id='id' value=''>
                                                                     <!--end::Input group-->
                                                                     <!--begin::Input group-->
@@ -2535,7 +2422,7 @@
                         class="container-fluid d-flex flex-column flex-md-row align-items-center justify-content-between">
                         <!--begin::Copyright-->
                         <div class="text-dark order-2 order-md-1">
-                            <span class="text-muted fw-bold me-1">2021©</span>
+                            <span class="text-muted fw-bold me-1"><?php echo Date('Y');?> ©</span>
                             <a target="_blank" class="text-gray-800 text-hover-primary">CTHostel</a>
                         </div>
                         <!--end::Copyright-->
@@ -2663,47 +2550,7 @@
 
                         });
 
-						$("#edit_image").on('change', function(e) {
-
-						var file = e.target.files[0];
-						console.log(file);
-				$("#update_hostel").on('submit', async function(e){
-                e.preventDefault();
-                Swal.fire('Updating hostel, please wait...');
-                $("#kt_modal_new_address_submit").attr('disabled',true)
-							fd = new FormData();
-							fd.append('id',  $("#id").val());
-							fd.append('name', $("#edit_name").val());
-                            fd.append('description', $("#edit_desc").val());
-                            fd.append('hostel_type', $("#hostel_type").val());
-                            fd.append('price', $("#edit_price").val());
-                            fd.append('category_id', $("#edit_category_id").val());
-                            fd.append('image', file);
-
-                            console.log(fd, 'this is the fd');
-
-                            $.ajax({
-                                type: 'POST',
-                                url: "../album/albums/update",
-                                data: fd,
-                                cache: false,
-                                contentType: false,
-                                processData: false,
-                                success: (data) => {
-                                    Swal.close()
-                                    Swal.fire("Success", 'Hostel Updated successfully', 'success');
-                                    console.log(data)
-									window.location.reload();
-
-
-                                },
-                                error: function(data) {
-                                    console.log(data);
-                                    Swal.fire("Oops!", 'Image size is too big', 'error');
-                                }
-                            });
-                            });
-            });
+				
          
 				$('body').on('click', '#upload_image_id', function () {
 				var id = $(this).data('id');
@@ -2839,6 +2686,9 @@
                     $('#edit_desc').val(data.description);
                     $('#edit_price').val(data.price);
                     $('#edit_category_id').val(data.category_id);
+                    $('#edit_category_id').prepend('<option value="' + data.category_id + '">' + data.category_name + '</option>');
+                 
+                    $('#edit_sch_id').val(data.school_id);
                     // $('#edit_image').val(data.image);
                     $('#id').val(id);
                     console.log(data)
@@ -2900,10 +2750,32 @@
 			var id = $("#sch_id").val();
 			$.get('{{ route('getlocation') }}?id=' + id, function (data) {
 			console.log(data,'the locations')
-   for (var index = 0; index <= data.length - 1; index++) {
-      $('#edit_category_id').append('<option value="' + data[index].id + '">' + data[index].name + '</option>');
-   }
+                for (var index = 0; index <= data.length - 1; index++) {
+                     $('#edit_category_id').append('<option value="' + data[index].id + '">' + data[index].name + '</option>');
+                 }
 			});
+
+            $("#edit_sch_id").change(function() {
+                var id = $("#edit_sch_id").val();
+                $("#edit_category_id").empty()
+			$.get('{{ route('getlocation') }}?id=' + id, function (data) {
+			console.log(data,'the locations')
+                for (var index = 0; index <= data.length - 1; index++) {
+                     $('#edit_category_id').append('<option value="' + data[index].id + '">' + data[index].name + '</option>');
+                 }
+			});
+            })
+
+            $("#sch_id").change(function() {
+                var id = $("#sch_id").val();
+                $("#category_id").empty()
+			$.get('{{ route('getlocation') }}?id=' + id, function (data) {
+			console.log(data,'the locations')
+                for (var index = 0; index <= data.length - 1; index++) {
+                     $('#category_id').append('<option value="' + data[index].id + '">' + data[index].name + '</option>');
+                 }
+			});
+            })
     //  $(document).on('click', '.status_id', function () {
 
               $(".status_id").click(function() {

@@ -18380,7 +18380,7 @@
               <div class="top-menu top-menu-14">
                 <ul class="j-menu">
                   <li class="menu-item top-menu-item top-menu-item-1">
-                    <a href="index11cd.html?route=information/information&amp;information_id=7"><span
+                    <a href="/faq"><span
                         class="links-text">FAQ</span></a>
                   </li>
 
@@ -18389,7 +18389,7 @@
                   </li>
 
                   <li class="menu-item top-menu-item top-menu-item-3">
-                    <a href="index2724.html?route=information/contact"><span class="links-text">Contact</span></a>
+                    <a href="https://wa.me/2349058744473"><span class="links-text">Contact</span></a>
                   </li>
 
                 </ul>
@@ -18980,41 +18980,45 @@
 
 
                 </div>
+                <form method='post' action='{{route("counter") }}'>@csrf
                 <div class="product-blocks blocks-bottom">
                   <div class="product-blocks-bottom product-blocks-251 grid-rows">
                     <div class="grid-row grid-row-251-1">
                       <div class="grid-cols">
+                        <h4 class='text-danger'>Kindly Provide Your details to proceed.</h4>
+                        <input required class='form-control' type='text' placeholder='name' name='name'/>
+                        <input required minlength='10' class='form-control' type='number' placeholder='Phone Number' name='phone'/>
+                        <input class='form-control' type='hidden' value='{{ $album->id }}' name='album_id'/>
+                       
                         <div class="grid-col grid-col-251-1-1">
                           <div class="grid-items">
                             <div class="grid-item grid-item-251-1-1-1">
                               <div class="module module-button module-button-252">
-                                <!--                 <a style='background:#007bff' class="btn btn-success" href='https://wa.me/234{{substr($album->user->phone,1)}}?text=Hi%2C%20my%20name%20is%20%28Input%20your%20name%29.%0aHOSTEL%20REQUEST%20FOR%20CTHOSTEL.%0aInstitution:{{$album->school->name}}%0aHostel%20name:%20({{$album->name}})%0aHostel%20Price:{{$album->price}}%0aLocation:{{$album->category->name}}%0aAgent%20in%20charge:{{$album->user->name}}%0a(Input%20other%20message%20here)%20'>Message Agent In Charge >>></a>-->
-                                <a style='background:#007bff' class="btn btn-success"
-                                  href="{{route('counter',[$album->id])}}">Message Agent In Charge >>></a>
-                                <!--                 <a style='background:#007bff' class="btn btn-success" href='https://wa.me/234{{substr($album->user->phone,1)}}?text=Hi%2C%20my%20name%20is%20%28Input%20your%20name%29.%20I%20am%20interested%20in%20an%20hostel%20of%20yours%20%28Input%20name%20of%20hostel%29%20posted%20on%20the%20CTHostel%20platform.'>Message agent in charge >>></a>-->
+                                <button name='type' value='message' type='submit' style='background:#007bff' class="btn btn-success"
+                                  >Message Agent In Charge</button>
                               </div>
-
                             </div>
                           </div>
                         </div>
-                        <div class="grid-col grid-col-251-1-2">
+                       <div class="grid-col grid-col-251-1-2">
                           <div class="grid-items">
                             <div class="grid-item grid-item-251-1-2-1">
                               <div class="module module-button module-button-253">
-                                <a style='background:#ffc107;color:black' class="btn btn-success fa fa-phone"
-                                  href="{{route('callcounter',[$album->id])}}">Make a call</a>
-                                <!--       <a style='background:#ffc107;color:black' class="btn btn-success fa fa-phone" href="tel:{{$album->user->phone}}">Call Agent</a>
-                           -->
+                                <button name='type' value='call' type='submit' style='background:#ffc107;color:black' class="btn btn-success fa fa-phone"
+                                  >Make a call</button>
+                             
                               </div>
 
                             </div>
                           </div>
                         </div>
+                     
                       </div>
                     </div>
                   </div>
 
                 </div>
+                 </form>
               </div>
             </div>
           </div>
