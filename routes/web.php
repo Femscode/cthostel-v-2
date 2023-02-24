@@ -177,7 +177,7 @@ Route::get('createlocation',function() {
     if(Auth::user()->email == env("ADMIN_EMAIL")) {
         return view('createlocation');
     }
-})->name('createschool')->middleware('auth');
+})->name('createlocation')->middleware('auth');
 
 // Route::get('agentcontact',function() {
 //     return(User::pluck('phone'));
