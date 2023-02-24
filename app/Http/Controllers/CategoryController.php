@@ -1,10 +1,11 @@
-Models\<?php
+<?php
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Models\Category;
 use App\Models\schools;
+use App\Models\Category;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class CategoryController extends Controller
@@ -30,6 +31,8 @@ class CategoryController extends Controller
         'image' => 'required'
       ]);
       $schoolimage = $request->image->hashName();
+      $image = $request->image;
+      $image->move(public_path().'/schoolimages',$schoolimage);
       schools::create([
         'name' => $request->name,
         'image' => $request->image->hashName()
