@@ -179,9 +179,9 @@ Route::get('createlocation',function() {
     }
 })->name('createschool')->middleware('auth');
 
-Route::get('agentcontact',function() {
-    return(User::pluck('phone'));
-})->name('createschool')->middleware('auth');
+// Route::get('agentcontact',function() {
+//     return(User::pluck('phone'));
+// })->name('createschool')->middleware('auth');
 // Route::view('createlocation','createlocation')->name('createschool')->middleware('auth');
 Route::any('superadmin',[AlbumController::class,'super_admin'])->middleware('auth');
 Route::any('/upgrade_user/{id}',[AlbumController::class,'upgrade_user'])->middleware('auth')->name('upgrade_user');

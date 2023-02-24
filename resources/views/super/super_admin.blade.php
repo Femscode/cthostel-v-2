@@ -1431,7 +1431,8 @@
 											<span class="card-label fw-bolder fs-3 mb-1">All Schools</span>
 										</h3>
 										<div class="card-toolbar">
-											<a class='btn btn-primary' href='{{route("createschool")}}'>Create School</a>
+											<a class='btn btn-primary btn-sm' href='{{route("createschool")}}'>Create School</a>
+											<a class='btn btn-primary btn-sm' href='{{route("createlocation")}}'>Create Location</a>
 										</div>
 									</div>
 									<!--end::Header-->
