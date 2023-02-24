@@ -116,11 +116,15 @@ Route::post('/follow',[FollowController::class,'followUnfollow'])->middleware('a
 
 Route::get('/user/profile/{id}',[FrontendCOntroller::class,'userAlbum'])->name('user.album');
 Route::any('filter',[FrontendCOntroller::class,'filter'])->name('filter');
+
+Route::middleware(['auth','isAdmin'])->group(function () {
 Route::any('/sugagentmail',[AlbumController::class,'sugagentmail'])->name('sugagentmail')->middleware('auth');
 Route::any('/sugstudentmail',[AlbumController::class,'sugstudentmail'])->name('sugstudentmail')->middleware('auth');
 Route::get('/agents',[AlbumController::class,'agents'])->name('agents')->middleware('auth');
 Route::get('/students',[AlbumController::class,'students'])->name('students')->middleware('auth');
 Route::get('/hostels',[AlbumController::class,'hostels'])->name('hostels')->middleware('auth');
+});
+
 Route::get('/albums/{slug}/{id}',[GalleryController::class,'viewAlbum'])->name('view.album');
 
 // Route::resource('roommate',[roommateController::class]);
