@@ -1432,7 +1432,7 @@
 										</h3>
 										<div class="card-toolbar">
 											<a class='btn btn-primary btn-sm' href='{{route("createschool")}}'>Create School</a>
-											<a class='btn btn-primary btn-sm' href='{{route("createlocation")}}'>Create Location</a>
+											<a class='btn btn-info btn-sm' href='{{route("createlocation")}}'>Create Location</a>
 										</div>
 									</div>
 									<!--end::Header-->
