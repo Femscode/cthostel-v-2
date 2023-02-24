@@ -32,7 +32,7 @@ class CategoryController extends Controller
       ]);
       $schoolimage = $request->image->hashName();
       $image = $request->image;
-      $image->move(public_path().'/schoolimages',$schoolimage);
+      // $image->move(public_path().'/schoolimages',$schoolimage);
       schools::create([
         'name' => $request->name,
         'image' => $request->image->hashName()
