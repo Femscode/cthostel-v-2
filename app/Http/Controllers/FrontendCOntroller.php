@@ -10,11 +10,13 @@ use App\Models\Services;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Session;
 
 class FrontendCOntroller extends Controller
 {
     public function cthostel($slug,$id) {
+      
         
        $data['album'] = $album = Album::with('albumimages')->where('slug',$slug)->where('status',1)->where('id',$id)->get()[0];
        $data['albums'] = Album::where('school_id', $album->school_id)->where('status',1)->paginate(20);
@@ -33,7 +35,7 @@ class FrontendCOntroller extends Controller
        $data['user'] = User::find($userId);
        //(new User)->amIfollowing($userId);
        $data['roommate'] = $roommate= Roommate::where('hostel_id',$id)->get();
-       
+     
        return view('frontend.cthostel',$data);
     //    return view('album.show',$data);
     }

@@ -16,6 +16,7 @@ use App\Models\saveUser;
 use App\Models\Services;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use App\Models\SpecialRequest;
 use Nexmo\Laravel\Facade\Nexmo;
 use Illuminate\Support\Facades\DB;
@@ -25,6 +26,8 @@ use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 use App\Http\Resources\AlbumResource;
+use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Redirect;
 
@@ -77,23 +80,29 @@ class AlbumController extends Controller
 
     public function counter(Request $request)
     {
-        // dd($request->all());
-        $this->validate($request, [
-            'album_id' => 'required',
-            'type' => 'required',
-            'name' => 'required',
-            'phone' => 'required|min:10|max:14',
-        ]);
         $album = Album::find($request->album_id);
         $user = User::find($album->user_id);
+        
+        if(!session()->has('student')) {
+            $session = session()->put('student','nice');
+            $this->validate($request, [
+                'album_id' => 'required',
+                'type' => 'required',
+                'name' => 'required',
+                'phone' => 'required|min:10|max:14',
+            ]);
+            saveUser::create([
+                'name' => $request->name,
+                'phone' => $request->phone,
+                'school_id' => $user->school_id,
+                'hostel_id' => $request->album_id,
+            ]);
+        }
+       
+       
         $user->new_clicks += 1;
         $user->save();
-        saveUser::create([
-            'name' => $request->name,
-            'phone' => $request->phone,
-            'school_id' => $user->school_id,
-            'hostel_id' => $request->album_id,
-        ]);
+       
         $number = substr($album->user->phone, 1);
         if($request->type == 'message') {
             return redirect()->away('https://wa.me/234' . $number . '?text=HOSTEL%20REQUEST%20FOR%20CTHOSTEL.%0aInstitution:' . $album->school->name . '%0aHostel%20name:%20(' . $album->name . ')%0aHostel%20Price:' . $album->price . '%0aLocation:' . $album->category->name . '%0aAgent%20in%20charge:' . $album->user->name . '%0a(Input%20other%20message%20here)%20');

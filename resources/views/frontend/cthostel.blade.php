@@ -18985,9 +18985,11 @@
                   <div class="product-blocks-bottom product-blocks-251 grid-rows">
                     <div class="grid-row grid-row-251-1">
                       <div class="grid-cols">
+                        @if(!session()->has('student'))
                         <h4 class='text-danger'>Kindly Provide Your details to proceed.</h4>
                         <input required class='form-control' type='text' placeholder='name' name='name'/>
                         <input required minlength='10' class='form-control' type='number' placeholder='Phone Number' name='phone'/>
+                       @endif
                         <input class='form-control' type='hidden' value='{{ $album->id }}' name='album_id'/>
                        
                         <div class="grid-col grid-col-251-1-1">
@@ -19000,6 +19002,7 @@
                             </div>
                           </div>
                         </div>
+                       
                        <div class="grid-col grid-col-251-1-2">
                           <div class="grid-items">
                             <div class="grid-item grid-item-251-1-2-1">
