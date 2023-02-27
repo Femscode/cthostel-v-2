@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\User;
 use App\Models\Album;
 use App\Models\schools;
 use Illuminate\Database\Eloquent\Model;
@@ -18,5 +19,8 @@ class saveUser extends Model
     }
     public function school() {
         return $this->belongsTo(schools::class);
+    }
+    public function agent() {
+        return $this->belongsTo(User::class,'user_id','id');
     }
 }

@@ -96,6 +96,7 @@ class AlbumController extends Controller
                 'phone' => $request->phone,
                 'school_id' => $user->school_id,
                 'hostel_id' => $request->album_id,
+                'user_id' => $user->id
             ]);
         }
        
@@ -105,7 +106,7 @@ class AlbumController extends Controller
        
         $number = substr($album->user->phone, 1);
         if($request->type == 'message') {
-            return redirect()->away('https://wa.me/234' . $number . '?text=HOSTEL%20REQUEST%20FOR%20CTHOSTEL.%0aInstitution:' . $album->school->name . '%0aHostel%20name:%20(' . $album->name . ')%0aHostel%20Price:' . $album->price . '%0aLocation:' . $album->category->name . '%0aAgent%20in%20charge:' . $album->user->name . '%0a(Input%20other%20message%20here)%20');
+            return redirect()->away('https://wa.me/234' . $number . '?text=HOSTEL%20REQUEST%20FROM%20CTHOSTEL.%0aInstitution:' . $album->school->name . '%0aHostel%20name:%20(' . $album->name . ')%0aHostel%20Price:' . $album->price . '%0aLocation:' . $album->category->name . '%0aAgent%20in%20charge:' . $album->user->name . '%0a(Input%20other%20message%20here)%20');
         }
         else {
             return redirect()->away('tel:' . $album->user->phone);

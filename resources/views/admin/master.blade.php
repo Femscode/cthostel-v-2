@@ -1390,7 +1390,7 @@
                         class="container-fluid d-flex flex-column flex-md-row align-items-center justify-content-between">
                         <!--begin::Copyright-->
                         <div class="text-dark order-2 order-md-1">
-                            <span class="text-muted fw-bold me-1">2021©</span>
+                            <span class="text-muted fw-bold me-1"><?php echo Date('Y');?>©</span>
                             <a target="_blank" class="text-gray-800 text-hover-primary">CTHostel</a>
                         </div>
                         <!--end::Copyright-->

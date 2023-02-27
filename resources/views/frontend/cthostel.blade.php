@@ -18364,7 +18364,7 @@
                     </div>
                   </div>
 
-                  <input type="text" disabled name="searchinput" value="" placeholder="Search here..."
+                  <input type="text" name="searchinput" value="" placeholder="Search here..."
                     class="search-input" data-category_id="0" />
                   <button type="submit" class="search-button">
 
