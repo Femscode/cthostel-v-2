@@ -17,7 +17,7 @@
 
 	<meta property="og:site_name" content="Discover your dream hostel" />
 	
-	<link rel="shortcut icon" href="{{ asset('myimages/logo_header.png')}}" />
+	<link rel="shortcut icon" href="{{ asset('myimages/fav_01.png')}}" />
 
 
     <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
