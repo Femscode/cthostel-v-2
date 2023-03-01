@@ -7,9 +7,19 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>CTHostel</title>
-    <meta name="robots" content="noindex, follow" />
-    <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+
+    <meta name="description" content="Discover your dream hostel." />
+	<meta name="keywords" content="Discover your dream hostel" />
+	<meta property="og:title" content="Discover your dream hostel" />
+	<meta name="csrf-token" content="{{ csrf_token() }}">
+
+	<meta property="og:site_name" content="Discover your dream hostel" />
+	
+	<link rel="shortcut icon" href="{{ asset('myimages/logo_header.png')}}" />
+
+
     <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
     <link rel="stylesheet" href="{{ asset('welcomehome/css/font-icons.css')}}">
     <link rel="stylesheet" href="{{ asset('welcomehome/css/plugins.css')}}">
