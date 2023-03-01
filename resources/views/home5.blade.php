@@ -7,11 +7,11 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>CTHostel</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
-
-    <meta name="description" content="Discover your dream hostel." />
+    <meta name="description" content="Discover your dream hostel" />
 	<meta name="keywords" content="Discover your dream hostel" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    
 	<meta property="og:title" content="Discover your dream hostel" />
 	<meta name="csrf-token" content="{{ csrf_token() }}">
 
