@@ -4,23 +4,15 @@
 
 <!-- Mirrored from tunatheme.com/tf/html/quarter-preview/quarter/index-8.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 21 Dec 2021 02:36:29 GMT -->
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta charset="utf-8" />
     <title>CTHostel</title>
-    <meta name="description" content="Discover your dream hostel" />
+	<meta name="description" content="Discover your dream hostel" />
 	<meta name="keywords" content="Discover your dream hostel" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	
     
-	<meta property="og:title" content="Discover your dream hostel" />
-	<meta name="csrf-token" content="{{ csrf_token() }}">
-
-	<meta property="og:site_name" content="Discover your dream hostel" />
 	
 	<link rel="shortcut icon" href="{{ asset('myimages/fav_01.png')}}" />
-
-
-    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
     <link rel="stylesheet" href="{{ asset('welcomehome/css/font-icons.css')}}">
     <link rel="stylesheet" href="{{ asset('welcomehome/css/plugins.css')}}">
     <link rel="stylesheet" href="{{ asset('welcomehome/css/style.css')}}">
