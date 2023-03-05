@@ -443,6 +443,15 @@ class AlbumController extends Controller
         }
         return redirect()->back()->with("success", 'Project Uploaded successfully');
     }
+    public function view_identification($id) {
+        $user = User::where('identification',$id)->first();
+        $file = $user->identification;
+        $path = public_path('identification/'.$file);
+        // $header = [
+        //     'Content-Type' =>  'application/pdf',
+        // ];
+        return response()->download($path);
+    }
 
     public function updateprofile(Request $request)
     {

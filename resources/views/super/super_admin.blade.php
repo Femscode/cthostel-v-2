@@ -1393,6 +1393,9 @@
 																<input type='submit' class='btn btn-secondary' value='Set Rank'/>
 															</form>
 															<a class='btn btn-info btn-sm' href='/{{ $user->username }}'>View Page</a>
+															@if($user->identification !== null)
+															<a class='btn btn-primary btn-sm' href='/view_identification/{{ $user->identification }}'>View Identification</a>
+															@endif
 															<a onclick='return confirm("Are you sure you want to delete this user?")' class='btn btn-danger btn-sm' href='deleteuser/{{ $user->id }}'>Delete User</a>
 														</td>
 													</tr>

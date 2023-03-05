@@ -5,19 +5,15 @@
 
 <head>
     <title>CTHostel | Dashboard</title>
-    <meta name="CTHostel"
-        content="...the safest place to get it cheaper without getting scammed." />
-    <meta name="description"
-        content="...the safest place to get it cheaper without getting scammed." />
-    <meta name="keywords"
-        content="...the safest place to get it cheaper without getting scammed." />
+    <meta name="CTHostel" content="...the safest place to get it cheaper without getting scammed." />
+    <meta name="description" content="...the safest place to get it cheaper without getting scammed." />
+    <meta name="keywords" content="...the safest place to get it cheaper without getting scammed." />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta charset="utf-8" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:type" content="article" />
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <meta property="og:title"
-        content="...the safest place to get it cheaper without getting scammed." />
+    <meta property="og:title" content="...the safest place to get it cheaper without getting scammed." />
     <meta property="og:url" content="https://cthostel.com" />
     <meta property="og:site_name" content="CTHostel | Dashboard" />
     <link rel="canonical" href="https://cthostel.com" />
@@ -34,6 +30,48 @@
     @livewireStyles
     <!--end::Global Stylesheets Bundle-->
     <!--Begin::Google Tag Manager -->
+    <style>
+        .copy-icon {
+
+            margin-left: 5px;
+            padding: 5px;
+            background-color: #f2f2f2;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        /* Style the copy icon when hovered */
+        .copy-icon:hover {
+            background-color: #ddd;
+        }
+
+        #myInput {
+            padding:5px;
+            font-weight: 500;
+            line-height: 1.5;
+            color: #181c32;
+            background-color: #fff;
+            background-clip: padding-box;
+            border: 1px solid #e4e6ef;
+            appearance: none;
+            border-radius: 0.475rem;
+            box-shadow: inset 0 1px 2px rgb(0 0 0 / 8%);
+            transition:
+        }
+
+        /* Hide the input field's default copy icon */
+        #myInput::-webkit-contacts-auto-fill-button {
+            display: none !important;
+        }
+    </style>
+    <script>
+        function copyText() {
+              var copyText = document.getElementById("myInput");
+              copyText.select();
+              document.execCommand("copy");
+            }
+
+    </script>
     <script>
         (function(w, d, s, l, i) {
             w[l] = w[l] || [];
@@ -105,6 +143,7 @@
                                     <span class="menu-title">My Page </span>
                                 </span>
 
+
                             </div>
 
 
@@ -116,7 +155,7 @@
                 </div>
                 <!--end::Aside menu-->
                 <!--begin::Footer-->
-              
+
                 <!--end::Footer-->
             </div>
             <!--end::Aside-->
@@ -939,12 +978,14 @@
                                         <div class="cursor-pointer symbol symbol-30px symbol-md-40px"
                                             data-kt-menu-trigger="click" data-kt-menu-attach="parent"
                                             data-kt-menu-placement="bottom-end" data-kt-menu-flip="bottom">
-                                            
+
                                             @if($user->profilePic !== null)
-                                            <img src="https://cthostel.com/cthostel_files/public/agent/{{$user->profilePic}}" alt="profilePic" />
-                                            @else 
-                                            <img src="https://cthostel.com/myimages/cbanner.jpg" style='height:20px' alt="image" />
-                                           @endif
+                                            <img src="https://cthostel.com/cthostel_files/public/agent/{{$user->profilePic}}"
+                                                alt="profilePic" />
+                                            @else
+                                            <img src="https://cthostel.com/myimages/cbanner.jpg" style='height:20px'
+                                                alt="image" />
+                                            @endif
                                         </div>
                                         <!--begin::Menu-->
                                         <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg menu-state-primary fw-bold py-4 fs-6 w-275px"
@@ -976,22 +1017,23 @@
                                             <div class="separator my-2"></div>
                                             <!--end::Menu separator-->
                                             <!--begin::Menu item-->
-                                            
+
                                             <!--end::Menu item-->
                                             <!--begin::Menu item-->
-                                           
+
                                             <!--end::Menu item-->
-                                    
+
                                             <!--end::Menu item-->
                                             <!--begin::Menu item-->
                                             <div class="menu-item px-5">
-                                                <a href="https://cthostel.com/{{ $user->username }}" class="menu-link px-5">My
+                                                <a href="https://cthostel.com/{{ $user->username }}"
+                                                    class="menu-link px-5">My
                                                     Page</a>
                                             </div>
                                             <!--end::Menu item-->
                                             <!--begin::Menu separator-->
                                             <div class="separator my-2"></div>
-                                      
+
                                             <!--begin::Menu item-->
                                             <div class="menu-item px-5 my-1">
                                                 <a href="upgrade_account" class="menu-link px-5">Upgrade Plan</a>
@@ -999,8 +1041,8 @@
                                             <!--end::Menu item-->
                                             <!--begin::Menu item-->
                                             <div class="menu-item px-5">
-                                                <a onclick='return confirm("Are you sure you want to logout?")' href='{{route("logout")}}'
-                                                    class="menu-link px-5">Sign Out</a>
+                                                <a onclick='return confirm("Are you sure you want to logout?")'
+                                                    href='{{route("logout")}}' class="menu-link px-5">Sign Out</a>
                                             </div>
                                             <!--end::Menu item-->
                                         </div>
@@ -1046,7 +1088,7 @@
                     <!--begin::Container-->
                     <div id="kt_content_container" class="container">
                         @if(Session::has('message'))
-                            <div class='alert alert-success'>{{ Session::get('message') }}</div>
+                        <div class='alert alert-success'>{{ Session::get('message') }}</div>
                         @endif
 
                         <div class="card mb-5 mb-xl-10">
@@ -1062,10 +1104,12 @@
                                     <div class="me-7 mb-4">
                                         <div class="symbol symbol-100px symbol-lg-160px symbol-fixed position-relative">
                                             @if($user->profilePic !== null)
-                                            <img src="https://cthostel.com/cthostel_files/public/agent/{{$user->profilePic}}" alt="image" />
-                                            @else 
-                                            
-                                            <img src="https://cthostel.com/myimages/cbanner.jpg" style='height:100px' alt="image" />
+                                            <img src="https://cthostel.com/cthostel_files/public/agent/{{$user->profilePic}}"
+                                                alt="image" />
+                                            @else
+
+                                            <img src="https://cthostel.com/myimages/cbanner.jpg" style='height:100px'
+                                                alt="image" />
                                             @endif
                                             <div
                                                 class="position-absolute translate-middle bottom-0 start-100 mb-6 bg-success rounded-circle border border-4 border-white h-20px w-20px">
@@ -1100,7 +1144,8 @@
                                                         <!--end::Svg Icon-->
                                                     </a><br>
                                                     {{-- <a href="/{{$user->username}}"
-                                                        class="btn btn-sm btn-light-success fw-bolder ms-2 fs-8 py-1 px-3">cthostel.com/{{$user->username}}</a> --}}
+                                                        class="btn btn-sm btn-light-success fw-bolder ms-2 fs-8 py-1 px-3">cthostel.com/{{$user->username}}</a>
+                                                    --}}
                                                 </div>
                                                 <!--end::Name-->
                                                 <!--begin::Info-->
@@ -1133,11 +1178,10 @@
 
                                                         <!--end::Svg Icon-->{{ $user->school->name }}
                                                     </a>
-                                                   
+
                                                 </div>
                                                 @if($user->plan == "Free Mode")
-                                                <a data-bs-toggle="modal"
-                                                data-bs-target="#kt_modal_offer_a_deal" 
+                                                <a data-bs-toggle="modal" data-bs-target="#kt_modal_offer_a_deal"
                                                     class="d-flex align-items-center alert alert-danger mb-2">
                                                     Click here to upgrade plan to enjoy more benefit!
                                                 </a>
@@ -1182,7 +1226,8 @@
                                                         <!--begin::Modal body-->
                                                         <div class="modal-body scroll-y px-10 px-lg-15 pt-0 pb-15">
                                                             <!--begin:Form-->
-                                                            <form method='post' action='{{ route("updateprofile") }}' enctype="multipart/form-data" class="form">@csrf
+                                                            <form method='post' action='{{ route("updateprofile") }}'
+                                                                enctype="multipart/form-data" class="form">@csrf
                                                                 <!--begin::Heading-->
                                                                 <div class="mb-13 text-center">
                                                                     <!--begin::Title-->
@@ -1209,8 +1254,7 @@
                                                                     <!--end::Label-->
                                                                     <input type="text" required
                                                                         class="form-control form-control-solid"
-                                                                        id='profilename'
-                                                                        value='{{$user->username}}'
+                                                                        id='profilename' value='{{$user->username}}'
                                                                         name="name" />
                                                                 </div>
                                                                 <div class="d-flex flex-column mb-8 fv-row">
@@ -1225,8 +1269,8 @@
                                                                     <!--end::Label-->
                                                                     <input type="text" readonly
                                                                         class="form-control form-control-solid"
-                                                                        id='profileemail'
-                                                                        value='{{$user->email}}' name="email" />
+                                                                        id='profileemail' value='{{$user->email}}'
+                                                                        name="email" />
                                                                 </div>
                                                                 <div class="d-flex flex-column mb-8 fv-row">
                                                                     <!--begin::Label-->
@@ -1240,41 +1284,47 @@
                                                                     <!--end::Label-->
                                                                     <input required type="text"
                                                                         class="form-control form-control-solid"
-                                                                        id='profilephone'
-                                                                        value='{{$user->phone}}' name="phone" />
+                                                                        id='profilephone' value='{{$user->phone}}'
+                                                                        name="phone" />
                                                                 </div>
                                                                 <div class="d-flex flex-column mb-8 fv-row">
                                                                     <!--begin::Label-->
                                                                     <label
                                                                         class="d-flex align-items-center fs-6 fw-bold mb-2">
                                                                         <span class="required">Profile Picture</span>
-                                                                        <i class="fas fa-exclamation-circle ms-2 fs-7"
-                                                                            data-bs-toggle="tooltip"
-                                                                            title="This field is mandatory"></i>
+                                                                       
                                                                     </label>
                                                                     <!--end::Label-->
                                                                     <input accept="image/png,image/jpg, image/jpeg"
-                                                                         type="file"
+                                                                        type="file"
                                                                         class="form-control form-control-solid"
                                                                         id='profilePic' name="profilePic" />
                                                                 </div>
-                                                               
+
 
                                                                 <div class="d-flex flex-column mb-8 fv-row">
                                                                     <!--begin::Label-->
                                                                     <label
                                                                         class="d-flex align-items-center fs-6 fw-bold mb-2">
-                                                                        <span class="required">Means Of identification</span>
-                                                                        <i class="fas fa-exclamation-circle ms-2 fs-7"
-                                                                            data-bs-toggle="tooltip"
-                                                                            title="This field is mandatory"></i>
+                                                                        <span class="required">Means Of
+                                                                            identification</span>
+                                                                       
                                                                     </label>
+                                                                   @if($user->identification == null)
                                                                     <div class='alert alert-danger'>
-                                                                        Please note that means of identification is one of the essential criteria for getting verified.
+                                                                        Please note that means of identification is one
+                                                                        of the essential criteria for getting verified.
                                                                     </div>
+                                                                    @else
+                                                                   
+                                                                    <div class='alert alert-info'>
+                                                                        Kudos!, you have submitted your means of identification.
+                                                                        click <a href='/view_identification/{{ $user->identification }}'>here</a> to view.
+                                                                    </div>
+                                                                    @endif
                                                                     <!--end::Label-->
                                                                     <input accept="image/png,image/jpg, image/jpeg"
-                                                                         type="file"
+                                                                        type="file"
                                                                         class="form-control form-control-solid"
                                                                         id='profilePic' name="identification" />
                                                                 </div>
@@ -1337,117 +1387,141 @@
                                                         <!--begin::Modal body-->
                                                         <div class="modal-body scroll-y px-10 px-lg-15 pt-0 pb-15">
                                                             <!--begin:Form-->
-                                                          
-                                                                <!--begin::Heading-->
-                                                                <div class="mb-13 text-center">
-                                                                    <!--begin::Title-->
-                                                                    <h1 class="mb-3">Upgrade to Beta Agent</h1>
-                                                                    <!--end::Title-->
-                                                                    <!--begin::Description-->
 
-                                                                    <!--end::Description-->
-                                                                </div>
-                                                                <!--end::Heading-->
-                                                                <!--begin::Input group-->
-                                                                <div class="card-body pt-5">
-                                                                    <!--begin::Timeline-->
-                                                                    <div class="timeline-label">
-                                                                        <!--begin::Item-->
-                                                                        <div class="timeline-item">
-                                                                          
-                                                                            <!--begin::Badge-->
-                                                                            <div class="timeline-badge">
-                                                                                <i class="fa fa-genderless text-warning fs-1"></i>
-                                                                            </div>
-                                                                            <!--end::Badge-->
-                                                                            <!--begin::Text-->
-                                                                            <div class="fw-semibold timeline-content text-grey ps-3">Make your hostels appear first in our homepage.</div>
-                                                                            <!--end::Text-->
+                                                            <!--begin::Heading-->
+                                                            <div class="mb-13 text-center">
+                                                                <!--begin::Title-->
+                                                                <h1 class="mb-3">Upgrade to Beta Agent</h1>
+                                                                <!--end::Title-->
+                                                                <!--begin::Description-->
+
+                                                                <!--end::Description-->
+                                                            </div>
+                                                            <!--end::Heading-->
+                                                            <!--begin::Input group-->
+                                                            <div class="card-body pt-5">
+                                                                <!--begin::Timeline-->
+                                                                <div class="timeline-label">
+                                                                    <!--begin::Item-->
+                                                                    <div class="timeline-item">
+
+                                                                        <!--begin::Badge-->
+                                                                        <div class="timeline-badge">
+                                                                            <i
+                                                                                class="fa fa-genderless text-warning fs-1"></i>
                                                                         </div>
-                                                                        <div class="timeline-item">
-                                                                           
-                                                                            <!--begin::Badge-->
-                                                                            <div class="timeline-badge">
-                                                                                <i class="fa fa-genderless text-danger fs-1"></i>
-                                                                            </div>
-                                                                            <!--end::Badge-->
-                                                                            <!--begin::Desc-->
-                                                                            <div class="timeline-content fw-semibold text-gray-800 ps-3">Make your hostels appear first in all searches by customers.</div>
-                                                                            <!--end::Desc-->
-                                                                        </div>
-                                                                        <!--end::Item-->
-                                                                        <!--begin::Item-->
-                                                                        <div class="timeline-item">
-                                                                           
-                                                                            <!--begin::Badge-->
-                                                                            <div class="timeline-badge">
-                                                                                <i class="fa fa-genderless text-success fs-1"></i>
-                                                                            </div>
-                                                                            <!--end::Badge-->
-                                                                            <!--begin::Content-->
-                                                                            <div class="timeline-content d-flex">
-                                                                                <span class="fw-semibold text-gray-800 ps-3">Make all your hostels have the CTHostel-Verified Badge.</span>
-                                                                            </div>
-                                                                            <!--end::Content-->
-                                                                        </div>
-                                                                        <!--end::Item-->
-                                                                        <!--begin::Item-->
-                                                                        <div class="timeline-item">
-                                                                           
-                                                                            <!--begin::Badge-->
-                                                                            <div class="timeline-badge">
-                                                                                <i class="fa fa-genderless text-danger fs-1"></i>
-                                                                            </div>
-                                                                            <!--end::Badge-->
-                                                                            <!--begin::Desc-->
-                                                                            <div class="timeline-content fw-semibold text-gray-800 ps-3">All your hostels enjoy premium advertisement.</div>
-                                                                            <!--end::Desc-->
-                                                                        </div>
-                                                                        <!--end::Item-->
-                                                                        <!--begin::Item-->
-                                                                        <div class="timeline-item">
-                                                                           <!--begin::Badge-->
-                                                                            <div class="timeline-badge">
-                                                                                <i class="fa fa-genderless text-primary fs-1"></i>
-                                                                            </div>
-                                                                            <!--end::Badge-->
-                                                                            <!--begin::Text-->
-                                                                            <div class="timeline-content fw-semibold text-grey ps-3">You can post as much as 100 Hostels on our platform.</div>
-                                                                            <!--end::Text-->
-                                                                        </div>
-                                                                        <!--end::Item-->
-                                                                        <!--begin::Item-->
-                                                                       
-                                                                        <!--end::Item-->
-                                                                        <!--begin::Item-->
-                                                                        {{-- <div class="timeline-item">
-                                                                           
-                                                                            <!--begin::Badge-->
-                                                                            <div class="timeline-badge">
-                                                                                <i class="fa fa-genderless text-primary fs-1"></i>
-                                                                            </div>
-                                                                            <!--end::Badge-->
-                                                                            <!--begin::Text-->
-                                                                            <div class="timeline-content fw-semibold text-grey ps-3">Enjoy free access to the CTHostel Market Space.</div>
-                                                                            <!--end::Text-->
-                                                                        </div> --}}
-                                                                        <!--end::Item-->
-                                                                        <!--begin::Item-->
-                                                                       <!--end::Item-->
+                                                                        <!--end::Badge-->
+                                                                        <!--begin::Text-->
+                                                                        <div
+                                                                            class="fw-semibold timeline-content text-grey ps-3">
+                                                                            Make your hostels appear first in our
+                                                                            homepage.</div>
+                                                                        <!--end::Text-->
                                                                     </div>
-                                                                    <!--end::Timeline-->
-                                                                </div>
+                                                                    <div class="timeline-item">
 
-                                                             
-                                                                <div class="text-center">
-                                                                   
-                                                                    <a href="upgrade_account"
-                                                                        id="kt_modal_new_target_submit"
-                                                                        class="btn btn-primary">
-                                                                        <span class="indicator-label">Upgrade Now</span>
-                                                                               </a>
+                                                                        <!--begin::Badge-->
+                                                                        <div class="timeline-badge">
+                                                                            <i
+                                                                                class="fa fa-genderless text-danger fs-1"></i>
+                                                                        </div>
+                                                                        <!--end::Badge-->
+                                                                        <!--begin::Desc-->
+                                                                        <div
+                                                                            class="timeline-content fw-semibold text-gray-800 ps-3">
+                                                                            Make your hostels appear first in all
+                                                                            searches by customers.</div>
+                                                                        <!--end::Desc-->
+                                                                    </div>
+                                                                    <!--end::Item-->
+                                                                    <!--begin::Item-->
+                                                                    <div class="timeline-item">
+
+                                                                        <!--begin::Badge-->
+                                                                        <div class="timeline-badge">
+                                                                            <i
+                                                                                class="fa fa-genderless text-success fs-1"></i>
+                                                                        </div>
+                                                                        <!--end::Badge-->
+                                                                        <!--begin::Content-->
+                                                                        <div class="timeline-content d-flex">
+                                                                            <span
+                                                                                class="fw-semibold text-gray-800 ps-3">Make
+                                                                                all your hostels have the
+                                                                                CTHostel-Verified Badge.</span>
+                                                                        </div>
+                                                                        <!--end::Content-->
+                                                                    </div>
+                                                                    <!--end::Item-->
+                                                                    <!--begin::Item-->
+                                                                    <div class="timeline-item">
+
+                                                                        <!--begin::Badge-->
+                                                                        <div class="timeline-badge">
+                                                                            <i
+                                                                                class="fa fa-genderless text-danger fs-1"></i>
+                                                                        </div>
+                                                                        <!--end::Badge-->
+                                                                        <!--begin::Desc-->
+                                                                        <div
+                                                                            class="timeline-content fw-semibold text-gray-800 ps-3">
+                                                                            All your hostels enjoy premium
+                                                                            advertisement.</div>
+                                                                        <!--end::Desc-->
+                                                                    </div>
+                                                                    <!--end::Item-->
+                                                                    <!--begin::Item-->
+                                                                    <div class="timeline-item">
+                                                                        <!--begin::Badge-->
+                                                                        <div class="timeline-badge">
+                                                                            <i
+                                                                                class="fa fa-genderless text-primary fs-1"></i>
+                                                                        </div>
+                                                                        <!--end::Badge-->
+                                                                        <!--begin::Text-->
+                                                                        <div
+                                                                            class="timeline-content fw-semibold text-grey ps-3">
+                                                                            You can post as much as 100 Hostels on our
+                                                                            platform.</div>
+                                                                        <!--end::Text-->
+                                                                    </div>
+                                                                    <!--end::Item-->
+                                                                    <!--begin::Item-->
+
+                                                                    <!--end::Item-->
+                                                                    <!--begin::Item-->
+                                                                    {{-- <div class="timeline-item">
+
+                                                                        <!--begin::Badge-->
+                                                                        <div class="timeline-badge">
+                                                                            <i
+                                                                                class="fa fa-genderless text-primary fs-1"></i>
+                                                                        </div>
+                                                                        <!--end::Badge-->
+                                                                        <!--begin::Text-->
+                                                                        <div
+                                                                            class="timeline-content fw-semibold text-grey ps-3">
+                                                                            Enjoy free access to the CTHostel Market
+                                                                            Space.</div>
+                                                                        <!--end::Text-->
+                                                                    </div> --}}
+                                                                    <!--end::Item-->
+                                                                    <!--begin::Item-->
+                                                                    <!--end::Item-->
                                                                 </div>
-                                                                <!--end::Actions-->
+                                                                <!--end::Timeline-->
+                                                            </div>
+
+
+                                                            <div class="text-center">
+
+                                                                <a href="upgrade_account"
+                                                                    id="kt_modal_new_target_submit"
+                                                                    class="btn btn-primary">
+                                                                    <span class="indicator-label">Upgrade Now</span>
+                                                                </a>
+                                                            </div>
+                                                            <!--end::Actions-->
                                                             </form>
                                                             <!--end:Form-->
                                                         </div>
@@ -1457,17 +1531,23 @@
                                                 </div>
                                                 <!--end::Modal dialog-->
                                             </div>
+                                            <h5>Personal Link:</h5>
                                             <div class="d-flex my-4">
 
-                                                <a href="https://cthostel.com/{{ $user->username }}" class="btn btn-sm btn-info me-3">My Page</a>
+                                                <input id='myInput' value='https://cthostel.com/{{ $user->username }}'>
+                                                <span class="copy-icon btn btn-sm btn-info me-3" onclick="copyText()"><i
+                                                        class='fa fa-copy'></i></span>
+                                                {{-- <a href="https://cthostel.com/{{ $user->username }}"
+                                                    class="btn btn-sm btn-info me-3">My Page</a> --}}
                                                 <a href="/" class="btn btn-sm btn-dark me-3" data-bs-toggle="modal"
                                                     data-bs-target="#kt_modal_new_target">My Profile</a>
                                                 {{-- <a class="btn btn-sm btn-primary me-3" data-bs-toggle="modal"
                                                     data-bs-target="#kt_modal_offer_a_deal">Upgrade Plan</a> --}}
                                                 <!--begin::Menu-->
-                                          
+
                                                 <!--end::Menu-->
                                             </div>
+                                          
                                             <!--end::Actions-->
                                         </div>
                                         <!--end::Title-->
@@ -1525,7 +1605,7 @@
 
                             </div>
                         </div>
-                       
+
                         <div class="card mb-5 mb-xl-8">
                             <!--begin::Header-->
                             <div class="card-header border-0 pt-5">
@@ -1556,7 +1636,7 @@
                                                         </g>
                                                     </svg>
                                                 </span>
-                                                Create New Hostel
+                                                Post New Hostel
                                                 <!--end::Svg Icon-->
                                             </button>
                                         </a>
@@ -1569,7 +1649,8 @@
                                                 <!--begin::Modal content-->
                                                 <div class="modal-content">
 
-                                                    <form method='post' id='create_hostel_for' action='{{ route("album.store") }}'
+                                                    <form method='post' id='create_hostel_for'
+                                                        action='{{ route("album.store") }}'
                                                         enctype="multipart/form-data">@csrf
                                                         {{-- <form method='post'
                                                             action="{{route('album.storewithroute')}}"
@@ -1641,9 +1722,11 @@
                                                                             <!--begin::Content-->
                                                                             <div class="fw-bold">
                                                                                 <h4 class="text-gray-900 fw-bolder">
-                                                                                    Not in {{ $user->school->name }}?</h4>
+                                                                                    Not in {{ $user->school->name }}?
+                                                                                </h4>
                                                                                 <div class="fs-6 text-gray-700">
-                                                                                    You can now create hostels for other schools
+                                                                                    You can now create hostels for other
+                                                                                    schools
                                                                                     <a href="#"></a>
                                                                                 </div>
                                                                             </div>
@@ -1651,44 +1734,47 @@
                                                                         </div>
                                                                         <!--end::Wrapper-->
                                                                     </div>
-                                                                   
+
                                                                     <div class="row mb-5">
                                                                         <!--begin::Col-->
                                                                         <div class="col-md-6 fv-row">
-                                                                            
+
                                                                             <label
                                                                                 class="required fs-5 fw-bold mb-2">School</label>
-                                                                           
+
                                                                             <select required type="text" id='sch_id'
                                                                                 name='school_id'
                                                                                 class="form-control form-control-solid">
-                                                                                <option value=''>--Select School--</option>
+                                                                                <option value=''>--Select School--
+                                                                                </option>
                                                                                 @foreach($schools as $sch)
-                                                                                <option value='{{ $sch->id }}'>{{ $sch->name }}</option>
+                                                                                <option value='{{ $sch->id }}'>{{
+                                                                                    $sch->name }}</option>
                                                                                 @endforeach
 
                                                                             </select>
-                                                                          
+
                                                                         </div>
-                                                                       
+
                                                                         <div class="col-md-6 fv-row">
                                                                             <!--end::Label-->
                                                                             <label
                                                                                 class="required fs-5 fw-bold mb-2">Location</label>
-                                                                           
-                                                                                <select required name="category_id"
+
+                                                                            <select required name="category_id"
                                                                                 id='category_id' data-control="select2"
                                                                                 data-dropdown-parent="#kt_modal_new_address"
                                                                                 data-placeholder="Select hostel location"
                                                                                 class="form-select form-select-solid">
-                                                                                <option value=''>Select Hostel Location</option>
-                                                                                  
-    
+                                                                                <option value=''>Select Hostel Location
+                                                                                </option>
+
+
                                                                             </select>
-                                                                              
-                                                                           
+
+
                                                                         </div>
-                                                                       
+
                                                                     </div>
 
                                                                     <div class="row mb-5">
@@ -1717,7 +1803,7 @@
                                                                                 name='price'
                                                                                 class="form-control form-control-solid"
                                                                                 placeholder="" />
-                                                                               
+
                                                                             <!--end::Input-->
                                                                         </div>
                                                                         <!--end::Col-->
@@ -1786,7 +1872,8 @@
                                                                             Image</label>
                                                                         <!--end::Label-->
                                                                         <!--begin::Input-->
-                                                                        <div class='alert alert-danger'>Select three(3) or more images of hostel</div>
+                                                                        <div class='alert alert-danger'>Select three(3)
+                                                                            or more images of hostel</div>
                                                                         <input accept="image/*" required
                                                                             class="form-control form-control-solid"
                                                                             id='image' type='file' multiple
@@ -1935,7 +2022,7 @@
 
                                                 <a title='View Hostel' href='/cthostel/{{$album->slug}}/{{$album->id}}'
                                                     class="btn btn-info btn-sm me-1">
-                                                   View
+                                                    View
                                                 </a>
                                                 @endif
 
@@ -1948,7 +2035,7 @@
                                                     {{-- <a href="{{ Route('upload.album', [$album->id]) }}"
                                                         class="btn btn-icon btn-bg-light btn-color-info btn-sm me-1">
                                                         --}}
-                                                       
+
                                                         Upload Additional Images
                                                     </a>
                                             </td>
@@ -2123,7 +2210,7 @@
                                                             </svg>
                                                         </span>
                                                     </a>
-                                                   
+
                                             </td>
                                             <div class="modal fade" id="kt_modal_new_target2" tabindex="-1"
                                                 aria-hidden="true">
@@ -2133,12 +2220,13 @@
                                                     <!--begin::Modal content-->
                                                     <div class="modal-content rounded">
                                                         <!--begin::Modal header-->
-                                                        
+
                                                         <div class="modal-header pb-0 border-0 justify-content-center">
                                                             <h2>Edit Hostel</h2>
                                                             <!--begin::Close-->
                                                             <div class="btn btn-sm btn-icon btn-active-color-primary justify-content-end"
-                                                                data-bs-dismiss="modal" style='margin-right:0px;right:0px'>
+                                                                data-bs-dismiss="modal"
+                                                                style='margin-right:0px;right:0px'>
                                                                 <!--begin::Svg Icon | path: icons/duotone/Navigation/Close.svg-->
                                                                 <span class="svg-icon svg-icon-1">
                                                                     <svg xmlns="http://www.w3.org/2000/svg"
@@ -2160,10 +2248,10 @@
                                                             </div>
                                                             <!--end::Close-->
                                                         </div>
-                                                       
 
-                                                        <form id='update_hostel' action='{{ route("update.album") }}' method="POST"
-                                                            enctype="multipart/form-data">@csrf
+
+                                                        <form id='update_hostel' action='{{ route("update.album") }}'
+                                                            method="POST" enctype="multipart/form-data">@csrf
                                                             {{ method_field('PUT') }}
 
 
@@ -2179,45 +2267,48 @@
                                                                     data-kt-scroll-offset="300px">
                                                                     <!--begin::Notice-->
                                                                     <!--begin::Notice-->
-                                                                   
+
                                                                     <!--end::Notice-->
                                                                     <!--end::Notice-->
                                                                     <!--begin::Input group-->
                                                                     <div class="row mb-5">
                                                                         <!--begin::Col-->
                                                                         <div class="col-md-6 fv-row">
-                                                                            
+
                                                                             <label
                                                                                 class="required fs-5 fw-bold mb-2">School</label>
-                                                                           
-                                                                            <select required type="text" id='edit_sch_id'
-                                                                                name='school_id'
+
+                                                                            <select required type="text"
+                                                                                id='edit_sch_id' name='school_id'
                                                                                 class="form-control form-control-solid">
-                                                                                <option value=''>--Select School--</option>
+                                                                                <option value=''>--Select School--
+                                                                                </option>
                                                                                 @foreach($schools as $sch)
-                                                                                <option value='{{ $sch->id }}'>{{ $sch->name }}</option>
+                                                                                <option value='{{ $sch->id }}'>{{
+                                                                                    $sch->name }}</option>
                                                                                 @endforeach
 
                                                                             </select>
-                                                                          
+
                                                                         </div>
-                                                                       
+
                                                                         <div class="col-md-6 fv-row">
                                                                             <!--end::Label-->
                                                                             <label
                                                                                 class="required fs-5 fw-bold mb-2">Location</label>
-                                                                           
-                                                                                <select required type="text" id='edit_category_id'
-                                                                                name='category_id'
+
+                                                                            <select required type="text"
+                                                                                id='edit_category_id' name='category_id'
                                                                                 class="form-control form-control-solid">
-                                                                                <option value=''>--Select Location--</option>
-                                                                               
+                                                                                <option value=''>--Select Location--
+                                                                                </option>
+
 
                                                                             </select>
-                                                                              
-                                                                           
+
+
                                                                         </div>
-                                                                       
+
                                                                     </div>
 
                                                                     <div class="row mb-5">
@@ -2232,8 +2323,9 @@
                                                                                 id='edit_name'
                                                                                 class="form-control form-control-solid"
                                                                                 placeholder="" />
-                                                                               
-                                                                            <input type='hidden' name='type' id='type' value='hostel'/>
+
+                                                                            <input type='hidden' name='type' id='type'
+                                                                                value='hostel' />
                                                                             <!--end::Input-->
                                                                         </div>
                                                                         <!--end::Col-->
@@ -2248,7 +2340,7 @@
                                                                                 id='edit_price' name='price'
                                                                                 class="form-control form-control-solid"
                                                                                 placeholder="" />
-                                                                             
+
                                                                             <!--end::Input-->
                                                                         </div>
                                                                         <!--end::Col-->
@@ -2304,7 +2396,7 @@
                                                                             <option value='Hostel Fence'>Hostel Fence
                                                                             </option>
                                                                         </select>
-                                                                     </div>
+                                                                    </div>
 
                                                                     <input type='hidden' name='id' id='id' value=''>
                                                                     <!--end::Input group-->
@@ -2319,7 +2411,6 @@
                                                                         <!--end::Label-->
                                                                         <!--begin::Input-->
                                                                         <input accept="image/png,image/jpg, image/jpeg"
-                                                                        
                                                                             class="form-control form-control-solid"
                                                                             type='file' id='edit_image'
                                                                             placeholder="Display image of hostel"
@@ -2422,7 +2513,9 @@
                         class="container-fluid d-flex flex-column flex-md-row align-items-center justify-content-between">
                         <!--begin::Copyright-->
                         <div class="text-dark order-2 order-md-1">
-                            <span class="text-muted fw-bold me-1"><?php echo Date('Y');?> ©</span>
+                            <span class="text-muted fw-bold me-1">
+                                <?php echo Date('Y');?> ©
+                            </span>
                             <a target="_blank" class="text-gray-800 text-hover-primary">CTHostel</a>
                         </div>
                         <!--end::Copyright-->

@@ -78,6 +78,7 @@ Route::get('/admin',[AlbumController::class,'admin'])->name('good')->middleware(
 Route::get('/dashboard',[AlbumController::class,'admin'])->name('dashboard')->middleware('auth');
 
 Route::any('/updateprofile',[AlbumController::class,'updateprofile'])->name('updateprofile');
+Route::any('/view_identification/{id}',[AlbumController::class,'view_identification'])->name('view_identification');
 Route::get('/',[AlbumController::class,'selectinstitution'])->name('selectinstitution');
 
 Route::any('/cthome',[FrontendCOntroller::class,'cthome'])->name('cthome');
