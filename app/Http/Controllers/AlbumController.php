@@ -447,10 +447,10 @@ class AlbumController extends Controller
         $user = User::where('identification',$id)->first();
         $file = $user->identification;
         $path = public_path('identification/'.$file);
-        // $header = [
-        //     'Content-Type' =>  'application/pdf',
-        // ];
-        return response()->download($path);
+        $header = [
+            'Content-Type' => 'image/jpeg',
+        ];
+        return response()->file($path,$header);
     }
 
     public function updateprofile(Request $request)
