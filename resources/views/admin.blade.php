@@ -1532,7 +1532,7 @@
                                                 <!--end::Modal dialog-->
                                             </div>
                                             <h5>Personal Link:</h5>
-                                            <div class="d-flex my-4">
+                                            <div class="my-4">
 
                                                 <input id='myInput' value='https://cthostel.com/{{ $user->username }}'>
                                                 <span class="copy-icon btn btn-sm btn-info me-3" onclick="copyText()"><i

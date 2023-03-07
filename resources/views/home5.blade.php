@@ -6,8 +6,8 @@
 <head>
     <meta charset="utf-8" />
     <title>CTHostel</title>
-	<meta name="description" content="Find affordable and comfortable accommodations for your next adventure" />
-	<meta name="keywords" content="Find affordable and comfortable accommodations for your next adventure" />
+	<meta name="description" content="Affordable and comfortable hostel for your next adventure" />
+	<meta name="keywords" content="Affordable and comfortable hostel for your next adventure" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	
     
