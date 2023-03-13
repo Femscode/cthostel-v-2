@@ -328,7 +328,7 @@ class AlbumController extends Controller
         $album = Album::find($request->id);
         if ($album->video !== null) {
             $storage = new StorageClient([
-                'keyFile' => json_decode(file_get_contents('C:\xampp\htdocs\docs\cthostel-v-2\public\ct-hostel-firebase-adminsdk-bf7nu-85872bd8b6.json'), true)
+                'keyFile' => json_decode(file_get_contents(env('STORAGE_PATH')), true)
             ]);
             $bucket = $storage->bucket('ct-hostel.appspot.com');
             $videoPath = 'videos/' . $album->video;
@@ -343,7 +343,7 @@ class AlbumController extends Controller
     public function uploadvideo(Request $request)
     {
         $album = Album::find($request->id);
-        $factory = (new Factory)->withServiceAccount('C:\xampp\htdocs\docs\cthostel-v-2\public\ct-hostel-firebase-adminsdk-bf7nu-85872bd8b6.json');
+        $factory = (new Factory)->withServiceAccount(env('STORAGE_PATH'));
         $storage = $factory->createStorage();
         //delete existing video
         if ($album->video !== null) {
@@ -436,7 +436,7 @@ class AlbumController extends Controller
         
       
         if ($request->video !== 'undefined') {
-            $factory = (new Factory)->withServiceAccount('C:\xampp\htdocs\docs\cthostel-v-2\public\ct-hostel-firebase-adminsdk-bf7nu-85872bd8b6.json');
+            $factory = (new Factory)->withServiceAccount(env('STORAGE_PATH'));
             $storage = $factory->createStorage();
             $video = $request->file('video');
             $bucket = $storage->getBucket();

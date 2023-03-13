@@ -42,7 +42,7 @@ class FrontendCOntroller extends Controller
         $data['roommate'] = $roommate = Roommate::where('hostel_id', $id)->get();
         if ($album->video !== null) {
             $storage = new StorageClient([
-                'keyFile' => json_decode(file_get_contents('C:\xampp\htdocs\docs\cthostel-v-2\public\ct-hostel-firebase-adminsdk-bf7nu-85872bd8b6.json'), true)
+                'keyFile' => json_decode(file_get_contents(env('STORAGE_PATH')), true)
             ]);
             $bucket = $storage->bucket('ct-hostel.appspot.com');
             $videoPath = 'videos/' . $album->video;
