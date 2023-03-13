@@ -21357,7 +21357,7 @@
 
                                     <div class="name"><a href="{{route('cthostel',[$album->slug,$album->id])}}"
                                         style='background:#003544;color:white;border-radius:4px'
-                                        class='btn btn-success'>View Hostel</a></div>
+                                        class='btn btn-success'>View Hostel @if($album->video !== null) <i class='fa fa-play'></i> @endif</a></div>
 
 
 

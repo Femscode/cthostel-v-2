@@ -859,7 +859,7 @@
                                                                                 class='btn btn-success btn-sm text-white'
                                                                                 style='background-color:#033533;border-radius:3px;color:white'
                                                                                 href='{{route("cthostel",[$album->slug,$album->id])}}'>View
-                                                                                hostel</a></div>
+                                                                                hostel @if($album->video !== null) <i class='fa fa-play'></i> @endif</a></div>
 
 
 

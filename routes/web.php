@@ -95,6 +95,8 @@ Route::get('statusdisable',[AlbumController::class,'statusdisable'])->name('stat
 Route::get('/{id}/category',[FrontendCOntroller::class,'albumCategory'])->name('album.category');
 Route::get('/getallalbums',[FrontendCOntroller::class,'getallalbum'])->name('getallalbums');
 Route::get('/loaduploadedimages',[AlbumController::class,'loaduploadedimages'])->name('loaduploadedimages');
+Route::get('/loadvideo',[AlbumController::class,'loadvideo'])->name('loadvideo');
+Route::any('uploadvideo',[AlbumController::class,'uploadvideo'])->name('uploadvideo');
 Route::get('/loadprojectimages',[AlbumController::class,'loadprojectimages'])->name('loadprojectimages');
 
 Route::get('/deleteuploadedimages',[AlbumController::class,'deleteuploadedimages'])->name('deleteuploadedimages');

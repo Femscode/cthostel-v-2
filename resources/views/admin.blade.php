@@ -5,15 +5,15 @@
 
 <head>
     <title>CTHostel | Dashboard</title>
-    <meta name="CTHostel" content="...the safest place to get it cheaper without getting scammed." />
-    <meta name="description" content="...the safest place to get it cheaper without getting scammed." />
-    <meta name="keywords" content="...the safest place to get it cheaper without getting scammed." />
+    <meta name="CTHostel" content="Safest place to get it cheaper without getting scammed." />
+    <meta name="description" content="Safest place to get it cheaper without getting scammed." />
+    <meta name="keywords" content="Safest place to get it cheaper without getting scammed." />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta charset="utf-8" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:type" content="article" />
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <meta property="og:title" content="...the safest place to get it cheaper without getting scammed." />
+    <meta property="og:title" content="Safest place to get it cheaper without getting scammed." />
     <meta property="og:url" content="https://cthostel.com" />
     <meta property="og:site_name" content="CTHostel | Dashboard" />
     <link rel="canonical" href="https://cthostel.com" />
@@ -46,7 +46,7 @@
         }
 
         #myInput {
-            padding:5px;
+            padding: 5px;
             font-weight: 500;
             line-height: 1.5;
             color: #181c32;
@@ -1292,7 +1292,7 @@
                                                                     <label
                                                                         class="d-flex align-items-center fs-6 fw-bold mb-2">
                                                                         <span class="required">Profile Picture</span>
-                                                                       
+
                                                                     </label>
                                                                     <!--end::Label-->
                                                                     <input accept="image/png,image/jpg, image/jpeg"
@@ -1308,18 +1308,21 @@
                                                                         class="d-flex align-items-center fs-6 fw-bold mb-2">
                                                                         <span class="required">Means Of
                                                                             identification</span>
-                                                                       
+
                                                                     </label>
-                                                                   @if($user->identification == null)
+                                                                    @if($user->identification == null)
                                                                     <div class='alert alert-danger'>
                                                                         Please note that means of identification is one
                                                                         of the essential criteria for getting verified.
                                                                     </div>
                                                                     @else
-                                                                   
+
                                                                     <div class='alert alert-info'>
-                                                                        Kudos!, you have submitted your means of identification.
-                                                                        click <a href='/view_identification/{{ $user->identification }}'>here</a> to view.
+                                                                        Kudos!, you have submitted your means of
+                                                                        identification.
+                                                                        click <a
+                                                                            href='/view_identification/{{ $user->identification }}'>here</a>
+                                                                        to view.
                                                                     </div>
                                                                     @endif
                                                                     <!--end::Label-->
@@ -1547,7 +1550,7 @@
 
                                                 <!--end::Menu-->
                                             </div>
-                                          
+
                                             <!--end::Actions-->
                                         </div>
                                         <!--end::Title-->
@@ -1642,19 +1645,19 @@
                                         </a>
                                         <!--begin::Menu 2-->
 
-                                        <div class="modal fade" id="kt_modal_new_address" tabindex="-1"
+                                        <div class="modal fade" role="dialog" id="kt_modal_new_address" tabindex="-1"
                                             aria-hidden="true">
                                             <!--begin::Modal dialog-->
                                             <div class="modal-dialog modal-dialog-centered mw-650px">
                                                 <!--begin::Modal content-->
                                                 <div class="modal-content">
 
-                                                    <form method='post' id='create_hostel_for'
+                                                    {{-- <form method='post' id='create_hostel_form'
                                                         action='{{ route("album.store") }}'
-                                                        enctype="multipart/form-data">@csrf
-                                                        {{-- <form method='post'
-                                                            action="{{route('album.storewithroute')}}"
-                                                            enctype="multipart/form-data">@csrf --}}
+                                                        enctype="multipart/form-data">@csrf --}}
+                                                        <form method='post' id='create_hostel_form'
+                                                            enctype="multipart/form-data">@csrf
+
                                                             <!--begin::Modal header-->
                                                             <div class="modal-header" id="kt_modal_new_address_header">
                                                                 <!--begin::Modal title-->
@@ -1688,6 +1691,7 @@
                                                             <!--begin::Modal body-->
                                                             <div class="modal-body py-10 px-lg-17">
                                                                 <!--begin::Scroll-->
+
                                                                 <div class="scroll-y me-n7 pe-7"
                                                                     id="kt_modal_new_address_scroll"
                                                                     data-kt-scroll="true"
@@ -1695,7 +1699,7 @@
                                                                     data-kt-scroll-max-height="auto"
                                                                     data-kt-scroll-dependencies="#kt_modal_new_address_header"
                                                                     data-kt-scroll-wrappers="#kt_modal_new_address_scroll"
-                                                                    data-kt-scroll-offset="300px">
+                                                                    data-kt-scroll-offset="50px">
                                                                     <!--begin::Notice-->
                                                                     <!--begin::Notice-->
                                                                     <div
@@ -1868,13 +1872,13 @@
                                                                     <!--begin::Input group-->
                                                                     <div class="d-flex flex-column mb-5 fv-row">
                                                                         <!--begin::Label-->
-                                                                        <label class="required fs-5 fw-bold mb-2">Hostel
-                                                                            Image</label>
+                                                                        <label class="fs-5 fw-bold mb-2">Hostel
+                                                                            Image (Optional)</label>
                                                                         <!--end::Label-->
                                                                         <!--begin::Input-->
-                                                                        <div class='alert alert-danger'>Select three(3)
+                                                                        <div class='alert alert-danger'>Select two(2)
                                                                             or more images of hostel</div>
-                                                                        <input accept="image/*" required
+                                                                        <input accept="image/*"
                                                                             class="form-control form-control-solid"
                                                                             id='image' type='file' multiple
                                                                             placeholder="Display image of hostel"
@@ -1883,7 +1887,25 @@
                                                                         <!--end::Input-->
                                                                     </div>
 
+                                                                    <div class="d-flex flex-column mb-5 fv-row">
+                                                                        <!--begin::Label-->
+                                                                        <label class="fs-5 fw-bold mb-2">Hostel
+                                                                            Video <span
+                                                                                class='text-danger'>(Optional)</span></label>
+                                                                        <!--end::Label-->
+                                                                        <!--begin::Input-->
+
+                                                                        <input accept="video/*"
+                                                                            class="form-control form-control-solid"
+                                                                            id='video' type='file' name="video" />
+
+                                                                        <!--end::Input-->
+                                                                    </div>
+
+
                                                                 </div>
+
+
                                                                 <!--end::Scroll-->
                                                             </div>
                                                             <!--end::Modal body-->
@@ -1904,10 +1926,13 @@
                                                                 </button>
                                                                 <!--end::Button-->
                                                             </div>
+
+
                                                             <!--end::Modal footer-->
                                                         </form>
                                                         <!--end::Form-->
                                                 </div>
+
                                             </div>
                                         </div>
 
@@ -1989,7 +2014,8 @@
                                 <!--begin::Table container-->
                                 <div class="table-responsive">
                                     <!--begin::Table-->
-                                    <table class="table table-row-dashed table-row-gray-300 align-middle gs-0 gy-4">
+                                    <table id='datatable'
+                                        class="table table-row-dashed table-row-gray-300 align-middle gs-0 gy-4">
                                         <thead>
                                             <tr>
                                                 <th scope="col">SN</th>
@@ -2000,6 +2026,7 @@
                                                 <th scope="col">Location</th>
                                                 <th scope="col">View</th>
                                                 <th scope="col">Upload</th>
+                                                <th scope="col">Video</th>
                                                 <th scope="col">Edit</th>
                                                 <th scope="col">Available</th>
                                                 <th scope="col">Address</th>
@@ -2020,7 +2047,7 @@
                                             <td>{{ $album->school->name }} | {{ $album->category->name }}</td>
                                             <td>@if($album->status == 1)
 
-                                                <a title='View Hostel' href='/cthostel/{{$album->slug}}/{{$album->id}}'
+                                                <a target="_blank" title='View Hostel' href='/cthostel/{{$album->slug}}/{{$album->id}}'
                                                     class="btn btn-info btn-sm me-1">
                                                     View
                                                 </a>
@@ -2036,157 +2063,281 @@
                                                         class="btn btn-icon btn-bg-light btn-color-info btn-sm me-1">
                                                         --}}
 
-                                                        Upload Additional Images
+                                                        Add More Images
                                                     </a>
                                             </td>
                                             <div class="modal fade" id="kt_modal_create_api_key" tabindex="-1"
-                                                aria-hidden="true">
-                                                <!--begin::Modal dialog-->
-                                                <div class="modal-dialog modal-dialog-centered mw-650px">
-                                                    <!--begin::Modal content-->
-                                                    <div class="modal-content">
-                                                        <!--begin::Modal header-->
-                                                        <div class="modal-header" id="kt_modal_create_api_key_header">
-                                                            <!--begin::Modal title-->
-                                                            <h2>Upload Hostel Additional Images</h2>
-                                                            <!--end::Modal title-->
-                                                            <!--begin::Close-->
-                                                            <div class="btn btn-sm btn-icon btn-active-color-primary"
-                                                                data-bs-dismiss="modal">
-                                                                <!--begin::Svg Icon | path: icons/duotone/Navigation/Close.svg-->
-                                                                <span class="svg-icon svg-icon-1">
-                                                                    <svg xmlns="http://www.w3.org/2000/svg"
-                                                                        xmlns:xlink="http://www.w3.org/1999/xlink"
-                                                                        width="24px" height="24px" viewBox="0 0 24 24"
-                                                                        version="1.1">
-                                                                        <g transform="translate(12.000000, 12.000000) rotate(-45.000000) translate(-12.000000, -12.000000) translate(4.000000, 4.000000)"
-                                                                            fill="#000000">
-                                                                            <rect fill="#000000" x="0" y="7" width="16"
-                                                                                height="2" rx="1" />
-                                                                            <rect fill="#000000" opacity="0.5"
-                                                                                transform="translate(8.000000, 8.000000) rotate(-270.000000) translate(-8.000000, -8.000000)"
-                                                                                x="0" y="7" width="16" height="2"
-                                                                                rx="1" />
-                                                                        </g>
-                                                                    </svg>
-                                                                </span>
-                                                                <!--end::Svg Icon-->
-                                                            </div>
-                                                            <!--end::Close-->
+                                            aria-hidden="true">
+                                            <!--begin::Modal dialog-->
+                                            <div class="modal-dialog modal-dialog-centered mw-650px">
+                                                <!--begin::Modal content-->
+                                                <div class="modal-content">
+                                                    <!--begin::Modal header-->
+                                                    <div class="modal-header" id="kt_modal_create_api_key_header">
+                                                        <!--begin::Modal title-->
+                                                        <h2>Upload Hostel Additional Images</h2>
+                                                        <!--end::Modal title-->
+                                                        <!--begin::Close-->
+                                                        <div class="btn btn-sm btn-icon btn-active-color-primary"
+                                                            data-bs-dismiss="modal">
+                                                            <!--begin::Svg Icon | path: icons/duotone/Navigation/Close.svg-->
+                                                            <span class="svg-icon svg-icon-1">
+                                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                                    width="24px" height="24px" viewBox="0 0 24 24"
+                                                                    version="1.1">
+                                                                    <g transform="translate(12.000000, 12.000000) rotate(-45.000000) translate(-12.000000, -12.000000) translate(4.000000, 4.000000)"
+                                                                        fill="#000000">
+                                                                        <rect fill="#000000" x="0" y="7" width="16"
+                                                                            height="2" rx="1" />
+                                                                        <rect fill="#000000" opacity="0.5"
+                                                                            transform="translate(8.000000, 8.000000) rotate(-270.000000) translate(-8.000000, -8.000000)"
+                                                                            x="0" y="7" width="16" height="2"
+                                                                            rx="1" />
+                                                                    </g>
+                                                                </svg>
+                                                            </span>
+                                                            <!--end::Svg Icon-->
                                                         </div>
-                                                        <!--end::Modal header-->
-                                                        <!--begin::Form-->
-                                                        <form id="kt_modal_create_api_key_form" class="form"
-                                                            enctype="multipart/form-data" action="#">
-                                                            {{-- <form action="{{route('uploadImagewithroute')}}"
-                                                                enctype="multipart/form-data" class="form"
-                                                                method="post"> --}}
-                                                                @csrf
-                                                                <!--begin::Modal body-->
-                                                                <div class="modal-body py-10 px-lg-17">
-                                                                    <!--begin::Scroll-->
-                                                                    <div class="scroll-y me-n7 pe-7"
-                                                                        id="kt_modal_create_api_key_scroll"
-                                                                        data-kt-scroll="true"
-                                                                        data-kt-scroll-activate="{default: false, lg: true}"
-                                                                        data-kt-scroll-max-height="auto"
-                                                                        data-kt-scroll-dependencies="#kt_modal_create_api_key_header"
-                                                                        data-kt-scroll-wrappers="#kt_modal_create_api_key_scroll"
-                                                                        data-kt-scroll-offset="300px">
-                                                                        <!--begin::Notice-->
-                                                                        <div
-                                                                            class="notice d-flex bg-light-warning rounded border-warning border border-dashed mb-10 p-6">
-                                                                            <!--begin::Icon-->
-                                                                            <!--begin::Svg Icon | path: icons/duotone/Code/Warning-1-circle.svg-->
-                                                                            <span
-                                                                                class="svg-icon svg-icon-2tx svg-icon-warning me-4">
-                                                                                <svg xmlns="http://www.w3.org/2000/svg"
-                                                                                    width="24px" height="24px"
-                                                                                    viewBox="0 0 24 24" version="1.1">
-                                                                                    <circle fill="#000000" opacity="0.3"
-                                                                                        cx="12" cy="12" r="10" />
-                                                                                    <rect fill="#000000" x="11" y="7"
-                                                                                        width="2" height="8" rx="1" />
-                                                                                    <rect fill="#000000" x="11" y="16"
-                                                                                        width="2" height="2" rx="1" />
-                                                                                </svg>
-                                                                            </span>
-                                                                            <!--end::Svg Icon-->
-                                                                            <!--end::Icon-->
-                                                                            <!--begin::Wrapper-->
-                                                                            <div class="d-flex flex-stack flex-grow-1">
-                                                                                <!--begin::Content-->
-                                                                                <div class="fw-bold">
-                                                                                    <h4 class="text-gray-900 fw-bolder">
-                                                                                        Please Note!</h4>
-                                                                                    <div class="fs-6 text-gray-700">It
-                                                                                        is
-                                                                                        advisable to upload three(3)
-                                                                                        images
-                                                                                        at a time for fast upload.
-                                                                                    </div>
-                                                                                </div>
-                                                                                <!--end::Content-->
-                                                                            </div>
-                                                                            <!--end::Wrapper-->
-                                                                        </div>
-                                                                        <!--end::Notice-->
-                                                                        <!--begin::Input group-->
-                                                                        <div class="mb-5 fv-row">
-                                                                            <!--begin::Label-->
-                                                                            <label
-                                                                                class="required fs-5 fw-bold mb-2">Images</label>
-                                                                            <!--end::Label-->
-                                                                            <!--begin::Input-->
-                                                                            <input type='hidden' name='hostel_id'
-                                                                                id='hostelimage' value='{{$album->id}}'>
-                                                                            <input required
-                                                                                accept="image/png,image/jpg, image/jpeg"
-                                                                                type="file" multiple
-                                                                                class="form-control form-control-solid"
-                                                                                id='upload_file' name='hostelimage[]'
-                                                                                placeholder="kitchen, toilet, room e.t.c" />
-                                                                            <!--end::Input-->
-                                                                        </div>
-
-                                                                    </div>
-                                                                    <!--end::Scroll-->
-                                                                </div>
-
-                                                                <!--end::Modal body-->
-                                                                <!--begin::Modal footer-->
-                                                                <div class="modal-footer flex-center">
-                                                                    <!--begin::Button-->
-                                                                    <button type="reset"
-                                                                        id="kt_modal_create_api_key_cancel"
-                                                                        class="btn btn-light me-3">Discard</button>
-                                                                    <!--end::Button-->
-                                                                    <!--begin::Button-->
-                                                                    <button type="submit"
-                                                                        id="kt_modal_create_api_key_submit"
-                                                                        class="btn btn-primary">
-                                                                        <span class="indicator-label">Upload</span>
-                                                                        <span class="indicator-progress">Please wait...
-                                                                            <span
-                                                                                class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
-                                                                    </button>
-
-                                                                </div>
-                                                                <div class='mb-5 fv-row'>
-
-                                                                    <div style='padding: 15px 15px 15px 15px;margin: 20px 20px 20px 20px;background: #fff;overflow: visible;position: relative;'
-                                                                        id='uploadedimagediv'>
-                                                                    </div>
-
-                                                                </div>
-                                                                <!--end::Modal footer-->
-                                                            </form>
-                                                            <!--end::Form-->
+                                                        <!--end::Close-->
                                                     </div>
-                                                    <!--end::Modal content-->
+                                                    <!--end::Modal header-->
+                                                    <!--begin::Form-->
+                                                    <form id="kt_modal_create_api_key_form" class="form"
+                                                        enctype="multipart/form-data" action="#">
+                                                        {{-- <form action="{{route('uploadImagewithroute')}}"
+                                                            enctype="multipart/form-data" class="form"
+                                                            method="post"> --}}
+                                                            @csrf
+                                                            <!--begin::Modal body-->
+                                                            <div class="modal-body py-10 px-lg-17">
+                                                                <!--begin::Scroll-->
+                                                                <div class="scroll-y me-n7 pe-7"
+                                                                    id="kt_modal_create_api_key_scroll"
+                                                                    data-kt-scroll="true"
+                                                                    data-kt-scroll-activate="{default: false, lg: true}"
+                                                                    data-kt-scroll-max-height="auto"
+                                                                    data-kt-scroll-dependencies="#kt_modal_create_api_key_header"
+                                                                    data-kt-scroll-wrappers="#kt_modal_create_api_key_scroll"
+                                                                    data-kt-scroll-offset="300px">
+                                                                    <!--begin::Notice-->
+                                                                    <div
+                                                                        class="notice d-flex bg-light-warning rounded border-warning border border-dashed mb-10 p-6">
+                                                                        <!--begin::Icon-->
+                                                                        <!--begin::Svg Icon | path: icons/duotone/Code/Warning-1-circle.svg-->
+                                                                        <span
+                                                                            class="svg-icon svg-icon-2tx svg-icon-warning me-4">
+                                                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                                                width="24px" height="24px"
+                                                                                viewBox="0 0 24 24" version="1.1">
+                                                                                <circle fill="#000000" opacity="0.3"
+                                                                                    cx="12" cy="12" r="10" />
+                                                                                <rect fill="#000000" x="11" y="7"
+                                                                                    width="2" height="8" rx="1" />
+                                                                                <rect fill="#000000" x="11" y="16"
+                                                                                    width="2" height="2" rx="1" />
+                                                                            </svg>
+                                                                        </span>
+                                                                        <!--end::Svg Icon-->
+                                                                        <!--end::Icon-->
+                                                                        <!--begin::Wrapper-->
+                                                                        <div class="d-flex flex-stack flex-grow-1">
+                                                                            <!--begin::Content-->
+                                                                            <div class="fw-bold">
+                                                                                <h4 class="text-gray-900 fw-bolder">
+                                                                                    Please Note!</h4>
+                                                                                <div class="fs-6 text-gray-700">It
+                                                                                    is
+                                                                                    advisable to upload three(3)
+                                                                                    images
+                                                                                    at a time for fast upload.
+                                                                                </div>
+                                                                            </div>
+                                                                            <!--end::Content-->
+                                                                        </div>
+                                                                        <!--end::Wrapper-->
+                                                                    </div>
+                                                                    <!--end::Notice-->
+                                                                    <!--begin::Input group-->
+                                                                    <div class="mb-5 fv-row">
+                                                                        <!--begin::Label-->
+                                                                        <label
+                                                                            class="required fs-5 fw-bold mb-2">Images</label>
+                                                                        <!--end::Label-->
+                                                                        <!--begin::Input-->
+                                                                        <input type='hidden' name='hostel_id'
+                                                                            id='hostelimage' value='{{$album->id}}'>
+                                                                        <input required
+                                                                            accept="image/png,image/jpg, image/jpeg"
+                                                                            type="file" multiple
+                                                                            class="form-control form-control-solid"
+                                                                            id='upload_file' name='hostelimage[]'
+                                                                            placeholder="kitchen, toilet, room e.t.c" />
+                                                                        <!--end::Input-->
+                                                                    </div>
+
+                                                                </div>
+                                                                <!--end::Scroll-->
+                                                            </div>
+
+                                                            <!--end::Modal body-->
+                                                            <!--begin::Modal footer-->
+                                                            <div class="modal-footer flex-center">
+                                                                <!--begin::Button-->
+                                                                <button type="reset"
+                                                                    id="kt_modal_create_api_key_cancel"
+                                                                    class="btn btn-light me-3">Discard</button>
+                                                                <!--end::Button-->
+                                                                <!--begin::Button-->
+                                                                <button type="submit"
+                                                                    id="kt_modal_create_api_key_submit"
+                                                                    class="btn btn-primary">
+                                                                    <span class="indicator-label">Upload</span>
+                                                                    <span class="indicator-progress">Please wait...
+                                                                        <span
+                                                                            class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
+                                                                </button>
+
+                                                            </div>
+                                                            <div class='mb-5 fv-row'>
+
+                                                                <div style='padding: 15px 15px 15px 15px;margin: 20px 20px 20px 20px;background: #fff;overflow: visible;position: relative;'
+                                                                    id='uploadedimagediv'>
+                                                                </div>
+
+                                                            </div>
+                                                            <!--end::Modal footer-->
+                                                        </form>
+                                                        <!--end::Form-->
                                                 </div>
-                                                <!--end::Modal dialog-->
+                                                <!--end::Modal content-->
                                             </div>
+                                            <!--end::Modal dialog-->
+                                        </div>
+                                            <td>
+                                                <a  data-bs-toggle="modal" data-id='{{$album->id}}'
+                                                    data-bs-target="#video_modal" class='update_video btn btn-secondary btn-sm'>Update Video</a>
+                                            </td>
+                                            <div class="modal fade" id="video_modal" tabindex="-1"
+                                            aria-hidden="true">
+                                            <!--begin::Modal dialog-->
+                                            <div class="modal-dialog modal-dialog-centered mw-650px">
+                                                <!--begin::Modal content-->
+                                                <div class="modal-content">
+                                                    <!--begin::Modal header-->
+                                                    <div class="modal-header" id="kt_modal_create_api_key_header">
+                                                        <!--begin::Modal title-->
+                                                        <h2>Upload Hostel Video</h2>
+                                                        <!--end::Modal title-->
+                                                        <!--begin::Close-->
+                                                        <div class="btn btn-sm btn-icon btn-active-color-primary"
+                                                            data-bs-dismiss="modal">
+                                                            <!--begin::Svg Icon | path: icons/duotone/Navigation/Close.svg-->
+                                                            <span class="svg-icon svg-icon-1">
+                                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                                    width="24px" height="24px" viewBox="0 0 24 24"
+                                                                    version="1.1">
+                                                                    <g transform="translate(12.000000, 12.000000) rotate(-45.000000) translate(-12.000000, -12.000000) translate(4.000000, 4.000000)"
+                                                                        fill="#000000">
+                                                                        <rect fill="#000000" x="0" y="7" width="16"
+                                                                            height="2" rx="1" />
+                                                                        <rect fill="#000000" opacity="0.5"
+                                                                            transform="translate(8.000000, 8.000000) rotate(-270.000000) translate(-8.000000, -8.000000)"
+                                                                            x="0" y="7" width="16" height="2"
+                                                                            rx="1" />
+                                                                    </g>
+                                                                </svg>
+                                                            </span>
+                                                            <!--end::Svg Icon-->
+                                                        </div>
+                                                        <!--end::Close-->
+                                                    </div>
+                                                    <!--end::Modal header-->
+                                                    <!--begin::Form-->
+                                                    <form id="create_video" class="form"
+                                                        enctype="multipart/form-data" action="#">
+                                                        {{-- <form action="{{route('uploadImagewithroute')}}"
+                                                            enctype="multipart/form-data" class="form"
+                                                            method="post"> --}}
+                                                            @csrf
+                                                            <!--begin::Modal body-->
+                                                            <div class="modal-body py-10 px-lg-17">
+                                                                <!--begin::Scroll-->
+                                                                <div class="scroll-y me-n7 pe-7"
+                                                                    id="kt_modal_create_api_key_scroll"
+                                                                    data-kt-scroll="true"
+                                                                    data-kt-scroll-activate="{default: false, lg: true}"
+                                                                    data-kt-scroll-max-height="auto"
+                                                                    data-kt-scroll-dependencies="#kt_modal_create_api_key_header"
+                                                                    data-kt-scroll-wrappers="#kt_modal_create_api_key_scroll"
+                                                                    data-kt-scroll-offset="0px">
+                                                                    <!--begin::Notice-->
+                                                                   
+                                                                        <div style='display:none' class="video_div mb-2 d-flex justify-content-center">
+                                                                           
+                                                                                <video class='video_src' width="320" height="240" controls>
+                                                                                    <source  src="{{ $album->video }}" type="video/mp4">
+                                                                                    Your browser does not support the video tag.
+                                                                                  </video>
+                
+                                                                        </div>
+                                                                        <div style='display:none' class='no_video_div'>
+                                                                            <div class='alert alert-danger'>No video for this hostel yet</div>
+                                                                        </div>
+                                                                        
+                                                                    <!--end::Notice-->
+                                                                    <!--begin::Input group-->
+                                                                    <div class="mb-5 fv-row">
+                                                                        <!--begin::Label-->
+                                                                        <label
+                                                                            class="required fs-5 fw-bold mb-2">Video</label>
+                                                                        <!--end::Label-->
+                                                                        <!--begin::Input-->
+                                                                        <input type='hidden' name='hostel_id'
+                                                                            id='hostel_video_id' value='{{$album->id}}'>
+                                                                        <input required
+                                                                            accept="video/*"
+                                                                            type="file" 
+                                                                            class="form-control form-control-solid"
+                                                                            id='hostel_video_file'
+                                                                           />
+                                                                        <!--end::Input-->
+                                                                    </div>
+
+                                                                </div>
+                                                                <!--end::Scroll-->
+                                                            </div>
+
+                                                            <!--end::Modal body-->
+                                                            <!--begin::Modal footer-->
+                                                            <div class="modal-footer flex-center">
+                                                                <!--begin::Button-->
+                                                                <button type="reset"
+                                                                    id="kt_modal_create_api_key_cancel"
+                                                                    class="btn btn-light me-3">Discard</button>
+                                                                <!--end::Button-->
+                                                                <!--begin::Button-->
+                                                                <button type="submit"
+                                                                    id="kt_modal_create_api_key_submit"
+                                                                    class="btn btn-primary">
+                                                                    <span class="indicator-label">Upload</span>
+                                                                    <span class="indicator-progress">Please wait...
+                                                                        <span
+                                                                            class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
+                                                                </button>
+
+                                                            </div>
+                                                          
+                                                            <!--end::Modal footer-->
+                                                        </form>
+                                                        <!--end::Form-->
+                                                </div>
+                                                <!--end::Modal content-->
+                                            </div>
+                                            <!--end::Modal dialog-->
+                                        </div>
+                                           
 
                                             <td>
                                                 <a title='Edit Hostel' href="#" data-id='{{ $album->id }}'
@@ -2596,13 +2747,16 @@
                     @if (session('message'))
                         Swal.fire('',"{{ session('message') }}",'success');
                     @endif
-                    $("#image").on('change', function(e) {
-
-                            var file = e.target.files[0];
-                            console.log(file);
+                  
                        
 				   $("#create_hostel_form").submit(async function(e) {
                        e.preventDefault()
+                       if($('#image').val() === '' && $("#video").val() === '') {
+                            Swal.fire('Image/Video Field required','You must either select an image or a video','info')
+                       }
+                       else {
+
+                       
                        Swal.fire('Creating hostel, please wait...')
                             //  $("#create_hostel").attr('disabled',true);
                             var fd = new FormData();
@@ -2615,7 +2769,12 @@
                             fd.append('type', $("#type").val());
                             fd.append('category_id', $("#category_id").val());
                             fd.append('school_id', $("#sch_id").val());
-                            fd.append('image', file);
+                            var files = $('#image')[0].files;
+                            for (var i = 0; i < files.length; i++) {
+                                fd.append('image[]', files[i]);
+                            }
+                            fd.append('image', $("#image")[0].files);
+                            fd.append('video', $("#video")[0].files[0]);
 
                             console.log(fd, 'this is the fd');
 
@@ -2626,23 +2785,98 @@
                                 cache: false,
                                 contentType: false,
                                 processData: false,
+                                xhr: function() {
+                                    
+                                  var xhr = new window.XMLHttpRequest();
+                                  xhr.upload.addEventListener("progress", function(evt) {
+                                    if (evt.lengthComputable) {
+                                      var percentComplete = Math.round(evt.loaded / evt.total * 100);
+                                      Swal.update({
+                                        title: "Uploading...",
+                                        html: "Please wait.<br>" + percentComplete + "%",
+                                        allowOutsideClick: false,
+                                        showConfirmButton: false,
+                                        didOpen: () => {
+                                          Swal.showLoading();
+                                        }
+                                      });
+                                    }
+                                  }, false);
+                                  return xhr;
+                                },
+                                
                                 success: (data) => {
                                     Swal.close()
                                     Swal.fire("Success", 'Hostel created successfully', 'success');
                                     console.log(data)
-									window.location.reload();
+                                 	window.location.reload();
 
                                 },
                                 error: function(data) {
                                     console.log(data);
-                                    Swal.close()
                                     Swal.fire('Oops', 'Hostel not created','error')
+                                    
+                                }
+                            });
+                        }
+						});
+
+                    
+
+                        $("#create_video").submit(async function(e) {
+                       e.preventDefault()
+                       Swal.fire('Uploading video, please wait...')
+                            //  $("#create_hostel").attr('disabled',true);
+                            var fd = new FormData();
+
+                            // Append data 
+                            fd.append('id', $("#hostel_video_id").val());
+                            fd.append('video', $("#hostel_video_file")[0].files[0]);
+                           
+
+                            console.log(fd, 'this is the fd');
+
+                            $.ajax({
+                                type: 'POST',
+                                url: "{{ route('uploadvideo') }}",
+                                data: fd,
+                                cache: false,
+                                contentType: false,
+                                processData: false,
+                                xhr: function() {
+                                    
+                                  var xhr = new window.XMLHttpRequest();
+                                  xhr.upload.addEventListener("progress", function(evt) {
+                                    if (evt.lengthComputable) {
+                                      var percentComplete = Math.round(evt.loaded / evt.total * 100);
+                                      Swal.update({
+                                        title: "Uploading...",
+                                        html: "Please wait.<br>" + percentComplete + "%",
+                                        allowOutsideClick: false,
+                                        showConfirmButton: false,
+                                        didOpen: () => {
+                                          Swal.showLoading();
+                                        }
+                                      });
+                                    }
+                                  }, false);
+                                  return xhr;
+                                },
+                                
+                                success: (data) => {
+                                    Swal.close()
+                                    Swal.fire("Success", 'Hostel video uploaded successfully', 'success');
+                                    console.log(data)
+                                 	// window.location.reload();
+
+                                },
+                                error: function(data) {
+                                    console.log(data);
+                                    Swal.fire('Oops', 'Video not uploaded','error')
+                                    
                                 }
                             });
 						});
-
-                        });
-
 				
          
 				$('body').on('click', '#upload_image_id', function () {
@@ -2655,7 +2889,7 @@
                     
                     $("#uploadedimagediv").empty()
 					for(i = 0;i<= data.length-1;i++) {
-			console.log(data[i].image,'the image')
+			            console.log(data[i].image,'the image')
                     
                     $("#uploadedimagediv").append("<a style='position:absolute;background:red;display: inline-block;border:2px solid white;padding:5px;' class='deleteuploaded btn btn-danger btn-sm' data-id='"+data[i].id+"'>&times;</a><img class='imgpreview' style='width:100px;height:100px;margin:5px;box-shadow: 5px 5px 2px #888888' src='https://cthostel.com/cthostel_files/public/images/"+data[i].image+"'>")
 					
@@ -2665,6 +2899,36 @@
 
 			
 			});
+
+            $('body').on('click', '.update_video', function () {
+				var id = $(this).data('id');
+				$("#hostel_video_id").val(id);
+
+				$.get("{{ route('loadvideo') }}?id=" + id, function (data) {
+                    console.log(data,'the video data')
+                    if(data == 'null') {
+                        $('.video_div').hide()
+                        $('.video_div video').css('display', 'none');
+                        $('.no_video_div').show()
+                        
+                    }
+                    else {
+                        $('.no_video_div').hide()
+                        $('.video_div').show()
+                        $('.video_div video').css('display', 'block');
+                        $('.video_src source').attr('src',data);
+                        $('.video_src')[0].load();
+
+
+                    }
+                    
+                  
+			
+				 });
+
+			
+			});
+           
            
             
             $(document).on("click",".deleteuploaded",function() {
@@ -2755,6 +3019,26 @@
                                 cache: false,
                                 contentType: false,
                                 processData: false,
+                                xhr: function() {
+                                    
+                                    var xhr = new window.XMLHttpRequest();
+                                    xhr.upload.addEventListener("progress", function(evt) {
+                                      if (evt.lengthComputable) {
+                                        var percentComplete = Math.round(evt.loaded / evt.total * 100);
+                                        Swal.update({
+                                          title: "Uploading...",
+                                          html: "Please wait.<br>" + percentComplete + "%",
+                                          allowOutsideClick: false,
+                                          showConfirmButton: false,
+                                          didOpen: () => {
+                                            Swal.showLoading();
+                                          }
+                                        });
+                                      }
+                                    }, false);
+                                    return xhr;
+                                  },
+                                  
                                 success: (data) => {
                                     Swal.fire("Success", 'Hostel Addtional Images Uploaded successfully', 'success');
                                     console.log(data,'this data')
@@ -2898,10 +3182,19 @@
     <!--end::Page Custom Javascript-->
     <!--end::Javascript-->
     <!--Begin::Google Tag Manager (noscript) -->
+    <script src='{{ asset('backend/cdn/jquery.dataTables.min.js')}}'></script>
+    <link rel='stylesheet' href='{{ asset('backend/cdn/jquery.dataTables.min.css')}}' />
+    <script>
+        var oTable = $('#datatable').DataTable();   //using Capital D, which is mandatory to retrieve "api" datatables' object, latest jquery Datatable
+       $('#myInput').keyup(function(){
+             oTable.search($(this).val()).draw() ;
+       });
+    </script>
     <noscript>
         <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5FS8GGP" height="0" width="0"
             style="display:none;visibility:hidden"></iframe>
     </noscript>
+
     <!--End::Google Tag Manager (noscript) -->
 </body>
 <!--end::Body-->

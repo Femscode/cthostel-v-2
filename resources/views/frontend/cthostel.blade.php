@@ -18562,6 +18562,7 @@
               </div>
             </div> --}}
             <div class="product-left">
+              @if($album->image !== 'video.jpg')
               <div class="product-image direction-vertical position-left">
                 <div class="swiper main-image"
                   data-options='{"speed":0,"autoplay":false,"pauseOnHover":false,"loop":false}'
@@ -18634,6 +18635,7 @@
                   <div class="swiper-pagination"></div>
                 </div>
               </div>
+              @endif
               <div class="lightgallery lightgallery-product-images" data-images='[
                   {&quot;src&quot;:&quot;{{asset(' hostelimage/'.$album->
                 image)}}&quot;,&quot;thumb&quot;:&quot;https://cthostel.com/cthostel_files/public/hostelimage/{{$album->image  }}&quot;,&quot;subHtml&quot;:&quot;&quot;},
@@ -18678,14 +18680,29 @@
                 <div class="tabs-container product_extra product_tabs product_tabs-image">
                   <ul class="nav nav-tabs">
                     <li class="active">
-                      <a href="#product_tabs-611eaafe184be" data-toggle="tab">Description</a>
+                      <a href="#product_tabs-611eaafe184be" data-toggle="tab">Hostel Video</a>
                     </li>
                     <li class="">
-                      <a href="#product_tabs-611eaafe189b9" data-toggle="tab">Hostel Video</a>
+                      <a href="#product_tabs-611eaafe189b9" data-toggle="tab">Description</a>
                     </li>
                   </ul>
                   <div class="tab-content">
                     <div class="product_extra-277 tab-pane active" id="product_tabs-611eaafe184be">
+                    
+                       <!--the hostel video-->
+                       @if($album->video == null)
+                       <p>There is no video for this hostel</p>
+                       @else 
+                       <div class="embed-responsive embed-responsive-16by9">
+                         <iframe class="embed-responsive-item" src="{{ $my_video }}" allowfullscreen></iframe>
+                       </div>
+                        
+                       @endif
+                     
+                    </div>
+                    <div class="product_extra-278 tab-pane" id="product_tabs-611eaafe189b9">
+                    
+
                       <div class="block-body expand-block">
                         <div class="block-wrapper">
                           <div class="block-content ">
@@ -18693,25 +18710,7 @@
                           </div>
                         </div>
                       </div>
-                    </div>
-                    <div class="product_extra-278 tab-pane" id="product_tabs-611eaafe189b9">
-                      {{-- <div class="block-body expand-block">
-                        <div class="block-wrapper">
-                          <div class="block-content ">
-                            <div class="video-responsive">
-                              <div class="video-frame">
-
-                                <iframe width="560" height="315"
-                                  src="https://www.youtube.com/embed/Z4uiBxkOZQo"></iframe>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div> --}}
-
-
-                      <!--the hostel video-->
-                      <p>There is no video for this hostel</p>
+                   
 
 
 
@@ -18723,6 +18722,7 @@
                 </div>
 
               </div>
+             
             </div>
             <div class="product-right">
               <div id="product" class="product-details">

@@ -16,6 +16,7 @@ use App\Models\saveUser;
 use App\Models\Services;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Kreait\Firebase\Factory;
 use Illuminate\Http\Response;
 use App\Models\SpecialRequest;
 use Nexmo\Laravel\Facade\Nexmo;
@@ -27,9 +28,11 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 use App\Http\Resources\AlbumResource;
 use Illuminate\Support\Facades\Cache;
+use Google\Cloud\Storage\StorageClient;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Storage as LaravelStorage;
 
 class AlbumController extends Controller
 {
@@ -82,9 +85,9 @@ class AlbumController extends Controller
     {
         $album = Album::find($request->album_id);
         $user = User::find($album->user_id);
-        
-        if(!session()->has('student')) {
-            $session = session()->put('student','nice');
+
+        if (!session()->has('student')) {
+            $session = session()->put('student', 'nice');
             $this->validate($request, [
                 'album_id' => 'required',
                 'type' => 'required',
@@ -99,16 +102,15 @@ class AlbumController extends Controller
                 'user_id' => $user->id
             ]);
         }
-       
-       
+
+
         $user->new_clicks += 1;
         $user->save();
-       
+
         $number = substr($album->user->phone, 1);
-        if($request->type == 'message') {
+        if ($request->type == 'message') {
             return redirect()->away('https://wa.me/234' . $number . '?text=HOSTEL%20REQUEST%20FROM%20CTHOSTEL.%0aInstitution:' . $album->school->name . '%0aHostel%20name:%20(' . $album->name . ')%0aHostel%20Price:' . $album->price . '%0aLocation:' . $album->category->name . '%0aAgent%20in%20charge:' . $album->user->name . '%0a(Input%20other%20message%20here)%20');
-        }
-        else {
+        } else {
             return redirect()->away('tel:' . $album->user->phone);
         }
 
@@ -292,11 +294,10 @@ class AlbumController extends Controller
     {
         $data['active'] = 'student';
         $user = Auth::user();
-        if($user->email == 'fasanyafemi@gmail.com') {
+        if ($user->email == 'fasanyafemi@gmail.com') {
             $data['students'] = saveUser::latest()->get();
-        }
-        else {
-            $data['students'] = saveUser::where('school_id',$user->school_id)->latest()->get();
+        } else {
+            $data['students'] = saveUser::where('school_id', $user->school_id)->latest()->get();
         }
         return view('admin.students', $data);
     }
@@ -304,10 +305,9 @@ class AlbumController extends Controller
     {
         $user = Auth::user();
         $data['active'] = 'hostel';
-        if($user->email == 'fasanyafemi@gmail.com') {
+        if ($user->email == 'fasanyafemi@gmail.com') {
             $data['hostels'] = Album::inRandomOrder()->get();
-        }
-        else {
+        } else {
             $data['hostels'] = Album::inRandomOrder()->where('school_id', $user->school_id)->get();
         }
         return view('admin.hostels', $data);
@@ -316,68 +316,150 @@ class AlbumController extends Controller
     {
         $user = Auth::user();
         $data['active'] = 'agent';
-        if($user->email == 'fasanyafemi@gmail.com') {
-            $data['agents'] = User::where('type','agent')->latest()->get();
-        }
-        else {
-            $data['agents'] = User::where('school_id', $user->school_id)->where('type','agent')->latest()->get();
+        if ($user->email == 'fasanyafemi@gmail.com') {
+            $data['agents'] = User::where('type', 'agent')->latest()->get();
+        } else {
+            $data['agents'] = User::where('school_id', $user->school_id)->where('type', 'agent')->latest()->get();
         }
         return view('admin.agents', $data);
+    }
+    public function loadvideo(Request $request)
+    {
+        $album = Album::find($request->id);
+        if ($album->video !== null) {
+            $storage = new StorageClient([
+                'keyFile' => json_decode(file_get_contents('C:\xampp\htdocs\docs\cthostel-v-2\public\ct-hostel-firebase-adminsdk-bf7nu-85872bd8b6.json'), true)
+            ]);
+            $bucket = $storage->bucket('ct-hostel.appspot.com');
+            $videoPath = 'videos/' . $album->video;
+            $object = $bucket->object($videoPath);
+            $my_video = $object->signedUrl(new \DateTime('tomorrow'));
+            return $my_video;
+        } else {
+            return 'null';
+        }
+    }
+
+    public function uploadvideo(Request $request)
+    {
+        $album = Album::find($request->id);
+        $factory = (new Factory)->withServiceAccount('C:\xampp\htdocs\docs\cthostel-v-2\public\ct-hostel-firebase-adminsdk-bf7nu-85872bd8b6.json');
+        $storage = $factory->createStorage();
+        //delete existing video
+        if ($album->video !== null) {
+
+            //delete previous video
+            $videoPath = 'videos/' . $album->video;
+            $storage->getBucket()->object($videoPath)->delete();
+        }
+        //upload new one
+
+
+        $video = $request->file('video');
+        $bucket = $storage->getBucket();
+        $video = $request->file('video');
+        $filename = $request->file('video')->hashName();
+        $video->move(public_path('videos'), $filename);
+        $myPath = public_path() . '/videos/' . $filename;
+        $bucket->upload(
+            fopen($myPath, 'r'),
+            [
+                'name' => 'videos/' . $filename,
+                'predefinedAcl' => 'publicRead'
+            ]
+        );
+
+        $album->video = $filename;
+        $album->save();
+        unlink($myPath);
+
+        return true;
     }
 
     public function store(Request $request)
     {
-
+        
         $this->validate($request, [
             'name' => 'required|min:3|max:35',
             'school_id' => 'required',
-            'description' => 'required|min:3|max:500',
+            'description' => 'required',
             'category_id' => 'required',
-            'school_id' => 'required',
             'image' => 'required',
             'price' => 'required',
             'hostel_type' => 'required'
         ]);
 
-        $image = $request->image[0];
-        $rand = Str::random(5);
-        $imageName = time() . $rand . '.' . $image->extension();
-        $img = Compressor::make($image->path());
-        $good = $img->resize(500, 300, function ($constraint) {
-            $constraint->aspectRatio();
-        })->save(public_path('hostelimage') . '/' . $imageName);
-
         $category_name = Category::where('id', $request->category_id)->pluck('name')->first();
-        $description = implode(',', $request->description);
+        // $description = implode(',', $request->description);
         // dd($request->all(),$request->image,count($request->image),$imageName,Str::slug('Fas Pel Is'));
         $album = Album::create([
             'name' => $request->name,
-            'description' => $description,
+            'description' => $request->description,
             'school_id' => $request->school_id,
             'category_id' => $request->category_id,
             'category_name' => $category_name,
             'slug' => Str::slug($request->name),
             'user_id' => auth()->user()->id,
             'price' => $request->price,
-            'image' => $imageName,
+            
             'school_id' => $request->school_id,
             'hostel_type' => $request->hostel_type
         ]);
-        //   foreach ($request->file('image') as $file) {
-        for ($i = 1; $i < count($request->image); $i++) {
-            $file = $request->image[$i];
+        if($request->hasFile('image')) {
+            $image = $request->image[0];
             $rand = Str::random(5);
-            $imageName = time() . $rand . '.' .  $file->extension();
-            $img = Compressor::make($file->path());
+            $imageName = time() . $rand . '.' . $image->extension();
+            $img = Compressor::make($image->path());
             $good = $img->resize(500, 300, function ($constraint) {
                 $constraint->aspectRatio();
-            })->save(public_path('images') . '/' . $imageName);
-            $file = new Image;
-            $file->album_id = $album->id;
-            $file->image = $imageName;
-            // dd($file);
-            $file->save();
+            })->save(public_path('hostelimage') . '/' . $imageName);
+            $album->image = $imageName;
+            $album->save();
+    
+    
+            //   foreach ($request->file('image') as $file) {
+            for ($i = 1; $i < count($request->image); $i++) {
+                $file = $request->image[$i];
+                $rand = Str::random(5);
+                $imageName = time() . $rand . '.' .  $file->extension();
+                $img = Compressor::make($file->path());
+                $good = $img->resize(500, 300, function ($constraint) {
+                    $constraint->aspectRatio();
+                })->save(public_path('images') . '/' . $imageName);
+                $file = new Image;
+                $file->album_id = $album->id;
+                $file->image = $imageName;
+                // dd($file);
+                $file->save();
+            }
         }
+        
+      
+        if ($request->video !== 'undefined') {
+            $factory = (new Factory)->withServiceAccount('C:\xampp\htdocs\docs\cthostel-v-2\public\ct-hostel-firebase-adminsdk-bf7nu-85872bd8b6.json');
+            $storage = $factory->createStorage();
+            $video = $request->file('video');
+            $bucket = $storage->getBucket();
+            $video = $request->file('video');
+            $filename = $request->file('video')->hashName();
+            $video->move(public_path('videos'), $filename);
+            $myPath = public_path() . '/videos/' . $filename;
+            $bucket->upload(
+                fopen($myPath, 'r'),
+                [
+                    'name' => 'videos/' . $filename,
+                    'predefinedAcl' => 'publicRead'
+                ]
+            );
+            // $object = $bucket->upload(fopen($myPath, 'r'), [
+            //     'name' => 'videos/' . $filename
+            // ]);
+            $album->video = $filename;
+            $album->save();
+            unlink($myPath);
+        }
+        // return response()->json(['success' => true]);
+
         return redirect()->back()->with('message', 'Hostel Created Successfully');
     }
     public function storewithroute(Request $request)
@@ -443,14 +525,15 @@ class AlbumController extends Controller
         }
         return redirect()->back()->with("success", 'Project Uploaded successfully');
     }
-    public function view_identification($id) {
-        $user = User::where('identification',$id)->first();
+    public function view_identification($id)
+    {
+        $user = User::where('identification', $id)->first();
         $file = $user->identification;
-        $path = public_path('identification/'.$file);
+        $path = public_path('identification/' . $file);
         $header = [
             'Content-Type' => 'image/jpeg',
         ];
-        return response()->file($path,$header);
+        return response()->file($path, $header);
     }
 
     public function updateprofile(Request $request)
@@ -668,13 +751,13 @@ class AlbumController extends Controller
         }
 
         $data['locations'] = Category::where('school_id', $school_id)->get();
-       
+
         $search_array = [];
-        $name_search = Album::where('status', 1)->orderBy('rank')->where('soft_delete', 0)->where('school_id',$request->school_id)->where('name', 'like', '%' . $searchinput . '%')->get();
-        $description_search = Album::where('status', 1)->orderBy('rank')->where('soft_delete', 0)->where('school_id',$request->school_id)->where('description', 'like', '%' . $searchinput . '%')->get();
-        $price_search = Album::where('status', 1)->orderBy('rank')->where('soft_delete', 0)->where('school_id',$request->school_id)->where('price', 'like', '%' . $searchinput . '%')->get();
-        $category_search = Album::where('status', 1)->orderBy('rank')->where('soft_delete', 0)->where('school_id',$request->school_id)->where('category_name', 'like', '%' . $searchinput . '%')->get();
-      
+        $name_search = Album::where('status', 1)->orderBy('rank')->where('soft_delete', 0)->where('school_id', $request->school_id)->where('name', 'like', '%' . $searchinput . '%')->get();
+        $description_search = Album::where('status', 1)->orderBy('rank')->where('soft_delete', 0)->where('school_id', $request->school_id)->where('description', 'like', '%' . $searchinput . '%')->get();
+        $price_search = Album::where('status', 1)->orderBy('rank')->where('soft_delete', 0)->where('school_id', $request->school_id)->where('price', 'like', '%' . $searchinput . '%')->get();
+        $category_search = Album::where('status', 1)->orderBy('rank')->where('soft_delete', 0)->where('school_id', $request->school_id)->where('category_name', 'like', '%' . $searchinput . '%')->get();
+
 
         foreach ($name_search as $sub) {
             array_push($search_array, $sub);
@@ -692,9 +775,9 @@ class AlbumController extends Controller
 
         // dd($collection,collect($collection), $search_object);
         $data['searched'] = $search_object->paginate(20);
-      
 
-      
+
+
         $data['school_id'] = $school_id;
         return view('frontend.search', $data);
     }

@@ -163,7 +163,7 @@ return [
         Illuminate\View\ViewServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
         Unicodeveloper\Paystack\PaystackServiceProvider::class,
-
+        Kreait\Laravel\Firebase\ServiceProvider::class,    
         /*
          * Package Service Providers...
          */

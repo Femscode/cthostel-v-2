@@ -730,12 +730,16 @@
                                     <a href="{{route("cthostel",[$album->slug,$album->id])}}"
                                       class="product-img ">
                                       <div>
+                                        @if($album->image !== null)
                                         <img loading="lazy" src="https://cthostel.com/cthostel_files/public/hostelimage/{{$album->image  }}" data-src="https://cthostel.com/cthostel_files/public/hostelimage/{{$album->image  }}"
                                         data-srcset="https://cthostel.com/cthostel_files/public/hostelimage/{{$album->image  }}" width="250" height="250" alt="Hostel Image" title=""
                                         class="img-responsive" />
-                                        {{-- <img src="{{asset('hostelimage/'.$album->image)}}" data-src="{{asset('hostelimage/'.$album->image)}}"
-                                          data-srcset="{{asset('hostelimage/'.$album->image)}}" width="250" height="250" alt="CTHostel" title=""
-                                          class="img-responsive" /> --}}
+                                        @else 
+                                        <img loading="lazy" src="https://cthostel.com/cthostel_files/public/hostelimage/video.jpg" data-src="https://cthostel.com/cthostel_files/public/hostelimage/video.jpg"
+                                        data-srcset="https://cthostel.com/cthostel_files/public/hostelimage/video.jpg" width="250" height="250" alt="Hostel Image" title=""
+                                        class="img-responsive" />
+                                        @endif
+                                      
                               
                                       </div>
                                     </a>
@@ -756,10 +760,10 @@
                                     <input id='getid' type='hidden' value='{{$school_id}}'>
                               
                                     <div class="name"><a href='{{route("cthostel",[$album->slug,$album->id])}}'>{!!Str::limit($album->name,25)!!} ,
-                                        {!!Str::limit($album->category->name ?? '--',25)!!}</a></div>
+                                        {!!Str::limit($album->category->name ?? '--',25)!!}</a> </div>
                                     <div class="name"><a class='btn btn-success btn-sm text-white'
                                         style='background-color:#033533;border-radius:3px;color:white'
-                                        href='{{route("cthostel",[$album->slug,$album->id])}}'>View hostel</a></div>
+                                        href='{{route("cthostel",[$album->slug,$album->id])}}'>View hostel @if($album->video !== null) <i class='fa fa-play'></i> @endif</a></div>
                                   </div>
                                 </div>
                               </div>

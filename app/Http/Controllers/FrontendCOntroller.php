@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\User;
 use App\Models\Album;
 use App\Models\schools;
@@ -8,51 +9,64 @@ use App\Models\Category;
 use App\Models\roommate;
 use App\Models\Services;
 use Illuminate\Http\Request;
+use Kreait\Firebase\Factory;
 use Illuminate\Support\Facades\DB;
+use Kreait\Firebase\ServiceAccount;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cache;
+use Google\Cloud\Storage\StorageClient;
 use Illuminate\Support\Facades\Session;
 
 class FrontendCOntroller extends Controller
 {
-    public function cthostel($slug,$id) {
-      
-        
-       $data['album'] = $album = Album::with('albumimages')->where('slug',$slug)->where('status',1)->where('id',$id)->get()[0];
-       $data['albums'] = Album::where('school_id', $album->school_id)->where('status',1)->paginate(20);
-       $data['similar_hostels'] = Album::where('school_id', $album->school_id)->orderBy('rank')->where('status',1)->where('category_id',$album->category_id)->paginate(10);
-       $data['agenthostel'] =  Album::where('school_id', $album->school_id)->where('status',1)->where('user_id',$album->user_id)->paginate(10);
-           
-       $data['albumImage'] = Album::where('user_id',$album['user_id'])->where('status',1)->get();
-       $data['category'] = Category::where('school_id', $album->school_id)->get();
-       $data['school_id'] = $album->school_id;
-     
-        $data['userId'] = $userId  = Album::where('id',$id)->first()->user_id;
-           $follows = 'kokanmi';
-     
-       $data['follows'] = 'good';
-    //    $data['userId'] = 1;
-       $data['user'] = User::find($userId);
-       //(new User)->amIfollowing($userId);
-       $data['roommate'] = $roommate= Roommate::where('hostel_id',$id)->get();
-     
-       return view('frontend.cthostel',$data);
-    //    return view('album.show',$data);
+    public function cthostel($slug, $id)
+    {
+
+
+        $data['album'] = $album = Album::with('albumimages')->where('slug', $slug)->where('status', 1)->where('id', $id)->get()[0];
+        $data['albums'] = Album::where('school_id', $album->school_id)->where('status', 1)->paginate(20);
+        $data['similar_hostels'] = Album::where('school_id', $album->school_id)->orderBy('rank')->where('status', 1)->where('category_id', $album->category_id)->paginate(10);
+        $data['agenthostel'] =  Album::where('school_id', $album->school_id)->where('status', 1)->where('user_id', $album->user_id)->paginate(10);
+
+        $data['albumImage'] = Album::where('user_id', $album['user_id'])->where('status', 1)->get();
+        $data['category'] = Category::where('school_id', $album->school_id)->get();
+        $data['school_id'] = $album->school_id;
+
+        $data['userId'] = $userId  = Album::where('id', $id)->first()->user_id;
+        $follows = 'kokanmi';
+
+        $data['follows'] = 'good';
+        //    $data['userId'] = 1;
+        $data['user'] = User::find($userId);
+        //(new User)->amIfollowing($userId);
+        $data['roommate'] = $roommate = Roommate::where('hostel_id', $id)->get();
+        if ($album->video !== null) {
+            $storage = new StorageClient([
+                'keyFile' => json_decode(file_get_contents('C:\xampp\htdocs\docs\cthostel-v-2\public\ct-hostel-firebase-adminsdk-bf7nu-85872bd8b6.json'), true)
+            ]);
+            $bucket = $storage->bucket('ct-hostel.appspot.com');
+            $videoPath = 'videos/' . $album->video;
+            $object = $bucket->object($videoPath);
+            $data['my_video'] = $object->signedUrl(new \DateTime('tomorrow'));
+        }
+
+        return view('frontend.cthostel', $data);
+        //    return view('album.show',$data);
     }
 
-    
+
     public function fetch_data(Request $request, $id)
     {
 
         if ($request->ajax()) {
 
-            $data['albums'] = Album::where('school_id', $id)->where('status',1)->paginate(20);
+            $data['albums'] = Album::where('school_id', $id)->where('status', 1)->paginate(20);
             $data['school_id'] = $id;
-            $data['albums'] = $albums = Album::where('school_id', $id)->where('status',1)->where('type',null)->latest()->paginate(20);
-            $data['latest'] = Album::where('school_id', $id)->where('status',1)->where('type',null)->latest()->paginate(20);
-            $data['cheapest'] = Album::inRandomOrder()->where('status',1)->where('type',null)->where('school_id', $id)->where('price', '<', 50000)->paginate(20);
-            $data['highest'] = Album::where('school_id', $id)->where('status',1)->where('type',null)->where('price', '>', 60000)->paginate(20);
-            $data['random'] = Album::inRandomOrder()->where('school_id', $id)->where('type',null)->where('status',1)->paginate(20);
+            $data['albums'] = $albums = Album::where('school_id', $id)->where('status', 1)->where('type', null)->latest()->paginate(20);
+            $data['latest'] = Album::where('school_id', $id)->where('status', 1)->where('type', null)->latest()->paginate(20);
+            $data['cheapest'] = Album::inRandomOrder()->where('status', 1)->where('type', null)->where('school_id', $id)->where('price', '<', 50000)->paginate(20);
+            $data['highest'] = Album::where('school_id', $id)->where('status', 1)->where('type', null)->where('price', '>', 60000)->paginate(20);
+            $data['random'] = Album::inRandomOrder()->where('school_id', $id)->where('type', null)->where('status', 1)->paginate(20);
 
             return view('pagination', $data)->render();
         }
@@ -62,10 +76,10 @@ class FrontendCOntroller extends Controller
 
         if ($request->ajax()) {
 
-            $data['albums'] = Album::where('school_id', $id)->where('status',1)->orderBy('rank')->paginate(20);
+            $data['albums'] = Album::where('school_id', $id)->where('status', 1)->orderBy('rank')->paginate(20);
             $data['school_id'] = $id;
-            $data['albums'] = $albums = Album::where('school_id', $id)->orderBy('rank')->where('status',1)->latest()->paginate(20);
-            $data['searched'] = Album::where('school_id', $id)->orderBy('rank')->where('status',1)->latest()->paginate(20);
+            $data['albums'] = $albums = Album::where('school_id', $id)->orderBy('rank')->where('status', 1)->latest()->paginate(20);
+            $data['searched'] = Album::where('school_id', $id)->orderBy('rank')->where('status', 1)->latest()->paginate(20);
 
             return view('filteredpagination', $data)->render();
         }
@@ -74,11 +88,11 @@ class FrontendCOntroller extends Controller
     {
         // dd($request->all());
         $data['school_id'] = $school_id = $request->school_id;
-     
-     
+
+
         $data['school'] = $school = Schools::where('id', $school_id)->get();
         $data['locations'] = Category::where('school_id', $school_id)->get();
-        $data['latest'] = Album::where('school_id', $school_id)->orderBy('rank')->where('type', null)->where('status',1)->where('soft_delete',0)->latest()->paginate(20)->withQueryString();
+        $data['latest'] = Album::where('school_id', $school_id)->orderBy('rank')->where('type', null)->where('status', 1)->where('soft_delete', 0)->latest()->paginate(20)->withQueryString();
         // $data['random'] = Album::inRandomOrder()->where('status',1)->orderBy('rank')->where('type', null)->where('school_id', $school_id)->where('price', '>', 150000)->where('soft_delete',0)->paginate(20)->withQueryString();
         return view('frontend.cthome', $data);
     }
@@ -86,57 +100,59 @@ class FrontendCOntroller extends Controller
     {
         // dd($request->all());
         $data['school_id'] = $school_id = $request->school_id;
-     
-     
+
+
         $data['school'] = $school = Schools::where('id', $school_id)->get();
         $data['locations'] = Category::where('school_id', $school_id)->get();
-        $data['latest'] = Album::where('school_id', $school_id)->orderBy('rank')->where('type', null)->where('status',1)->where('soft_delete',0)->latest()->paginate(20)->withQueryString();
+        $data['latest'] = Album::where('school_id', $school_id)->orderBy('rank')->where('type', null)->where('status', 1)->where('soft_delete', 0)->latest()->paginate(20)->withQueryString();
         // $data['random'] = Album::inRandomOrder()->where('status',1)->orderBy('rank')->where('type', null)->where('school_id', $school_id)->where('price', '>', 150000)->where('soft_delete',0)->paginate(20)->withQueryString();
         return view('frontend.cthome', $data);
     }
-    public function cheapest($school_id) {
+    public function cheapest($school_id)
+    {
         $data['school'] = $school = Schools::where('id', $school_id)->get();
         $data['locations'] = Category::where('school_id', $school_id)->get();
         $data['school_id'] = $school_id;
-      
-        $data['cheapest'] = Album::orderBy('rank')->where('status',1)->where('type', null)->where('school_id', $school_id)->where('price', '<', 100000)->where('soft_delete',0)->paginate(20)->withQueryString();
+
+        $data['cheapest'] = Album::orderBy('rank')->where('status', 1)->where('type', null)->where('school_id', $school_id)->where('price', '<', 100000)->where('soft_delete', 0)->paginate(20)->withQueryString();
         // dd($data['cheapest']);
-        return view('frontend.cheapest', $data);  
+        return view('frontend.cheapest', $data);
     }
-    public function bestrated($school_id) {
+    public function bestrated($school_id)
+    {
         $data['school'] = $school = Schools::where('id', $school_id)->get();
         $data['locations'] = Category::where('school_id', $school_id)->get();
         $data['school_id'] = $school_id;
-        $data['highest'] = Album::orderBy('rank')->where('school_id', $school_id)->where('type', null)->where('status',1)->where('price', '>', 100000)->where('soft_delete',0)->paginate(20)->withQueryString();
-        return view('frontend.bestrated', $data);  
+        $data['highest'] = Album::orderBy('rank')->where('school_id', $school_id)->where('type', null)->where('status', 1)->where('price', '>', 100000)->where('soft_delete', 0)->paginate(20)->withQueryString();
+        return view('frontend.bestrated', $data);
     }
     // }
- 
+
     public function agentpage($slug, $id)
     {
 
-            
-        $data['albums'] = Album::where('user_id',$id)->where('status',1)->latest()->paginate(20);
-       $data['agent'] = $agent = User::where('id',$id)->first();
-       $data['school_id'] = $agent->school_id;
 
-       $data['locations'] = Category::where('school_id', $data['school_id'])->get();
+        $data['albums'] = Album::where('user_id', $id)->where('status', 1)->latest()->paginate(20);
+        $data['agent'] = $agent = User::where('id', $id)->first();
+        $data['school_id'] = $agent->school_id;
 
-    //    dd($agent);
+        $data['locations'] = Category::where('school_id', $data['school_id'])->get();
+
+        //    dd($agent);
         return view('agentpage', $data);
     }
     public function index(Request $request)
     {
         // $category = DB::table('');
         // dd($category);
-      
-        $albums = Album::latest()->where('status',1)->paginate(8);
-        $slider = Album::latest()->where('status',1)->paginate(20);
-        $albums2 = Album::inRandomOrder()->where('status',1)->get();
-        $harmony = Album::inRandomOrder()->where('category_id', 1)->where('status',1)->orWhere('category_id', 2)->orWhere('category_id', 3)->limit(3);
-        $isolu = Album::inRandomOrder()->where('category_id', 4)->where('status',1)->orWhere('category_id', 5)->orWhere('category_id', 7)->orWhere('category_id', 8)->get();
-        $camp = Album::inRandomOrder()->where('category_id', 6)->where('status',1)->orWhere('category_id', 9)->orWhere('category_id', 10)->orWhere('category_id', 11)->limit(3);
-        $cheapest = Album::inRandomOrder()->where('price', '<', '40000')->where('status',1)->limit(3);
+
+        $albums = Album::latest()->where('status', 1)->paginate(8);
+        $slider = Album::latest()->where('status', 1)->paginate(20);
+        $albums2 = Album::inRandomOrder()->where('status', 1)->get();
+        $harmony = Album::inRandomOrder()->where('category_id', 1)->where('status', 1)->orWhere('category_id', 2)->orWhere('category_id', 3)->limit(3);
+        $isolu = Album::inRandomOrder()->where('category_id', 4)->where('status', 1)->orWhere('category_id', 5)->orWhere('category_id', 7)->orWhere('category_id', 8)->get();
+        $camp = Album::inRandomOrder()->where('category_id', 6)->where('status', 1)->orWhere('category_id', 9)->orWhere('category_id', 10)->orWhere('category_id', 11)->limit(3);
+        $cheapest = Album::inRandomOrder()->where('price', '<', '40000')->where('status', 1)->limit(3);
         return view('funnab', compact('albums', 'slider', 'albums2', 'harmony', 'camp', 'isolu', 'cheapest'));
         return view('hostel', compact('albums', 'slider', 'albums2', 'harmony', 'camp', 'isolu', 'cheapest'));
         //return view('home',compact('albums'));
@@ -145,7 +161,7 @@ class FrontendCOntroller extends Controller
 
     public function albumCategory($id)
     {
-        $albums = Album::where('category_id', $id)->where('status',1)->get();
+        $albums = Album::where('category_id', $id)->where('status', 1)->get();
         return view('album-category', compact('albums'));
     }
 
@@ -161,8 +177,8 @@ class FrontendCOntroller extends Controller
 
         $data['school'] = Schools::where('id', $data['school_id'])->get();
 
-        $data['albums'] = Album::where('school_id', $data['school_id'])->where('status',1)->latest()->paginate(20);
-        $data['albums2'] = Album::inRandomOrder()->where('status',1)->get();
+        $data['albums'] = Album::where('school_id', $data['school_id'])->where('status', 1)->latest()->paginate(20);
+        $data['albums2'] = Album::inRandomOrder()->where('status', 1)->get();
 
         $data['location'] = Category::where('school_id', $data['school_id'])->get();
         // dd($school,$album,$location);
@@ -181,7 +197,7 @@ class FrontendCOntroller extends Controller
     }
     public function filter(Request $request)
     {
-        if($request->has('school_id') && $request->has('location')) {
+        if ($request->has('school_id') && $request->has('location')) {
             session()->put('filter_school_id', $request->school_id);
             session()->put('filter_location', $request->location);
             session()->put('filter_min_price', $request->min_price);
@@ -190,35 +206,34 @@ class FrontendCOntroller extends Controller
             $location = $request->location;
             $min_price = $request->min_price;
             $max_price = $request->max_price;
-        }
-        else {
+        } else {
             $school_id = session()->get('filter_school_id');
             $location = session()->get('filter_location');
             $min_price = session()->get('filter_min_price');
             $max_price = session()->get('filter_max_price');
         }
-        if($school_id == null || $location == null ) {
-            return redirect()->back()->with('message','Please fill the filter form appropriately');
+        if ($school_id == null || $location == null) {
+            return redirect()->back()->with('message', 'Please fill the filter form appropriately');
         }
         $data['locations'] = Category::where('school_id', $school_id)->get();
         $id = $location;
-       
+
         $minimum = (array_map('intval', [$min_price]));
         $maximum = (array_map('intval', [$max_price]));
         $location = (array_map('intval', $id));
         $locate = count($location);
-        $slider = Album::where('status',1)->where('soft_delete',0)->orderBy('rank')->latest()->paginate(20);
+        $slider = Album::where('status', 1)->where('soft_delete', 0)->orderBy('rank')->latest()->paginate(20);
         // dd($minimum,$id,$location);
         $data['school_id'] = $school_id;
         $filter = [];
-      
-        $subcategory = DB::table('albums')->where('status',1)->where('soft_delete',0)->whereIn('category_id', $location)->get();
+
+        $subcategory = DB::table('albums')->where('status', 1)->where('soft_delete', 0)->whereIn('category_id', $location)->get();
         foreach ($location as $sub) {
             array_push($filter, $sub);
         }
-        $data['filtered'] = $filtered = Album::where('status',1)->orderBy('rank')->where('soft_delete',0)->whereIn('category_id', $filter)->where('price', '>=', $minimum[0])->where('price', '<=', $maximum[0])->paginate(20)->withQueryString();
-        $data['searched'] = $filtered = Album::where('status',1)->orderBy('rank')->where('soft_delete',0)->whereIn('category_id', $filter)->where('price', '>=', $minimum[0])->where('price', '<=', $maximum[0])->paginate(20)->withQueryString();
-        
+        $data['filtered'] = $filtered = Album::where('status', 1)->orderBy('rank')->where('soft_delete', 0)->whereIn('category_id', $filter)->where('price', '>=', $minimum[0])->where('price', '<=', $maximum[0])->paginate(20)->withQueryString();
+        $data['searched'] = $filtered = Album::where('status', 1)->orderBy('rank')->where('soft_delete', 0)->whereIn('category_id', $filter)->where('price', '>=', $minimum[0])->where('price', '<=', $maximum[0])->paginate(20)->withQueryString();
+
         return view('frontend.filtered', $data);
 
 
@@ -263,7 +278,7 @@ class FrontendCOntroller extends Controller
     {
         if ($request->search) {
             $products = Album::where('name', 'like', '%' . $request->search . '%')
-                ->where('status',1)->orWhere('description', 'like', '%' . $request->search . '%')
+                ->where('status', 1)->orWhere('description', 'like', '%' . $request->search . '%')
                 ->orWhere('price', 'like', '%' . $request->search . '%')
                 ->orWhere('category_id', 'like', '%' . $request->search . '%')
 
@@ -271,12 +286,13 @@ class FrontendCOntroller extends Controller
             return view('allhostel', compact('products'));
         }
 
-        $products  = Album::where('status',1)->latest()->paginate(20);
+        $products  = Album::where('status', 1)->latest()->paginate(20);
         return view('allhostel', compact('products'));
     }
-    public function subscription(Request $request) {
-    $contact = DB::insert('insert into subscription (email) values(?)', [$request->email]);
-      return 'subscribed successfully';
+    public function subscription(Request $request)
+    {
+        $contact = DB::insert('insert into subscription (email) values(?)', [$request->email]);
+        return 'subscribed successfully';
     }
 
     public function contact(Request $request)
@@ -289,69 +305,70 @@ class FrontendCOntroller extends Controller
             return redirect()->back()->with('alert', "Sorry, your message could not be sent,try again later");
         }
     }
-  
+
     public function shs(Request $request)
     {
 
         $data['school_id'] = $school_id = $request->school_id;
-        $data['albums'] = Album::where('user_id',1)->where('status',1)->latest()->paginate(20);
-       $data['agent'] = $agent = User::where('id',1)->first();
-       $data['school_id'] = $agent->school_id;
+        $data['albums'] = Album::where('user_id', 1)->where('status', 1)->latest()->paginate(20);
+        $data['agent'] = $agent = User::where('id', 1)->first();
+        $data['school_id'] = $agent->school_id;
 
 
         // if($school_id == 1) {
         //     return view('counter');
         // } else {
 
-        
+
         $data['school'] = $school = Schools::where('id', $data['school_id'])->get();
         $data['roommate'] = Roommate::paginate(10);
-     	$id = $request->school_id;
+        $id = $request->school_id;
 
         // dd($albums);
         $data['services'] = User::where('school_id', $data['school_id'])->get();
-             
-        $data['mechanics'] = User::where('type','mechanic')->where('school_id', $id)->get();
-        $data['electricians'] = User::where('type','electrician')->where('school_id', $id)->get();
-        $data['ac_technicians'] = User::where('type','A.C Technician')->where('school_id', $id)->get();
-        $data['plumbers'] = User::where('type','plumber')->where('school_id', $id)->get();
-        $data['painters'] = User::where('type','painter')->where('school_id', $id)->get();
-       $data['kitchen_engineer'] = User::where('type','Kitchen Appliances Engineer')->where('school_id', $id)->get();
-       $data['phone_engineer'] = User::where('type','Phone Engineer')->where('school_id', $id)->get();
-       $data['laptop_engineer'] = User::where('type','Laptop Engineer')->where('school_id', $id)->get();
-       $data['washing_machine_engineer'] = User::where('type','Washing Machine Specialist')->where('school_id', $id)->get();
-      $data['tv_engineer'] = User::where('type','TV/Playstation Engineer')->where('school_id', $id)->get();
+
+        $data['mechanics'] = User::where('type', 'mechanic')->where('school_id', $id)->get();
+        $data['electricians'] = User::where('type', 'electrician')->where('school_id', $id)->get();
+        $data['ac_technicians'] = User::where('type', 'A.C Technician')->where('school_id', $id)->get();
+        $data['plumbers'] = User::where('type', 'plumber')->where('school_id', $id)->get();
+        $data['painters'] = User::where('type', 'painter')->where('school_id', $id)->get();
+        $data['kitchen_engineer'] = User::where('type', 'Kitchen Appliances Engineer')->where('school_id', $id)->get();
+        $data['phone_engineer'] = User::where('type', 'Phone Engineer')->where('school_id', $id)->get();
+        $data['laptop_engineer'] = User::where('type', 'Laptop Engineer')->where('school_id', $id)->get();
+        $data['washing_machine_engineer'] = User::where('type', 'Washing Machine Specialist')->where('school_id', $id)->get();
+        $data['tv_engineer'] = User::where('type', 'TV/Playstation Engineer')->where('school_id', $id)->get();
         // dd($data['painters']);
         $data['locations'] = Services::where('school_id', $data['school_id'])->inRandomOrder()->paginate(5);
-        
+
         return view('shs', $data);
-    
     }
-  public function servicepage()  {
-    $data['schools'] = schools::get();
-    
-  	return view('technician.servicepage',$data);
-  }
-  public function searchtechnician(Request $request) {
-    
-  //  $users = User::where('school_id', $request->school_id)->where('category_id',$request->location_id)->where('type',$request->service_type)->get();
-     $users = User::where('school_id', $request->school_id)->where('type',$request->service_type)->get();
-        
-    return $users;
-    
-  }
-  public function getContact() {
-    $users = User::where('category_id','!=',null)->pluck('phone');
-    return $users;
-  }
-  public function upgrade_account()
-  {
+    public function servicepage()
+    {
+        $data['schools'] = schools::get();
 
-    
-      $user = Auth::user();
-      
+        return view('technician.servicepage', $data);
+    }
+    public function searchtechnician(Request $request)
+    {
 
-      return redirect()->away('https://wa.me/2349058744473?text=Hi%2C%20my%20account%20name%20is%20%28'.$user->name.'%29.%0aI%20will%20like%20to%20upgrade%20my%20CT-Hostel%20account.%0a');
-      // return redirect()->away('https://wa.me/234{{substr($album->user->phone,1)}}?text=Hi%2C%20my%20name%20is%20%28Input%20your%20name%29.%0aHOSTEL%20REQUEST%20FOR%20CTHOSTEL.%0aInstitution:{{$album->school->name}}%0aHostel%20name:%20({{$album->name}})%0aHostel%20Price:{{$album->price}}%0aLocation:{{$album->category->name}}%0aAgent%20in%20charge:{{$album->user->name}}%0a(Input%20other%20message%20here)%20');
-  }
+        //  $users = User::where('school_id', $request->school_id)->where('category_id',$request->location_id)->where('type',$request->service_type)->get();
+        $users = User::where('school_id', $request->school_id)->where('type', $request->service_type)->get();
+
+        return $users;
+    }
+    public function getContact()
+    {
+        $users = User::where('category_id', '!=', null)->pluck('phone');
+        return $users;
+    }
+    public function upgrade_account()
+    {
+
+
+        $user = Auth::user();
+
+
+        return redirect()->away('https://wa.me/2349058744473?text=Hi%2C%20my%20account%20name%20is%20%28' . $user->name . '%29.%0aI%20will%20like%20to%20upgrade%20my%20CT-Hostel%20account.%0a');
+        // return redirect()->away('https://wa.me/234{{substr($album->user->phone,1)}}?text=Hi%2C%20my%20name%20is%20%28Input%20your%20name%29.%0aHOSTEL%20REQUEST%20FOR%20CTHOSTEL.%0aInstitution:{{$album->school->name}}%0aHostel%20name:%20({{$album->name}})%0aHostel%20Price:{{$album->price}}%0aLocation:{{$album->category->name}}%0aAgent%20in%20charge:{{$album->user->name}}%0a(Input%20other%20message%20here)%20');
+    }
 }
