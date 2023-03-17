@@ -18693,9 +18693,13 @@
                        @if($album->video == null)
                        <p>There is no video for this hostel</p>
                        @else 
-                       <div class="embed-responsive embed-responsive-16by9">
+                       {{-- <div class="embed-responsive embed-responsive-16by9">
                          <iframe class="embed-responsive-item" src="{{ $my_video }}" allowfullscreen></iframe>
-                       </div>
+                       </div> --}}
+                         <video class='video_src' width="320" height="240" controls>
+                                                                                    <source  src="{{ $my_video }}" type="video/mp4">
+                                                                                    Your browser does not support the video tag.
+                                                                                  </video>
                         
                        @endif
                      

@@ -28,6 +28,14 @@ require __DIR__ . '/auth.php';
 //     return view('frontend.home');
 // });
 // the real route
+Route::any('realpath', function() {
+    $path = __DIR__.'/../'; // set the path to the root directory of your Laravel project
+    $realpath = realpath($path);
+    
+    echo $realpath;
+    
+    dd($realpath);
+});
 Route::any('search_property', [MarketController::class, 'search_property'])->name('search_property');
 Route::any('upgrade_account', [FrontendCOntroller::class, 'upgrade_account'])->name('upgrade_account');
 
