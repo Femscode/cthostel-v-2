@@ -10,8 +10,8 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="https://hostel.thecaretech.org/Rapid/assets/img/logo.jpg" rel="icon">
-  <link href="https://hostel.thecaretech.org//assets/img/logo.jpg" rel="apple-touch-icon">
+  <link href="welcomehome/assets/img/logo.jpg" rel="icon">
+  <link href="/welcomehome/assets/img/logo.jpg" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Montserrat:300,400,500,600,700" rel="stylesheet">
@@ -19,19 +19,19 @@
 <link href="//fonts.googleapis.com/css?family=Nunito:300,400,700" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
-  <link href="{{asset('Rapid/assets/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
-  <link href="{{asset('Rapid/assets/vendor/animate.css/animate.min.css')}}" rel="stylesheet">
-  <link href="{{asset('Rapid/assets/vendor/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet">
-  <link href="{{asset('Rapid/assets/vendor/ionicons/css/ionicons.min.css')}}" rel="stylesheet">
-  <link href="{{asset('Rapid/assets/vendor/venobox/venobox.css')}}" rel="stylesheet">
-  <link href="{{asset('Rapid/assets/vendor/owl.carousel/assets/owl.carousel.min.css')}}" rel="stylesheet">
+  <link href="{{asset('welcomehome/assets/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+  <link href="{{asset('welcomehome/assets/vendor/animate.css/animate.min.css')}}" rel="stylesheet">
+  <link href="{{asset('welcomehome/assets/vendor/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet">
+  <link href="{{asset('welcomehome/assets/vendor/ionicons/css/ionicons.min.css')}}" rel="stylesheet">
+  <link href="{{asset('welcomehome/assets/vendor/venobox/venobox.css')}}" rel="stylesheet">
+  <link href="{{asset('welcomehome/assets/vendor/owl.carousel/assets/owl.carousel.min.css')}}" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <link href="{{asset('Rapid/assets/css/style.css')}}" rel="stylesheet">
+  <link href="{{asset('welcomehome/assets/css/style.css')}}" rel="stylesheet">
 
   <!-- =======================================================
-  * Template Name: Rapid - v2.1.0
-  * Template URL: https://bootstrapmade.com/rapid-multipurpose-bootstrap-business-template/
+  * Template Name: welcomehome - v2.1.0
+  * Template URL: https://bootstrapmade.com/welcomehome-multipurpose-bootstrap-business-template/
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
@@ -88,7 +88,7 @@
         </div>
 
    <!--     <div class="col-md-6 intro-img order-md-last order-first">
-          <img src="https://hostel.thecaretech.org/Rapid/assets/img/banner2.png" alt="" class="img-fluid">
+          <img src="https://cthostel.com/welcomehome/assets/img/banner2.png" alt="" class="img-fluid">
         </div>-->
       </div>
   </section>
@@ -104,7 +104,7 @@
 
           <div class="col-lg-5 col-md-6">
             <div class="about-img">
-              <img src="https://hostel.thecaretech.org/Rapid/assets/img/about.png" alt="">
+              <img src="https://cthostel.com/welcomehome/assets/img/about.png" alt="">
             </div>
           </div>
 
@@ -188,7 +188,7 @@
 
         <div class="row feature-item">
           <div class="col-lg-6 wow fadeInUp">
-            <img src="https://hostel.thecaretech.org/Rapid/assets/img/banne.png" class="img-fluid" alt="">
+            <img src="https://cthostel.com/welcomehome/assets/img/banne.png" class="img-fluid" alt="">
           </div>
           <div class="col-lg-6 wow fadeInUp pt-5 pt-lg-0">
             <h4 id='secure'><b>SECURE AN HOSTEL IN YOUR INSTITUTION</b></h4>
@@ -210,7 +210,7 @@
 
         <div class="row feature-item mt-5 pt-5">
           <div class="col-lg-6 wow fadeInUp order-1 order-lg-2">
-            <img src="https://hostel.thecaretech.org/Rapid/assets/img/features-2.svg" class="img-fluid" alt="">
+            <img src="https://cthostel.com/welcomehome/assets/img/features-2.svg" class="img-fluid" alt="">
           </div>
 
           <div class="col-lg-6 wow fadeInUp pt-4 pt-lg-0 order-2 order-lg-1">
@@ -251,14 +251,14 @@
             <div class="owl-carousel testimonials-carousel wow fadeInUp">
 
               <div class="testimonial-item">
-                <img src="https://hostel.thecaretech.org/Rapid/assets/img/testimonial-1.jpg" class="testimonial-img" alt="">
+                <img src="https://cthostel.com/welcomehome/assets/img/testimonial-1.jpg" class="testimonial-img" alt="">
                 <h3>Boluwatife Sotonwa</h3>
                 <h4>Student, Federal University of Agriculture Abeokuta</h4>
                 <p>CareTech Hostel is really amazing, I was able to get my desired hostel at a very cheap amount</p>
               </div>
 
               <div class="testimonial-item">
-                <img src="https://hostel.thecaretech.org/Rapid/assets/img/testimonial-2.jpg" class="testimonial-img" alt="">
+                <img src="https://cthostel.com/welcomehome/assets/img/testimonial-2.jpg" class="testimonial-img" alt="">
                 <h3>Bola Akinfenwa</h3>
                 <h4>Student, Obafemi Awolowo University</h4>
                 <p>
@@ -267,7 +267,7 @@
               </div>
 
               <div class="testimonial-item">
-                <img src="https://hostel.thecaretech.org/Rapid/assets/img/testimonial-3.jpg" class="testimonial-img" alt="">
+                <img src="https://cthostel.com/welcomehome/assets/img/testimonial-3.jpg" class="testimonial-img" alt="">
                 <h3>jayeola Johnson</h3>
                 <h4>
                   Agent, Lagos State University
@@ -278,7 +278,7 @@
               </div>
 
               <div class="testimonial-item">
-                <img src="https://hostel.thecaretech.org/assets/img/testimonial-4.jpg" class="testimonial-img" alt="">
+                <img src="https://cthostel.com/assets/img/testimonial-4.jpg" class="testimonial-img" alt="">
                 <h3>Popoola Timothy</h3>
                 <h4>Mechanical Engineer Student, Olabisi Onabanjo University</h4>
                 <p>
@@ -496,7 +496,7 @@
         All the links in the footer should remain intact.
         You can delete the links only if you purchased the pro version.
         Licensing information: https://bootstrapmade.com/license/
-        Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Rapid
+        Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=welcomehome
       -->
 	© 2000 - 2021 Care Technology. All Rights Reserved | Powered by <a href="index.html" target="_blank">Care-Tech</a></p>		
 
@@ -504,20 +504,20 @@
     </div>
   </footer><!-- End  Footer -->
 <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
-  <script src="{{asset('Rapid/assets/vendor/jquery/jquery.min.js')}}"></script>
-  <script src="{{asset('Rapid/assets/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-  <script src="{{asset('Rapid/assets/vendor/jquery.easing/jquery.easing.min.js')}}"></script>
-  <script src="{{asset('Rapid/assets/vendor/php-email-form/validate.js')}}"></script>
-  <script src="{{asset('Rapid/assets/vendor/isotope-layout/isotope.pkgd.min.js')}}"></script>
-  <script src="{{asset('Rapid/assets/vendor/counterup/counterup.min.js')}}"></script>
-  <script src="{{asset('Rapid/assets/vendor/venobox/venobox.min.js')}}"></script>
-  <script src="{{asset('Rapid/assets/vendor/mobile-nav/mobile-nav.js')}}"></script>
-  <script src="{{asset('Rapid/assets/vendor/wow/wow.min.js')}}"></script>
-  <script src="{{asset('Rapid/assets/vendor/owl.carousel/owl.carousel.min.js')}}"></script>
-  <script src="{{asset('Rapid/assets/vendor/waypoints/jquery.waypoints.min.js')}}"></script>
+  <script src="{{asset('welcomehome/assets/vendor/jquery/jquery.min.js')}}"></script>
+  <script src="{{asset('welcomehome/assets/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+  <script src="{{asset('welcomehome/assets/vendor/jquery.easing/jquery.easing.min.js')}}"></script>
+  <script src="{{asset('welcomehome/assets/vendor/php-email-form/validate.js')}}"></script>
+  <script src="{{asset('welcomehome/assets/vendor/isotope-layout/isotope.pkgd.min.js')}}"></script>
+  <script src="{{asset('welcomehome/assets/vendor/counterup/counterup.min.js')}}"></script>
+  <script src="{{asset('welcomehome/assets/vendor/venobox/venobox.min.js')}}"></script>
+  <script src="{{asset('welcomehome/assets/vendor/mobile-nav/mobile-nav.js')}}"></script>
+  <script src="{{asset('welcomehome/assets/vendor/wow/wow.min.js')}}"></script>
+  <script src="{{asset('welcomehome/assets/vendor/owl.carousel/owl.carousel.min.js')}}"></script>
+  <script src="{{asset('welcomehome/assets/vendor/waypoints/jquery.waypoints.min.js')}}"></script>
 
   <!-- Template Main JS File -->
-  <script src="{{asset('Rapid/assets/js/main.js')}}"></script>
+  <script src="{{asset('welcomehome/assets/js/main.js')}}"></script>
 
 </body>
 
