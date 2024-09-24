@@ -55,7 +55,7 @@
                             <th><b>Hostel Name</b></th>
                             <th><b>Price</b></th>
                             <th><b>location</b></th>
-                            <th><b>Complaint</b></th>
+                            @if(Auth::user()->email == 'fasanyafemi@gmail.com')<th><b>Complaint</b></th>@endif
                             <th><b>Number</b></th>
                             <th><b>View Hostel</b></th>
                         </tr>
@@ -69,13 +69,13 @@
                                 <td>{{$hostel->name}} <br> ({{ $hostel->user->name }})</td>
                             <td>₦{{number_format($hostel->price,2)}}</td>
                             <td>{{$hostel->category->name ?? ""}}</td>
-                            <td>
+                            @if(Auth::user()->email == 'fasanyafemi@gmail.com')<td>
                                 <form method='post' action='/updateHostelPhone'>@csrf
                                     <input type='hidden' name='id' value='{{$hostel->id}}'/>
                                     <input value='{{$hostel->phone}}' type='phone' name='phone' type='number' class='form-control'/>
                                     <button class='btn btn-dark btn-sm' type='submit'>Update</button>
                                 </form>
-                            </td>
+                            </td>@endif
                             <td><a class='btn btn-success' href='tel:{{$hostel->user->phone}}'>Call</a></td>
                             <td><a class='btn btn-info' href='/cthostel/{{ $hostel->slug }}/{{ $hostel->id }}'>View</a></td>
                         </tr>
