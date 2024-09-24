@@ -107,7 +107,8 @@ class AlbumController extends Controller
         $user->new_clicks += 1;
         $user->save();
 
-        $number = substr($album->user->phone, 1);
+        $number = substr($album->phone ?? $album->user->phone, 1);
+        dd($number);
         if ($request->type == 'message') {
             return redirect()->away('https://wa.me/234' . $number . '?text=HOSTEL%20REQUEST%20FROM%20CTHOSTEL.%0aInstitution:' . $album->school->name . '%0aHostel%20name:%20(' . $album->name . ')%0aHostel%20Price:' . $album->price . '%0aLocation:' . $album->category->name . '%0aAgent%20in%20charge:' . $album->user->name . '%0a(Input%20other%20message%20here)%20');
         } else {
@@ -306,11 +307,18 @@ class AlbumController extends Controller
         $user = Auth::user();
         $data['active'] = 'hostel';
         if ($user->email == 'fasanyafemi@gmail.com') {
-            $data['hostels'] = Album::inRandomOrder()->get();
+            $data['hostels'] = Album::latest()->get();
         } else {
             $data['hostels'] = Album::inRandomOrder()->where('school_id', $user->school_id)->get();
         }
         return view('admin.hostels', $data);
+    }
+    public function updateHostelPhone(Request $request) {
+        // dd($request->all());
+        $hostel = Album::find($request->id);
+        $hostel->phone = $request->phone;
+        $hostel->save();
+        return redirect()->back()->with('message','updated successfully');
     }
     public function agents()
     {

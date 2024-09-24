@@ -134,6 +134,7 @@ Route::any('/sugstudentmail',[AlbumController::class,'sugstudentmail'])->name('s
 Route::get('/agents',[AlbumController::class,'agents'])->name('agents')->middleware('auth');
 Route::get('/students',[AlbumController::class,'students'])->name('students')->middleware('auth');
 Route::get('/hostels',[AlbumController::class,'hostels'])->name('hostels')->middleware('auth');
+Route::post('/updateHostelPhone',[AlbumController::class,'updateHostelPhone'])->name('updateHostelPhone')->middleware('auth');
 });
 
 Route::get('/albums/{slug}/{id}',[GalleryController::class,'viewAlbum'])->name('view.album');
