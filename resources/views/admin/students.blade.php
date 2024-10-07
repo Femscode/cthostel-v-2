@@ -56,6 +56,7 @@
                             <th><b>Phone</b></th>
                             <th><b>Hostel Name</b></th>
                             <th><b>Agent</b></th>
+                            <th><b>Date</b></th>
                             <th><b>Action</b></th>
                         </tr>
                     </thead>
@@ -68,6 +69,8 @@
                             <td>{{$user->phone}}</td>
                             <td> {{ $user->school->name ?? "" }} |{{$user->hostel->name ?? ""}}</td>
                             <td><a href='https://wa.me/234{{ substr($user->agent->phone ?? "000000", 1) }}'>{{ $user->agent->name ?? "not-provided" }}</a></td>
+                            <td>{{ date('jS \o\f F, Y', strtotime($user->created_at)) }}</td>
+
                             <td>
                                 <a class='btn btn-info btn-sm' href='tel:{{$user->phone}}'>Call</a>
                                 <a class='btn btn-success btn-sm' href='https://wa.me/234{{substr($user->phone,1)}}'>Message</a>

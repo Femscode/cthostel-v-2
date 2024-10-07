@@ -33,6 +33,7 @@ use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Storage as LaravelStorage;
+use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
 class AlbumController extends Controller
 {
@@ -108,7 +109,7 @@ class AlbumController extends Controller
         $user->save();
 
         $number = substr($album->phone ?? $album->user->phone, 1);
-        
+
         if ($request->type == 'message') {
             return redirect()->away('https://wa.me/234' . $number . '?text=HOSTEL%20REQUEST%20FROM%20CTHOSTEL.%0aInstitution:' . $album->school->name . '%0aHostel%20name:%20(' . $album->name . ')%0aHostel%20Price:' . $album->price . '%0aLocation:' . $album->category->name . '%0aAgent%20in%20charge:' . $album->user->name . '%0a(Input%20other%20message%20here)%20');
         } else {
@@ -313,12 +314,13 @@ class AlbumController extends Controller
         }
         return view('admin.hostels', $data);
     }
-    public function updateHostelPhone(Request $request) {
+    public function updateHostelPhone(Request $request)
+    {
         // dd($request->all());
         $hostel = Album::find($request->id);
         $hostel->phone = $request->phone;
         $hostel->save();
-        return redirect()->back()->with('message','updated successfully');
+        return redirect()->back()->with('message', 'updated successfully');
     }
     public function agents()
     {
@@ -386,7 +388,7 @@ class AlbumController extends Controller
 
     public function store(Request $request)
     {
-        
+
         $this->validate($request, [
             'name' => 'required|min:3|max:35',
             'school_id' => 'required',
@@ -409,11 +411,11 @@ class AlbumController extends Controller
             'slug' => Str::slug($request->name),
             'user_id' => auth()->user()->id,
             'price' => $request->price,
-            
+
             'school_id' => $request->school_id,
             'hostel_type' => $request->hostel_type
         ]);
-        if($request->hasFile('image')) {
+        if ($request->hasFile('image')) {
             $image = $request->image[0];
             $rand = Str::random(5);
             $imageName = time() . $rand . '.' . $image->extension();
@@ -423,8 +425,8 @@ class AlbumController extends Controller
             })->save(public_path('hostelimage') . '/' . $imageName);
             $album->image = $imageName;
             $album->save();
-    
-    
+
+
             //   foreach ($request->file('image') as $file) {
             for ($i = 1; $i < count($request->image); $i++) {
                 $file = $request->image[$i];
@@ -441,8 +443,8 @@ class AlbumController extends Controller
                 $file->save();
             }
         }
-        
-      
+
+
         if ($request->video !== 'undefined') {
             $factory = (new Factory)->withServiceAccount(env('STORAGE_PATH'));
             $storage = $factory->createStorage();
@@ -1107,8 +1109,14 @@ class AlbumController extends Controller
         ]);
         $contact = DB::insert('insert into students (name,department,level,gender,phone,email,school,location)
          values(?,?,?,?,?,?,?,?)', [
-            $request->name, $request->department, $request->level, $request->gender,
-            $request->phone, $request->email, $request->school, $request->location
+            $request->name,
+            $request->department,
+            $request->level,
+            $request->gender,
+            $request->phone,
+            $request->email,
+            $request->school,
+            $request->location
         ]);
 
 
@@ -1321,5 +1329,17 @@ class AlbumController extends Controller
         Auth::login($register);
 
         return redirect()->route('dashboard');
+    }
+  
+    public function generateQRCode($id)
+    {
+        // Find the hostel by ID
+        $data['hostel'] = $hostel = Album::find($id);
+        $data['hostel_link'] = "https://cthostel.com/" . $hostel->slug . '/' . $hostel->id;
+
+        return view('admin.qr-code2',$data);
+        return view('admin.qr-code',$data);
+
+
     }
 }

@@ -57,7 +57,7 @@ Route::any('messagetechnician/{phone}',[ServiceController::class,'messagetechnic
 Route::any('calltechnician/{phone}',[ServiceController::class,'calltechnician'])->name('calltechnician');
 
 
-Route::view('egbamiregistration','studentportal');
+Route::view('egbamiregistration','studentportal');  
 Route::any('/admindashboard',[AlbumController::class,'schooldashboard'])->name('schooldashboard')->middleware('auth');
 Route::any('/schoolhostels',[AlbumController::class,'schoolhostels'])->name('schoolhostels')->middleware('auth');
 Route::any('/shs',[FrontendCOntroller::class,'shs'])->name('shs');
@@ -135,6 +135,7 @@ Route::get('/agents',[AlbumController::class,'agents'])->name('agents')->middlew
 Route::get('/students',[AlbumController::class,'students'])->name('students')->middleware('auth');
 Route::get('/hostels',[AlbumController::class,'hostels'])->name('hostels')->middleware('auth');
 Route::post('/updateHostelPhone',[AlbumController::class,'updateHostelPhone'])->name('updateHostelPhone')->middleware('auth');
+Route::any('/generateQRCode/{id}',[AlbumController::class,'generateQRCode'])->name('generateQRCode')->middleware('auth');
 });
 
 Route::get('/albums/{slug}/{id}',[GalleryController::class,'viewAlbum'])->name('view.album');

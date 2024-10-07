@@ -22,7 +22,6 @@ class FrontendCOntroller extends Controller
     public function cthostel($slug, $id)
     {
 
-
         $data['album'] = $album = Album::with('albumimages')->where('slug', $slug)->where('status', 1)->where('id', $id)->get()[0];
         $data['albums'] = Album::where('school_id', $album->school_id)->where('status', 1)->paginate(20);
         $data['similar_hostels'] = Album::where('school_id', $album->school_id)->orderBy('rank')->where('status', 1)->where('category_id', $album->category_id)->paginate(10);
@@ -34,7 +33,6 @@ class FrontendCOntroller extends Controller
 
         $data['userId'] = $userId  = Album::where('id', $id)->first()->user_id;
         $follows = 'kokanmi';
-
         $data['follows'] = 'good';
         //    $data['userId'] = 1;
         $data['user'] = User::find($userId);
@@ -49,7 +47,6 @@ class FrontendCOntroller extends Controller
             $object = $bucket->object($videoPath);
             $data['my_video'] = $object->signedUrl(new \DateTime('tomorrow'));
         }
-
         return view('frontend.cthostel', $data);
         //    return view('album.show',$data);
     }
@@ -75,7 +72,6 @@ class FrontendCOntroller extends Controller
     {
 
         if ($request->ajax()) {
-
             $data['albums'] = Album::where('school_id', $id)->where('status', 1)->orderBy('rank')->paginate(20);
             $data['school_id'] = $id;
             $data['albums'] = $albums = Album::where('school_id', $id)->orderBy('rank')->where('status', 1)->latest()->paginate(20);

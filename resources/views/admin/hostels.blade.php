@@ -55,9 +55,10 @@
                             <th><b>Hostel Name</b></th>
                             <th><b>Price</b></th>
                             <th><b>location</b></th>
-                            @if(Auth::user()->email == 'fasanyafemi@gmail.com')<th><b>Complaint</b></th>@endif
+                            @if(Auth::user()->email == 'fasanyafemi@gmail.com')<th><b>Caretaker's Number</b></th>@endif
                             <th><b>Number</b></th>
                             <th><b>View Hostel</b></th>
+                            @if(Auth::user()->email == 'fasanyafemi@gmail.com')<th><b>Generate QR Code</b></th>@endif
                         </tr>
                     </thead>
                     <!--end::Table head-->
@@ -78,6 +79,9 @@
                             </td>@endif
                             <td><a class='btn btn-success' href='tel:{{$hostel->user->phone}}'>Call</a></td>
                             <td><a class='btn btn-info' href='/cthostel/{{ $hostel->slug }}/{{ $hostel->id }}'>View</a></td>
+                            @if(Auth::user()->email == 'fasanyafemi@gmail.com')
+                            <td><a class='btn btn-success' href='/generateQRCode/{{ $hostel->id }}'>Generate QRCode</a></td>
+                            @endif
                         </tr>
                         @endforeach
 
