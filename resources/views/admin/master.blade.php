@@ -1457,7 +1457,10 @@
 <link rel='stylesheet' href='https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css'/>
 
     <script>
-        var oTable = $('#datatable').DataTable();   //using Capital D, which is mandatory to retrieve "api" datatables' object, latest jquery Datatable
+        // var oTable = $('#datatable').DataTable(); 
+        var oTable = $('#datatable').DataTable({
+    "ordering": false // Disable sorting
+});  //using Capital D, which is mandatory to retrieve "api" datatables' object, latest jquery Datatable
        $('#myInput').keyup(function(){
              oTable.search($(this).val()).draw() ;
        });
