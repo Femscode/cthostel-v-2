@@ -45,7 +45,6 @@ class AlbumController extends Controller
         DB::insert('insert into students(email,phone) VALUES(?,?)', [$request->email, $request->phone]);
         dd('created');
     }
-
     public function getAlbums()
     {
         return new AlbumResource(Album::with('category')->where('user_id', auth()->user()->id)->paginate(3));

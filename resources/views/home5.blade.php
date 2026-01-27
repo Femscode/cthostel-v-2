@@ -296,7 +296,7 @@
                                 <!-- <div class="section-title-area ltn__section-title-2 text-center">
                                     <h1 class="section-title  text-color-white">Find Your <span class="ltn__secondary-color-3">Perfect</span> Car</h1>
                                 </div> -->
-                                <h3 class="text-color-white--- text-center mb-30">Get Yourself An <span class="ltn__secondary-color-3">Affordable</span> Hostel/Technician</h3>
+                                <h3 class="text-color-white--- text-center mb-30">Get An <span class="ltn__secondary-color-3">Affordable</span> Hostel/Technician</h3>
                                 <div class="ltn__car-dealer-form-tab">
                                     <div class="ltn__tab-menu  text-uppercase text-center">
                                         <div class="nav">
