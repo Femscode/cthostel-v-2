@@ -74,7 +74,7 @@
                     <div class="col">
                         <div class="site-logo-wrap">
                             <div class="site-logo">
-                                <a href="/"><img src="{{ asset('myimages/logo_header.png')}}" style='width:150px;height:30px' alt="CTHostel"></a>
+                                <a href="/cthostel"><img src="{{ asset('myimages/logo_header.png')}}" style='width:150px;height:30px' alt="CTHostel"></a>
                             </div>
                             <div class="get-support clearfix d-none">
                                 <div class="get-support-icon">
@@ -92,7 +92,7 @@
                             <nav>
                                 <div class="ltn__main-menu">
                                     <ul>
-                                        <li class="menu-icon"><a href="/">Home</a>
+                                        <li class="menu-icon"><a href="/cthostel">Home</a>
                                           
                                         </li>
                                         <li class="menu-icon"><a href="#about">About</a>
@@ -197,7 +197,7 @@
         <div class="ltn__utilize-menu-inner ltn__scrollbar">
             <div class="ltn__utilize-menu-head">
                 <div class="site-logo">
-                    <a href="/"><img src="{{ asset('myimages/logo_header.png')}}" alt="CTHostel"></a>
+                    <a href="/cthostel"><img src="{{ asset('myimages/logo_header.png')}}" alt="CTHostel"></a>
                 </div>
                 <button class="ltn__utilize-close">×</button>
             </div>
@@ -2127,7 +2127,7 @@
                             <div class="footer-menu">
                                 <ul>
                                     <li><a href="#">Hostel Accommodation</a></li>
-                                    <li><a href="/">Egbami Security</a></li>
+                                    <li><a href="/cthostel">Egbami Security</a></li>
                                     <li><a href="/myroomie">Room mate pairing</a></li>
                                     <li><a href="/services">Technician Services</a></li>
                                    

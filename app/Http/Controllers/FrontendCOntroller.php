@@ -16,9 +16,15 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cache;
 use Google\Cloud\Storage\StorageClient;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Mail;
 
 class FrontendCOntroller extends Controller
 {
+    public function landingPage()
+    {
+        return view('landing');
+    }
+
     public function cthostel($slug, $id)
     {
 
@@ -295,12 +301,28 @@ class FrontendCOntroller extends Controller
 
     public function contact(Request $request)
     {
-        // dd($request->all());
         $contact = DB::insert('insert into contacts (name,email,phone,message) values(?,?,?,?)', [$request->name, $request->email, $request->phone, $request->message]);
+
         if ($contact == true) {
+            try {
+                $details = [
+                    'name' => $request->name,
+                    'email' => $request->email,
+                    'phone' => $request->phone,
+                    'message' => $request->message
+                ];
+
+                Mail::raw("New Contact Form Submission:\n\nName: {$details['name']}\nEmail: {$details['email']}\nPhone: {$details['phone']}\nMessage: {$details['message']}", function ($message) use ($details) {
+                    $message->to('fasanyafemi@gmail.com')
+                        ->subject('New CTHOSTEL Contact Submission from ' . $details['name']);
+                });
+            } catch (\Exception $e) {
+                // Email failed but data was saved
+            }
+
             return redirect()->back()->with('alert', "Thanks $request->name, your message has been sent successfully.");
         } else {
-            return redirect()->back()->with('alert', "Sorry, your message could not be sent,try again later");
+            return redirect()->back()->with('alert', "Sorry, your message could not be sent, try again later");
         }
     }
 
