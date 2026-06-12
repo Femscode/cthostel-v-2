@@ -1,178 +1,525 @@
-
 <!DOCTYPE html>
 <html lang="en">
-	<!--begin::Head-->
-	<head>
-        <title>CTHostel | Login</title>
-        <meta name="description"
-            content="...the safest place to get it cheaper without getting scammed." />
-        <meta name="keywords"
-            content="...the safest place to get it cheaper without getting scammed." />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta charset="utf-8" />
-        <meta property="og:locale" content="en_US" />
-        <meta property="og:type" content="article" />
-        <meta name="csrf-token" content="{{ csrf_token() }}">
-        <meta property="og:title"
-            content="...the safest place to get it cheaper without getting scammed." />
-        <meta property="og:url" content="https://cthostel.com" />
-        <meta property="og:site_name" content="CTHostel | Dashboard" />
-        <link rel="canonical" href="https://cthostel.com" />
-        <link href="{{ asset('myimages/fav.png') }}" src='{{ asset(' myimages/fav.png') }}' rel="icon" />
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
-        <!--end::Fonts-->
-        <!--begin::Page Vendor Stylesheets(used by this page)-->
-        <link href="{{ asset('backend/plugins/custom/fullcalendar/fullcalendar.bundle.css" rel="stylesheet') }}"
-            type="text/css" />
-        <!--end::Page Vendor Stylesheets-->
-        <!--begin::Global Stylesheets Bundle(used by all pages)-->
-        <link href="{{ asset('backend/plugins/global/plugins.bundle.css') }}" rel="stylesheet" type="text/css" />
-        <link href="{{ asset('backend/css/style.bundle.css') }}" rel="stylesheet" type="text/css" />
-        @livewireStyles
-        <!--end::Global Stylesheets Bundle-->
-        <!--Begin::Google Tag Manager -->
-        <script>
-            (function(w, d, s, l, i) {
-                w[l] = w[l] || [];
-                w[l].push({
-                    'gtm.start': new Date().getTime(),
-                    event: 'gtm.js'
-                });
-                var f = d.getElementsByTagName(s)[0],
-                    j = d.createElement(s),
-                    dl = l != 'dataLayer' ? '&amp;l=' + l : '';
-                j.async = true;
-                j.src = '../../../www.googletagmanager.com/gtm5445.html?id=' + i + dl;
-                f.parentNode.insertBefore(j, f);
-            })(window, document, 'script', 'dataLayer', 'GTM-5FS8GGP');
-        </script>
-        <!--End::Google Tag Manager -->
-    </head>
-	<!--end::Head-->
-	<!--begin::Body-->
-	<body id="kt_body"  class="app-blank app-blank bgi-size-cover bgi-position-center bgi-no-repeat">
-		<!--begin::Theme mode setup on page load-->
-		<script>var defaultThemeMode = "light"; var themeMode; if ( document.documentElement ) { if ( document.documentElement.hasAttribute("data-theme-mode")) { themeMode = document.documentElement.getAttribute("data-theme-mode"); } else { if ( localStorage.getItem("data-theme") !== null ) { themeMode = localStorage.getItem("data-theme"); } else { themeMode = defaultThemeMode; } } if (themeMode === "system") { themeMode = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"; } document.documentElement.setAttribute("data-theme", themeMode); }</script>
-		<!--end::Theme mode setup on page load-->
-		<!--Begin::Google Tag Manager (noscript) -->
-		<noscript>
-			<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5FS8GGP" height="0" width="0" style="display:none;visibility:hidden"></iframe>
-		</noscript>
-		<!--End::Google Tag Manager (noscript) -->
-		<!--begin::Root-->
-		<div class="d-flex flex-column flex-root" id="kt_app_root">
-			<!--begin::Page bg image-->
-			<style>body { background-image: url('/backend/media/bg4.jpg'); } [data-theme="dark"] body { background-image: url('/metronic8/demo1/assets/media/auth/bg4-dark.jpg'); }</style>
-			<!--end::Page bg image-->
-			<!--begin::Authentication - Sign-in -->
-			<div class="d-flex flex-column flex-column-fluid flex-lg-row">
-				<!--begin::Aside-->
-				<div class="d-flex flex-center w-lg-50 pt-15 pt-lg-0 px-10">
-					<!--begin::Aside-->
-					<div class="d-flex flex-center flex-lg-start flex-column">
-						<!--begin::Logo-->
-						<a href="/metronic8/demo1/../demo1/index.html" class="mb-7">
-							<img alt="Logo" src="{{asset('myimages/logo_header.png')}}" style='height:50px; height:50px; margin:20px; border-radius:5px;padding:4px' />
-						</a>
-						<!--end::Logo-->
-						<!--begin::Title-->
-							<!--end::Title-->
-					</div>
-					<!--begin::Aside-->
-				</div>
-				<!--begin::Aside-->
-				<!--begin::Body-->
-				<div class="d-flex flex-center w-lg-50 p-10">
-					<!--begin::Card-->
-					<div class="card rounded-3 w-md-550px">
-						<!--begin::Card body-->
-						<div class="card-body p-10 p-lg-20">
-							<!--begin::Form-->
-							<form action="{{ route('login') }}" class="form w-100" method="post" class="form-element">@csrf
-                       
-								@if (count($errors) > 0)
-                                    <div class="alert alert-danger">
-                                        <strong>Whoops!</strong> There were some problems with your input.
-                                        <ul>
-                                            @foreach ($errors->all() as $error)
-                                                <li>{{ $error }}</li>
-                                            @endforeach
-                                        </ul>
-                                    </div>
-                                @endif
-								<!--begin::Heading-->
-								<div class="text-center mb-11">
-									<!--begin::Title-->
-									<h1 class="text-dark fw-bolder mb-3">Sign In</h1>
-									<!--end::Title-->
-									<!--begin::Subtitle-->
-									<div class="text-gray-500 fw-semibold fs-6">Signin to your account</div>
-									<!--end::Subtitle=-->
-								</div>
-								<!--begin::Heading-->
-								<!--begin::Login options-->
-							
-								<!--end::Separator-->
-								<!--begin::Input group=-->
-								<div class="fv-row mb-8">
-									<!--begin::Email-->
-									<input type="text" placeholder="Email" name="email" autocomplete="off" class="form-control bg-transparent" />
-									<!--end::Email-->
-								</div>
-								<!--end::Input group=-->
-								<div class="fv-row mb-3">
-									<!--begin::Password-->
-									<input type="password" placeholder="Password" name="password" autocomplete="off" class="form-control bg-transparent" />
-									<!--end::Password-->
-								</div>
-								<!--end::Input group=-->
-								<!--begin::Wrapper-->
-								<div class="d-flex flex-stack flex-wrap gap-3 fs-base fw-semibold mb-8">
-									<div></div>
-									<!--begin::Link-->
-									<a href="{{route('password.request')}}" class="link-primary">Forgot Password ?</a>
-									<!--end::Link-->
-								</div>
-								<!--end::Wrapper-->
-								<!--begin::Submit button-->
-								<div class="d-grid mb-10">
-									<button type="submit" id="kt_sign_in_submit" class="btn btn-success">
-										<!--begin::Indicator label-->
-										<span class="indicator-label">Sign In</span>
-										<!--end::Indicator label-->
-										<!--begin::Indicator progress-->
-										<span class="indicator-progress">Please wait... 
-										<span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
-										<!--end::Indicator progress-->
-									</button>
-								</div>
-								<!--end::Submit button-->
-								<!--begin::Sign up-->
-								<div class="text-gray-500 text-center fw-semibold fs-6">Not a Member yet? 
-								<a href="/register" class="link-primary">Sign up</a></div>
-								<!--end::Sign up-->
-							</form>
-							<!--end::Form-->
-						</div>
-						<!--end::Card body-->
-					</div>
-					<!--end::Card-->
-				</div>
-				<!--end::Body-->
-			</div>
-			<!--end::Authentication - Sign-in-->
-		</div>
-		<!--end::Root-->
-		<!--begin::Javascript-->
-		<script>var hostUrl = "/metronic8/demo1/assets/";</script>
-		<!--begin::Global Javascript Bundle(mandatory for all pages)-->
-		<script src="/metronic8/demo1/assets/plugins/global/plugins.bundle.js"></script>
-		<script src="/metronic8/demo1/assets/js/scripts.bundle.js"></script>
-		<!--end::Global Javascript Bundle-->
-		<!--begin::Custom Javascript(used for this page only)-->
-		<script src="/metronic8/demo1/assets/js/custom/authentication/sign-in/general.js"></script>
-		<!--end::Custom Javascript-->
-		<!--end::Javascript-->
-	</body>
-	<!--end::Body-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <title>CTHostel | Partner Sign In</title>
+    
+    <!-- Favicon -->
+    <link href="{{ asset('myimages/fav.png') }}" rel="icon" type="image/png" />
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --brand-green: #089A49;
+            --brand-green-hover: #0aa850;
+            --brand-green-dark: #067e3b;
+            --brand-dark: #041113;
+            --brand-slate: #0b2c3d;
+            --brand-glow: rgba(8, 154, 73, 0.15);
+            --font-sans: 'Plus Jakarta Sans', sans-serif;
+            --font-outfit: 'Outfit', sans-serif;
+            --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: #f8fafc;
+            color: #334155;
+            min-height: 100vh;
+            display: flex;
+            overflow-x: hidden;
+        }
+
+        /* Split screen layout */
+        .auth-container {
+            display: flex;
+            width: 100%;
+            min-height: 100vh;
+        }
+
+        /* Left side showcase */
+        .auth-showcase {
+            flex: 1.2;
+            background: linear-gradient(135deg, var(--brand-slate) 0%, var(--brand-dark) 100%);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 60px;
+            color: #ffffff;
+        }
+
+        /* Background glowing decorative orbs */
+        .auth-showcase::before, .auth-showcase::after {
+            content: '';
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(120px);
+            z-index: 1;
+            opacity: 0.35;
+        }
+
+        .auth-showcase::before {
+            width: 450px;
+            height: 450px;
+            background: var(--brand-green);
+            top: -120px;
+            left: -120px;
+        }
+
+        .auth-showcase::after {
+            width: 350px;
+            height: 350px;
+            background: #00ff73;
+            bottom: -80px;
+            right: -80px;
+        }
+
+        .showcase-header {
+            position: relative;
+            z-index: 2;
+        }
+
+        .showcase-header img {
+            height: 50px;
+            border-radius: 6px;
+        }
+
+        .showcase-content {
+            position: relative;
+            z-index: 2;
+            margin-top: auto;
+            margin-bottom: auto;
+            max-width: 500px;
+        }
+
+        .showcase-tag {
+            display: inline-block;
+            background: rgba(8, 154, 73, 0.2);
+            border: 1px solid rgba(8, 154, 73, 0.3);
+            color: #10b981;
+            padding: 6px 16px;
+            border-radius: 99px;
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .showcase-title {
+            font-family: var(--font-outfit);
+            font-size: 44px;
+            font-weight: 900;
+            line-height: 1.25;
+            margin-bottom: 20px;
+            background: linear-gradient(to right, #ffffff, #a7f3d0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .showcase-text {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #94a3b8;
+        }
+
+        .showcase-footer {
+            position: relative;
+            z-index: 2;
+            font-size: 13px;
+            color: #64748b;
+        }
+
+        /* Right side form container */
+        .auth-form-side {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+            position: relative;
+            background-color: #f8fafc;
+        }
+
+        .auth-card {
+            width: 100%;
+            max-width: 440px;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 24px;
+            box-shadow: 0 20px 40px rgba(4, 17, 19, 0.04);
+            border: 1px solid rgba(15, 23, 42, 0.05);
+            transition: var(--transition-smooth);
+        }
+
+        .auth-logo-mobile {
+            display: none;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .auth-logo-mobile img {
+            height: 45px;
+            border-radius: 6px;
+        }
+
+        /* Typography styles */
+        .auth-header {
+            margin-bottom: 32px;
+            text-align: left;
+        }
+
+        .auth-header h1 {
+            font-family: var(--font-outfit);
+            font-size: 28px;
+            font-weight: 800;
+            color: #0f172a;
+            margin-bottom: 8px;
+        }
+
+        .auth-header p {
+            color: #64748b;
+            font-size: 15px;
+            font-weight: 500;
+        }
+
+        /* Form inputs & controls */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            color: #475569;
+            margin-bottom: 8px;
+        }
+
+        .input-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .input-icon {
+            position: absolute;
+            left: 16px;
+            color: #94a3b8;
+            font-size: 16px;
+            pointer-events: none;
+        }
+
+        .form-control {
+            width: 100% !important;
+            height: 50px !important;
+            padding: 0 16px 0 44px !important;
+            border: 1px solid rgba(15, 23, 42, 0.12) !important;
+            border-radius: 12px !important;
+            font-size: 15px !important;
+            font-family: var(--font-sans) !important;
+            color: #0f172a !important;
+            background-color: #ffffff !important;
+            transition: var(--transition-smooth) !important;
+        }
+
+        .form-control:focus {
+            border-color: var(--brand-green) !important;
+            box-shadow: 0 0 0 4px var(--brand-glow) !important;
+            outline: none !important;
+        }
+
+        /* Checkbox & Options */
+        .form-options {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+            font-size: 14px;
+        }
+
+        .checkbox-label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            color: #64748b;
+            font-weight: 500;
+        }
+
+        .checkbox-label input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            accent-color: var(--brand-green);
+            cursor: pointer;
+        }
+
+        .forgot-link {
+            color: var(--brand-green);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition-smooth);
+        }
+
+        .forgot-link:hover {
+            color: var(--brand-green-hover);
+            text-decoration: underline;
+        }
+
+        /* Action button */
+        .btn-primary {
+            width: 100%;
+            height: 50px;
+            background-color: var(--brand-green);
+            color: #ffffff;
+            border: none;
+            border-radius: 12px;
+            font-size: 15px;
+            font-weight: 700;
+            font-family: var(--font-outfit);
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            box-shadow: 0 4px 12px rgba(8, 154, 73, 0.15);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--brand-green-hover);
+            box-shadow: 0 6px 20px rgba(8, 154, 73, 0.25);
+            transform: translateY(-1px);
+        }
+
+        .btn-primary:active {
+            transform: translateY(0);
+        }
+
+        /* Footer / Switch link */
+        .auth-footer {
+            text-align: center;
+            margin-top: 24px;
+            font-size: 14px;
+            color: #64748b;
+            font-weight: 500;
+        }
+
+        .auth-footer a {
+            color: var(--brand-green);
+            text-decoration: none;
+            font-weight: 700;
+            transition: var(--transition-smooth);
+        }
+
+        .auth-footer a:hover {
+            color: var(--brand-green-hover);
+        }
+
+        /* Error/Alert design */
+        .alert {
+            padding: 16px;
+            border-radius: 12px;
+            margin-bottom: 24px;
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 1.5;
+        }
+
+        .alert-danger {
+            background-color: #fef2f2;
+            border: 1px solid #fecaca;
+            color: #ef4444;
+        }
+
+        .alert-danger ul {
+            padding-left: 20px;
+            margin-top: 8px;
+        }
+
+        /* Responsive / Mobile premium visual layout */
+        @media (max-width: 991px) {
+            body {
+                background: var(--brand-dark);
+            }
+            .auth-showcase {
+                display: none;
+            }
+            .auth-form-side {
+                width: 100%;
+                padding: 30px 16px;
+                background: radial-gradient(circle at 15% 15%, rgba(8, 154, 73, 0.15) 0%, transparent 45%),
+                            radial-gradient(circle at 85% 85%, rgba(0, 255, 115, 0.1) 0%, transparent 45%),
+                            linear-gradient(135deg, var(--brand-slate) 0%, var(--brand-dark) 100%);
+                min-height: 100vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+            .auth-card {
+                background: rgba(255, 255, 255, 0.05) !important;
+                backdrop-filter: blur(16px) !important;
+                -webkit-backdrop-filter: blur(16px) !important;
+                border: 1px solid rgba(255, 255, 255, 0.08) !important;
+                color: #ffffff !important;
+                box-shadow: 0 24px 50px rgba(0, 0, 0, 0.3) !important;
+                padding: 32px 24px !important;
+                border-radius: 24px !important;
+            }
+            .auth-logo-mobile {
+                display: block;
+            }
+            .auth-header h1 {
+                color: #ffffff !important;
+            }
+            .auth-header p {
+                color: #94a3b8 !important;
+            }
+            .form-label {
+                color: #cbd5e1 !important;
+            }
+            .form-control {
+                background-color: rgba(255, 255, 255, 0.04) !important;
+                border: 1px solid rgba(255, 255, 255, 0.1) !important;
+                color: #ffffff !important;
+            }
+            .form-control::placeholder {
+                color: rgba(255, 255, 255, 0.3) !important;
+            }
+            .form-control:focus {
+                border-color: var(--brand-green) !important;
+                background-color: rgba(255, 255, 255, 0.08) !important;
+            }
+            .checkbox-label {
+                color: #cbd5e1 !important;
+            }
+            .forgot-link {
+                color: var(--brand-green-hover) !important;
+            }
+            .auth-footer {
+                color: #94a3b8 !important;
+            }
+            .auth-footer a {
+                color: var(--brand-green-hover) !important;
+            }
+            .alert-danger {
+                background-color: rgba(239, 68, 68, 0.1) !important;
+                border: 1px solid rgba(239, 68, 68, 0.2) !important;
+                color: #fca5a5 !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="auth-container">
+        <!-- Left Side: Brand Showcase -->
+        <div class="auth-showcase">
+            <div class="showcase-header">
+                <a href="/">
+                    <img src="{{ asset('myimages/logo_header.png') }}" alt="CTHostel Logo">
+                </a>
+            </div>
+            <div class="showcase-content">
+                <span class="showcase-tag">Partner Portal</span>
+                <h1 class="showcase-title">Your properties, simply managed.</h1>
+                <p class="showcase-text">
+                    Welcome back to CTHostel's portal for agents and landlords. Connect with students, manage your listed properties, and coordinate reservation bookings easily.
+                </p>
+            </div>
+            <div class="showcase-footer">
+                &copy; {{ date('Y') }} CTHostel. All rights reserved.
+            </div>
+        </div>
+
+        <!-- Right Side: Form View -->
+        <div class="auth-form-side">
+            <div class="auth-card">
+                <!-- Mobile Logo -->
+                <div class="auth-logo-mobile">
+                    <a href="/">
+                        <img src="{{ asset('myimages/logo_header.png') }}" alt="CTHostel Logo">
+                    </a>
+                </div>
+
+                <div class="auth-header">
+                    <h1>Partner Sign In</h1>
+                    <p>Sign in to manage your listed hostels.</p>
+                </div>
+
+                @if (count($errors) > 0)
+                <div class="alert alert-danger">
+                    <strong>Whoops!</strong> There were some issues with your submission:
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+                @endif
+
+                <form action="{{ route('login') }}" method="POST">
+                    @csrf
+                    
+                    <!-- Email field -->
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email Address</label>
+                        <div class="input-wrapper">
+                            <i class="fa-regular fa-envelope input-icon"></i>
+                            <input type="email" id="email" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus class="form-control" placeholder="name@domain.com">
+                        </div>
+                    </div>
+
+                    <!-- Password field -->
+                    <div class="form-group">
+                        <label for="password" class="form-label">Password</label>
+                        <div class="input-wrapper">
+                            <i class="fa-solid fa-lock input-icon"></i>
+                            <input type="password" id="password" name="password" required autocomplete="current-password" class="form-control" placeholder="••••••••••••">
+                        </div>
+                    </div>
+
+                    <!-- Options (Remember me & forgot password) -->
+                    <div class="form-options">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+                            <span>Remember me</span>
+                        </label>
+                        @if (Route::has('password.request'))
+                        <a href="{{ route('password.request') }}" class="forgot-link">Forgot Password?</a>
+                        @endif
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="btn-primary">
+                        <span>Sign In</span>
+                        <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                    </button>
+
+                    <!-- Sign up footer -->
+                    <div class="auth-footer">
+                        Don't have an account yet? <a href="/register">Sign Up</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
 </html>

@@ -22,19 +22,25 @@ class FrontendCOntroller extends Controller
 {
     public function landingPage()
     {
-        return view('landing');
+        $data['category'] = Category::all();
+        $data['schools'] = schools::all();
+        $data['filtered'] = [];
+        return view('home', $data);
+        // return view('landing');
     }
 
     public function cthostel($slug, $id)
     {
 
-        $data['album'] = $album = Album::with('albumimages')->where('slug', $slug)->where('status', 1)->where('id', $id)->get()[0];
+        $data['album'] = $album = Album::with('albumimages')->where('slug', $slug)->where('status', 1)->where('id', $id)->firstOrFail();
         $data['albums'] = Album::where('school_id', $album->school_id)->where('status', 1)->paginate(20);
-        $data['similar_hostels'] = Album::where('school_id', $album->school_id)->orderBy('rank')->where('status', 1)->where('category_id', $album->category_id)->paginate(10);
-        $data['agenthostel'] =  Album::where('school_id', $album->school_id)->where('status', 1)->where('user_id', $album->user_id)->paginate(10);
+        $data['similar_hostels'] = Album::where('school_id', $album->school_id)->orderBy('rank')->where('status', 1)->where('category_id', $album->category_id)->where('soft_delete', 0)->paginate(10);
+        $data['agenthostel'] =  Album::where('school_id', $album->school_id)->where('status', 1)->where('user_id', $album->user_id)->where('soft_delete', 0)->paginate(10);
 
         $data['albumImage'] = Album::where('user_id', $album['user_id'])->where('status', 1)->get();
         $data['category'] = Category::where('school_id', $album->school_id)->get();
+        $data['locations'] = Category::where('school_id', $album->school_id)->get();
+        $data['school'] = schools::where('id', $album->school_id)->get();
         $data['school_id'] = $album->school_id;
 
         $data['userId'] = $userId  = Album::where('id', $id)->first()->user_id;
@@ -42,11 +48,12 @@ class FrontendCOntroller extends Controller
         $data['follows'] = 'good';
         //    $data['userId'] = 1;
         $data['user'] = User::find($userId);
+
         //(new User)->amIfollowing($userId);
         $data['roommate'] = $roommate = Roommate::where('hostel_id', $id)->get();
         if ($album->video !== null) {
             $storage = new StorageClient([
-               
+
 
                 'keyFile' => json_decode(file_get_contents(public_path('ct-hostel-firebase-adminsdk-bf7nu-85872bd8b6.json')), true)
             ]);
@@ -118,17 +125,16 @@ class FrontendCOntroller extends Controller
         $data['locations'] = Category::where('school_id', $school_id)->get();
         $data['school_id'] = $school_id;
 
-        $data['cheapest'] = Album::orderBy('rank')->where('status', 1)->where('type', null)->where('school_id', $school_id)->where('price', '<', 100000)->where('soft_delete', 0)->paginate(20)->withQueryString();
-        // dd($data['cheapest']);
-        return view('frontend.cheapest', $data);
+        $data['latest'] = Album::orderBy('rank')->where('status', 1)->where('type', null)->where('school_id', $school_id)->where('price', '<', 100000)->where('soft_delete', 0)->paginate(20)->withQueryString();
+        return view('frontend.cthome', $data);
     }
     public function bestrated($school_id)
     {
         $data['school'] = $school = Schools::where('id', $school_id)->get();
         $data['locations'] = Category::where('school_id', $school_id)->get();
         $data['school_id'] = $school_id;
-        $data['highest'] = Album::orderBy('rank')->where('school_id', $school_id)->where('type', null)->where('status', 1)->where('price', '>', 100000)->where('soft_delete', 0)->paginate(20)->withQueryString();
-        return view('frontend.bestrated', $data);
+        $data['latest'] = Album::orderBy('rank')->where('school_id', $school_id)->where('type', null)->where('status', 1)->where('price', '>', 100000)->where('soft_delete', 0)->paginate(20)->withQueryString();
+        return view('frontend.cthome', $data);
     }
     // }
 
@@ -235,10 +241,10 @@ class FrontendCOntroller extends Controller
         foreach ($location as $sub) {
             array_push($filter, $sub);
         }
-        $data['filtered'] = $filtered = Album::where('status', 1)->orderBy('rank')->where('soft_delete', 0)->whereIn('category_id', $filter)->where('price', '>=', $minimum[0])->where('price', '<=', $maximum[0])->paginate(20)->withQueryString();
-        $data['searched'] = $filtered = Album::where('status', 1)->orderBy('rank')->where('soft_delete', 0)->whereIn('category_id', $filter)->where('price', '>=', $minimum[0])->where('price', '<=', $maximum[0])->paginate(20)->withQueryString();
+        $data['school'] = Schools::where('id', $school_id)->get();
+        $data['latest'] = Album::where('status', 1)->orderBy('rank')->where('soft_delete', 0)->whereIn('category_id', $filter)->where('price', '>=', $minimum[0])->where('price', '<=', $maximum[0])->paginate(20)->withQueryString();
 
-        return view('frontend.filtered', $data);
+        return view('frontend.cthome', $data);
 
 
 

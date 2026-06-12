@@ -79,12 +79,19 @@ Route::view('launching', 'counter');
 Route::get('send_mail', [AlbumController::class, 'send_mail'])->name('send_mail');
 Route::get('/logout', [RegisteredUserController::class, 'logout'])->name("logout");
 Route::view('faq', 'faq');
+Route::view('contactus', 'contactus')->name('contactus');
 Route::any('subscription', [AlbumController::class, 'subscription'])->name('subscription');
 Route::any('locationdisplay/{id}', [AlbumController::class, 'locationdisplay'])->name('locationdisplay');
 Route::any('searchInstitution', [AlbumController::class, 'searchInstitution'])->name('searchInstitution');
 Route::any('search', [AlbumController::class, 'search'])->name('search');
 Route::get('/admin', [AlbumController::class, 'admin'])->name('good')->middleware('auth');
 Route::get('/dashboard', [AlbumController::class, 'admin'])->name('dashboard')->middleware('auth');
+Route::get('/my-hostels', [AlbumController::class, 'myHostels'])->name('my-hostels')->middleware('auth');
+Route::get('/add-hostel', [AlbumController::class, 'addHostel'])->name('add-hostel')->middleware('auth');
+Route::get('/edit-hostel/{id}', [AlbumController::class, 'editHostelPage'])->name('edit-hostel.page')->middleware('auth');
+Route::post('/delete-gallery-image', [AlbumController::class, 'deleteGalleryImage'])->name('delete.gallery.image')->middleware('auth');
+Route::get('/hostel-requests', [AlbumController::class, 'hostelRequests'])->name('hostel-requests')->middleware('auth');
+Route::get('/my-profile', [AlbumController::class, 'myProfile'])->name('my-profile')->middleware('auth');
 
 Route::any('/updateprofile', [AlbumController::class, 'updateprofile'])->name('updateprofile');
 Route::any('/view_identification/{id}', [AlbumController::class, 'view_identification'])->name('view_identification');
@@ -131,8 +138,6 @@ Route::get('/user/profile/{id}', [FrontendCOntroller::class, 'userAlbum'])->name
 Route::any('filter', [FrontendCOntroller::class, 'filter'])->name('filter');
 
 Route::middleware(['auth', 'isAdmin'])->group(function () {
-    Route::any('/sugagentmail', [AlbumController::class, 'sugagentmail'])->name('sugagentmail')->middleware('auth');
-    Route::any('/sugstudentmail', [AlbumController::class, 'sugstudentmail'])->name('sugstudentmail')->middleware('auth');
     Route::get('/agents', [AlbumController::class, 'agents'])->name('agents')->middleware('auth');
     Route::get('/students', [AlbumController::class, 'students'])->name('students')->middleware('auth');
     Route::get('/hostels', [AlbumController::class, 'hostels'])->name('hostels')->middleware('auth');
@@ -183,16 +188,11 @@ Route::any('uploadImagewithroute', [AlbumController::class, 'uploadImagewithrout
 Route::post('uploadImage2/{id}', [GalleryController::class, 'myupload'])->name('image.upload')->middleware('auth');
 //Route::get('welcomepage',[FrontendCOntroller::class,'welcomepage'])->name('welcomepage');
 Route::view('/selectschool', 'selectschool');
-Route::get('createschool', function () {
-    if (Auth::user()->email == env("ADMIN_EMAIL")) {
-        return view('createSchool');
-    }
-})->name('createschool')->middleware('auth');
-Route::get('createlocation', function () {
-    if (Auth::user()->email == env("ADMIN_EMAIL")) {
-        return view('createlocation');
-    }
-})->name('createlocation')->middleware('auth');
+Route::get('createschool', [AlbumController::class, 'schools'])->name('createschool')->middleware('auth');
+Route::get('createlocation', [AlbumController::class, 'locations'])->name('createlocation')->middleware('auth');
+
+Route::get('hostel-requests-admin/{id}', [AlbumController::class, 'hostel_requests_admin'])->name('hostel_requests_admin')->middleware('auth');
+Route::get('agent-requests-admin/{id}', [AlbumController::class, 'agent_requests_admin'])->name('agent_requests_admin')->middleware('auth');
 
 // Route::get('agentcontact',function() {
 //     return(User::pluck('phone'));
@@ -204,7 +204,6 @@ Route::any('/degrade_user/{id}', [AlbumController::class, 'degrade_user'])->midd
 Route::any('set_rank/{id}', [AlbumController::class, 'set_rank'])->middleware('auth')->name('set_rank');
 Route::any('cthadmin', [AlbumController::class, 'manager'])->middleware('auth');
 Route::any('sug', [AlbumController::class, 'sug'])->middleware('auth');
-Route::any('daily_post', [AlbumController::class, 'daily_post'])->name('daily_post');
 Route::any('editlocation', [AlbumController::class, 'editlocation'])->name('editlocation');
 Route::any('deletelocation', [AlbumController::class, 'deletelocation'])->name('deletelocation');
 Route::any('editschool', [AlbumController::class, 'editschool'])->name('editschool');

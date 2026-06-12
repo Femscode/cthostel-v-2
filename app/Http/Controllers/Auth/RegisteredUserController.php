@@ -47,21 +47,19 @@ class RegisteredUserController extends Controller
         $validator = $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            // 'address' => ['required'],
-
             'phone' => ['required', 'unique:users'],
-            // 'state' => ['required'],
-
+            'user_type' => ['required', 'string', 'in:agent,landlord'],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
         $uuid = Str::uuid();
-        $username = ucwords(str_replace(' ','-',$request->name));
+        $username = ucwords(str_replace(' ', '-', $request->name));
         $user = User::create([
             'name' => $request->name,
             'username' => $username,
             'email' => $request->email,
             'uuid' => $uuid,
             'type' => 'agent',
+            'user_type' => $request->user_type,
             'phone' => $request->phone,
             'school_id' => $request->school_id,
             'password' => Hash::make($request->password),
@@ -71,11 +69,14 @@ class RegisteredUserController extends Controller
         $email = $request->email;
 
         $data = array('name' => $request->name);
-        Mail::send('mail.welcomemail', $data, function($message) use($email) {
-            $message->to($email, '')->subject
-               ('Welcome to CTHostel');
-            $message->from('support@cthostel.com','CTHostel');
-         });
+        try {
+            Mail::send('mail.welcomemail', $data, function ($message) use ($email) {
+                $message->to($email, '')->subject('Welcome to CTHostel');
+                $message->from('support@cthostel.com', 'CTHostel');
+            });
+        } catch (\Exception $e) {
+        }
+
         Auth::login($user);
 
 
@@ -84,8 +85,8 @@ class RegisteredUserController extends Controller
     public function logout()
     {
         Auth::logout();
-       // return Redirect::route('login');
-       Session::flush();
+        // return Redirect::route('login');
+        Session::flush();
 
         return Redirect::away('login');
     }

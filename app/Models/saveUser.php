@@ -15,7 +15,10 @@ class saveUser extends Model
     protected $table = 'save_users';
 
     public function hostel() {
-        return $this->belongsTo(Album::class);
+        return $this->belongsTo(Album::class, 'hostel_id');
+    }
+    public function album() {
+        return $this->belongsTo(Album::class, 'hostel_id');
     }
     public function school() {
         return $this->belongsTo(schools::class);

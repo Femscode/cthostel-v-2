@@ -112,7 +112,7 @@
                     </div>
                     <!--end::Aside Menu-->
                 </div>
-               
+
             </div>
             <!--end::Aside-->
             <!--begin::Wrapper-->
@@ -934,7 +934,7 @@
                                         <div class="cursor-pointer symbol symbol-30px symbol-md-40px"
                                             data-kt-menu-trigger="click" data-kt-menu-attach="parent"
                                             data-kt-menu-placement="bottom-end" data-kt-menu-flip="bottom">
-                                            <img src="https://cthostel.com/cthostel_files/public/agent/{{$user->profilePic}}" alt="profilePic" />
+                                            <img src="{{$user->profilePic}}" alt="profilePic" />
                                         </div>
                                         <!--begin::Menu-->
                                         <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg menu-state-primary fw-bold py-4 fs-6 w-275px"
@@ -966,12 +966,12 @@
                                             <div class="separator my-2"></div>
                                             <!--end::Menu separator-->
                                             <!--begin::Menu item-->
-                                            
+
                                             <!--end::Menu item-->
                                             <!--begin::Menu item-->
-                                           
+
                                             <!--end::Menu item-->
-                                    
+
                                             <!--end::Menu item-->
                                             <!--begin::Menu item-->
                                             <div class="menu-item px-5">
@@ -981,9 +981,9 @@
                                             <!--end::Menu item-->
                                             <!--begin::Menu separator-->
                                             <div class="separator my-2"></div>
-                                      
+
                                             <!--begin::Menu item-->
-                                           
+
                                             <!--end::Menu item-->
                                             <!--begin::Menu item-->
                                             <div class="menu-item px-5">
@@ -1034,7 +1034,7 @@
                     <!--begin::Container-->
                     <div id="kt_content_container" class="container">
                         @if(Session::has('message'))
-                            <div class='alert alert-success'>{{ Session::get('message') }}</div>
+                        <div class='alert alert-success'>{{ Session::get('message') }}</div>
                         @endif
 
                         <div class="card mb-5 mb-xl-10">
@@ -1049,7 +1049,7 @@
                                     <!--begin: Pic-->
                                     <div class="me-7 mb-4">
                                         <div class="symbol symbol-100px symbol-lg-160px symbol-fixed position-relative">
-                                            <img src="https://cthostel.com/cthostel_files/public/agent/{{$user->profilePic}}" alt="image" />
+                                            <img src="{{$user->profilePic}}" alt="image" />
                                             <div
                                                 class="position-absolute translate-middle bottom-0 start-100 mb-6 bg-success rounded-circle border border-4 border-white h-20px w-20px">
                                             </div>
@@ -1116,7 +1116,7 @@
 
                                                         <!--end::Svg Icon-->{{ $user->school->name }}
                                                     </a>
-                                                   
+
                                                 </div>
                                                 <!--end::Info-->
                                             </div>
@@ -1230,11 +1230,11 @@
                                                                     </label>
                                                                     <!--end::Label-->
                                                                     <input accept="image/png,image/jpg, image/jpeg"
-                                                                         type="file"
+                                                                        type="file"
                                                                         class="form-control form-control-solid"
                                                                         id='profilePic' name="profilePic" />
                                                                 </div>
-                                                               
+
 
                                                                 <div class="d-flex flex-column mb-8 fv-row">
                                                                     <!--begin::Label-->
@@ -1250,7 +1250,7 @@
                                                                     </div>
                                                                     <!--end::Label-->
                                                                     <input accept="image/png,image/jpg, image/jpeg"
-                                                                         type="file"
+                                                                        type="file"
                                                                         class="form-control form-control-solid"
                                                                         id='profilePic' name="identification" />
                                                                 </div>
@@ -1313,116 +1313,116 @@
                                                         <!--begin::Modal body-->
                                                         <div class="modal-body scroll-y px-10 px-lg-15 pt-0 pb-15">
                                                             <!--begin:Form-->
-                                                          
-                                                                <!--begin::Heading-->
-                                                                <div class="mb-13 text-center">
-                                                                    <!--begin::Title-->
-                                                                    <h1 class="mb-3">Upgrade to Beta Agent</h1>
-                                                                    <!--end::Title-->
-                                                                    <!--begin::Description-->
 
-                                                                    <!--end::Description-->
-                                                                </div>
-                                                                <!--end::Heading-->
-                                                                <!--begin::Input group-->
-                                                                <div class="card-body pt-5">
-                                                                    <!--begin::Timeline-->
-                                                                    <div class="timeline-label">
-                                                                        <!--begin::Item-->
-                                                                        <div class="timeline-item">
-                                                                          
-                                                                            <!--begin::Badge-->
-                                                                            <div class="timeline-badge">
-                                                                                <i class="fa fa-genderless text-warning fs-1"></i>
-                                                                            </div>
-                                                                            <!--end::Badge-->
-                                                                            <!--begin::Text-->
-                                                                            <div class="fw-semibold timeline-content text-grey ps-3">Get at least ten(10) hostel requests in a day.</div>
-                                                                            <!--end::Text-->
+                                                            <!--begin::Heading-->
+                                                            <div class="mb-13 text-center">
+                                                                <!--begin::Title-->
+                                                                <h1 class="mb-3">Upgrade to Beta Agent</h1>
+                                                                <!--end::Title-->
+                                                                <!--begin::Description-->
+
+                                                                <!--end::Description-->
+                                                            </div>
+                                                            <!--end::Heading-->
+                                                            <!--begin::Input group-->
+                                                            <div class="card-body pt-5">
+                                                                <!--begin::Timeline-->
+                                                                <div class="timeline-label">
+                                                                    <!--begin::Item-->
+                                                                    <div class="timeline-item">
+
+                                                                        <!--begin::Badge-->
+                                                                        <div class="timeline-badge">
+                                                                            <i class="fa fa-genderless text-warning fs-1"></i>
                                                                         </div>
-                                                                        <!--end::Item-->
-                                                                        <!--begin::Item-->
-                                                                        <div class="timeline-item">
-                                                                           
-                                                                            <!--begin::Badge-->
-                                                                            <div class="timeline-badge">
-                                                                                <i class="fa fa-genderless text-success fs-1"></i>
-                                                                            </div>
-                                                                            <!--end::Badge-->
-                                                                            <!--begin::Content-->
-                                                                            <div class="timeline-content d-flex">
-                                                                                <span class="fw-semibold text-gray-800 ps-3">All hostels by you will have the CTHostel-Verified Badge.</span>
-                                                                            </div>
-                                                                            <!--end::Content-->
-                                                                        </div>
-                                                                        <!--end::Item-->
-                                                                        <!--begin::Item-->
-                                                                        <div class="timeline-item">
-                                                                           
-                                                                            <!--begin::Badge-->
-                                                                            <div class="timeline-badge">
-                                                                                <i class="fa fa-genderless text-danger fs-1"></i>
-                                                                            </div>
-                                                                            <!--end::Badge-->
-                                                                            <!--begin::Desc-->
-                                                                            <div class="timeline-content fw-semibold text-gray-800 ps-3">All your hostels enjoy premium ads.</div>
-                                                                            <!--end::Desc-->
-                                                                        </div>
-                                                                        <!--end::Item-->
-                                                                        <!--begin::Item-->
-                                                                        <div class="timeline-item">
-                                                                           <!--begin::Badge-->
-                                                                            <div class="timeline-badge">
-                                                                                <i class="fa fa-genderless text-primary fs-1"></i>
-                                                                            </div>
-                                                                            <!--end::Badge-->
-                                                                            <!--begin::Text-->
-                                                                            <div class="timeline-content fw-semibold text-grey ps-3">You can post as much as 100 Hostels on our platform.</div>
-                                                                            <!--end::Text-->
-                                                                        </div>
-                                                                        <!--end::Item-->
-                                                                        <!--begin::Item-->
-                                                                        <div class="timeline-item">
-                                                                           
-                                                                            <!--begin::Badge-->
-                                                                            <div class="timeline-badge">
-                                                                                <i class="fa fa-genderless text-danger fs-1"></i>
-                                                                            </div>
-                                                                            <!--end::Badge-->
-                                                                            <!--begin::Desc-->
-                                                                            <div class="timeline-content fw-semibold text-gray-800 ps-3">Make your hostels appear first in all searches by customers.</div>
-                                                                            <!--end::Desc-->
-                                                                        </div>
-                                                                        <!--end::Item-->
-                                                                        <!--begin::Item-->
-                                                                        <div class="timeline-item">
-                                                                           
-                                                                            <!--begin::Badge-->
-                                                                            <div class="timeline-badge">
-                                                                                <i class="fa fa-genderless text-primary fs-1"></i>
-                                                                            </div>
-                                                                            <!--end::Badge-->
-                                                                            <!--begin::Text-->
-                                                                            <div class="timeline-content fw-semibold text-grey ps-3">Enjoy free access to the CTHostel Market Space.</div>
-                                                                            <!--end::Text-->
-                                                                        </div>
-                                                                        <!--end::Item-->
-                                                                        <!--begin::Item-->
-                                                                       <!--end::Item-->
+                                                                        <!--end::Badge-->
+                                                                        <!--begin::Text-->
+                                                                        <div class="fw-semibold timeline-content text-grey ps-3">Get at least ten(10) hostel requests in a day.</div>
+                                                                        <!--end::Text-->
                                                                     </div>
-                                                                    <!--end::Timeline-->
-                                                                </div>
+                                                                    <!--end::Item-->
+                                                                    <!--begin::Item-->
+                                                                    <div class="timeline-item">
 
-                                                             
-                                                                <div class="text-center">
-                                                                   
-                                                                    <a href="upgrade_account"
-                                                                        id="kt_modal_new_target_submit"
-                                                                        class="btn btn-primary">
-                                                                        <span class="indicator-label">Upgrade</span>
-                                                                               </a>
+                                                                        <!--begin::Badge-->
+                                                                        <div class="timeline-badge">
+                                                                            <i class="fa fa-genderless text-success fs-1"></i>
+                                                                        </div>
+                                                                        <!--end::Badge-->
+                                                                        <!--begin::Content-->
+                                                                        <div class="timeline-content d-flex">
+                                                                            <span class="fw-semibold text-gray-800 ps-3">All hostels by you will have the CTHostel-Verified Badge.</span>
+                                                                        </div>
+                                                                        <!--end::Content-->
+                                                                    </div>
+                                                                    <!--end::Item-->
+                                                                    <!--begin::Item-->
+                                                                    <div class="timeline-item">
+
+                                                                        <!--begin::Badge-->
+                                                                        <div class="timeline-badge">
+                                                                            <i class="fa fa-genderless text-danger fs-1"></i>
+                                                                        </div>
+                                                                        <!--end::Badge-->
+                                                                        <!--begin::Desc-->
+                                                                        <div class="timeline-content fw-semibold text-gray-800 ps-3">All your hostels enjoy premium ads.</div>
+                                                                        <!--end::Desc-->
+                                                                    </div>
+                                                                    <!--end::Item-->
+                                                                    <!--begin::Item-->
+                                                                    <div class="timeline-item">
+                                                                        <!--begin::Badge-->
+                                                                        <div class="timeline-badge">
+                                                                            <i class="fa fa-genderless text-primary fs-1"></i>
+                                                                        </div>
+                                                                        <!--end::Badge-->
+                                                                        <!--begin::Text-->
+                                                                        <div class="timeline-content fw-semibold text-grey ps-3">You can post as much as 100 Hostels on our platform.</div>
+                                                                        <!--end::Text-->
+                                                                    </div>
+                                                                    <!--end::Item-->
+                                                                    <!--begin::Item-->
+                                                                    <div class="timeline-item">
+
+                                                                        <!--begin::Badge-->
+                                                                        <div class="timeline-badge">
+                                                                            <i class="fa fa-genderless text-danger fs-1"></i>
+                                                                        </div>
+                                                                        <!--end::Badge-->
+                                                                        <!--begin::Desc-->
+                                                                        <div class="timeline-content fw-semibold text-gray-800 ps-3">Make your hostels appear first in all searches by customers.</div>
+                                                                        <!--end::Desc-->
+                                                                    </div>
+                                                                    <!--end::Item-->
+                                                                    <!--begin::Item-->
+                                                                    <div class="timeline-item">
+
+                                                                        <!--begin::Badge-->
+                                                                        <div class="timeline-badge">
+                                                                            <i class="fa fa-genderless text-primary fs-1"></i>
+                                                                        </div>
+                                                                        <!--end::Badge-->
+                                                                        <!--begin::Text-->
+                                                                        <div class="timeline-content fw-semibold text-grey ps-3">Enjoy free access to the CTHostel Market Space.</div>
+                                                                        <!--end::Text-->
+                                                                    </div>
+                                                                    <!--end::Item-->
+                                                                    <!--begin::Item-->
+                                                                    <!--end::Item-->
                                                                 </div>
-                                                                <!--end::Actions-->
+                                                                <!--end::Timeline-->
+                                                            </div>
+
+
+                                                            <div class="text-center">
+
+                                                                <a href="upgrade_account"
+                                                                    id="kt_modal_new_target_submit"
+                                                                    class="btn btn-primary">
+                                                                    <span class="indicator-label">Upgrade</span>
+                                                                </a>
+                                                            </div>
+                                                            <!--end::Actions-->
                                                             </form>
                                                             <!--end:Form-->
                                                         </div>
@@ -1436,9 +1436,9 @@
 
                                                 <a href="/" class="btn btn-sm btn-dark me-3" data-bs-toggle="modal"
                                                     data-bs-target="#kt_modal_new_target">My Profile</a>
-                                            
+
                                                 <!--begin::Menu-->
-                                             
+
                                                 <!--end::Menu-->
                                             </div>
                                             <!--end::Actions-->
@@ -1517,15 +1517,16 @@
                                     <div class="fw-semibold">
                                         <h4 class="text-gray-900 fw-bold">Want to upload your works?</h4>
                                         <div class="fs-6 text-gray-700">We are currently working on that.<br>
-                                            Pending that time, please make sure that your phone number is correct and it's your whatsapp number. 
-                                        <a href='/services' class="fw-bold">View Service Page</a>.</div>
+                                            Pending that time, please make sure that your phone number is correct and it's your whatsapp number.
+                                            <a href='/services' class="fw-bold">View Service Page</a>.
+                                        </div>
                                     </div>
                                     <!--end::Content-->
                                 </div>
                                 <!--end::Wrapper-->
                             </div>
                         </div>
-                   
+
 
 
                     </div>
@@ -1611,137 +1612,139 @@
     <script src="{{ asset('assets2/js/custom/intro.js') }}"></script>
     <script>
         $(document).ready(function() {
-             
-                    $.ajaxSetup({
-                        headers: {
-                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+            $("#image").on('change', function(e) {
+
+                var file = e.target.files[0];
+                console.log(file);
+
+                $("#create_hostel_form").submit(async function(e) {
+                    e.preventDefault()
+                    Swal.fire('Creating hostel, please wait...')
+                    //  $("#create_hostel").attr('disabled',true);
+                    var fd = new FormData();
+
+                    // Append data 
+                    fd.append('name', $("#name").val());
+                    fd.append('hostel_type', $("#hostel_type").val());
+                    fd.append('description', $("#desc").val());
+                    fd.append('price', $("#price").val());
+                    fd.append('type', $("#type").val());
+                    fd.append('category_id', $("#category_id").val());
+                    fd.append('school_id', $("#sch_id").val());
+                    fd.append('image', file);
+
+                    console.log(fd, 'this is the fd');
+
+                    $.ajax({
+                        type: 'POST',
+                        url: "../album/albums/store",
+                        data: fd,
+                        cache: false,
+                        contentType: false,
+                        processData: false,
+                        success: (data) => {
+                            Swal.close()
+                            Swal.fire("Success", 'Hostel created successfully', 'success');
+                            console.log(data)
+                            window.location.reload();
+
+                        },
+                        error: function(data) {
+                            console.log(data);
+                            Swal.close()
+                            Swal.fire('Oops', 'Hostel not created', 'error')
                         }
                     });
-                    $("#image").on('change', function(e) {
+                });
 
-                            var file = e.target.files[0];
-                            console.log(file);
-                       
-				   $("#create_hostel_form").submit(async function(e) {
-                       e.preventDefault()
-                       Swal.fire('Creating hostel, please wait...')
-                            //  $("#create_hostel").attr('disabled',true);
-                            var fd = new FormData();
-
-                            // Append data 
-                            fd.append('name', $("#name").val());
-                            fd.append('hostel_type', $("#hostel_type").val());
-                            fd.append('description', $("#desc").val());
-                            fd.append('price', $("#price").val());
-                            fd.append('type', $("#type").val());
-                            fd.append('category_id', $("#category_id").val());
-                            fd.append('school_id', $("#sch_id").val());
-                            fd.append('image', file);
-
-                            console.log(fd, 'this is the fd');
-
-                            $.ajax({
-                                type: 'POST',
-                                url: "../album/albums/store",
-                                data: fd,
-                                cache: false,
-                                contentType: false,
-                                processData: false,
-                                success: (data) => {
-                                    Swal.close()
-                                    Swal.fire("Success", 'Hostel created successfully', 'success');
-                                    console.log(data)
-									window.location.reload();
-
-                                },
-                                error: function(data) {
-                                    console.log(data);
-                                    Swal.close()
-                                    Swal.fire('Oops', 'Hostel not created','error')
-                                }
-                            });
-						});
-
-                        });
-
-						$("#edit_image").on('change', function(e) {
-
-						var file = e.target.files[0];
-						console.log(file);
-				$("#update_hostel").on('submit', async function(e){
-                e.preventDefault();
-                Swal.fire('Updating hostel, please wait...');
-                $("#kt_modal_new_address_submit").attr('disabled',true)
-							fd = new FormData();
-							fd.append('id',  $("#id").val());
-							fd.append('name', $("#edit_name").val());
-                            fd.append('description', $("#edit_desc").val());
-                            fd.append('hostel_type', $("#hostel_type").val());
-                            fd.append('price', $("#edit_price").val());
-                            fd.append('category_id', $("#edit_category_id").val());
-                            fd.append('image', file);
-
-                            console.log(fd, 'this is the fd');
-
-                            $.ajax({
-                                type: 'POST',
-                                url: "../album/albums/update",
-                                data: fd,
-                                cache: false,
-                                contentType: false,
-                                processData: false,
-                                success: (data) => {
-                                    Swal.close()
-                                    Swal.fire("Success", 'Hostel Updated successfully', 'success');
-                                    console.log(data)
-									window.location.reload();
-
-
-                                },
-                                error: function(data) {
-                                    console.log(data);
-                                    Swal.fire("Oops!", 'Image size is too big', 'error');
-                                }
-                            });
-                            });
             });
-				$('body').on('click', '#upload_image_id', function () {
-				var id = $(this).data('id');
-				$("#hostelimage").val(id);
 
-				$.get('{{ route('loaduploadedimages') }}?id=' + id, function (data) {
-				
-                    console.log(data)
-                    
-                    $("#uploadedimagediv").empty()
-					for(i = 0;i<= data.length-1;i++) {
-			console.log(data[i].image,'the image')
-                    
-                    $("#uploadedimagediv").append("<a style='position:absolute;background:red;display: inline-block;border:2px solid white;padding:5px;' class='deleteuploaded btn btn-danger btn-sm' data-id='"+data[i].id+"'>&times;</a><img class='imgpreview' style='width:100px;height:100px;margin:5px;box-shadow: 5px 5px 2px #888888' src='https://cthostel.com/cthostel_files/public/images/"+data[i].image+"'>")
-					
-                    }
-			
-				 });
+            $("#edit_image").on('change', function(e) {
 
-			
-			});
-           
-            
-            $(document).on("click",".deleteuploaded",function() {
-              
-              var id = $(this).data('id')
-            
+                var file = e.target.files[0];
+                console.log(file);
+                $("#update_hostel").on('submit', async function(e) {
+                    e.preventDefault();
+                    Swal.fire('Updating hostel, please wait...');
+                    $("#kt_modal_new_address_submit").attr('disabled', true)
+                    fd = new FormData();
+                    fd.append('id', $("#id").val());
+                    fd.append('name', $("#edit_name").val());
+                    fd.append('description', $("#edit_desc").val());
+                    fd.append('hostel_type', $("#hostel_type").val());
+                    fd.append('price', $("#edit_price").val());
+                    fd.append('category_id', $("#edit_category_id").val());
+                    fd.append('image', file);
 
-             
-            console.log(id)
-            var token = $("meta[name='csrf-token']").attr("content");
-            var el = this;
-            // alert(user_id);
-            resetImage(el,id);
+                    console.log(fd, 'this is the fd');
+
+                    $.ajax({
+                        type: 'POST',
+                        url: "../album/albums/update",
+                        data: fd,
+                        cache: false,
+                        contentType: false,
+                        processData: false,
+                        success: (data) => {
+                            Swal.close()
+                            Swal.fire("Success", 'Hostel Updated successfully', 'success');
+                            console.log(data)
+                            window.location.reload();
+
+
+                        },
+                        error: function(data) {
+                            console.log(data);
+                            Swal.fire("Oops!", 'Image size is too big', 'error');
+                        }
+                    });
+                });
+            });
+            $('body').on('click', '#upload_image_id', function() {
+                var id = $(this).data('id');
+                $("#hostelimage").val(id);
+
+                $.get('{{ route('
+                    loaduploadedimages ') }}?id=' + id,
+                    function(data) {
+
+                        console.log(data)
+
+                        $("#uploadedimagediv").empty()
+                        for (i = 0; i <= data.length - 1; i++) {
+                            console.log(data[i].image, 'the image')
+
+                            $("#uploadedimagediv").append("<a style='position:absolute;background:red;display: inline-block;border:2px solid white;padding:5px;' class='deleteuploaded btn btn-danger btn-sm' data-id='" + data[i].id + "'>&times;</a><img class='imgpreview' style='width:100px;height:100px;margin:5px;box-shadow: 5px 5px 2px #888888' src='https://cthostel.com/cthostel_files/public/images/" + data[i].image + "'>")
+
+                        }
+
+                    });
+
+
             });
 
 
-        async function resetImage(el,id) {
+            $(document).on("click", ".deleteuploaded", function() {
+
+                var id = $(this).data('id')
+
+
+
+                console.log(id)
+                var token = $("meta[name='csrf-token']").attr("content");
+                var el = this;
+                // alert(user_id);
+                resetImage(el, id);
+            });
+
+
+            async function resetImage(el, id) {
                 const willUpdate = await Swal.fire({
                     title: "Confirm Hostel Image Delete",
                     text: `Delete this particular image from the additional images of this hostel?`,
@@ -1753,27 +1756,27 @@
                 });
                 if (willUpdate.isDismissed == false) {
                     //performReset()
-                    deleteImage(el,id);
+                    deleteImage(el, id);
                 } else {
                     Swal.fire("Image will not be deleted  :)");
                 }
             }
 
 
-        function deleteImage(el,id)
-            {
-               
+            function deleteImage(el, id) {
+
                 try {
-                        $.get('{{ route('deleteuploadedimages') }}?id=' + id,
-                        function (data, status) {
+                    $.get('{{ route('
+                        deleteuploadedimages ') }}?id=' + id,
+                        function(data, status) {
                             console.log(status);
                             console.table(data);
-                            if( status === "success") {
-                               
-                                let alert = Swal.fire('success',"Image successfully deleted!.",'success');
-                                $(el).closest( ".imgpreview" ).remove();
-                                $(el).next( ".imgpreview" ).remove();
-                                $(el).closest( "a" ).remove();
+                            if (status === "success") {
+
+                                let alert = Swal.fire('success', "Image successfully deleted!.", 'success');
+                                $(el).closest(".imgpreview").remove();
+                                $(el).next(".imgpreview").remove();
+                                $(el).closest("a").remove();
                             }
                         }
                     );
@@ -1782,83 +1785,85 @@
                 }
             }
 
-  
-			$("#upload_file").on('change', function(e) {
+
+            $("#upload_file").on('change', function(e) {
                 thecount = e.target.files.length;
-                
+
                 files = []
-                for(i = 0;i<thecount;i++) {
-			var file = e.target.files[i];
-            files.push(file)
-        }
-        console.log(files,'the files');
+                for (i = 0; i < thecount; i++) {
+                    var file = e.target.files[i];
+                    files.push(file)
+                }
+                console.log(files, 'the files');
 
-			$("#kt_modal_create_api_key_form").on('submit', async function(e){
-                e.preventDefault();
-                Swal.fire('Uploading Additional Images, Please Wait...')
-                $("#kt_modal_create_api_key_submit").attr('disabled',true)
-				var id = $("#hostelimage").val();
-				file = $("#upload_file").val();
-                console.log(file,'the file')
-				var id = $("#hostelimage").val();
-							fd = new FormData();
-							fd.append('id', id);
-                            for(i = 0;i<thecount;i++) {
-							fd.append('file[]', files[i]);
-                            }
-                          	console.log(fd, 'this is the fd');
+                $("#kt_modal_create_api_key_form").on('submit', async function(e) {
+                    e.preventDefault();
+                    Swal.fire('Uploading Additional Images, Please Wait...')
+                    $("#kt_modal_create_api_key_submit").attr('disabled', true)
+                    var id = $("#hostelimage").val();
+                    file = $("#upload_file").val();
+                    console.log(file, 'the file')
+                    var id = $("#hostelimage").val();
+                    fd = new FormData();
+                    fd.append('id', id);
+                    for (i = 0; i < thecount; i++) {
+                        fd.append('file[]', files[i]);
+                    }
+                    console.log(fd, 'this is the fd');
 
-                            $.ajax({
-                                type: 'POST',
-                                url: "../uploadImage",
-                                data: fd,
-                                cache: false,
-                                contentType: false,
-                                processData: false,
-                                success: (data) => {
-                                    Swal.fire("Success", 'Hostel Addtional Images Uploaded successfully', 'success');
-                                    console.log(data,'this data')
-									window.location.reload();
-									 },
-                                error: function(data) {
-                                    console.log(data);
-                                    Swal.fire("Oops!", 'Image size is too big', 'error');
-                                }
-                            });
-                            });
-                            });
+                    $.ajax({
+                        type: 'POST',
+                        url: "../uploadImage",
+                        data: fd,
+                        cache: false,
+                        contentType: false,
+                        processData: false,
+                        success: (data) => {
+                            Swal.fire("Success", 'Hostel Addtional Images Uploaded successfully', 'success');
+                            console.log(data, 'this data')
+                            window.location.reload();
+                        },
+                        error: function(data) {
+                            console.log(data);
+                            Swal.fire("Oops!", 'Image size is too big', 'error');
+                        }
+                    });
+                });
+            });
 
-             $('body').on('click', '#edit_hostel', function () {
+            $('body').on('click', '#edit_hostel', function() {
 
                 var id = $(this).data('id');
-            
 
-                $.get('{{ route('edit.album') }}?id=' + id, function (data) {
-                    $('#ajax-crud-modal').modal('show');
-                    $('#edit_name').val(data.name);
-                    $('#edit_desc').val(data.description);
-                    $('#edit_price').val(data.price);
-                    $('#edit_category_id').val(data.category_id);
-                    // $('#edit_image').val(data.image);
-                    $('#id').val(id);
-                    console.log(data)
 
-                })
+                $.get('{{ route('
+                    edit.album ') }}?id=' + id,
+                    function(data) {
+                        $('#ajax-crud-modal').modal('show');
+                        $('#edit_name').val(data.name);
+                        $('#edit_desc').val(data.description);
+                        $('#edit_price').val(data.price);
+                        $('#edit_category_id').val(data.category_id);
+                        // $('#edit_image').val(data.image);
+                        $('#id').val(id);
+                        console.log(data)
+
+                    })
             });
 
-             /* When click delete button */
-     $('body').on('click', '#delete_hostel', function () {
-            // var id = $("#delete_id").val();
-			id = $(this).data('id');
-            console.log(id)
-            var token = $("meta[name='csrf-token']").attr("content");
-            var el = this;
-            // alert(user_id);
-            resetAccount(el,id);
+            /* When click delete button */
+            $('body').on('click', '#delete_hostel', function() {
+                // var id = $("#delete_id").val();
+                id = $(this).data('id');
+                console.log(id)
+                var token = $("meta[name='csrf-token']").attr("content");
+                var el = this;
+                // alert(user_id);
+                resetAccount(el, id);
             });
 
 
-        async function resetAccount(el,id) {
+            async function resetAccount(el, id) {
                 const willUpdate = await Swal.fire({
                     title: "Confirm Hostel Delete",
                     text: `Are you sure you want to delete this hostel?`,
@@ -1870,24 +1875,24 @@
                 });
                 if (willUpdate.isDismissed == false) {
                     //performReset()
-                    performDelete(el,id);
+                    performDelete(el, id);
                 } else {
                     Swal.fire("Hostel will not be deleted  :)");
                 }
             }
 
 
-        function performDelete(el,id)
-            {
-               
+            function performDelete(el, id) {
+
                 try {
-                        $.get('{{ route('destroy.album') }}?id=' + id,
-                        function (data, status) {
+                    $.get('{{ route('
+                        destroy.album ') }}?id=' + id,
+                        function(data, status) {
                             console.log(status);
                             console.table(data);
-                            if( status === "success") {
-                                let alert = Swal.fire('success',"Hostel successfully deleted!.",'success');
-                                $(el).closest( "tr" ).remove();
+                            if (status === "success") {
+                                let alert = Swal.fire('success', "Hostel successfully deleted!.", 'success');
+                                $(el).closest("tr").remove();
                                 // alert.then(() => {
                                 // });
                             }
@@ -1897,36 +1902,41 @@
                     let alert = Swal.fire(e.message);
                 }
             }
-			var id = $("#sch_id").val();
-			$.get('{{ route('getlocation') }}?id=' + id, function (data) {
-			console.log(data,'the locations')
-   for (var index = 0; index <= data.length - 1; index++) {
-      $('#edit_category_id').append('<option value="' + data[index].id + '">' + data[index].name + '</option>');
-   }
-			});
-    //  $(document).on('click', '.status_id', function () {
+            var id = $("#sch_id").val();
+            $.get('{{ route('
+                getlocation ') }}?id=' + id,
+                function(data) {
+                    console.log(data, 'the locations')
+                    for (var index = 0; index <= data.length - 1; index++) {
+                        $('#edit_category_id').append('<option value="' + data[index].id + '">' + data[index].name + '</option>');
+                    }
+                });
+            //  $(document).on('click', '.status_id', function () {
 
-              $(".status_id").click(function() {
-                  id = $(this).data('id');
-                
-                if($(this).is(':checked')) {
-                   
-			    $.get('{{ route('statusenable') }}?id=' + id, function (data) {
-                  Swal.fire('Hostel Enabled','This hostel is now available for students','success') 
-                // window.location.reload()
-                });
-                    
-               } 
-                else {
-                   
-                    $.get('{{ route('statusdisable') }}?id=' + id, function (data) {
-                    Swal.fire('Hostel Disabled','This hostel is no longer available for students','info') 
-                    // window.location.reload()
-                });
+            $(".status_id").click(function() {
+                id = $(this).data('id');
+
+                if ($(this).is(':checked')) {
+
+                    $.get('{{ route('
+                        statusenable ') }}?id=' + id,
+                        function(data) {
+                            Swal.fire('Hostel Enabled', 'This hostel is now available for students', 'success')
+                            // window.location.reload()
+                        });
+
+                } else {
+
+                    $.get('{{ route('
+                        statusdisable ') }}?id=' + id,
+                        function(data) {
+                            Swal.fire('Hostel Disabled', 'This hostel is no longer available for students', 'info')
+                            // window.location.reload()
+                        });
                 }
             });
 
-                    });
+        });
     </script>
     <!--     <script src="{{asset('assets/professionallocker.js')}}"></script>-->
 

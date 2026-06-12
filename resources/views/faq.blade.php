@@ -1,2035 +1,1517 @@
-<!DOCTYPE html>
-
-<html lang="en">
-<meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<!doctype html>
+<html class="no-js" lang="zxx">
 
 <head>
-    <title>CTHostel | FAQ</title>
-    <meta name="CTHostel"
-        content="...the safest place to get it cheaper without getting scammed." />
-    <meta name="description"
-        content="...the safest place to get it cheaper without getting scammed." />
-    <meta name="keywords"
-        content="...the safest place to get it cheaper without getting scammed." />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta charset="utf-8" />
-    <meta property="og:locale" content="en_US" />
-    <meta property="og:type" content="article" />
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-    <meta property="og:title"
-        content="...the safest place to get it cheaper without getting scammed." />
-    <meta property="og:url" content="https://cthostel.com" />
-    <meta property="og:site_name" content="CTHostel | Dashboard" />
-    <link rel="canonical" href="https://cthostel.com" />
-    <link href="{{ asset('myimages/fav.png') }}" src='{{ asset(' myimages/fav.png') }}' rel="icon" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
-    <!--end::Fonts-->
-    <!--begin::Page Vendor Stylesheets(used by this page)-->
-    <link href="{{ asset('backend/plugins/custom/fullcalendar/fullcalendar.bundle.css" rel="stylesheet') }}"
-        type="text/css" />
-    <!--end::Page Vendor Stylesheets-->
-    <!--begin::Global Stylesheets Bundle(used by all pages)-->
-    <link href="{{ asset('backend/plugins/global/plugins.bundle.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('backend/css/style.bundle.css') }}" rel="stylesheet" type="text/css" />
-    @livewireStyles
-    <!--end::Global Stylesheets Bundle-->
-    <!--Begin::Google Tag Manager -->
-    <script>
-        (function(w, d, s, l, i) {
-            w[l] = w[l] || [];
-            w[l].push({
-                'gtm.start': new Date().getTime(),
-                event: 'gtm.js'
-            });
-            var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s),
-                dl = l != 'dataLayer' ? '&amp;l=' + l : '';
-            j.async = true;
-            j.src = '../../../www.googletagmanager.com/gtm5445.html?id=' + i + dl;
-            f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-5FS8GGP');
-    </script>
-    <!--End::Google Tag Manager -->
+    <title>CTHostel | FAQ</title>
+    <meta name="description" content="Frequently Asked Questions about CTHostel off-campus student accommodation" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="shortcut icon" href="{{ asset('myimages/fav_01.png')}}" />
+    <link rel="stylesheet" href="{{ asset('welcomehome/css/font-icons.css')}}">
+    <link rel="stylesheet" href="{{ asset('welcomehome/css/plugins.css')}}">
+    <link rel="stylesheet" href="{{ asset('welcomehome/css/style.css')}}">
+    <link rel="stylesheet" href="{{ asset('welcomehome/css/responsive.css')}}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+
+    <style>
+        /* Custom CSS variables matching CTHostel brand system */
+        :root {
+            --brand-green: #089A49;
+            --brand-green-hover: #0aa850;
+            --brand-green-dark: #067e3b;
+            --brand-dark: #041113;
+            --brand-slate: #0b2c3d;
+            --brand-glow: rgba(8, 154, 73, 0.15);
+            --font-sans: 'Plus Jakarta Sans', sans-serif;
+            --font-outfit: 'Outfit', sans-serif;
+            --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        body {
+            font-family: var(--font-sans) !important;
+            color: #4a5568;
+            background-color: #fbfcff;
+            overflow-x: hidden !important;
+        }
+
+        /* Typographic updates */
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: var(--font-outfit) !important;
+            color: #0f172a;
+        }
+
+        /* Premium Button Overrides */
+        .ct-btn-primary {
+            background-color: var(--brand-green) !important;
+            color: #ffffff !important;
+            font-family: var(--font-outfit) !important;
+            font-weight: 600 !important;
+            padding: 14px 28px !important;
+            border-radius: 12px !important;
+            transition: var(--transition-smooth) !important;
+            display: inline-flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            gap: 8px !important;
+            text-transform: uppercase !important;
+            font-size: 13px !important;
+            letter-spacing: 0.5px !important;
+            border: none !important;
+            cursor: pointer !important;
+            text-decoration: none !important;
+        }
+
+        .ct-btn-primary:hover {
+            background-color: var(--brand-green-hover) !important;
+            transform: translateY(-2px) !important;
+            box-shadow: 0 10px 20px rgba(8, 154, 73, 0.2) !important;
+        }
+
+        /* Header & Navigation */
+        .ct-top-bar {
+            background-color: var(--brand-dark) !important;
+            color: rgba(255, 255, 255, 0.8) !important;
+            padding: 10px 0 !important;
+            font-size: 12px !important;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+            font-weight: 500 !important;
+            font-family: var(--font-sans) !important;
+        }
+
+        .ct-top-bar-inner {
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            justify-content: space-between !important;
+            gap: 8px !important;
+        }
+
+        @media (min-width: 576px) {
+            .ct-top-bar-inner {
+                flex-direction: row !important;
+                gap: 0 !important;
+            }
+        }
+
+        .ct-top-bar a {
+            color: rgba(255, 255, 255, 0.8) !important;
+            text-decoration: none !important;
+            transition: var(--transition-smooth) !important;
+        }
+
+        .ct-top-bar a:hover {
+            color: var(--brand-green) !important;
+        }
+
+        .ct-nav-list {
+            display: flex !important;
+            align-items: center !important;
+            gap: 36px !important;
+            list-style: none !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            font-size: 15px !important;
+            font-weight: 700 !important;
+            color: var(--brand-slate) !important;
+            font-family: var(--font-outfit) !important;
+        }
+
+        .ct-nav-link {
+            color: #334155 !important;
+            text-decoration: none !important;
+            position: relative !important;
+            padding: 8px 0 !important;
+            transition: var(--transition-smooth) !important;
+            display: block !important;
+        }
+
+        .ct-nav-link:hover {
+            color: var(--brand-green) !important;
+        }
+
+        .ct-nav-link::after {
+            content: '' !important;
+            position: absolute !important;
+            bottom: 0 !important;
+            left: 50% !important;
+            transform: translateX(-50%) !important;
+            width: 0 !important;
+            height: 3px !important;
+            background-color: var(--brand-green) !important;
+            border-radius: 9999px !important;
+            transition: var(--transition-smooth) !important;
+        }
+
+        .ct-nav-link:hover::after {
+            width: 24px !important;
+        }
+
+        .ct-register-btn {
+            display: inline-flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            padding: 10px 24px !important;
+            background-color: var(--brand-green) !important;
+            color: #ffffff !important;
+            border-radius: 12px !important;
+            font-weight: 600 !important;
+            font-family: var(--font-outfit) !important;
+            text-decoration: none !important;
+            transition: var(--transition-smooth) !important;
+            font-size: 14px !important;
+        }
+
+        .ct-register-btn:hover {
+            background-color: var(--brand-green-hover) !important;
+            box-shadow: 0 4px 12px rgba(8, 154, 73, 0.2) !important;
+        }
+
+        .ltn__header-middle-area.ltn__header-sticky {
+            background-color: rgba(255, 255, 255, 0.95) !important;
+            backdrop-filter: blur(8px) !important;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05) !important;
+            padding: 16px 0 !important;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02) !important;
+        }
+
+        #ltn__utilize-mobile-menu {
+            background-color: var(--brand-dark) !important;
+            color: #ffffff !important;
+        }
+
+        #ltn__utilize-mobile-menu .ltn__utilize-menu-inner {
+            background-color: rgba(4, 17, 19, 0.95) !important;
+            backdrop-filter: blur(10px) !important;
+        }
+
+        .ct-mobile-nav-list {
+            list-style: none !important;
+            padding: 0 !important;
+            margin: 0 !important;
+        }
+
+        .ct-mobile-nav-list li a {
+            color: #ffffff !important;
+            font-weight: 700 !important;
+            padding: 12px 0 !important;
+            display: block !important;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+            transition: var(--transition-smooth) !important;
+        }
+
+        .ct-mobile-nav-list li a:hover {
+            color: var(--brand-green) !important;
+        }
+
+        .ct-mobile-action-btn {
+            display: flex !important;
+            align-items: center !important;
+            gap: 12px !important;
+            padding: 14px 20px !important;
+            background: rgba(255, 255, 255, 0.05) !important;
+            border: 1px solid rgba(255, 255, 255, 0.1) !important;
+            border-radius: 16px !important;
+            color: #ffffff !important;
+            font-size: 14px !important;
+            font-weight: 600 !important;
+            transition: var(--transition-smooth) !important;
+            text-decoration: none !important;
+            width: 100% !important;
+        }
+
+        .ct-mobile-action-btn:hover {
+            background: rgba(8, 154, 73, 0.15) !important;
+            border-color: var(--brand-green) !important;
+        }
+
+        /* FAQ Hero Style */
+        .ct-faq-hero {
+            background-color: var(--brand-dark) !important;
+            padding: 96px 0 !important;
+            position: relative !important;
+            overflow: hidden !important;
+            text-align: center !important;
+            z-index: 10;
+        }
+
+        .ct-faq-hero-overlay {
+            position: absolute !important;
+            inset: 0 !important;
+            background-color: rgba(4, 17, 19, 0.65) !important;
+            backdrop-filter: blur(1px) !important;
+            z-index: 1;
+        }
+
+        .ct-faq-hero-container {
+            position: relative !important;
+            z-index: 5 !important;
+        }
+
+        .ct-faq-glow-blob-1 {
+            position: absolute !important;
+            width: 350px !important;
+            height: 350px !important;
+            background: rgba(8, 154, 73, 0.22) !important;
+            border-radius: 50% !important;
+            filter: blur(100px) !important;
+            top: -10% !important;
+            left: 10% !important;
+            z-index: 2 !important;
+            pointer-events: none !important;
+        }
+
+        .ct-faq-glow-blob-2 {
+            position: absolute !important;
+            width: 380px !important;
+            height: 380px !important;
+            background: rgba(0, 255, 115, 0.12) !important;
+            border-radius: 50% !important;
+            filter: blur(120px) !important;
+            bottom: -15% !important;
+            right: 15% !important;
+            z-index: 2 !important;
+            pointer-events: none !important;
+        }
+
+        .ct-faq-hero h1 {
+            font-size: 36px !important;
+            color: #ffffff !important;
+            font-weight: 900 !important;
+            font-family: var(--font-outfit) !important;
+            margin-bottom: 16px !important;
+            letter-spacing: -1px !important;
+        }
+
+        @media (min-width: 768px) {
+            .ct-faq-hero h1 {
+                font-size: 56px !important;
+            }
+        }
+
+        .ct-faq-hero p {
+            color: #94a3b8 !important;
+            font-size: 15px !important;
+            font-weight: 500 !important;
+            max-width: 600px !important;
+            margin: 0 auto 36px !important;
+            line-height: 1.65 !important;
+        }
+
+        /* FAQ Search Widget */
+        .ct-faq-search-wrap {
+            position: relative !important;
+            max-width: 540px !important;
+            margin: 0 auto !important;
+            width: 100% !important;
+        }
+
+        .ct-faq-search-input {
+            width: 100% !important;
+            height: 60px !important;
+            background-color: rgba(255, 255, 255, 0.05) !important;
+            border: 1px solid rgba(255, 255, 255, 0.15) !important;
+            border-radius: 99px !important;
+            padding-left: 28px !important;
+            padding-right: 60px !important;
+            color: #ffffff !important;
+            font-size: 16px !important;
+            font-weight: 600 !important;
+            outline: none !important;
+            transition: var(--transition-smooth) !important;
+            font-family: var(--font-sans) !important;
+            backdrop-filter: blur(8px) !important;
+        }
+
+        .ct-faq-search-input:focus {
+            border-color: var(--brand-green) !important;
+            background-color: rgba(255, 255, 255, 0.08) !important;
+            box-shadow: 0 0 0 5px rgba(8, 154, 73, 0.15) !important;
+        }
+
+        .ct-faq-search-icon {
+            position: absolute !important;
+            right: 24px !important;
+            top: 50% !important;
+            transform: translateY(-50%) !important;
+            color: var(--brand-green) !important;
+            font-size: 18px !important;
+            pointer-events: none !important;
+        }
+
+        /* Layout Grids for FAQ Main Area */
+        .ct-faq-section {
+            padding: 96px 0 !important;
+            background-color: #ffffff !important;
+            position: relative !important;
+        }
+
+        .ct-faq-layout {
+            display: grid !important;
+            grid-template-columns: 1fr !important;
+            gap: 48px !important;
+        }
+
+        @media (min-width: 992px) {
+            .ct-faq-layout {
+                grid-template-columns: 320px 1fr !important;
+            }
+        }
+
+        /* FAQ Sidebar Categories */
+        .ct-faq-sidebar {
+            position: relative !important;
+        }
+
+        @media (min-width: 992px) {
+            .ct-faq-sidebar-sticky {
+                position: sticky !important;
+                top: 100px !important;
+            }
+        }
+
+        .ct-faq-categories-card {
+            background-color: #ffffff !important;
+            border: 1px solid #f1f5f9 !important;
+            border-radius: 28px !important;
+            padding: 24px !important;
+            box-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.03), 0 1px 3px rgba(15, 23, 42, 0.02) !important;
+        }
+
+        .ct-faq-sidebar h3 {
+            font-size: 18px !important;
+            font-weight: 800 !important;
+            color: #0f172a !important;
+            margin-bottom: 20px !important;
+            border-left: 4px solid var(--brand-green) !important;
+            padding-left: 12px !important;
+            font-family: var(--font-outfit) !important;
+        }
+
+        .ct-faq-categories-list {
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 8px !important;
+            list-style: none !important;
+            padding: 0 !important;
+            margin: 0 !important;
+        }
+
+        .ct-faq-cat-btn {
+            display: flex !important;
+            justify-content: space-between !important;
+            align-items: center !important;
+            width: 100% !important;
+            border: none !important;
+            background: transparent !important;
+            padding: 14px 18px !important;
+            border-radius: 16px !important;
+            font-weight: 700 !important;
+            font-family: var(--font-outfit) !important;
+            color: #64748b !important;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+            text-align: left !important;
+            cursor: pointer !important;
+            outline: none !important;
+        }
+
+        .ct-faq-cat-btn:hover {
+            color: var(--brand-green) !important;
+            background-color: rgba(8, 154, 73, 0.03) !important;
+        }
+
+        .ct-faq-cat-btn.active {
+            background-color: rgba(8, 154, 73, 0.08) !important;
+            color: var(--brand-green) !important;
+        }
+
+        .ct-faq-cat-badge {
+            display: inline-flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            width: 24px !important;
+            height: 24px !important;
+            border-radius: 50% !important;
+            background-color: #f1f5f9 !important;
+            font-size: 11px !important;
+            font-weight: 700 !important;
+            color: #64748b !important;
+            transition: all 0.3s ease !important;
+        }
+
+        .ct-faq-cat-btn.active .ct-faq-cat-badge {
+            background-color: var(--brand-green) !important;
+            color: #ffffff !important;
+        }
+
+        /* Accordion Styles */
+        .ct-faq-accordion {
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 16px !important;
+        }
+
+        .ct-faq-item {
+            background-color: #ffffff !important;
+            border: 1px solid #f1f5f9 !important;
+            border-radius: 20px !important;
+            padding: 24px !important;
+            box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.01) !important;
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+        }
+
+        .ct-faq-item:hover {
+            border-color: rgba(8, 154, 73, 0.2) !important;
+            box-shadow: 0 12px 30px -10px rgba(8, 154, 73, 0.04) !important;
+            transform: translateY(-2px) !important;
+        }
+
+        .ct-faq-item.active {
+            border-color: var(--brand-green) !important;
+            box-shadow: 0 15px 35px -10px rgba(8, 154, 73, 0.08) !important;
+            background-color: rgba(8, 154, 73, 0.005) !important;
+        }
+
+        .ct-faq-question-wrap {
+            display: flex !important;
+            justify-content: space-between !important;
+            align-items: center !important;
+            cursor: pointer !important;
+            gap: 16px !important;
+        }
+
+        .ct-faq-question {
+            font-size: 17px !important;
+            font-weight: 800 !important;
+            color: #0f172a !important;
+            font-family: var(--font-outfit) !important;
+            margin: 0 !important;
+            line-height: 1.4 !important;
+            letter-spacing: -0.2px !important;
+            transition: color 0.3s ease !important;
+        }
+
+        .ct-faq-item:hover .ct-faq-question {
+            color: var(--brand-green) !important;
+        }
+
+        .ct-faq-item.active .ct-faq-question {
+            color: var(--brand-green) !important;
+        }
+
+        .ct-faq-toggle-icon {
+            width: 36px !important;
+            height: 36px !important;
+            border-radius: 50% !important;
+            background-color: #f8fafc !important;
+            color: #64748b !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            font-size: 12px !important;
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+            flex-shrink: 0 !important;
+        }
+
+        .ct-faq-item:hover .ct-faq-toggle-icon {
+            background-color: rgba(8, 154, 73, 0.05) !important;
+            color: var(--brand-green) !important;
+        }
+
+        .ct-faq-item.active .ct-faq-toggle-icon {
+            background-color: var(--brand-green) !important;
+            color: #ffffff !important;
+            transform: rotate(45deg) !important;
+        }
+
+        /* CSS Grid auto-height transition */
+        .ct-faq-answer-container {
+            display: grid !important;
+            grid-template-rows: 0fr !important;
+            transition: grid-template-rows 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+            overflow: hidden !important;
+        }
+
+        .ct-faq-item.active .ct-faq-answer-container {
+            grid-template-rows: 1fr !important;
+        }
+
+        .ct-faq-answer-inner {
+            min-height: 0 !important;
+        }
+
+        .ct-faq-answer {
+            font-size: 14.5px !important;
+            color: #475569 !important;
+            line-height: 1.75 !important;
+            font-weight: 500 !important;
+            padding-top: 16px !important;
+            margin: 0 !important;
+        }
+
+        /* Search Not Found State */
+        .ct-faq-no-results {
+            text-align: center !important;
+            padding: 48px 24px !important;
+            background-color: #f8fafc !important;
+            border-radius: 24px !important;
+            border: 1px dashed #cbd5e1 !important;
+            display: none !important;
+        }
+
+        .ct-faq-no-results i {
+            font-size: 40px !important;
+            color: #94a3b8 !important;
+            margin-bottom: 16px !important;
+        }
+
+        .ct-faq-no-results h4 {
+            font-size: 18px !important;
+            font-weight: 800 !important;
+            color: #334155 !important;
+            margin-bottom: 8px !important;
+        }
+
+        .ct-faq-no-results p {
+            font-size: 14px !important;
+            color: #64748b !important;
+            margin: 0 !important;
+        }
+
+        /* Call To Action Banner styling */
+        .ct-cta-section {
+            padding: 80px 0 0 !important;
+            background-color: #ffffff !important;
+        }
+
+        .ct-cta-card {
+            background: linear-gradient(to right, var(--brand-dark), var(--brand-slate)) !important;
+            border-radius: 32px !important;
+            padding: 48px 40px !important;
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            justify-content: space-between !important;
+            gap: 32px !important;
+            text-align: center !important;
+            position: relative !important;
+            overflow: hidden !important;
+        }
+
+        @media (min-width: 992px) {
+            .ct-cta-card {
+                flex-direction: row !important;
+                text-align: left !important;
+                padding: 56px 64px !important;
+            }
+        }
+
+        .ct-cta-title {
+            font-size: 28px !important;
+            font-weight: 900 !important;
+            color: #ffffff !important;
+            margin-bottom: 12px !important;
+            font-family: var(--font-outfit) !important;
+        }
+
+        @media (min-width: 768px) {
+            .ct-cta-title {
+                font-size: 36px !important;
+            }
+        }
+
+        .ct-cta-desc {
+            font-size: 15px !important;
+            color: #94a3b8 !important;
+            font-weight: 500 !important;
+            margin: 0 !important;
+            max-width: 560px !important;
+            line-height: 1.65 !important;
+        }
+
+        /* Footer styling */
+        .ct-footer {
+            background-color: var(--brand-dark) !important;
+            color: #ffffff !important;
+            padding-top: 80px !important;
+            font-family: var(--font-sans) !important;
+        }
+
+        .ct-footer-grid {
+            display: grid !important;
+            grid-template-columns: 1fr !important;
+            gap: 48px !important;
+            padding-bottom: 64px !important;
+        }
+
+        @media (min-width: 768px) {
+            .ct-footer-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .ct-footer-grid {
+                grid-template-columns: 4fr 2fr 2fr 3fr !important;
+            }
+        }
+
+        .ct-footer-logo {
+            margin-bottom: 24px !important;
+        }
+
+        .ct-footer-logo img {
+            width: 150px !important;
+            height: auto !important;
+            filter: brightness(0) invert(1) !important;
+        }
+
+        .ct-footer-desc {
+            color: #94a3b8 !important;
+            font-size: 14px !important;
+            line-height: 1.75 !important;
+            font-weight: 500 !important;
+            margin-bottom: 24px !important;
+        }
+
+        .ct-footer-contact {
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 14px !important;
+            font-size: 14px !important;
+            font-weight: 500 !important;
+        }
+
+        .ct-footer-contact-item {
+            display: flex !important;
+            align-items: flex-start !important;
+            gap: 12px !important;
+        }
+
+        .ct-footer-contact-item span {
+            color: var(--brand-green) !important;
+        }
+
+        .ct-footer-contact-item a {
+            color: #cbd5e1 !important;
+            text-decoration: none !important;
+            transition: var(--transition-smooth) !important;
+        }
+
+        .ct-footer-contact-item a:hover {
+            color: var(--brand-green) !important;
+        }
+
+        .ct-footer-socials {
+            display: flex !important;
+            align-items: center !important;
+            gap: 16px !important;
+            margin-top: 24px !important;
+        }
+
+        .ct-footer-social-btn {
+            width: 40px !important;
+            height: 40px !important;
+            border-radius: 12px !important;
+            background-color: rgba(255, 255, 255, 0.05) !important;
+            border: 1px solid rgba(255, 255, 255, 0.1) !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            color: rgba(255, 255, 255, 0.7) !important;
+            transition: var(--transition-smooth) !important;
+            text-decoration: none !important;
+        }
+
+        .ct-footer-social-btn:hover {
+            border-color: rgba(8, 154, 73, 0.35) !important;
+            background-color: rgba(8, 154, 73, 0.1) !important;
+            color: var(--brand-green) !important;
+            transform: translateY(-2px) !important;
+        }
+
+        .ct-footer-title {
+            font-size: 18px !important;
+            font-weight: 700 !important;
+            font-family: var(--font-outfit) !important;
+            color: #ffffff !important;
+            border-left: 4px solid var(--brand-green) !important;
+            padding-left: 12px !important;
+            margin-bottom: 24px !important;
+        }
+
+        .ct-footer-links {
+            list-style: none !important;
+            padding: 0 !important;
+            margin: 0 !important;
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 14px !important;
+            font-size: 14px !important;
+            font-weight: 500 !important;
+        }
+
+        .ct-footer-links li a {
+            color: #94a3b8 !important;
+            text-decoration: none !important;
+            display: flex !important;
+            align-items: center !important;
+            gap: 8px !important;
+            transition: var(--transition-smooth) !important;
+        }
+
+        .ct-footer-links li a:hover {
+            color: var(--brand-green) !important;
+            padding-left: 4px !important;
+        }
+
+        .ct-footer-links li a i {
+            font-size: 9px !important;
+            color: rgba(8, 154, 73, 0.6) !important;
+            transition: var(--transition-smooth) !important;
+        }
+
+        .ct-footer-newsletter-text {
+            color: #94a3b8 !important;
+            font-size: 14px !important;
+            line-height: 1.75 !important;
+            font-weight: 500 !important;
+            margin-bottom: 24px !important;
+        }
+
+        .ct-newsletter-form {
+            position: relative !important;
+        }
+
+        .ct-newsletter-input {
+            width: 100% !important;
+            background-color: rgba(255, 255, 255, 0.05) !important;
+            border: 1px solid rgba(255, 255, 255, 0.1) !important;
+            border-radius: 16px !important;
+            padding: 14px 56px 14px 16px !important;
+            color: #ffffff !important;
+            font-size: 14px !important;
+            transition: var(--transition-smooth) !important;
+            outline: none !important;
+        }
+
+        .ct-newsletter-input:focus {
+            border-color: var(--brand-green) !important;
+        }
+
+        .ct-newsletter-submit {
+            position: absolute !important;
+            right: 6px !important;
+            top: 6px !important;
+            bottom: 6px !important;
+            padding: 0 16px !important;
+            background-color: var(--brand-green) !important;
+            color: #ffffff !important;
+            border-radius: 12px !important;
+            border: none !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            cursor: pointer !important;
+            transition: var(--transition-smooth) !important;
+        }
+
+        .ct-newsletter-submit:hover {
+            background-color: var(--brand-green-hover) !important;
+        }
+
+        .ct-copyright-bar {
+            background-color: rgba(4, 17, 19, 0.85) !important;
+            border-top: 1px solid rgba(255, 255, 255, 0.05) !important;
+            padding: 24px 0 !important;
+            color: #64748b !important;
+            font-size: 14px !important;
+            font-weight: 500 !important;
+        }
+
+        .ct-copyright-bar-inner {
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            justify-content: space-between !important;
+            gap: 12px !important;
+        }
+
+        @media (min-width: 768px) {
+            .ct-copyright-bar-inner {
+                flex-direction: row !important;
+                gap: 0 !important;
+            }
+        }
+
+        .ct-copyright-links {
+            display: flex !important;
+            gap: 24px !important;
+            list-style: none !important;
+            padding: 0 !important;
+            margin: 0 !important;
+        }
+
+        .ct-copyright-links a {
+            color: #64748b !important;
+            text-decoration: none !important;
+            transition: var(--transition-smooth) !important;
+        }
+
+        .ct-copyright-links a:hover {
+            color: var(--brand-green) !important;
+        }
+    </style>
 </head>
-<!--end::Head-->
-<!--begin::Body-->
 
-<body id="kt_body"
-    class="header-fixed header-tablet-and-mobile-fixed toolbar-enabled toolbar-fixed toolbar-tablet-and-mobile-fixed aside-enabled aside-fixed">
-    <!--begin::Main-->
-    <!--begin::Root-->
+<body>
 
-    <div class="d-flex flex-column flex-root">
-        <!--begin::Page-->
-        <div class="page d-flex flex-row flex-column-fluid">
-            <!--begin::Aside-->
-            <div id="kt_aside" class="aside pb-5 pt-5 pt-lg-0" data-kt-drawer="true" data-kt-drawer-name="aside"
-                data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-overlay="true"
-                data-kt-drawer-width="{default:'80px', '300px': '100px'}" data-kt-drawer-direction="start"
-                data-kt-drawer-toggle="#kt_aside_mobile_toggle">
-                <!--begin::Brand-->
-                <div class="aside-logo py-8" id="kt_aside_logo">
-                    <!--begin::Logo-->
-                    <a class="d-flex align-items-center" style='background:#fff;padding:5px;border-radius:4px'>
-                        <img alt="Logo" src="{{ asset('myimages/fav.png') }}" class="h-45px logo" />
-                    </a>
-                    <!--end::Logo-->
+    <!-- Body main wrapper start -->
+    <div class="body-wrapper">
+
+        <!-- HEADER AREA START (header-5) -->
+        <header class="ltn__header-area ltn__header-5 ltn__header-transparent--- gradient-color-4---">
+            <!-- ltn__header-top-area start -->
+            <div class="ltn__header-top-area ct-top-bar">
+                <div class="container">
+                    <div class="ct-top-bar-inner">
+                        <div class="top-bar-left">
+                            <ul>
+                                <li>
+                                    <a href="mailto:support@cthostel.com?Subject=TO%20the%20admin%20CTHostel">
+                                        <i class="icon-mail" style="color: var(--brand-green); margin-right: 6px;"></i> support@cthostel.com
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="top-bar-right">
+                            <div class="ltn__top-bar-menu">
+                                <ul style="display: flex; gap: 16px; list-style: none; margin: 0; padding: 0;">
+                                    <li><a href="https://x.com/ct_hostel" title="Twitter"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a href="https://www.instagram.com/ct_hostel/" title="Instagram"><i class="fab fa-instagram"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <!--end::Brand-->
-                <!--begin::Aside menu-->
-                <div class="aside-menu flex-column-fluid" id="kt_aside_menu">
-                    <!--begin::Aside Menu-->
-                    <div class="hover-scroll-overlay-y my-2 my-lg-5 pe-lg-n1" id="kt_aside_menu_wrapper"
-                        data-kt-scroll="true" data-kt-scroll-height="auto"
-                        data-kt-scroll-dependencies="#kt_aside_logo, #kt_aside_footer"
-                        data-kt-scroll-wrappers="#kt_aside, #kt_aside_menu" data-kt-scroll-offset="5px">
-                        <!--begin::Menu-->
-                        <div class="menu menu-column menu-title-gray-700 menu-state-title-primary menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-500 fw-bold"
-                            id="#kt_aside_menu" data-kt-menu="true">
-                            <div class="menu-item py-2">
-                                <a class="menu-link active menu-center" href="#" data-bs-trigger="hover"
-                                    data-bs-dismiss="click" data-bs-placement="right">
-                                    <span class="menu-icon me-0">
-                                        <i class="bi bi-house fs-2"></i>
-                                    </span>
-                                    <span class="menu-title">Lodge Complain</span>
+            </div>
+            <!-- ltn__header-top-area end -->
+
+            <!-- ltn__header-middle-area start -->
+            <div class="ltn__header-middle-area ltn__header-sticky sticky-active">
+                <div class="container">
+                    <div style="display: flex; align-items: center; justify-content: space-between;">
+                        <div class="site-logo-wrap-custom">
+                            <div class="site-logo-custom" style="display: flex; align-items: center;">
+                                <a href="/cthostel">
+                                    <img src="{{ asset('myimages/logo_header.png')}}" style="width: 150px; height: auto;" alt="CTHostel">
                                 </a>
                             </div>
-                            <div data-kt-menu-trigger="click" data-kt-menu-placement="right-start"
-                                class="menu-item py-2">
-                                <span class="menu-link menu-center" data-bs-trigger="hover" data-bs-dismiss="click"
-                                    data-bs-placement="right">
-                                    <span class="menu-icon me-0">
-                                        <i class="bi bi-file-earmark-lock fs-2"></i>
-                                    </span>
-                                    <span class="menu-title">My Page	</span>
-                                </span>
-                               
-                            </div>
-                            
-                           
-                        </a>
                         </div>
-                        <!--end::Menu-->
-                    </div>
-                    <!--end::Aside Menu-->
-                </div>
-                <!--end::Aside menu-->
-                <!--begin::Footer-->
-               
-                <!--end::Footer-->
-            </div>
-            <!--end::Aside-->
-            <!--begin::Wrapper-->
-            <div class="wrapper d-flex flex-column flex-row-fluid" id="kt_wrapper">
-                <!--begin::Header-->
-                <div id="kt_header" style="" class="header align-items-stretch">
-                    <!--begin::Container-->
-                    <div class="container-fluid d-flex align-items-stretch justify-content-between">
-                        <!--begin::Aside mobile toggle-->
-                        <div class="d-flex align-items-center d-lg-none ms-n1 me-2" title="Show aside menu">
-                            <div class="btn btn-icon btn-active-color-primary w-30px h-30px w-md-40px h-md-40px"
-                                id="kt_aside_mobile_toggle">
-                                <!--begin::Svg Icon | path: icons/duotone/Text/Menu.svg-->
-                                <span class="svg-icon svg-icon-2x mt-1">
-                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                        width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
-                                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                            <rect x="0" y="0" width="24" height="24" />
-                                            <rect fill="#000000" x="4" y="5" width="16" height="3" rx="1.5" />
-                                            <path
-                                                d="M5.5,15 L18.5,15 C19.3284271,15 20,15.6715729 20,16.5 C20,17.3284271 19.3284271,18 18.5,18 L5.5,18 C4.67157288,18 4,17.3284271 4,16.5 C4,15.6715729 4.67157288,15 5.5,15 Z M5.5,10 L18.5,10 C19.3284271,10 20,10.6715729 20,11.5 C20,12.3284271 19.3284271,13 18.5,13 L5.5,13 C4.67157288,13 4,12.3284271 4,11.5 C4,10.6715729 4.67157288,10 5.5,10 Z"
-                                                fill="#000000" opacity="0.3" />
-                                        </g>
-                                    </svg>
-                                </span>
-                                <!--end::Svg Icon-->
-                            </div>
-                        </div>
-                        <!--end::Aside mobile toggle-->
-                        <!--begin::Mobile logo-->
-                        <div class="d-flex align-items-center flex-grow-1 flex-lg-grow-0">
-                            <a href="index.html" class="d-lg-none">
-                                <img alt="Logo" src="{{ asset('myimages/fav.png') }}" class="h-30px" />
-                            </a>
-                        </div>
-                        <!--end::Mobile logo-->
-                        <!--begin::Wrapper-->
-                        <div class="d-flex align-items-stretch justify-content-between flex-lg-grow-1">
-                            <!--begin::Navbar-->
-                            <div class="d-flex align-items-stretch" id="kt_header_nav">
-                                <!--begin::Menu wrapper-->
-                                <div class="header-menu align-items-stretch" data-kt-drawer="true"
-                                    data-kt-drawer-name="header-menu"
-                                    data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-overlay="true"
-                                    data-kt-drawer-width="{default:'200px', '300px': '250px'}"
-                                    data-kt-drawer-direction="end" data-kt-drawer-toggle="#kt_header_menu_mobile_toggle"
-                                    data-kt-swapper="true" data-kt-swapper-mode="prepend"
-                                    data-kt-swapper-parent="{default: '#kt_body', lg: '#kt_header_nav'}">
-                                    <!--begin::Menu-->
-                                    <div class="menu menu-lg-rounded menu-column menu-lg-row menu-state-bg menu-title-gray-700 menu-state-title-primary menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-400 fw-bold my-5 my-lg-0 align-items-stretch"
-                                        id="#kt_header_menu" data-kt-menu="true">
-                                        <div data-kt-menu-trigger="click" data-kt-menu-placement="bottom-start"
-                                            class="menu-item here show menu-lg-down-accordion me-lg-1">
-                                            <a class="menu-link active py-3">
-                                                <span class="menu-arrow d-lg-none"></span>
-                                            </a>
-                                            
-                                        </div>
-                                    </div>
-                                    <!--end::Menu-->
-                                </div>
-                                <!--end::Menu wrapper-->
-                            </div>
-                            <!--end::Navbar-->
-                            <!--begin::Topbar-->
-                            <div class="d-flex align-items-stretch flex-shrink-0">
-                                <!--begin::Toolbar wrapper-->
-                                <div class="d-flex align-items-stretch flex-shrink-0">
-                                    <!--begin::Search-->
-                                    <div class="d-flex align-items-stretch ms-1 ms-lg-3">
-                                        <!--begin::Search-->
-                                        <div id="kt_header_search" class="d-flex align-items-stretch"
-                                            data-kt-search-keypress="true" data-kt-search-min-length="2"
-                                            data-kt-search-enter="enter" data-kt-search-layout="menu"
-                                            data-kt-menu-trigger="auto" data-kt-menu-overflow="false"
-                                            data-kt-menu-permanent="true" data-kt-menu-placement="bottom-end"
-                                            data-kt-menu-flip="bottom">
-                                            <!--begin::Search toggle-->
-                                            
-                                            <!--end::Search toggle-->
-                                            <!--begin::Menu-->
-                                            <div data-kt-search-element="content"
-                                                class="menu menu-sub menu-sub-dropdown p-7 w-325px w-md-375px">
-                                                <!--begin::Wrapper-->
-                                                <div data-kt-search-element="wrapper">
-                                                    <!--begin::Form-->
-                                                    <form data-kt-search-element="form"
-                                                        class="w-100 position-relative mb-3" autocomplete="off">
-                                                        <!--begin::Icon-->
-                                                        <!--begin::Svg Icon | path: icons/duotone/General/Search.svg-->
-                                                        <span
-                                                            class="svg-icon svg-icon-2 svg-icon-lg-1 svg-icon-gray-500 position-absolute top-50 translate-middle-y ms-0">
-                                                            <svg xmlns="http://www.w3.org/2000/svg"
-                                                                xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
-                                                                height="24px" viewBox="0 0 24 24" version="1.1">
-                                                                <g stroke="none" stroke-width="1" fill="none"
-                                                                    fill-rule="evenodd">
-                                                                    <rect x="0" y="0" width="24" height="24" />
-                                                                    <path
-                                                                        d="M14.2928932,16.7071068 C13.9023689,16.3165825 13.9023689,15.6834175 14.2928932,15.2928932 C14.6834175,14.9023689 15.3165825,14.9023689 15.7071068,15.2928932 L19.7071068,19.2928932 C20.0976311,19.6834175 20.0976311,20.3165825 19.7071068,20.7071068 C19.3165825,21.0976311 18.6834175,21.0976311 18.2928932,20.7071068 L14.2928932,16.7071068 Z"
-                                                                        fill="#000000" fill-rule="nonzero"
-                                                                        opacity="0.3" />
-                                                                    <path
-                                                                        d="M11,16 C13.7614237,16 16,13.7614237 16,11 C16,8.23857625 13.7614237,6 11,6 C8.23857625,6 6,8.23857625 6,11 C6,13.7614237 8.23857625,16 11,16 Z M11,18 C7.13400675,18 4,14.8659932 4,11 C4,7.13400675 7.13400675,4 11,4 C14.8659932,4 18,7.13400675 18,11 C18,14.8659932 14.8659932,18 11,18 Z"
-                                                                        fill="#000000" fill-rule="nonzero" />
-                                                                </g>
-                                                            </svg>
-                                                        </span>
-                                                        <!--end::Svg Icon-->
-                                                        <!--end::Icon-->
-                                                        <!--begin::Input-->
-                                                        <input type="text" class="form-control form-control-flush ps-10"
-                                                            name="search" value="" placeholder="Search..."
-                                                            data-kt-search-element="input" />
-                                                        <!--end::Input-->
-                                                        <!--begin::Spinner-->
-                                                        <span
-                                                            class="position-absolute top-50 end-0 translate-middle-y lh-0 d-none me-1"
-                                                            data-kt-search-element="spinner">
-                                                            <span
-                                                                class="spinner-border h-15px w-15px align-middle text-gray-400"></span>
-                                                        </span>
-                                                        <!--end::Spinner-->
-                                                        <!--begin::Reset-->
-                                                        <span
-                                                            class="btn btn-flush btn-active-color-primary position-absolute top-50 end-0 translate-middle-y lh-0 d-none"
-                                                            data-kt-search-element="clear">
-                                                            <!--begin::Svg Icon | path: icons/duotone/Navigation/Close.svg-->
-                                                            <span class="svg-icon svg-icon-2 svg-icon-lg-1 me-0">
-                                                                <svg xmlns="http://www.w3.org/2000/svg"
-                                                                    xmlns:xlink="http://www.w3.org/1999/xlink"
-                                                                    width="24px" height="24px" viewBox="0 0 24 24"
-                                                                    version="1.1">
-                                                                    <g transform="translate(12.000000, 12.000000) rotate(-45.000000) translate(-12.000000, -12.000000) translate(4.000000, 4.000000)"
-                                                                        fill="#000000">
-                                                                        <rect fill="#000000" x="0" y="7" width="16"
-                                                                            height="2" rx="1" />
-                                                                        <rect fill="#000000" opacity="0.5"
-                                                                            transform="translate(8.000000, 8.000000) rotate(-270.000000) translate(-8.000000, -8.000000)"
-                                                                            x="0" y="7" width="16" height="2" rx="1" />
-                                                                    </g>
-                                                                </svg>
-                                                            </span>
-                                                            <!--end::Svg Icon-->
-                                                        </span>
-                                                        <!--end::Reset-->
-                                                        <!--begin::Toolbar-->
-                                                        <div class="position-absolute top-50 end-0 translate-middle-y"
-                                                            data-kt-search-element="toolbar">
-                                                            <!--begin::Preferences toggle-->
-                                                            <div data-kt-search-element="preferences-show"
-                                                                class="btn btn-icon w-20px btn-sm btn-active-color-primary me-1"
-                                                                data-bs-toggle="tooltip"
-                                                                title="Show search preferences">
-                                                                <!--begin::Svg Icon | path: icons/duotone/Code/Settings4.svg-->
-                                                                <span class="svg-icon svg-icon-1">
-                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24px"
-                                                                        height="24px" viewBox="0 0 24 24" version="1.1">
-                                                                        <path
-                                                                            d="M18.6225,9.75 L18.75,9.75 C19.9926407,9.75 21,10.7573593 21,12 C21,13.2426407 19.9926407,14.25 18.75,14.25 L18.6854912,14.249994 C18.4911876,14.250769 18.3158978,14.366855 18.2393549,14.5454486 C18.1556809,14.7351461 18.1942911,14.948087 18.3278301,15.0846699 L18.372535,15.129375 C18.7950334,15.5514036 19.03243,16.1240792 19.03243,16.72125 C19.03243,17.3184208 18.7950334,17.8910964 18.373125,18.312535 C17.9510964,18.7350334 17.3784208,18.97243 16.78125,18.97243 C16.1840792,18.97243 15.6114036,18.7350334 15.1896699,18.3128301 L15.1505513,18.2736469 C15.008087,18.1342911 14.7951461,18.0956809 14.6054486,18.1793549 C14.426855,18.2558978 14.310769,18.4311876 14.31,18.6225 L14.31,18.75 C14.31,19.9926407 13.3026407,21 12.06,21 C10.8173593,21 9.81,19.9926407 9.81,18.75 C9.80552409,18.4999185 9.67898539,18.3229986 9.44717599,18.2361469 C9.26485393,18.1556809 9.05191298,18.1942911 8.91533009,18.3278301 L8.870625,18.372535 C8.44859642,18.7950334 7.87592081,19.03243 7.27875,19.03243 C6.68157919,19.03243 6.10890358,18.7950334 5.68746499,18.373125 C5.26496665,17.9510964 5.02757002,17.3784208 5.02757002,16.78125 C5.02757002,16.1840792 5.26496665,15.6114036 5.68716991,15.1896699 L5.72635306,15.1505513 C5.86570889,15.008087 5.90431906,14.7951461 5.82064513,14.6054486 C5.74410223,14.426855 5.56881236,14.310769 5.3775,14.31 L5.25,14.31 C4.00735931,14.31 3,13.3026407 3,12.06 C3,10.8173593 4.00735931,9.81 5.25,9.81 C5.50008154,9.80552409 5.67700139,9.67898539 5.76385306,9.44717599 C5.84431906,9.26485393 5.80570889,9.05191298 5.67216991,8.91533009 L5.62746499,8.870625 C5.20496665,8.44859642 4.96757002,7.87592081 4.96757002,7.27875 C4.96757002,6.68157919 5.20496665,6.10890358 5.626875,5.68746499 C6.04890358,5.26496665 6.62157919,5.02757002 7.21875,5.02757002 C7.81592081,5.02757002 8.38859642,5.26496665 8.81033009,5.68716991 L8.84944872,5.72635306 C8.99191298,5.86570889 9.20485393,5.90431906 9.38717599,5.82385306 L9.49484664,5.80114977 C9.65041313,5.71688974 9.7492905,5.55401473 9.75,5.3775 L9.75,5.25 C9.75,4.00735931 10.7573593,3 12,3 C13.2426407,3 14.25,4.00735931 14.25,5.25 L14.249994,5.31450877 C14.250769,5.50881236 14.366855,5.68410223 14.552824,5.76385306 C14.7351461,5.84431906 14.948087,5.80570889 15.0846699,5.67216991 L15.129375,5.62746499 C15.5514036,5.20496665 16.1240792,4.96757002 16.72125,4.96757002 C17.3184208,4.96757002 17.8910964,5.20496665 18.312535,5.626875 C18.7350334,6.04890358 18.97243,6.62157919 18.97243,7.21875 C18.97243,7.81592081 18.7350334,8.38859642 18.3128301,8.81033009 L18.2736469,8.84944872 C18.1342911,8.99191298 18.0956809,9.20485393 18.1761469,9.38717599 L18.1988502,9.49484664 C18.2831103,9.65041313 18.4459853,9.7492905 18.6225,9.75 Z"
-                                                                            fill="#000000" fill-rule="nonzero"
-                                                                            opacity="0.3" />
-                                                                        <path
-                                                                            d="M12,15 C13.6568542,15 15,13.6568542 15,12 C15,10.3431458 13.6568542,9 12,9 C10.3431458,9 9,10.3431458 9,12 C9,13.6568542 10.3431458,15 12,15 Z"
-                                                                            fill="#000000" />
-                                                                    </svg>
-                                                                </span>
-                                                                <!--end::Svg Icon-->
-                                                            </div>
-                                                            <!--end::Preferences toggle-->
-                                                            <!--begin::Advanced search toggle-->
-                                                            <div data-kt-search-element="advanced-options-form-show"
-                                                                class="btn btn-icon w-20px btn-sm btn-active-color-primary"
-                                                                data-bs-toggle="tooltip"
-                                                                title="Show more search options">
-                                                                <!--begin::Svg Icon | path: icons/duotone/Navigation/Angle-down.svg-->
-                                                                <span class="svg-icon svg-icon-2">
-                                                                    <svg xmlns="http://www.w3.org/2000/svg"
-                                                                        xmlns:xlink="http://www.w3.org/1999/xlink"
-                                                                        width="24px" height="24px" viewBox="0 0 24 24"
-                                                                        version="1.1">
-                                                                        <g stroke="none" stroke-width="1" fill="none"
-                                                                            fill-rule="evenodd">
-                                                                            <polygon points="0 0 24 0 24 24 0 24" />
-                                                                            <path
-                                                                                d="M6.70710678,15.7071068 C6.31658249,16.0976311 5.68341751,16.0976311 5.29289322,15.7071068 C4.90236893,15.3165825 4.90236893,14.6834175 5.29289322,14.2928932 L11.2928932,8.29289322 C11.6714722,7.91431428 12.2810586,7.90106866 12.6757246,8.26284586 L18.6757246,13.7628459 C19.0828436,14.1360383 19.1103465,14.7686056 18.7371541,15.1757246 C18.3639617,15.5828436 17.7313944,15.6103465 17.3242754,15.2371541 L12.0300757,10.3841378 L6.70710678,15.7071068 Z"
-                                                                                fill="#000000" fill-rule="nonzero"
-                                                                                transform="translate(12.000003, 11.999999) rotate(-180.000000) translate(-12.000003, -11.999999)" />
-                                                                        </g>
-                                                                    </svg>
-                                                                </span>
-                                                                <!--end::Svg Icon-->
-                                                            </div>
-                                                            <!--end::Advanced search toggle-->
-                                                        </div>
-                                                        <!--end::Toolbar-->
-                                                    </form>
-                                                    <!--end::Form-->
-                                                    <!--begin::Separator-->
-                                                    <div class="separator border-gray-200 mb-6"></div>
-                                                    <!--end::Separator-->
-                                                    <!--begin::Recently viewed-->
-                                                    <div data-kt-search-element="results" class="d-none">
-                                                        <!--begin::Items-->
-                                                        <div class="scroll-y mh-200px mh-lg-350px">
-                                                            <!--begin::Category title-->
-                                                            <h3 class="fs-5 text-muted m-0 pb-5"
-                                                                data-kt-search-element="category-title">Users</h3>
-                                                            <!--end::Category title-->
-                                                            <!--begin::Item-->
-                                                            <a href="#"
-                                                                class="d-flex text-dark text-hover-primary align-items-center mb-5">
-                                                                <!--begin::Symbol-->
-                                                                <div class="symbol symbol-40px me-4">
-                                                                    <img src="backend/media/avatars/150-1.jpg" alt="" />
-                                                                </div>
-                                                                <!--end::Symbol-->
-                                                                <!--begin::Title-->
-                                                                <div
-                                                                    class="d-flex flex-column justify-content-start fw-bold">
-                                                                    <span class="fs-6 fw-bold">Karina Clark</span>
-                                                                    <span class="fs-7 fw-bold text-muted">Marketing
-                                                                        Manager</span>
-                                                                </div>
-                                                                <!--end::Title-->
-                                                            </a>
-                                                            <!--end::Item-->
-                                                            <!--begin::Item-->
-                                                            <a href="#"
-                                                                class="d-flex text-dark text-hover-primary align-items-center mb-5">
-                                                                <!--begin::Symbol-->
-                                                                <div class="symbol symbol-40px me-4">
-                                                                    <img src="backend/media/avatars/150-3.jpg" alt="" />
-                                                                </div>
-                                                                <!--end::Symbol-->
-                                                                <!--begin::Title-->
-                                                                <div
-                                                                    class="d-flex flex-column justify-content-start fw-bold">
-                                                                    <span class="fs-6 fw-bold">Olivia Bold</span>
-                                                                    <span class="fs-7 fw-bold text-muted">Software
-                                                                        Engineer</span>
-                                                                </div>
-                                                                <!--end::Title-->
-                                                            </a>
-                                                            <!--end::Item-->
-                                                            <!--begin::Item-->
-                                                            <a href="#"
-                                                                class="d-flex text-dark text-hover-primary align-items-center mb-5">
-                                                                <!--begin::Symbol-->
-                                                                <div class="symbol symbol-40px me-4">
-                                                                    <img src="backend/media/avatars/150-8.jpg" alt="" />
-                                                                </div>
-                                                                <!--end::Symbol-->
-                                                                <!--begin::Title-->
-                                                                <div
-                                                                    class="d-flex flex-column justify-content-start fw-bold">
-                                                                    <span class="fs-6 fw-bold">Ana Clark</span>
-                                                                    <span class="fs-7 fw-bold text-muted">UI/UX
-                                                                        Designer</span>
-                                                                </div>
-                                                                <!--end::Title-->
-                                                            </a>
-                                                            <!--end::Item-->
-                                                            <!--begin::Item-->
-                                                            <a href="#"
-                                                                class="d-flex text-dark text-hover-primary align-items-center mb-5">
-                                                                <!--begin::Symbol-->
-                                                                <div class="symbol symbol-40px me-4">
-                                                                    <img src="backend/media/avatars/150-11.jpg"
-                                                                        alt="" />
-                                                                </div>
-                                                                <!--end::Symbol-->
-                                                                <!--begin::Title-->
-                                                                <div
-                                                                    class="d-flex flex-column justify-content-start fw-bold">
-                                                                    <span class="fs-6 fw-bold">Nick Pitola</span>
-                                                                    <span class="fs-7 fw-bold text-muted">Art
-                                                                        Director</span>
-                                                                </div>
-                                                                <!--end::Title-->
-                                                            </a>
-                                                            <!--end::Item-->
-                                                            <!--begin::Item-->
-                                                            <a href="#"
-                                                                class="d-flex text-dark text-hover-primary align-items-center mb-5">
-                                                                <!--begin::Symbol-->
-                                                                <div class="symbol symbol-40px me-4">
-                                                                    <img src="backend/media/avatars/150-12.jpg"
-                                                                        alt="" />
-                                                                </div>
-                                                                <!--end::Symbol-->
-                                                                <!--begin::Title-->
-                                                                <div
-                                                                    class="d-flex flex-column justify-content-start fw-bold">
-                                                                    <span class="fs-6 fw-bold">Edward Kulnic</span>
-                                                                    <span class="fs-7 fw-bold text-muted">System
-                                                                        Administrator</span>
-                                                                </div>
-                                                                <!--end::Title-->
-                                                            </a>
-                                                            <!--end::Item-->
-                                                            <!--begin::Category title-->
-                                                            <h3 class="fs-5 text-muted m-0 pt-5 pb-5"
-                                                                data-kt-search-element="category-title">Customers</h3>
-                                                            <!--end::Category title-->
-                                                            <!--begin::Item-->
-                                                            <a href="#"
-                                                                class="d-flex text-dark text-hover-primary align-items-center mb-5">
-                                                                <!--begin::Symbol-->
-                                                                <div class="symbol symbol-40px me-4">
-                                                                    <span class="symbol-label bg-light">
-                                                                        <img class="w-20px h-20px"
-                                                                            src="backend/media/svg/brand-logos/volicity-9.svg"
-                                                                            alt="" />
-                                                                    </span>
-                                                                </div>
-                                                                <!--end::Symbol-->
-                                                                <!--begin::Title-->
-                                                                <div
-                                                                    class="d-flex flex-column justify-content-start fw-bold">
-                                                                    <span class="fs-6 fw-bold">Company Rbranding</span>
-                                                                    <span class="fs-7 fw-bold text-muted">UI
-                                                                        Design</span>
-                                                                </div>
-                                                                <!--end::Title-->
-                                                            </a>
-                                                            <!--end::Item-->
-                                                            <!--begin::Item-->
-                                                            <a href="#"
-                                                                class="d-flex text-dark text-hover-primary align-items-center mb-5">
-                                                                <!--begin::Symbol-->
-                                                                <div class="symbol symbol-40px me-4">
-                                                                    <span class="symbol-label bg-light">
-                                                                        <img class="w-20px h-20px"
-                                                                            src="backend/media/svg/brand-logos/tvit.svg"
-                                                                            alt="" />
-                                                                    </span>
-                                                                </div>
-                                                                <!--end::Symbol-->
-                                                                <!--begin::Title-->
-                                                                <div
-                                                                    class="d-flex flex-column justify-content-start fw-bold">
-                                                                    <span class="fs-6 fw-bold">Company
-                                                                        Re-branding</span>
-                                                                    <span class="fs-7 fw-bold text-muted">Web
-                                                                        Development</span>
-                                                                </div>
-                                                                <!--end::Title-->
-                                                            </a>
-                                                            <!--end::Item-->
-                                                            <!--begin::Item-->
-                                                            <a href="#"
-                                                                class="d-flex text-dark text-hover-primary align-items-center mb-5">
-                                                                <!--begin::Symbol-->
-                                                                <div class="symbol symbol-40px me-4">
-                                                                    <span class="symbol-label bg-light">
-                                                                        <img class="w-20px h-20px"
-                                                                            src="backend/media/svg/misc/infography.svg"
-                                                                            alt="" />
-                                                                    </span>
-                                                                </div>
-                                                                <!--end::Symbol-->
-                                                                <!--begin::Title-->
-                                                                <div
-                                                                    class="d-flex flex-column justify-content-start fw-bold">
-                                                                    <span class="fs-6 fw-bold">Business Analytics
-                                                                        App</span>
-                                                                    <span
-                                                                        class="fs-7 fw-bold text-muted">Administration</span>
-                                                                </div>
-                                                                <!--end::Title-->
-                                                            </a>
-                                                            <!--end::Item-->
-                                                            <!--begin::Item-->
-                                                            <a href="#"
-                                                                class="d-flex text-dark text-hover-primary align-items-center mb-5">
-                                                                <!--begin::Symbol-->
-                                                                <div class="symbol symbol-40px me-4">
-                                                                    <span class="symbol-label bg-light">
-                                                                        <img class="w-20px h-20px"
-                                                                            src="backend/media/svg/brand-logos/leaf.svg"
-                                                                            alt="" />
-                                                                    </span>
-                                                                </div>
-                                                                <!--end::Symbol-->
-                                                                <!--begin::Title-->
-                                                                <div
-                                                                    class="d-flex flex-column justify-content-start fw-bold">
-                                                                    <span class="fs-6 fw-bold">EcoLeaf App Launch</span>
-                                                                    <span
-                                                                        class="fs-7 fw-bold text-muted">Marketing</span>
-                                                                </div>
-                                                                <!--end::Title-->
-                                                            </a>
-                                                            <!--end::Item-->
-                                                            <!--begin::Item-->
-                                                            <a href="#"
-                                                                class="d-flex text-dark text-hover-primary align-items-center mb-5">
-                                                                <!--begin::Symbol-->
-                                                                <div class="symbol symbol-40px me-4">
-                                                                    <span class="symbol-label bg-light">
-                                                                        <img class="w-20px h-20px"
-                                                                            src="backend/media/svg/brand-logos/tower.svg"
-                                                                            alt="" />
-                                                                    </span>
-                                                                </div>
-                                                                <!--end::Symbol-->
-                                                                <!--begin::Title-->
-                                                                <div
-                                                                    class="d-fslex flex-column justify-content-start fw-bold">
-                                                                    <span class="fs-6 fw-bold">Tower Group
-                                                                        Website</span>
-                                                                    <span class="fs-7 fw-bold text-muted">Google
-                                                                        Adwords</span>
-                                                                </div>
-                                                                <!--end::Title-->
-                                                            </a>
-                                                            <!--end::Item-->
-                                                            <!--begin::Category title-->
-                                                            <h3 class="fs-5 text-muted m-0 pt-5 pb-5"
-                                                                data-kt-search-element="category-title">Projects</h3>
-                                                            <!--end::Category title-->
-                                                            <!--begin::Item-->
-                                                            <a href="#"
-                                                                class="d-flex text-dark text-hover-primary align-items-center mb-5">
-                                                                <!--begin::Symbol-->
-                                                                <div class="symbol symbol-40px me-4">
-                                                                    <span class="symbol-label bg-light">
-                                                                        <!--begin::Svg Icon | path: icons/duotone/Communication/Clipboard-list.svg-->
-                                                                        <span
-                                                                            class="svg-icon svg-icon-2 svg-icon-primary">
-                                                                            <svg xmlns="http://www.w3.org/2000/svg"
-                                                                                width="24px" height="24px"
-                                                                                viewBox="0 0 24 24" version="1.1">
-                                                                                <path
-                                                                                    d="M8,3 L8,3.5 C8,4.32842712 8.67157288,5 9.5,5 L14.5,5 C15.3284271,5 16,4.32842712 16,3.5 L16,3 L18,3 C19.1045695,3 20,3.8954305 20,5 L20,21 C20,22.1045695 19.1045695,23 18,23 L6,23 C4.8954305,23 4,22.1045695 4,21 L4,5 C4,3.8954305 4.8954305,3 6,3 L8,3 Z"
-                                                                                    fill="#000000" opacity="0.3" />
-                                                                                <path
-                                                                                    d="M11,2 C11,1.44771525 11.4477153,1 12,1 C12.5522847,1 13,1.44771525 13,2 L14.5,2 C14.7761424,2 15,2.22385763 15,2.5 L15,3.5 C15,3.77614237 14.7761424,4 14.5,4 L9.5,4 C9.22385763,4 9,3.77614237 9,3.5 L9,2.5 C9,2.22385763 9.22385763,2 9.5,2 L11,2 Z"
-                                                                                    fill="#000000" />
-                                                                                <rect fill="#000000" opacity="0.3"
-                                                                                    x="10" y="9" width="7" height="2"
-                                                                                    rx="1" />
-                                                                                <rect fill="#000000" opacity="0.3" x="7"
-                                                                                    y="9" width="2" height="2" rx="1" />
-                                                                                <rect fill="#000000" opacity="0.3" x="7"
-                                                                                    y="13" width="2" height="2"
-                                                                                    rx="1" />
-                                                                                <rect fill="#000000" opacity="0.3"
-                                                                                    x="10" y="13" width="7" height="2"
-                                                                                    rx="1" />
-                                                                                <rect fill="#000000" opacity="0.3" x="7"
-                                                                                    y="17" width="2" height="2"
-                                                                                    rx="1" />
-                                                                                <rect fill="#000000" opacity="0.3"
-                                                                                    x="10" y="17" width="7" height="2"
-                                                                                    rx="1" />
-                                                                            </svg>
-                                                                        </span>
-                                                                        <!--end::Svg Icon-->
-                                                                    </span>
-                                                                </div>
-                                                                <!--end::Symbol-->
-                                                                <!--begin::Title-->
-                                                                <div class="d-flex flex-column">
-                                                                    <span class="fs-6 fw-bold">Si-Fi Project by AU
-                                                                        Themes</span>
-                                                                    <span class="fs-7 fw-bold text-muted">#45670</span>
-                                                                </div>
-                                                                <!--end::Title-->
-                                                            </a>
-                                                            <!--end::Item-->
-                                                            <!--begin::Item-->
-                                                          
-                                                            <!--end::Item-->
-                                                            <!--begin::Item-->
-                                                            <a href="#"
-                                                                class="d-flex text-dark text-hover-primary align-items-center mb-5">
-                                                                <!--begin::Symbol-->
-                                                                <div class="symbol symbol-40px me-4">
-                                                                    <span class="symbol-label bg-light">
-                                                                        <!--begin::Svg Icon | path: icons/duotone/Communication/Group-chat.svg-->
-                                                                        <span
-                                                                            class="svg-icon svg-icon-2 svg-icon-primary">
-                                                                            <svg xmlns="http://www.w3.org/2000/svg"
-                                                                                width="24px" height="24px"
-                                                                                viewBox="0 0 24 24" version="1.1">
-                                                                                <path
-                                                                                    d="M16,15.6315789 L16,12 C16,10.3431458 14.6568542,9 13,9 L6.16183229,9 L6.16183229,5.52631579 C6.16183229,4.13107011 7.29290239,3 8.68814808,3 L20.4776218,3 C21.8728674,3 23.0039375,4.13107011 23.0039375,5.52631579 L23.0039375,13.1052632 L23.0206157,17.786793 C23.0215995,18.0629336 22.7985408,18.2875874 22.5224001,18.2885711 C22.3891754,18.2890457 22.2612702,18.2363324 22.1670655,18.1421277 L19.6565168,15.6315789 L16,15.6315789 Z"
-                                                                                    fill="#000000" />
-                                                                                <path
-                                                                                    d="M1.98505595,18 L1.98505595,13 C1.98505595,11.8954305 2.88048645,11 3.98505595,11 L11.9850559,11 C13.0896254,11 13.9850559,11.8954305 13.9850559,13 L13.9850559,18 C13.9850559,19.1045695 13.0896254,20 11.9850559,20 L4.10078614,20 L2.85693427,21.1905292 C2.65744295,21.3814685 2.34093638,21.3745358 2.14999706,21.1750444 C2.06092565,21.0819836 2.01120804,20.958136 2.01120804,20.8293182 L2.01120804,18.32426 C1.99400175,18.2187196 1.98505595,18.1104045 1.98505595,18 Z M6.5,14 C6.22385763,14 6,14.2238576 6,14.5 C6,14.7761424 6.22385763,15 6.5,15 L11.5,15 C11.7761424,15 12,14.7761424 12,14.5 C12,14.2238576 11.7761424,14 11.5,14 L6.5,14 Z M9.5,16 C9.22385763,16 9,16.2238576 9,16.5 C9,16.7761424 9.22385763,17 9.5,17 L11.5,17 C11.7761424,17 12,16.7761424 12,16.5 C12,16.2238576 11.7761424,16 11.5,16 L9.5,16 Z"
-                                                                                    fill="#000000" opacity="0.3" />
-                                                                            </svg>
-                                                                        </span>
-                                                                        <!--end::Svg Icon-->
-                                                                    </span>
-                                                                </div>
-                                                                <!--end::Symbol-->
-                                                                <!--begin::Title-->
-                                                                <div class="d-flex flex-column">
-                                                                    <span class="fs-6 fw-bold">Finance Monitoring SAAS
-                                                                        Discussion</span>
-                                                                    <span class="fs-7 fw-bold text-muted">#21090</span>
-                                                                </div>
-                                                                <!--end::Title-->
-                                                            </a>
-                                                            <!--end::Item-->
-                                                            <!--begin::Item-->
-                                                            <a href="#"
-                                                                class="d-flex text-dark text-hover-primary align-items-center mb-5">
-                                                                <!--begin::Symbol-->
-                                                                <div class="symbol symbol-40px me-4">
-                                                                    <span class="symbol-label bg-light">
-                                                                        <!--begin::Svg Icon | path: icons/duotone/General/User.svg-->
-                                                                        <span
-                                                                            class="svg-icon svg-icon-2 svg-icon-primary">
-                                                                            <svg xmlns="http://www.w3.org/2000/svg"
-                                                                                xmlns:xlink="http://www.w3.org/1999/xlink"
-                                                                                width="24px" height="24px"
-                                                                                viewBox="0 0 24 24" version="1.1">
-                                                                                <g stroke="none" stroke-width="1"
-                                                                                    fill="none" fill-rule="evenodd">
-                                                                                    <polygon
-                                                                                        points="0 0 24 0 24 24 0 24" />
-                                                                                    <path
-                                                                                        d="M12,11 C9.790861,11 8,9.209139 8,7 C8,4.790861 9.790861,3 12,3 C14.209139,3 16,4.790861 16,7 C16,9.209139 14.209139,11 12,11 Z"
-                                                                                        fill="#000000"
-                                                                                        fill-rule="nonzero"
-                                                                                        opacity="0.3" />
-                                                                                    <path
-                                                                                        d="M3.00065168,20.1992055 C3.38825852,15.4265159 7.26191235,13 11.9833413,13 C16.7712164,13 20.7048837,15.2931929 20.9979143,20.2 C21.0095879,20.3954741 20.9979143,21 20.2466999,21 C16.541124,21 11.0347247,21 3.72750223,21 C3.47671215,21 2.97953825,20.45918 3.00065168,20.1992055 Z"
-                                                                                        fill="#000000"
-                                                                                        fill-rule="nonzero" />
-                                                                                </g>
-                                                                            </svg>
-                                                                        </span>
-                                                                        <!--end::Svg Icon-->
-                                                                    </span>
-                                                                </div>
-                                                                <!--end::Symbol-->
-                                                                <!--begin::Title-->
-                                                                <div class="d-flex flex-column">
-                                                                    <span class="fs-6 fw-bold">Dashboard Analitics
-                                                                        Launch</span>
-                                                                    <span class="fs-7 fw-bold text-muted">#34560</span>
-                                                                </div>
-                                                                <!--end::Title-->
-                                                            </a>
-                                                            <!--end::Item-->
-                                                        </div>
-                                                        <!--end::Items-->
-                                                    </div>
-                                                    <!--end::Recently viewed-->
-                                                    <!--begin::Recently viewed-->
-                                                    <div class="mb-4" data-kt-search-element="main">
-                                                        <!--begin::Heading-->
-                                                        <div class="d-flex flex-stack fw-bold mb-4">
-                                                            <!--begin::Label-->
-                                                            <span class="text-muted fs-6 me-2">Recently Searched:</span>
-                                                            <!--end::Label-->
-                                                        </div>
-                                                        <!--end::Heading-->
-                                                      
-                                                        <!--end::Items-->
-                                                    </div>
-                                                    <!--end::Recently viewed-->
-                                                    <!--begin::Empty-->
-                                                    <div data-kt-search-element="empty" class="text-center d-none">
-                                                        <!--begin::Icon-->
-                                                        <div class="pt-10 pb-10">
-                                                            <!--begin::Svg Icon | path: icons/duotone/Interface/File-Search.svg-->
-                                                            <span class="svg-icon svg-icon-4x opacity-50">
-                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24"
-                                                                    height="24" viewBox="0 0 24 24" fill="none">
-                                                                    <path opacity="0.25"
-                                                                        d="M3 4C3 2.34315 4.34315 1 6 1H15.7574C16.553 1 17.3161 1.31607 17.8787 1.87868L20.1213 4.12132C20.6839 4.68393 21 5.44699 21 6.24264V20C21 21.6569 19.6569 23 18 23H6C4.34315 23 3 21.6569 3 20V4Z"
-                                                                        fill="#12131A" />
-                                                                    <path
-                                                                        d="M15 1.89181C15 1.39927 15.3993 1 15.8918 1V1C16.6014 1 17.2819 1.28187 17.7836 1.78361L20.2164 4.21639C20.7181 4.71813 21 5.39863 21 6.10819V6.10819C21 6.60073 20.6007 7 20.1082 7H16C15.4477 7 15 6.55228 15 6V1.89181Z"
-                                                                        fill="#12131A" />
-                                                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                                                        d="M13.032 15.4462C12.4365 15.7981 11.7418 16 11 16C8.79086 16 7 14.2091 7 12C7 9.79086 8.79086 8 11 8C13.2091 8 15 9.79086 15 12C15 12.7418 14.7981 13.4365 14.4462 14.032L16.7072 16.293C17.0977 16.6835 17.0977 17.3167 16.7072 17.7072C16.3167 18.0977 15.6835 18.0977 15.293 17.7072L13.032 15.4462ZM13 12C13 13.1046 12.1046 14 11 14C9.89543 14 9 13.1046 9 12C9 10.8954 9.89543 10 11 10C12.1046 10 13 10.8954 13 12Z"
-                                                                        fill="#12131A" />
-                                                                </svg>
-                                                            </span>
-                                                            <!--end::Svg Icon-->
-                                                        </div>
-                                                        <!--end::Icon-->
-                                                        <!--begin::Message-->
-                                                        <div class="pb-15 fw-bold">
-                                                            <h3 class="text-gray-600 fs-5 mb-2">No result found</h3>
-                                                            <div class="text-muted fs-7">Please try again with a
-                                                                different query</div>
-                                                        </div>
-                                                        <!--end::Message-->
-                                                    </div>
-                                                    <!--end::Empty-->
-                                                </div>
-                                                <!--end::Wrapper-->
-                                                <!--begin::Preferences-->
-                                                <form data-kt-search-element="advanced-options-form"
-                                                    class="pt-1 d-none">
-                                                    <!--begin::Heading-->
-                                                    <h3 class="fw-bold text-dark mb-7">Advanced Search</h3>
-                                                    <!--end::Heading-->
-                                                    <!--begin::Input group-->
-                                                    <div class="mb-5">
-                                                        <input type="text"
-                                                            class="form-control form-control-sm form-control-solid"
-                                                            placeholder="Contains the word" name="query" />
-                                                    </div>
-                                                    <!--end::Input group-->
-                                                    <!--begin::Input group-->
-                                                    <div class="mb-5">
-                                                        <!--begin::Radio group-->
-                                                        <div class="nav-group nav-group-fluid">
-                                                            <!--begin::Option-->
-                                                            <label>
-                                                                <input type="radio" class="btn-check" name="type"
-                                                                    value="has" checked="checked" />
-                                                                <span
-                                                                    class="btn btn-sm btn-color-muted btn-active btn-active-primary">All</span>
-                                                            </label>
-                                                            <!--end::Option-->
-                                                            <!--begin::Option-->
-                                                            <label>
-                                                                <input type="radio" class="btn-check" name="type"
-                                                                    value="users" />
-                                                                <span
-                                                                    class="btn btn-sm btn-color-muted btn-active btn-active-primary px-4">Users</span>
-                                                            </label>
-                                                            <!--end::Option-->
-                                                            <!--begin::Option-->
-                                                            <label>
-                                                                <input type="radio" class="btn-check" name="type"
-                                                                    value="orders" />
-                                                                <span
-                                                                    class="btn btn-sm btn-color-muted btn-active btn-active-primary px-4">Orders</span>
-                                                            </label>
-                                                            <!--end::Option-->
-                                                            <!--begin::Option-->
-                                                            <label>
-                                                                <input type="radio" class="btn-check" name="type"
-                                                                    value="projects" />
-                                                                <span
-                                                                    class="btn btn-sm btn-color-muted btn-active btn-active-primary px-4">Projects</span>
-                                                            </label>
-                                                            <!--end::Option-->
-                                                        </div>
-                                                        <!--end::Radio group-->
-                                                    </div>
-                                                    <!--end::Input group-->
-                                                    <!--begin::Input group-->
-                                                    <div class="mb-5">
-                                                        <input type="text" name="assignedto"
-                                                            class="form-control form-control-sm form-control-solid"
-                                                            placeholder="Assigned to" value="" />
-                                                    </div>
-                                                    <!--end::Input group-->
-                                                    <!--begin::Input group-->
-                                                    <div class="mb-5">
-                                                        <input type="text" name="collaborators"
-                                                            class="form-control form-control-sm form-control-solid"
-                                                            placeholder="Collaborators" value="" />
-                                                    </div>
-                                                    <!--end::Input group-->
-                                                    <!--begin::Input group-->
-                                                    <div class="mb-5">
-                                                        <!--begin::Radio group-->
-                                                        <div class="nav-group nav-group-fluid">
-                                                            <!--begin::Option-->
-                                                            <label>
-                                                                <input type="radio" class="btn-check" name="attachment"
-                                                                    value="has" checked="checked" />
-                                                                <span
-                                                                    class="btn btn-sm btn-color-muted btn-active btn-active-primary">Has
-                                                                    attachment</span>
-                                                            </label>
-                                                            <!--end::Option-->
-                                                            <!--begin::Option-->
-                                                            <label>
-                                                                <input type="radio" class="btn-check" name="attachment"
-                                                                    value="any" />
-                                                                <span
-                                                                    class="btn btn-sm btn-color-muted btn-active btn-active-primary px-4">Any</span>
-                                                            </label>
-                                                            <!--end::Option-->
-                                                        </div>
-                                                        <!--end::Radio group-->
-                                                    </div>
-                                                    <!--end::Input group-->
-                                                    <!--begin::Input group-->
-                                                    <div class="mb-5">
-                                                        <select name="timezone" aria-label="Select a Timezone"
-                                                            data-control="select2" data-placeholder="date_period"
-                                                            class="form-select form-select-sm form-select-solid">
-                                                            <option value="next">Within the next</option>
-                                                            <option value="last">Within the last</option>
-                                                            <option value="between">Between</option>
-                                                            <option value="on">On</option>
-                                                        </select>
-                                                    </div>
-                                                    <!--end::Input group-->
-                                                    <!--begin::Input group-->
-                                                    <div class="row mb-8">
-                                                        <!--begin::Col-->
-                                                        <div class="col-6">
-                                                            <input type="number" name="date_number"
-                                                                class="form-control form-control-sm form-control-solid"
-                                                                placeholder="Lenght" value="" />
-                                                        </div>
-                                                        <!--end::Col-->
-                                                        <!--begin::Col-->
-                                                        <div class="col-6">
-                                                            <select name="date_typer" aria-label="Select a Timezone"
-                                                                data-control="select2" data-placeholder="Period"
-                                                                class="form-select form-select-sm form-select-solid">
-                                                                <option value="days">Days</option>
-                                                                <option value="weeks">Weeks</option>
-                                                                <option value="months">Months</option>
-                                                                <option value="years">Years</option>
-                                                            </select>
-                                                        </div>
-                                                        <!--end::Col-->
-                                                    </div>
-                                                    <!--end::Input group-->
-                                                    <!--begin::Actions-->
-                                                    <div class="d-flex justify-content-end">
-                                                        <button type="reset"
-                                                            class="btn btn-sm btn-light fw-bolder btn-active-light-primary me-2"
-                                                            data-kt-search-element="advanced-options-form-cancel">Cancel</button>
-                                                        <a href="pages/search/horizontal.html"
-                                                            class="btn btn-sm fw-bolder btn-primary"
-                                                            data-kt-search-element="advanced-options-form-search">Search</a>
-                                                    </div>
-                                                    <!--end::Actions-->
-                                                </form>
-                                                <!--end::Preferences-->
-                                                <!--begin::Preferences-->
-                                                <form data-kt-search-element="preferences" class="pt-1 d-none">
-                                                    <!--begin::Heading-->
-                                                    <h3 class="fw-bold text-dark mb-7">Search Preferences</h3>
-                                                    <!--end::Heading-->
-                                                    <!--begin::Input group-->
-                                                    <div class="pb-4 border-bottom">
-                                                        <label
-                                                            class="form-check form-switch form-switch-sm form-check-custom form-check-solid flex-stack">
-                                                            <span
-                                                                class="form-check-label text-gray-700 fs-6 fw-bold ms-0 me-2">Projects</span>
-                                                            <input class="form-check-input" type="checkbox" value="1"
-                                                                checked="checked" />
-                                                        </label>
-                                                    </div>
-                                                    <!--end::Input group-->
-                                                    <!--begin::Input group-->
-                                                    <div class="py-4 border-bottom">
-                                                        <label
-                                                            class="form-check form-switch form-switch-sm form-check-custom form-check-solid flex-stack">
-                                                            <span
-                                                                class="form-check-label text-gray-700 fs-6 fw-bold ms-0 me-2">Targets</span>
-                                                            <input class="form-check-input" type="checkbox" value="1"
-                                                                checked="checked" />
-                                                        </label>
-                                                    </div>
-                                                    <!--end::Input group-->
-                                                    <!--begin::Input group-->
-                                                    <div class="py-4 border-bottom">
-                                                        <label
-                                                            class="form-check form-switch form-switch-sm form-check-custom form-check-solid flex-stack">
-                                                            <span
-                                                                class="form-check-label text-gray-700 fs-6 fw-bold ms-0 me-2">Affiliate
-                                                                Programs</span>
-                                                            <input class="form-check-input" type="checkbox" value="1" />
-                                                        </label>
-                                                    </div>
-                                                    <!--end::Input group-->
-                                                    <!--begin::Input group-->
-                                                    <div class="py-4 border-bottom">
-                                                        <label
-                                                            class="form-check form-switch form-switch-sm form-check-custom form-check-solid flex-stack">
-                                                            <span
-                                                                class="form-check-label text-gray-700 fs-6 fw-bold ms-0 me-2">Referrals</span>
-                                                            <input class="form-check-input" type="checkbox" value="1"
-                                                                checked="checked" />
-                                                        </label>
-                                                    </div>
-                                                    <!--end::Input group-->
-                                                    <!--begin::Input group-->
-                                                    <div class="py-4 border-bottom">
-                                                        <label
-                                                            class="form-check form-switch form-switch-sm form-check-custom form-check-solid flex-stack">
-                                                            <span
-                                                                class="form-check-label text-gray-700 fs-6 fw-bold ms-0 me-2">Users</span>
-                                                            <input class="form-check-input" type="checkbox" value="1" />
-                                                        </label>
-                                                    </div>
-                                                    <!--end::Input group-->
-                                                    <!--begin::Actions-->
-                                                    <div class="d-flex justify-content-end pt-7">
-                                                        <button type="reset"
-                                                            class="btn btn-sm btn-light fw-bolder btn-active-light-primary me-2"
-                                                            data-kt-search-element="preferences-dismiss">Cancel</button>
-                                                        <button type="submit"
-                                                            class="btn btn-sm fw-bolder btn-primary">Save
-                                                            Changes</button>
-                                                    </div>
-                                                    <!--end::Actions-->
-                                                </form>
-                                                <!--end::Preferences-->
-                                            </div>
-                                            <!--end::Menu-->
-                                        </div>
-                                        <!--end::Search-->
-                                    </div>
-                                    <div class="d-flex align-items-center ms-1 ms-lg-3" id="kt_header_user_menu_toggle">
-                                        <!--begin::Menu wrapper-->
-                                        <div class="cursor-pointer symbol symbol-30px symbol-md-40px"
-                                            data-kt-menu-trigger="click" data-kt-menu-attach="parent"
-                                            data-kt-menu-placement="bottom-end" data-kt-menu-flip="bottom">
-                                         
-                                        </div>
-                                        <!--begin::Menu-->
-                                        <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg menu-state-primary fw-bold py-4 fs-6 w-275px"
-                                            data-kt-menu="true">
-                                            <!--begin::Menu item-->
-                                            <div class="menu-item px-3">
-                                                <div class="menu-content d-flex align-items-center px-3">
-                                                    <!--begin::Avatar-->
-                                                    <div class="symbol symbol-50px me-5">
-                                                        <img alt="Logo" src="backend/media/avatars/150-26.jpg" />
-                                                    </div>
-                                                    <!--end::Avatar-->
-                                                    <!--begin::Username-->
-                                                    <div class="d-flex flex-column">
-                                                        <div class="fw-bolder d-flex align-items-center fs-5">
-                                                           
-                                                            <span
-                                                                class="badge badge-light-success fw-bolder fs-8 px-2 py-1 ms-2">Pro</span>
-                                                        </div>
-                                                        <a href="#"
-                                                            class="fw-bold text-muted text-hover-primary fs-7"></a>
-                                                    </div>
-                                                    <!--end::Username-->
-                                                </div>
-                                            </div>
-                                            <!--end::Menu item-->
-                                            <!--begin::Menu separator-->
-                                            <div class="separator my-2"></div>
-                                            <!--end::Menu separator-->
-                                            <!--begin::Menu item-->
-                                            <div class="menu-item px-5">
-                                            </div>
-                                            <!--end::Menu item-->
-                                            <!--begin::Menu item-->
-                                            <div class="menu-item px-5">
-                                                <a href="pages/projects/list.html" class="menu-link px-5">
-                                                    <span class="menu-text">My Projects</span>
-                                                    <span class="menu-badge">
-                                                        <span
-                                                            class="badge badge-light-danger badge-circle fw-bolder fs-7">3</span>
-                                                    </span>
-                                                </a>
-                                            </div>
-                                            <!--end::Menu item-->
-                                            <!--begin::Menu item-->
-                                            <div class="menu-item px-5" data-kt-menu-trigger="hover"
-                                                data-kt-menu-placement="left-start" data-kt-menu-flip="bottom, top">
-                                                <a href="#" class="menu-link px-5">
-                                                    <span class="menu-title">My Subscription</span>
-                                                    <span class="menu-arrow"></span>
-                                                </a>
-                                                <!--begin::Menu sub-->
-                                                <div class="menu-sub menu-sub-dropdown w-175px py-4">
-                                                    <!--begin::Menu item-->
-                                                    <div class="menu-item px-3">
-                                                        <a href="account/referrals.html"
-                                                            class="menu-link px-5">Referrals</a>
-                                                    </div>
-                                                    <!--end::Menu item-->
-                                                    <!--begin::Menu item-->
-                                                    <div class="menu-item px-3">
-                                                        <a href="account/billing.html"
-                                                            class="menu-link px-5">Billing</a>
-                                                    </div>
-                                                    <!--end::Menu item-->
-                                                    <!--begin::Menu item-->
-                                                    <div class="menu-item px-3">
-                                                        <a href="account/statements.html"
-                                                            class="menu-link px-5">Payments</a>
-                                                    </div>
-                                                    <!--end::Menu item-->
-                                                    <!--begin::Menu item-->
-                                                    <div class="menu-item px-3">
-                                                        <a href="account/statements.html"
-                                                            class="menu-link d-flex flex-stack px-5">Statements
-                                                            <i class="fas fa-exclamation-circle ms-2 fs-7"
-                                                                data-bs-toggle="tooltip"
-                                                                title="View your statements"></i></a>
-                                                    </div>
-                                                    <!--end::Menu item-->
-                                                    <!--begin::Menu separator-->
-                                                    <div class="separator my-2"></div>
-                                                    <!--end::Menu separator-->
-                                                    <!--begin::Menu item-->
-                                                    <div class="menu-item px-3">
-                                                        <div class="menu-content px-3">
-                                                            <label
-                                                                class="form-check form-switch form-check-custom form-check-solid">
-                                                                <input class="form-check-input w-30px h-20px"
-                                                                    type="checkbox" value="1" checked="checked"
-                                                                    name="notifications" />
-                                                                <span
-                                                                    class="form-check-label text-muted fs-7">Notifications</span>
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                    <!--end::Menu item-->
-                                                </div>
-                                                <!--end::Menu sub-->
-                                            </div>
-                                            <!--end::Menu item-->
-                                            <!--begin::Menu item-->
-                                            <div class="menu-item px-5">
-                                                <a href="account/statements.html" class="menu-link px-5">My
-                                                    Statements</a>
-                                            </div>
-                                            <!--end::Menu item-->
-                                            <!--begin::Menu separator-->
-                                            <div class="separator my-2"></div>
-                                            <!--end::Menu separator-->
-                                            <!--begin::Menu item-->
-                                            <div class="menu-item px-5" data-kt-menu-trigger="hover"
-                                                data-kt-menu-placement="left-start" data-kt-menu-flip="bottom, top">
-                                                <a href="#" class="menu-link px-5">
-                                                    <span class="menu-title position-relative">Language
-                                                        <span
-                                                            class="fs-8 rounded bg-light px-3 py-2 position-absolute translate-middle-y top-50 end-0">English
-                                                            </span></span>
-                                                </a>
-                                                <!--begin::Menu sub-->
-                                                <div class="menu-sub menu-sub-dropdown w-175px py-4">
-                                                    <!--begin::Menu item-->
-                                                    <div class="menu-item px-3">
-                                                        <a href="account/settings.html"
-                                                            class="menu-link d-flex px-5 active">
-                                                            <span class="symbol symbol-20px me-4">
-                                                                <img class="rounded-1"
-                                                                    src="public/agent/"
-                                                                    alt="metronic" />
-                                                            </span>English</a>
-                                                    </div>
-                                                    <!--end::Menu item-->
-                                                    <!--begin::Menu item-->
-                                                    <div class="menu-item px-3">
-                                                        <a href="account/settings.html" class="menu-link d-flex px-5">
-                                                            <span class="symbol symbol-20px me-4">
-                                                                <img class="rounded-1"
-                                                                    src="public/agent/"
-                                                                    alt="metronic" />
-                                                            </span>Spanish</a>
-                                                    </div>
-                                                    <!--end::Menu item-->
-                                                    <!--begin::Menu item-->
-                                                    <div class="menu-item px-3">
-                                                        <a href="account/settings.html" class="menu-link d-flex px-5">
-                                                            <span class="symbol symbol-20px me-4">
-                                                                <img class="rounded-1"
-                                                                    src="/agent/"
-                                                                    alt="metronic" />
-                                                            </span>German</a>
-                                                    </div>
-                                                    <!--end::Menu item-->
-                                                    <!--begin::Menu item-->
-                                                    <div class="menu-item px-3">
-                                                        <a href="account/settings.html" class="menu-link d-flex px-5">
-                                                            <span class="symbol symbol-20px me-4">
-                                                                <img class="rounded-1"
-                                                                    src="/agent/"
-                                                                    alt="metronic" />
-                                                            </span>Japanese</a>
-                                                    </div>
-                                                    <!--end::Menu item-->
-                                                    <!--begin::Menu item-->
-                                                    <div class="menu-item px-3">
-                                                        <a href="account/settings.html" class="menu-link d-flex px-5">
-                                                            <span class="symbol symbol-20px me-4">
-                                                                <img class="rounded-1"
-                                                                    src="public/agent/"
-                                                                    alt="metronic" />
-                                                            </span></a>
-                                                    </div>
-                                                    <!--end::Menu item-->
-                                                </div>
-                                                <!--end::Menu sub-->
-                                            </div>
-                                            <!--end::Menu item-->
-                                            <!--begin::Menu item-->
-                                            <div class="menu-item px-5 my-1">
-                                                <a href="account/settings.html" class="menu-link px-5">Account
-                                                    Settings</a>
-                                            </div>
-                                            <!--end::Menu item-->
-                                            <!--begin::Menu item-->
-                                            <div class="menu-item px-5">
-                                                <a href="authentication/flows/basic/sign-in.html"
-                                                    class="menu-link px-5">Sign Out</a>
-                                            </div>
-                                            <!--end::Menu item-->
-                                        </div>
-                                        <!--end::Menu-->
-                                        <!--end::Menu wrapper-->
-                                    </div>
-                                    <!--end::User -->
-                                    <!--begin::Heaeder menu toggle-->
-                                  
-                                    <!--end::Heaeder menu toggle-->
-                                </div>
-                                <!--end::Toolbar wrapper-->
-                            </div>
-                            <!--end::Topbar-->
-                        </div>
-                        <!--end::Wrapper-->
-                    </div>
-                    <!--end::Container-->
-                </div>
-             
-                <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
-                    <!--begin::Container-->
-                    <div id="kt_content_container" class="container">
-<div class="card mb-12">
-								<!--begin::Hero body-->
-								<div class="card-body flex-column p-5">
-									<!--begin::Hero content-->
-									<div class="d-flex align-items-center h-lg-300px p-5 p-lg-15">
-										<!--begin::Wrapper-->
-										<div class="d-flex flex-column align-items-start justift-content-center flex-equal me-5">
-											<!--begin::Title-->
-											<h1 class="fw-bolder fs-4 fs-lg-1 text-gray-800 mb-5 mb-lg-10">How Can We Help You?</h1>
-											<!--end::Title-->
-											<!--begin::Input group-->
-											<div class="position-relative w-100">
-												<!--begin::Svg Icon | path: icons/duotone/General/Search.svg-->
-												<span class="svg-icon svg-icon-2 svg-icon-primary position-absolute top-50 translate-middle ms-8">
-													<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
-														<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-															<rect x="0" y="0" width="24" height="24" />
-															<path d="M14.2928932,16.7071068 C13.9023689,16.3165825 13.9023689,15.6834175 14.2928932,15.2928932 C14.6834175,14.9023689 15.3165825,14.9023689 15.7071068,15.2928932 L19.7071068,19.2928932 C20.0976311,19.6834175 20.0976311,20.3165825 19.7071068,20.7071068 C19.3165825,21.0976311 18.6834175,21.0976311 18.2928932,20.7071068 L14.2928932,16.7071068 Z" fill="#000000" fill-rule="nonzero" opacity="0.3" />
-															<path d="M11,16 C13.7614237,16 16,13.7614237 16,11 C16,8.23857625 13.7614237,6 11,6 C8.23857625,6 6,8.23857625 6,11 C6,13.7614237 8.23857625,16 11,16 Z M11,18 C7.13400675,18 4,14.8659932 4,11 C4,7.13400675 7.13400675,4 11,4 C14.8659932,4 18,7.13400675 18,11 C18,14.8659932 14.8659932,18 11,18 Z" fill="#000000" fill-rule="nonzero" />
-														</g>
-													</svg>
-												</span>
-												<!--end::Svg Icon-->
-												<input type="text" class="form-control fs-4 py-4 ps-14 text-gray-700 placeholder-gray-400 mw-500px" name="search" value="" placeholder="Ask a question" />
-											</div>
-											<!--end::Input group-->
-										</div>
-										<!--end::Wrapper-->
-										<!--begin::Wrapper-->
-										<div class="flex-equal d-flex justify-content-center align-items-end ms-5">
-											<!--begin::Illustration-
-                                            <img src='/myimages/faq.png' class="mw-100 mh-125px mh-lg-275px mb-lg-n12">
-    -->
-											<img src="{{asset('backend/media/svg/illustrations/sigma/question.svg')}}" alt="" class="mw-100 mh-125px mh-lg-275px mb-lg-n12" />
-											<!--end::Illustration-->
-										</div>
-										<!--end::Wrapper-->
-									</div>
-									<!--end::Hero content-->
-									
-								</div>
-								<!--end::Hero body-->
-							</div>
-<div class="card">
-								<!--begin::Body-->
-								<div class="card-body p-10 p-lg-15">
-									<!--begin::Classic content-->
-									<div class="mb-13">
-										<!--begin::Intro-->
-										<div class="mb-15">
-											<!--begin::Title-->
-											<h4 class="fs-2x text-gray-800 w-bolder mb-6">Frequently Asked Questions</h4>
-											<!--end::Title-->
-											<!--begin::Text-->
-											
-										</div>
-										<!--end::Intro-->
-										<!--begin::Row-->
-										<div class="row mb-12">
-											<!--begin::Col-->
-											<div class="col-md-6 pe-md-10 mb-10 mb-md-0">
-												<!--begin::Title-->
-												
-												<!--end::Title-->
-												<!--begin::Accordion-->
-												<!--begin::Section-->
-                                              <h2>
-                                                Egbami Of CTHostel
-                                              </h2>
-												<div class="m-0">
-													<!--begin::Heading-->
-													<div class="d-flex align-items-center collapsible py-3 toggle mb-0" data-bs-toggle="collapse" data-bs-target="#kt_job_4_1">
-														<!--begin::Icon-->
-														<div class="btn btn-sm btn-icon mw-20px btn-active-color-primary me-5">
-															<!--begin::Svg Icon | path: icons/duotone/Interface/Minus-Square.svg-->
-															<span class="svg-icon toggle-on svg-icon-primary svg-icon-1">
-																<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-																	<path opacity="0.25" d="M6.54184 2.36899C4.34504 2.65912 2.65912 4.34504 2.36899 6.54184C2.16953 8.05208 2 9.94127 2 12C2 14.0587 2.16953 15.9479 2.36899 17.4582C2.65912 19.655 4.34504 21.3409 6.54184 21.631C8.05208 21.8305 9.94127 22 12 22C14.0587 22 15.9479 21.8305 17.4582 21.631C19.655 21.3409 21.3409 19.655 21.631 17.4582C21.8305 15.9479 22 14.0587 22 12C22 9.94127 21.8305 8.05208 21.631 6.54184C21.3409 4.34504 19.655 2.65912 17.4582 2.36899C15.9479 2.16953 14.0587 2 12 2C9.94127 2 8.05208 2.16953 6.54184 2.36899Z" fill="#12131A" />
-																	<path d="M8 13C7.44772 13 7 12.5523 7 12C7 11.4477 7.44772 11 8 11H16C16.5523 11 17 11.4477 17 12C17 12.5523 16.5523 13 16 13H8Z" fill="#12131A" />
-																</svg>
-															</span>
-															<!--end::Svg Icon-->
-															<!--begin::Svg Icon | path: icons/duotone/Interface/Plus-Square.svg-->
-															<span class="svg-icon toggle-off svg-icon-1">
-																<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-																	<path opacity="0.25" fill-rule="evenodd" clip-rule="evenodd" d="M6.54184 2.36899C4.34504 2.65912 2.65912 4.34504 2.36899 6.54184C2.16953 8.05208 2 9.94127 2 12C2 14.0587 2.16953 15.9479 2.36899 17.4582C2.65912 19.655 4.34504 21.3409 6.54184 21.631C8.05208 21.8305 9.94127 22 12 22C14.0587 22 15.9479 21.8305 17.4582 21.631C19.655 21.3409 21.3409 19.655 21.631 17.4582C21.8305 15.9479 22 14.0587 22 12C22 9.94127 21.8305 8.05208 21.631 6.54184C21.3409 4.34504 19.655 2.65912 17.4582 2.36899C15.9479 2.16953 14.0587 2 12 2C9.94127 2 8.05208 2.16953 6.54184 2.36899Z" fill="#12131A" />
-																	<path fill-rule="evenodd" clip-rule="evenodd" d="M12 17C12.5523 17 13 16.5523 13 16V13H16C16.5523 13 17 12.5523 17 12C17 11.4477 16.5523 11 16 11H13V8C13 7.44772 12.5523 7 12 7C11.4477 7 11 7.44772 11 8V11H8C7.44772 11 7 11.4477 7 12C7 12.5523 7.44771 13 8 13H11V16C11 16.5523 11.4477 17 12 17Z" fill="#12131A" />
-																</svg>
-															</span>
-															<!--end::Svg Icon-->
-														</div>
-														<!--end::Icon-->
-														<!--begin::Title-->
-														<h4 class="text-gray-700 fw-bolder cursor-pointer mb-0">How can Egbami Of CTHostel save me in an emergency situation ?</h4>
-														<!--end::Title-->
-													</div>
-													<!--end::Heading-->
-													<!--begin::Body-->
-													<div id="kt_job_4_1" class="collapse show fs-6 ms-1">
-														<!--begin::Text-->
-														<div class="mb-4 text-gray-600 fw-bold fs-6 ps-10">For any emergency situation , all is needed is to type your emergency case at <a href='cthostel.com/egbami'>cthostel.com/egbami</a>, and our site will automatically track your current location, and send an emergency message to all students closer to your location, call the nearest ambulance/fire fighter/police depending on your emergency case . And in few minutes you have everyone at your side fighting for your safety.<br> To register for this security service, <a href='cthostel.com/egbami'>click here</a></div>
-														<!--end::Text-->
-													</div>
-													<!--end::Content-->
-													<!--begin::Separator-->
-													<div class="separator separator-dashed"></div>
-													<!--end::Separator-->
-												</div>
-												<!--end::Section-->
-												<!--begin::Section-->
-                                              <h2 class="text-gray-800 fw-bolder mb-4">Questions Partaining To Agents</h2>
-												<div class="m-0">
-													<!--begin::Heading-->
-													<div class="d-flex align-items-center collapsible py-3 toggle collapsed mb-0" data-bs-toggle="collapse" data-bs-target="#kt_job_4_2">
-														<!--begin::Icon-->
-														<div class="btn btn-sm btn-icon mw-20px btn-active-color-primary me-5">
-															<!--begin::Svg Icon | path: icons/duotone/Interface/Minus-Square.svg-->
-															<span class="svg-icon toggle-on svg-icon-primary svg-icon-1">
-																<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-																	<path opacity="0.25" d="M6.54184 2.36899C4.34504 2.65912 2.65912 4.34504 2.36899 6.54184C2.16953 8.05208 2 9.94127 2 12C2 14.0587 2.16953 15.9479 2.36899 17.4582C2.65912 19.655 4.34504 21.3409 6.54184 21.631C8.05208 21.8305 9.94127 22 12 22C14.0587 22 15.9479 21.8305 17.4582 21.631C19.655 21.3409 21.3409 19.655 21.631 17.4582C21.8305 15.9479 22 14.0587 22 12C22 9.94127 21.8305 8.05208 21.631 6.54184C21.3409 4.34504 19.655 2.65912 17.4582 2.36899C15.9479 2.16953 14.0587 2 12 2C9.94127 2 8.05208 2.16953 6.54184 2.36899Z" fill="#12131A" />
-																	<path d="M8 13C7.44772 13 7 12.5523 7 12C7 11.4477 7.44772 11 8 11H16C16.5523 11 17 11.4477 17 12C17 12.5523 16.5523 13 16 13H8Z" fill="#12131A" />
-																</svg>
-															</span>
-															<!--end::Svg Icon-->
-															<!--begin::Svg Icon | path: icons/duotone/Interface/Plus-Square.svg-->
-															<span class="svg-icon toggle-off svg-icon-1">
-																<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-																	<path opacity="0.25" fill-rule="evenodd" clip-rule="evenodd" d="M6.54184 2.36899C4.34504 2.65912 2.65912 4.34504 2.36899 6.54184C2.16953 8.05208 2 9.94127 2 12C2 14.0587 2.16953 15.9479 2.36899 17.4582C2.65912 19.655 4.34504 21.3409 6.54184 21.631C8.05208 21.8305 9.94127 22 12 22C14.0587 22 15.9479 21.8305 17.4582 21.631C19.655 21.3409 21.3409 19.655 21.631 17.4582C21.8305 15.9479 22 14.0587 22 12C22 9.94127 21.8305 8.05208 21.631 6.54184C21.3409 4.34504 19.655 2.65912 17.4582 2.36899C15.9479 2.16953 14.0587 2 12 2C9.94127 2 8.05208 2.16953 6.54184 2.36899Z" fill="#12131A" />
-																	<path fill-rule="evenodd" clip-rule="evenodd" d="M12 17C12.5523 17 13 16.5523 13 16V13H16C16.5523 13 17 12.5523 17 12C17 11.4477 16.5523 11 16 11H13V8C13 7.44772 12.5523 7 12 7C11.4477 7 11 7.44772 11 8V11H8C7.44772 11 7 11.4477 7 12C7 12.5523 7.44771 13 8 13H11V16C11 16.5523 11.4477 17 12 17Z" fill="#12131A" />
-																</svg>
-															</span>
-															<!--end::Svg Icon-->
-														</div>
-														<!--end::Icon-->
-														<!--begin::Title-->
-                                                      
-														<h4 class="text-gray-700 fw-bolder cursor-pointer mb-0">How can I register as an agent ?</h4>
-														<!--end::Title-->
-													</div>
-													<!--end::Heading-->
-													<!--begin::Body-->
-													<div id="kt_job_4_2" class="collapse fs-6 ms-1">
-														<!--begin::Text-->
-														<div class="mb-4 text-gray-600 fw-bold fs-6 ps-10">To register as an agent, visit <a href='https://cthostel.com'>www.cthostel.com/register</a>. Upload a means of identity (School ID Card, Voter's Card or NIN) and start creating hostels.</div>
-														<!--end::Text-->
-													</div>
-													<!--end::Content-->
-													<!--begin::Separator-->
-													<div class="separator separator-dashed"></div>
-													<!--end::Separator-->
-												</div>
-												<!--end::Section-->
-												<!--begin::Section-->
-												<div class="m-0">
-													<!--begin::Heading-->
-													<div class="d-flex align-items-center collapsible py-3 toggle collapsed mb-0" data-bs-toggle="collapse" data-bs-target="#kt_job_4_3">
-														<!--begin::Icon-->
-														<div class="btn btn-sm btn-icon mw-20px btn-active-color-primary me-5">
-															<!--begin::Svg Icon | path: icons/duotone/Interface/Minus-Square.svg-->
-															<span class="svg-icon toggle-on svg-icon-primary svg-icon-1">
-																<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-																	<path opacity="0.25" d="M6.54184 2.36899C4.34504 2.65912 2.65912 4.34504 2.36899 6.54184C2.16953 8.05208 2 9.94127 2 12C2 14.0587 2.16953 15.9479 2.36899 17.4582C2.65912 19.655 4.34504 21.3409 6.54184 21.631C8.05208 21.8305 9.94127 22 12 22C14.0587 22 15.9479 21.8305 17.4582 21.631C19.655 21.3409 21.3409 19.655 21.631 17.4582C21.8305 15.9479 22 14.0587 22 12C22 9.94127 21.8305 8.05208 21.631 6.54184C21.3409 4.34504 19.655 2.65912 17.4582 2.36899C15.9479 2.16953 14.0587 2 12 2C9.94127 2 8.05208 2.16953 6.54184 2.36899Z" fill="#12131A" />
-																	<path d="M8 13C7.44772 13 7 12.5523 7 12C7 11.4477 7.44772 11 8 11H16C16.5523 11 17 11.4477 17 12C17 12.5523 16.5523 13 16 13H8Z" fill="#12131A" />
-																</svg>
-															</span>
-															<!--end::Svg Icon-->
-															<!--begin::Svg Icon | path: icons/duotone/Interface/Plus-Square.svg-->
-															<span class="svg-icon toggle-off svg-icon-1">
-																<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-																	<path opacity="0.25" fill-rule="evenodd" clip-rule="evenodd" d="M6.54184 2.36899C4.34504 2.65912 2.65912 4.34504 2.36899 6.54184C2.16953 8.05208 2 9.94127 2 12C2 14.0587 2.16953 15.9479 2.36899 17.4582C2.65912 19.655 4.34504 21.3409 6.54184 21.631C8.05208 21.8305 9.94127 22 12 22C14.0587 22 15.9479 21.8305 17.4582 21.631C19.655 21.3409 21.3409 19.655 21.631 17.4582C21.8305 15.9479 22 14.0587 22 12C22 9.94127 21.8305 8.05208 21.631 6.54184C21.3409 4.34504 19.655 2.65912 17.4582 2.36899C15.9479 2.16953 14.0587 2 12 2C9.94127 2 8.05208 2.16953 6.54184 2.36899Z" fill="#12131A" />
-																	<path fill-rule="evenodd" clip-rule="evenodd" d="M12 17C12.5523 17 13 16.5523 13 16V13H16C16.5523 13 17 12.5523 17 12C17 11.4477 16.5523 11 16 11H13V8C13 7.44772 12.5523 7 12 7C11.4477 7 11 7.44772 11 8V11H8C7.44772 11 7 11.4477 7 12C7 12.5523 7.44771 13 8 13H11V16C11 16.5523 11.4477 17 12 17Z" fill="#12131A" />
-																</svg>
-															</span>
-															<!--end::Svg Icon-->
-														</div>
-														<!--end::Icon-->
-														<!--begin::Title-->
-														<h4 class="text-gray-700 fw-bolder cursor-pointer mb-0">How will CTHostel helps me to advertise my hostel better?</h4>
-														<!--end::Title-->
-													</div>
-													<!--end::Heading-->
-													<!--begin::Body-->
-													<div id="kt_job_4_3" class="collapse fs-6 ms-1">
-														<!--begin::Text-->
-														<div class="mb-4 text-gray-600 fw-bold fs-6 ps-10">CTHostels provide adequate marketing techniques to help increase the publicity of your hostel. First, we make your hostel globally visible and available, we run ads on other popular websites, and we connect to the most popular influencers in each school to help reach a greater audience.</div>
-														<!--end::Text-->
-													</div>
-													<!--end::Content-->
-													<!--begin::Separator-->
-													<div class="separator separator-dashed"></div>
-													<!--end::Separator-->
-												</div>
-												<!--end::Section-->
-												<!--begin::Section-->
-												<div class="m-0">
-													<!--begin::Heading-->
-													<div class="d-flex align-items-center collapsible py-3 toggle collapsed mb-0" data-bs-toggle="collapse" data-bs-target="#kt_job_4_4">
-														<!--begin::Icon-->
-														<div class="btn btn-sm btn-icon mw-20px btn-active-color-primary me-5">
-															<!--begin::Svg Icon | path: icons/duotone/Interface/Minus-Square.svg-->
-															<span class="svg-icon toggle-on svg-icon-primary svg-icon-1">
-																<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-																	<path opacity="0.25" d="M6.54184 2.36899C4.34504 2.65912 2.65912 4.34504 2.36899 6.54184C2.16953 8.05208 2 9.94127 2 12C2 14.0587 2.16953 15.9479 2.36899 17.4582C2.65912 19.655 4.34504 21.3409 6.54184 21.631C8.05208 21.8305 9.94127 22 12 22C14.0587 22 15.9479 21.8305 17.4582 21.631C19.655 21.3409 21.3409 19.655 21.631 17.4582C21.8305 15.9479 22 14.0587 22 12C22 9.94127 21.8305 8.05208 21.631 6.54184C21.3409 4.34504 19.655 2.65912 17.4582 2.36899C15.9479 2.16953 14.0587 2 12 2C9.94127 2 8.05208 2.16953 6.54184 2.36899Z" fill="#12131A" />
-																	<path d="M8 13C7.44772 13 7 12.5523 7 12C7 11.4477 7.44772 11 8 11H16C16.5523 11 17 11.4477 17 12C17 12.5523 16.5523 13 16 13H8Z" fill="#12131A" />
-																</svg>
-															</span>
-															<!--end::Svg Icon-->
-															<!--begin::Svg Icon | path: icons/duotone/Interface/Plus-Square.svg-->
-															<span class="svg-icon toggle-off svg-icon-1">
-																<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-																	<path opacity="0.25" fill-rule="evenodd" clip-rule="evenodd" d="M6.54184 2.36899C4.34504 2.65912 2.65912 4.34504 2.36899 6.54184C2.16953 8.05208 2 9.94127 2 12C2 14.0587 2.16953 15.9479 2.36899 17.4582C2.65912 19.655 4.34504 21.3409 6.54184 21.631C8.05208 21.8305 9.94127 22 12 22C14.0587 22 15.9479 21.8305 17.4582 21.631C19.655 21.3409 21.3409 19.655 21.631 17.4582C21.8305 15.9479 22 14.0587 22 12C22 9.94127 21.8305 8.05208 21.631 6.54184C21.3409 4.34504 19.655 2.65912 17.4582 2.36899C15.9479 2.16953 14.0587 2 12 2C9.94127 2 8.05208 2.16953 6.54184 2.36899Z" fill="#12131A" />
-																	<path fill-rule="evenodd" clip-rule="evenodd" d="M12 17C12.5523 17 13 16.5523 13 16V13H16C16.5523 13 17 12.5523 17 12C17 11.4477 16.5523 11 16 11H13V8C13 7.44772 12.5523 7 12 7C11.4477 7 11 7.44772 11 8V11H8C7.44772 11 7 11.4477 7 12C7 12.5523 7.44771 13 8 13H11V16C11 16.5523 11.4477 17 12 17Z" fill="#12131A" />
-																</svg>
-															</span>
-															<!--end::Svg Icon-->
-														</div>
-														<!--end::Icon-->
-														<!--begin::Title-->
-														<h4 class="text-gray-700 fw-bolder cursor-pointer mb-0">Can I get my own personal page for all my hostels?</h4>
-														<!--end::Title-->
-													</div>
-													<!--end::Heading-->
-													<!--begin::Body-->
-													<div id="kt_job_4_4" class="collapse fs-6 ms-1">
-														<!--begin::Text-->
-														<div class="mb-4 text-gray-600 fw-bold fs-6 ps-10">Yes, CTHostels provide each agent with their own personal page that comprises of hostels only created by them. This could serve as a personal portfolio or website to showcase all hostels created by you.</div>
-														<!--end::Text-->
-													</div>
-													<!--end::Content-->
-												</div>
-												<!--end::Section-->
-												<!--end::Accordion-->
-											</div>
-											<!--end::Col-->
-											<!--begin::Col-->
-											<div class="col-md-6 ps-md-10">
-												<!--begin::Title-->
-												<h2 class="text-gray-800 fw-bolder mb-4">Questions Partaining To Student</h2>
-												<!--end::Title-->
-												<!--begin::Accordion-->
-												<!--begin::Section-->
-												<div class="m-0">
-													<!--begin::Heading-->
-													<div class="d-flex align-items-center collapsible py-3 toggle mb-0" data-bs-toggle="collapse" data-bs-target="#kt_job_5_1">
-														<!--begin::Icon-->
-														<div class="btn btn-sm btn-icon mw-20px btn-active-color-primary me-5">
-															<!--begin::Svg Icon | path: icons/duotone/Interface/Minus-Square.svg-->
-															<span class="svg-icon toggle-on svg-icon-primary svg-icon-1">
-																<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-																	<path opacity="0.25" d="M6.54184 2.36899C4.34504 2.65912 2.65912 4.34504 2.36899 6.54184C2.16953 8.05208 2 9.94127 2 12C2 14.0587 2.16953 15.9479 2.36899 17.4582C2.65912 19.655 4.34504 21.3409 6.54184 21.631C8.05208 21.8305 9.94127 22 12 22C14.0587 22 15.9479 21.8305 17.4582 21.631C19.655 21.3409 21.3409 19.655 21.631 17.4582C21.8305 15.9479 22 14.0587 22 12C22 9.94127 21.8305 8.05208 21.631 6.54184C21.3409 4.34504 19.655 2.65912 17.4582 2.36899C15.9479 2.16953 14.0587 2 12 2C9.94127 2 8.05208 2.16953 6.54184 2.36899Z" fill="#12131A" />
-																	<path d="M8 13C7.44772 13 7 12.5523 7 12C7 11.4477 7.44772 11 8 11H16C16.5523 11 17 11.4477 17 12C17 12.5523 16.5523 13 16 13H8Z" fill="#12131A" />
-																</svg>
-															</span>
-															<!--end::Svg Icon-->
-															<!--begin::Svg Icon | path: icons/duotone/Interface/Plus-Square.svg-->
-															<span class="svg-icon toggle-off svg-icon-1">
-																<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-																	<path opacity="0.25" fill-rule="evenodd" clip-rule="evenodd" d="M6.54184 2.36899C4.34504 2.65912 2.65912 4.34504 2.36899 6.54184C2.16953 8.05208 2 9.94127 2 12C2 14.0587 2.16953 15.9479 2.36899 17.4582C2.65912 19.655 4.34504 21.3409 6.54184 21.631C8.05208 21.8305 9.94127 22 12 22C14.0587 22 15.9479 21.8305 17.4582 21.631C19.655 21.3409 21.3409 19.655 21.631 17.4582C21.8305 15.9479 22 14.0587 22 12C22 9.94127 21.8305 8.05208 21.631 6.54184C21.3409 4.34504 19.655 2.65912 17.4582 2.36899C15.9479 2.16953 14.0587 2 12 2C9.94127 2 8.05208 2.16953 6.54184 2.36899Z" fill="#12131A" />
-																	<path fill-rule="evenodd" clip-rule="evenodd" d="M12 17C12.5523 17 13 16.5523 13 16V13H16C16.5523 13 17 12.5523 17 12C17 11.4477 16.5523 11 16 11H13V8C13 7.44772 12.5523 7 12 7C11.4477 7 11 7.44772 11 8V11H8C7.44772 11 7 11.4477 7 12C7 12.5523 7.44771 13 8 13H11V16C11 16.5523 11.4477 17 12 17Z" fill="#12131A" />
-																</svg>
-															</span>
-															<!--end::Svg Icon-->
-														</div>
-														<!--end::Icon-->
-														<!--begin::Title-->
-														<h4 class="text-gray-700 fw-bolder cursor-pointer mb-0">How am I sure I am not going to get scammed by any agent?</h4>
-														<!--end::Title-->
-													</div>
-													<!--end::Heading-->
-													<!--begin::Body-->
-													<div id="kt_job_5_1" class="collapse show fs-6 ms-1">
-														<!--begin::Text-->
-														<div class="mb-4 text-gray-600 fw-bold fs-6 ps-10">All agents from CTHostel are reliable,it is advisable to always access your hostel before making payments or find someone you know to do it for you in case you are not available.</div>
-														<!--end::Text-->
-													</div>
-													<!--end::Content-->
-													<!--begin::Separator-->
-													<div class="separator separator-dashed"></div>
-													<!--end::Separator-->
-												</div>
-												<!--end::Section-->
-												<!--begin::Section-->
-												<div class="m-0">
-													<!--begin::Heading-->
-													<div class="d-flex align-items-center collapsible py-3 toggle collapsed mb-0" data-bs-toggle="collapse" data-bs-target="#kt_job_5_2">
-														<!--begin::Icon-->
-														<div class="btn btn-sm btn-icon mw-20px btn-active-color-primary me-5">
-															<!--begin::Svg Icon | path: icons/duotone/Interface/Minus-Square.svg-->
-															<span class="svg-icon toggle-on svg-icon-primary svg-icon-1">
-																<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-																	<path opacity="0.25" d="M6.54184 2.36899C4.34504 2.65912 2.65912 4.34504 2.36899 6.54184C2.16953 8.05208 2 9.94127 2 12C2 14.0587 2.16953 15.9479 2.36899 17.4582C2.65912 19.655 4.34504 21.3409 6.54184 21.631C8.05208 21.8305 9.94127 22 12 22C14.0587 22 15.9479 21.8305 17.4582 21.631C19.655 21.3409 21.3409 19.655 21.631 17.4582C21.8305 15.9479 22 14.0587 22 12C22 9.94127 21.8305 8.05208 21.631 6.54184C21.3409 4.34504 19.655 2.65912 17.4582 2.36899C15.9479 2.16953 14.0587 2 12 2C9.94127 2 8.05208 2.16953 6.54184 2.36899Z" fill="#12131A" />
-																	<path d="M8 13C7.44772 13 7 12.5523 7 12C7 11.4477 7.44772 11 8 11H16C16.5523 11 17 11.4477 17 12C17 12.5523 16.5523 13 16 13H8Z" fill="#12131A" />
-																</svg>
-															</span>
-															<!--end::Svg Icon-->
-															<!--begin::Svg Icon | path: icons/duotone/Interface/Plus-Square.svg-->
-															<span class="svg-icon toggle-off svg-icon-1">
-																<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-																	<path opacity="0.25" fill-rule="evenodd" clip-rule="evenodd" d="M6.54184 2.36899C4.34504 2.65912 2.65912 4.34504 2.36899 6.54184C2.16953 8.05208 2 9.94127 2 12C2 14.0587 2.16953 15.9479 2.36899 17.4582C2.65912 19.655 4.34504 21.3409 6.54184 21.631C8.05208 21.8305 9.94127 22 12 22C14.0587 22 15.9479 21.8305 17.4582 21.631C19.655 21.3409 21.3409 19.655 21.631 17.4582C21.8305 15.9479 22 14.0587 22 12C22 9.94127 21.8305 8.05208 21.631 6.54184C21.3409 4.34504 19.655 2.65912 17.4582 2.36899C15.9479 2.16953 14.0587 2 12 2C9.94127 2 8.05208 2.16953 6.54184 2.36899Z" fill="#12131A" />
-																	<path fill-rule="evenodd" clip-rule="evenodd" d="M12 17C12.5523 17 13 16.5523 13 16V13H16C16.5523 13 17 12.5523 17 12C17 11.4477 16.5523 11 16 11H13V8C13 7.44772 12.5523 7 12 7C11.4477 7 11 7.44772 11 8V11H8C7.44772 11 7 11.4477 7 12C7 12.5523 7.44771 13 8 13H11V16C11 16.5523 11.4477 17 12 17Z" fill="#12131A" />
-																</svg>
-															</span>
-															<!--end::Svg Icon-->
-														</div>
-														<!--end::Icon-->
-														<!--begin::Title-->
-														<h4 class="text-gray-700 fw-bolder cursor-pointer mb-0">What if the hostel is fully occupied?</h4>
-														<!--end::Title-->
-													</div>
-													<!--end::Heading-->
-													<!--begin::Body-->
-													<div id="kt_job_5_2" class="collapse fs-6 ms-1">
-														<!--begin::Text-->
-														<div class="mb-4 text-gray-600 fw-bold fs-6 ps-10">CTHostel saves you the stress of determining if an hostel is fully occupied or not, we filter and display only hostels that are yet to be fully occupied by students.</div>
-														<!--end::Text-->
-													</div>
-													<!--end::Content-->
-													<!--begin::Separator-->
-													<div class="separator separator-dashed"></div>
-													<!--end::Separator-->
-												</div>
-												<!--end::Section-->
-												<!--begin::Section-->
-												<div class="m-0">
-													<!--begin::Heading-->
-													<div class="d-flex align-items-center collapsible py-3 toggle collapsed mb-0" data-bs-toggle="collapse" data-bs-target="#kt_job_5_3">
-														<!--begin::Icon-->
-														<div class="btn btn-sm btn-icon mw-20px btn-active-color-primary me-5">
-															<!--begin::Svg Icon | path: icons/duotone/Interface/Minus-Square.svg-->
-															<span class="svg-icon toggle-on svg-icon-primary svg-icon-1">
-																<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-																	<path opacity="0.25" d="M6.54184 2.36899C4.34504 2.65912 2.65912 4.34504 2.36899 6.54184C2.16953 8.05208 2 9.94127 2 12C2 14.0587 2.16953 15.9479 2.36899 17.4582C2.65912 19.655 4.34504 21.3409 6.54184 21.631C8.05208 21.8305 9.94127 22 12 22C14.0587 22 15.9479 21.8305 17.4582 21.631C19.655 21.3409 21.3409 19.655 21.631 17.4582C21.8305 15.9479 22 14.0587 22 12C22 9.94127 21.8305 8.05208 21.631 6.54184C21.3409 4.34504 19.655 2.65912 17.4582 2.36899C15.9479 2.16953 14.0587 2 12 2C9.94127 2 8.05208 2.16953 6.54184 2.36899Z" fill="#12131A" />
-																	<path d="M8 13C7.44772 13 7 12.5523 7 12C7 11.4477 7.44772 11 8 11H16C16.5523 11 17 11.4477 17 12C17 12.5523 16.5523 13 16 13H8Z" fill="#12131A" />
-																</svg>
-															</span>
-															<!--end::Svg Icon-->
-															<!--begin::Svg Icon | path: icons/duotone/Interface/Plus-Square.svg-->
-															<span class="svg-icon toggle-off svg-icon-1">
-																<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-																	<path opacity="0.25" fill-rule="evenodd" clip-rule="evenodd" d="M6.54184 2.36899C4.34504 2.65912 2.65912 4.34504 2.36899 6.54184C2.16953 8.05208 2 9.94127 2 12C2 14.0587 2.16953 15.9479 2.36899 17.4582C2.65912 19.655 4.34504 21.3409 6.54184 21.631C8.05208 21.8305 9.94127 22 12 22C14.0587 22 15.9479 21.8305 17.4582 21.631C19.655 21.3409 21.3409 19.655 21.631 17.4582C21.8305 15.9479 22 14.0587 22 12C22 9.94127 21.8305 8.05208 21.631 6.54184C21.3409 4.34504 19.655 2.65912 17.4582 2.36899C15.9479 2.16953 14.0587 2 12 2C9.94127 2 8.05208 2.16953 6.54184 2.36899Z" fill="#12131A" />
-																	<path fill-rule="evenodd" clip-rule="evenodd" d="M12 17C12.5523 17 13 16.5523 13 16V13H16C16.5523 13 17 12.5523 17 12C17 11.4477 16.5523 11 16 11H13V8C13 7.44772 12.5523 7 12 7C11.4477 7 11 7.44772 11 8V11H8C7.44772 11 7 11.4477 7 12C7 12.5523 7.44771 13 8 13H11V16C11 16.5523 11.4477 17 12 17Z" fill="#12131A" />
-																</svg>
-															</span>
-															<!--end::Svg Icon-->
-														</div>
-														<!--end::Icon-->
-														<!--begin::Title-->
-														<h4 class="text-gray-700 fw-bolder cursor-pointer mb-0">What if I have half of the price of the hostel?</h4>
-														<!--end::Title-->
-													</div>
-													<!--end::Heading-->
-													<!--begin::Body-->
-													<div id="kt_job_5_3" class="collapse fs-6 ms-1">
-														<!--begin::Text-->
-														<div class="mb-4 text-gray-600 fw-bold fs-6 ps-10">CTHostel provides you an option to get any hostel of your choice even if you have half of the hostel fee,all you need to do is to request for roommate for that particular hostel on our portal, your request will be kept with us and we will notify you immediatley we get a roommate for you.</div>
-														<!--end::Text-->
-													</div>
-													<!--end::Content-->
-													<!--begin::Separator-->
-													<div class="separator separator-dashed"></div>
-													<!--end::Separator-->
-												</div>
-												<!--end::Section-->
-												<!--begin::Section-->
-												<div class="m-0">
-													<!--begin::Heading-->
-													<div class="d-flex align-items-center collapsible py-3 toggle collapsed mb-0" data-bs-toggle="collapse" data-bs-target="#kt_job_5_4">
-														<!--begin::Icon-->
-														<div class="btn btn-sm btn-icon mw-20px btn-active-color-primary me-5">
-															<!--begin::Svg Icon | path: icons/duotone/Interface/Minus-Square.svg-->
-															<span class="svg-icon toggle-on svg-icon-primary svg-icon-1">
-																<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-																	<path opacity="0.25" d="M6.54184 2.36899C4.34504 2.65912 2.65912 4.34504 2.36899 6.54184C2.16953 8.05208 2 9.94127 2 12C2 14.0587 2.16953 15.9479 2.36899 17.4582C2.65912 19.655 4.34504 21.3409 6.54184 21.631C8.05208 21.8305 9.94127 22 12 22C14.0587 22 15.9479 21.8305 17.4582 21.631C19.655 21.3409 21.3409 19.655 21.631 17.4582C21.8305 15.9479 22 14.0587 22 12C22 9.94127 21.8305 8.05208 21.631 6.54184C21.3409 4.34504 19.655 2.65912 17.4582 2.36899C15.9479 2.16953 14.0587 2 12 2C9.94127 2 8.05208 2.16953 6.54184 2.36899Z" fill="#12131A" />
-																	<path d="M8 13C7.44772 13 7 12.5523 7 12C7 11.4477 7.44772 11 8 11H16C16.5523 11 17 11.4477 17 12C17 12.5523 16.5523 13 16 13H8Z" fill="#12131A" />
-																</svg>
-															</span>
-															<!--end::Svg Icon-->
-															<!--begin::Svg Icon | path: icons/duotone/Interface/Plus-Square.svg-->
-															<span class="svg-icon toggle-off svg-icon-1">
-																<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-																	<path opacity="0.25" fill-rule="evenodd" clip-rule="evenodd" d="M6.54184 2.36899C4.34504 2.65912 2.65912 4.34504 2.36899 6.54184C2.16953 8.05208 2 9.94127 2 12C2 14.0587 2.16953 15.9479 2.36899 17.4582C2.65912 19.655 4.34504 21.3409 6.54184 21.631C8.05208 21.8305 9.94127 22 12 22C14.0587 22 15.9479 21.8305 17.4582 21.631C19.655 21.3409 21.3409 19.655 21.631 17.4582C21.8305 15.9479 22 14.0587 22 12C22 9.94127 21.8305 8.05208 21.631 6.54184C21.3409 4.34504 19.655 2.65912 17.4582 2.36899C15.9479 2.16953 14.0587 2 12 2C9.94127 2 8.05208 2.16953 6.54184 2.36899Z" fill="#12131A" />
-																	<path fill-rule="evenodd" clip-rule="evenodd" d="M12 17C12.5523 17 13 16.5523 13 16V13H16C16.5523 13 17 12.5523 17 12C17 11.4477 16.5523 11 16 11H13V8C13 7.44772 12.5523 7 12 7C11.4477 7 11 7.44772 11 8V11H8C7.44772 11 7 11.4477 7 12C7 12.5523 7.44771 13 8 13H11V16C11 16.5523 11.4477 17 12 17Z" fill="#12131A" />
-																</svg>
-															</span>
-															<!--end::Svg Icon-->
-														</div>
-														<!--end::Icon-->
-														<!--begin::Title-->
-														<h4 class="text-gray-700 fw-bolder cursor-pointer mb-0">How am I sure I am not overcharged for a particular hostel?</h4>
-														<!--end::Title-->
-													</div>
-													<!--end::Heading-->
-													<!--begin::Body-->
-													<div id="kt_job_5_4" class="collapse fs-6 ms-1">
-														<!--begin::Text-->
-														<div class="mb-4 text-gray-600 fw-bold fs-6 ps-10">CTHostel helps in hostel price regulation, we display the best prices of every hostel and we suggest better alternative hostels for you that you can get with almost same amount.</div>
-														<!--end::Text-->
-													</div>
-													<!--end::Content-->
-												</div>
-												<!--end::Section-->
-												<!--end::Accordion-->
-											</div>
-											<!--end::Col-->
-										</div>
-										<!--end::Row-->
-										<!--begin::Row-->
-										<div class="row">
-											<!--begin::Col-->
-											<div class="col-md-6 pe-md-10 mb-10 mb-md-0">
-												<!--begin::Title-->
-												<h2 class="text-gray-800 w-bolder mb-4">Technical Questions</h2>
-												<!--end::Title-->
-												<!--begin::Accordion-->
-												<!--begin::Section-->
-												<div class="m-0">
-													<!--begin::Heading-->
-													<div class="d-flex align-items-center collapsible py-3 toggle mb-0" data-bs-toggle="collapse" data-bs-target="#kt_job_6_1">
-														<!--begin::Icon-->
-														<div class="btn btn-sm btn-icon mw-20px btn-active-color-primary me-5">
-															<!--begin::Svg Icon | path: icons/duotone/Interface/Minus-Square.svg-->
-															<span class="svg-icon toggle-on svg-icon-primary svg-icon-1">
-																<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-																	<path opacity="0.25" d="M6.54184 2.36899C4.34504 2.65912 2.65912 4.34504 2.36899 6.54184C2.16953 8.05208 2 9.94127 2 12C2 14.0587 2.16953 15.9479 2.36899 17.4582C2.65912 19.655 4.34504 21.3409 6.54184 21.631C8.05208 21.8305 9.94127 22 12 22C14.0587 22 15.9479 21.8305 17.4582 21.631C19.655 21.3409 21.3409 19.655 21.631 17.4582C21.8305 15.9479 22 14.0587 22 12C22 9.94127 21.8305 8.05208 21.631 6.54184C21.3409 4.34504 19.655 2.65912 17.4582 2.36899C15.9479 2.16953 14.0587 2 12 2C9.94127 2 8.05208 2.16953 6.54184 2.36899Z" fill="#12131A" />
-																	<path d="M8 13C7.44772 13 7 12.5523 7 12C7 11.4477 7.44772 11 8 11H16C16.5523 11 17 11.4477 17 12C17 12.5523 16.5523 13 16 13H8Z" fill="#12131A" />
-																</svg>
-															</span>
-															<!--end::Svg Icon-->
-															<!--begin::Svg Icon | path: icons/duotone/Interface/Plus-Square.svg-->
-															<span class="svg-icon toggle-off svg-icon-1">
-																<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-																	<path opacity="0.25" fill-rule="evenodd" clip-rule="evenodd" d="M6.54184 2.36899C4.34504 2.65912 2.65912 4.34504 2.36899 6.54184C2.16953 8.05208 2 9.94127 2 12C2 14.0587 2.16953 15.9479 2.36899 17.4582C2.65912 19.655 4.34504 21.3409 6.54184 21.631C8.05208 21.8305 9.94127 22 12 22C14.0587 22 15.9479 21.8305 17.4582 21.631C19.655 21.3409 21.3409 19.655 21.631 17.4582C21.8305 15.9479 22 14.0587 22 12C22 9.94127 21.8305 8.05208 21.631 6.54184C21.3409 4.34504 19.655 2.65912 17.4582 2.36899C15.9479 2.16953 14.0587 2 12 2C9.94127 2 8.05208 2.16953 6.54184 2.36899Z" fill="#12131A" />
-																	<path fill-rule="evenodd" clip-rule="evenodd" d="M12 17C12.5523 17 13 16.5523 13 16V13H16C16.5523 13 17 12.5523 17 12C17 11.4477 16.5523 11 16 11H13V8C13 7.44772 12.5523 7 12 7C11.4477 7 11 7.44772 11 8V11H8C7.44772 11 7 11.4477 7 12C7 12.5523 7.44771 13 8 13H11V16C11 16.5523 11.4477 17 12 17Z" fill="#12131A" />
-																</svg>
-															</span>
-															<!--end::Svg Icon-->
-														</div>
-														<!--end::Icon-->
-														<!--begin::Title-->
-														<h4 class="text-gray-700 fw-bolder cursor-pointer mb-0">What if I forget my password?</h4>
-														<!--end::Title-->
-													</div>
-													<!--end::Heading-->
-													<!--begin::Body-->
-													<div id="kt_job_6_1" class="collapse show fs-6 ms-1">
-														<!--begin::Text-->
-														<div class="mb-4 text-gray-600 fw-bold fs-6 ps-10">An option is made for password recovery for an agent, just click on forgot password on the sign in page and you get a mail to reset your password.</div>
-														<!--end::Text-->
-													</div>
-													<!--end::Content-->
-													<!--begin::Separator-->
-													<div class="separator separator-dashed"></div>
-													<!--end::Separator-->
-												</div>
-												<!--end::Section-->
-												<!--begin::Section-->
-												<div class="m-0">
-													<!--begin::Heading-->
-													<div class="d-flex align-items-center collapsible py-3 toggle collapsed mb-0" data-bs-toggle="collapse" data-bs-target="#kt_job_6_2">
-														<!--begin::Icon-->
-														<div class="btn btn-sm btn-icon mw-20px btn-active-color-primary me-5">
-															<!--begin::Svg Icon | path: icons/duotone/Interface/Minus-Square.svg-->
-															<span class="svg-icon toggle-on svg-icon-primary svg-icon-1">
-																<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-																	<path opacity="0.25" d="M6.54184 2.36899C4.34504 2.65912 2.65912 4.34504 2.36899 6.54184C2.16953 8.05208 2 9.94127 2 12C2 14.0587 2.16953 15.9479 2.36899 17.4582C2.65912 19.655 4.34504 21.3409 6.54184 21.631C8.05208 21.8305 9.94127 22 12 22C14.0587 22 15.9479 21.8305 17.4582 21.631C19.655 21.3409 21.3409 19.655 21.631 17.4582C21.8305 15.9479 22 14.0587 22 12C22 9.94127 21.8305 8.05208 21.631 6.54184C21.3409 4.34504 19.655 2.65912 17.4582 2.36899C15.9479 2.16953 14.0587 2 12 2C9.94127 2 8.05208 2.16953 6.54184 2.36899Z" fill="#12131A" />
-																	<path d="M8 13C7.44772 13 7 12.5523 7 12C7 11.4477 7.44772 11 8 11H16C16.5523 11 17 11.4477 17 12C17 12.5523 16.5523 13 16 13H8Z" fill="#12131A" />
-																</svg>
-															</span>
-															<!--end::Svg Icon-->
-															<!--begin::Svg Icon | path: icons/duotone/Interface/Plus-Square.svg-->
-															<span class="svg-icon toggle-off svg-icon-1">
-																<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-																	<path opacity="0.25" fill-rule="evenodd" clip-rule="evenodd" d="M6.54184 2.36899C4.34504 2.65912 2.65912 4.34504 2.36899 6.54184C2.16953 8.05208 2 9.94127 2 12C2 14.0587 2.16953 15.9479 2.36899 17.4582C2.65912 19.655 4.34504 21.3409 6.54184 21.631C8.05208 21.8305 9.94127 22 12 22C14.0587 22 15.9479 21.8305 17.4582 21.631C19.655 21.3409 21.3409 19.655 21.631 17.4582C21.8305 15.9479 22 14.0587 22 12C22 9.94127 21.8305 8.05208 21.631 6.54184C21.3409 4.34504 19.655 2.65912 17.4582 2.36899C15.9479 2.16953 14.0587 2 12 2C9.94127 2 8.05208 2.16953 6.54184 2.36899Z" fill="#12131A" />
-																	<path fill-rule="evenodd" clip-rule="evenodd" d="M12 17C12.5523 17 13 16.5523 13 16V13H16C16.5523 13 17 12.5523 17 12C17 11.4477 16.5523 11 16 11H13V8C13 7.44772 12.5523 7 12 7C11.4477 7 11 7.44772 11 8V11H8C7.44772 11 7 11.4477 7 12C7 12.5523 7.44771 13 8 13H11V16C11 16.5523 11.4477 17 12 17Z" fill="#12131A" />
-																</svg>
-															</span>
-															<!--end::Svg Icon-->
-														</div>
-														<!--end::Icon-->
-														<!--begin::Title-->
-														<h4 class="text-gray-700 fw-bolder cursor-pointer mb-0">Can I create hostel in another school?</h4>
-														<!--end::Title-->
-													</div>
-													<!--end::Heading-->
-													<!--begin::Body-->
-													<div id="kt_job_6_2" class="collapse fs-6 ms-1">
-														<!--begin::Text-->
-														<div class="mb-4 text-gray-600 fw-bold fs-6 ps-10">Yes, CTHostel now support creation of hostels in other institutions, so far you in charge of that hostel.</div>
-														<!--end::Text-->
-													</div>
-													<!--end::Content-->
-													<!--begin::Separator-->
-													<div class="separator separator-dashed"></div>
-													<!--end::Separator-->
-												</div>
-												<!--end::Section-->
-												<!--begin::Section-->
-												<div class="m-0">
-													<!--begin::Heading-->
-													<div class="d-flex align-items-center collapsible py-3 toggle collapsed mb-0" data-bs-toggle="collapse" data-bs-target="#kt_job_6_3">
-														<!--begin::Icon-->
-														<div class="btn btn-sm btn-icon mw-20px btn-active-color-primary me-5">
-															<!--begin::Svg Icon | path: icons/duotone/Interface/Minus-Square.svg-->
-															<span class="svg-icon toggle-on svg-icon-primary svg-icon-1">
-																<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-																	<path opacity="0.25" d="M6.54184 2.36899C4.34504 2.65912 2.65912 4.34504 2.36899 6.54184C2.16953 8.05208 2 9.94127 2 12C2 14.0587 2.16953 15.9479 2.36899 17.4582C2.65912 19.655 4.34504 21.3409 6.54184 21.631C8.05208 21.8305 9.94127 22 12 22C14.0587 22 15.9479 21.8305 17.4582 21.631C19.655 21.3409 21.3409 19.655 21.631 17.4582C21.8305 15.9479 22 14.0587 22 12C22 9.94127 21.8305 8.05208 21.631 6.54184C21.3409 4.34504 19.655 2.65912 17.4582 2.36899C15.9479 2.16953 14.0587 2 12 2C9.94127 2 8.05208 2.16953 6.54184 2.36899Z" fill="#12131A" />
-																	<path d="M8 13C7.44772 13 7 12.5523 7 12C7 11.4477 7.44772 11 8 11H16C16.5523 11 17 11.4477 17 12C17 12.5523 16.5523 13 16 13H8Z" fill="#12131A" />
-																</svg>
-															</span>
-															<!--end::Svg Icon-->
-															<!--begin::Svg Icon | path: icons/duotone/Interface/Plus-Square.svg-->
-															<span class="svg-icon toggle-off svg-icon-1">
-																<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-																	<path opacity="0.25" fill-rule="evenodd" clip-rule="evenodd" d="M6.54184 2.36899C4.34504 2.65912 2.65912 4.34504 2.36899 6.54184C2.16953 8.05208 2 9.94127 2 12C2 14.0587 2.16953 15.9479 2.36899 17.4582C2.65912 19.655 4.34504 21.3409 6.54184 21.631C8.05208 21.8305 9.94127 22 12 22C14.0587 22 15.9479 21.8305 17.4582 21.631C19.655 21.3409 21.3409 19.655 21.631 17.4582C21.8305 15.9479 22 14.0587 22 12C22 9.94127 21.8305 8.05208 21.631 6.54184C21.3409 4.34504 19.655 2.65912 17.4582 2.36899C15.9479 2.16953 14.0587 2 12 2C9.94127 2 8.05208 2.16953 6.54184 2.36899Z" fill="#12131A" />
-																	<path fill-rule="evenodd" clip-rule="evenodd" d="M12 17C12.5523 17 13 16.5523 13 16V13H16C16.5523 13 17 12.5523 17 12C17 11.4477 16.5523 11 16 11H13V8C13 7.44772 12.5523 7 12 7C11.4477 7 11 7.44772 11 8V11H8C7.44772 11 7 11.4477 7 12C7 12.5523 7.44771 13 8 13H11V16C11 16.5523 11.4477 17 12 17Z" fill="#12131A" />
-																</svg>
-															</span>
-															<!--end::Svg Icon-->
-														</div>
-														<!--end::Icon-->
-														<!--begin::Title-->
-														<h4 class="text-gray-700 fw-bolder cursor-pointer mb-0">What if I see a server error?</h4>
-														<!--end::Title-->
-													</div>
-													<!--end::Heading-->
-													<!--begin::Body-->
-													<div id="kt_job_6_3" class="collapse fs-6 ms-1">
-														<!--begin::Text-->
-														<div class="mb-4 text-gray-600 fw-bold fs-6 ps-10"><a href='tel:9058744473'>Contact us</a> immediataly when you come across any form of error on our website, either as an agent or as a student.</div>
-														<!--end::Text-->
-													</div>
-													<!--end::Content-->
-													<!--begin::Separator-->
-													<div class="separator separator-dashed"></div>
-													<!--end::Separator-->
-												</div>
-												<!--end::Section-->
-												<!--begin::Section-->
-												<div class="m-0">
-													<!--begin::Heading-->
-													<div class="d-flex align-items-center collapsible py-3 toggle collapsed mb-0" data-bs-toggle="collapse" data-bs-target="#kt_job_6_4">
-														<!--begin::Icon-->
-														<div class="btn btn-sm btn-icon mw-20px btn-active-color-primary me-5">
-															<!--begin::Svg Icon | path: icons/duotone/Interface/Minus-Square.svg-->
-															<span class="svg-icon toggle-on svg-icon-primary svg-icon-1">
-																<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-																	<path opacity="0.25" d="M6.54184 2.36899C4.34504 2.65912 2.65912 4.34504 2.36899 6.54184C2.16953 8.05208 2 9.94127 2 12C2 14.0587 2.16953 15.9479 2.36899 17.4582C2.65912 19.655 4.34504 21.3409 6.54184 21.631C8.05208 21.8305 9.94127 22 12 22C14.0587 22 15.9479 21.8305 17.4582 21.631C19.655 21.3409 21.3409 19.655 21.631 17.4582C21.8305 15.9479 22 14.0587 22 12C22 9.94127 21.8305 8.05208 21.631 6.54184C21.3409 4.34504 19.655 2.65912 17.4582 2.36899C15.9479 2.16953 14.0587 2 12 2C9.94127 2 8.05208 2.16953 6.54184 2.36899Z" fill="#12131A" />
-																	<path d="M8 13C7.44772 13 7 12.5523 7 12C7 11.4477 7.44772 11 8 11H16C16.5523 11 17 11.4477 17 12C17 12.5523 16.5523 13 16 13H8Z" fill="#12131A" />
-																</svg>
-															</span>
-															<!--end::Svg Icon-->
-															<!--begin::Svg Icon | path: icons/duotone/Interface/Plus-Square.svg-->
-															<span class="svg-icon toggle-off svg-icon-1">
-																<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-																	<path opacity="0.25" fill-rule="evenodd" clip-rule="evenodd" d="M6.54184 2.36899C4.34504 2.65912 2.65912 4.34504 2.36899 6.54184C2.16953 8.05208 2 9.94127 2 12C2 14.0587 2.16953 15.9479 2.36899 17.4582C2.65912 19.655 4.34504 21.3409 6.54184 21.631C8.05208 21.8305 9.94127 22 12 22C14.0587 22 15.9479 21.8305 17.4582 21.631C19.655 21.3409 21.3409 19.655 21.631 17.4582C21.8305 15.9479 22 14.0587 22 12C22 9.94127 21.8305 8.05208 21.631 6.54184C21.3409 4.34504 19.655 2.65912 17.4582 2.36899C15.9479 2.16953 14.0587 2 12 2C9.94127 2 8.05208 2.16953 6.54184 2.36899Z" fill="#12131A" />
-																	<path fill-rule="evenodd" clip-rule="evenodd" d="M12 17C12.5523 17 13 16.5523 13 16V13H16C16.5523 13 17 12.5523 17 12C17 11.4477 16.5523 11 16 11H13V8C13 7.44772 12.5523 7 12 7C11.4477 7 11 7.44772 11 8V11H8C7.44772 11 7 11.4477 7 12C7 12.5523 7.44771 13 8 13H11V16C11 16.5523 11.4477 17 12 17Z" fill="#12131A" />
-																</svg>
-															</span>
-															<!--end::Svg Icon-->
-														</div>
-														<!--end::Icon-->
-														<!--begin::Title-->
-														<h4 class="text-gray-700 fw-bolder cursor-pointer mb-0">Why is the website loading slow?</h4>
-														<!--end::Title-->
-													</div>
-													<!--end::Heading-->
-													<!--begin::Body-->
-													<div id="kt_job_6_4" class="collapse fs-6 ms-1">
-														<!--begin::Text-->
-														<div class="mb-4 text-gray-600 fw-bold fs-6 ps-10">CTHostel is very fast and powerful, if you experience any delay in operation, check your internet connection status.</div>
-														<!--end::Text-->
-													</div>
-													<!--end::Content-->
-												</div>
-												<!--end::Section-->
-												<!--end::Accordion-->
-											</div>
-											<!--end::Col-->
-											<!--begin::Col-->
-											<div class="col-md-6 ps-md-10">
-												<!--begin::Title-->
-												<h2 class="text-gray-800 fw-bolder mb-4">Other Questions</h2>
-												<!--end::Title-->
-												<!--begin::Accordion-->
-												<!--begin::Section-->
-												<div class="m-0">
-													<!--begin::Heading-->
-													<div class="d-flex align-items-center collapsible py-3 toggle mb-0" data-bs-toggle="collapse" data-bs-target="#kt_job_7_1">
-														<!--begin::Icon-->
-														<div class="btn btn-sm btn-icon mw-20px btn-active-color-primary me-5">
-															<!--begin::Svg Icon | path: icons/duotone/Interface/Minus-Square.svg-->
-															<span class="svg-icon toggle-on svg-icon-primary svg-icon-1">
-																<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-																	<path opacity="0.25" d="M6.54184 2.36899C4.34504 2.65912 2.65912 4.34504 2.36899 6.54184C2.16953 8.05208 2 9.94127 2 12C2 14.0587 2.16953 15.9479 2.36899 17.4582C2.65912 19.655 4.34504 21.3409 6.54184 21.631C8.05208 21.8305 9.94127 22 12 22C14.0587 22 15.9479 21.8305 17.4582 21.631C19.655 21.3409 21.3409 19.655 21.631 17.4582C21.8305 15.9479 22 14.0587 22 12C22 9.94127 21.8305 8.05208 21.631 6.54184C21.3409 4.34504 19.655 2.65912 17.4582 2.36899C15.9479 2.16953 14.0587 2 12 2C9.94127 2 8.05208 2.16953 6.54184 2.36899Z" fill="#12131A" />
-																	<path d="M8 13C7.44772 13 7 12.5523 7 12C7 11.4477 7.44772 11 8 11H16C16.5523 11 17 11.4477 17 12C17 12.5523 16.5523 13 16 13H8Z" fill="#12131A" />
-																</svg>
-															</span>
-															<!--end::Svg Icon-->
-															<!--begin::Svg Icon | path: icons/duotone/Interface/Plus-Square.svg-->
-															<span class="svg-icon toggle-off svg-icon-1">
-																<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-																	<path opacity="0.25" fill-rule="evenodd" clip-rule="evenodd" d="M6.54184 2.36899C4.34504 2.65912 2.65912 4.34504 2.36899 6.54184C2.16953 8.05208 2 9.94127 2 12C2 14.0587 2.16953 15.9479 2.36899 17.4582C2.65912 19.655 4.34504 21.3409 6.54184 21.631C8.05208 21.8305 9.94127 22 12 22C14.0587 22 15.9479 21.8305 17.4582 21.631C19.655 21.3409 21.3409 19.655 21.631 17.4582C21.8305 15.9479 22 14.0587 22 12C22 9.94127 21.8305 8.05208 21.631 6.54184C21.3409 4.34504 19.655 2.65912 17.4582 2.36899C15.9479 2.16953 14.0587 2 12 2C9.94127 2 8.05208 2.16953 6.54184 2.36899Z" fill="#12131A" />
-																	<path fill-rule="evenodd" clip-rule="evenodd" d="M12 17C12.5523 17 13 16.5523 13 16V13H16C16.5523 13 17 12.5523 17 12C17 11.4477 16.5523 11 16 11H13V8C13 7.44772 12.5523 7 12 7C11.4477 7 11 7.44772 11 8V11H8C7.44772 11 7 11.4477 7 12C7 12.5523 7.44771 13 8 13H11V16C11 16.5523 11.4477 17 12 17Z" fill="#12131A" />
-																</svg>
-															</span>
-															<!--end::Svg Icon-->
-														</div>
-														<!--end::Icon-->
-														<!--begin::Title-->
-														<h4 class="text-gray-700 fw-bolder cursor-pointer mb-0">Is there any way I can report an Agent?</h4>
-														<!--end::Title-->
-													</div>
-													<!--end::Heading-->
-													<!--begin::Body-->
-													<div id="kt_job_7_1" class="collapse show fs-6 ms-1">
-														<!--begin::Text-->
-														<div class="mb-4 text-gray-600 fw-bold fs-6 ps-10">To report any agent's fraudulent act, you can contact us  <a href='tel:9058744473'>here</a> to report such agent.</div>
-														<!--end::Text-->
-													</div>
-													<!--end::Content-->
-													<!--begin::Separator-->
-													<div class="separator separator-dashed"></div>
-													<!--end::Separator-->
-												</div>
-												<!--end::Section-->
-												<!--begin::Section-->
-												<div class="m-0">
-													<!--begin::Heading-->
-													<div class="d-flex align-items-center collapsible py-3 toggle collapsed mb-0" data-bs-toggle="collapse" data-bs-target="#kt_job_7_2">
-														<!--begin::Icon-->
-														<div class="btn btn-sm btn-icon mw-20px btn-active-color-primary me-5">
-															<!--begin::Svg Icon | path: icons/duotone/Interface/Minus-Square.svg-->
-															<span class="svg-icon toggle-on svg-icon-primary svg-icon-1">
-																<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-																	<path opacity="0.25" d="M6.54184 2.36899C4.34504 2.65912 2.65912 4.34504 2.36899 6.54184C2.16953 8.05208 2 9.94127 2 12C2 14.0587 2.16953 15.9479 2.36899 17.4582C2.65912 19.655 4.34504 21.3409 6.54184 21.631C8.05208 21.8305 9.94127 22 12 22C14.0587 22 15.9479 21.8305 17.4582 21.631C19.655 21.3409 21.3409 19.655 21.631 17.4582C21.8305 15.9479 22 14.0587 22 12C22 9.94127 21.8305 8.05208 21.631 6.54184C21.3409 4.34504 19.655 2.65912 17.4582 2.36899C15.9479 2.16953 14.0587 2 12 2C9.94127 2 8.05208 2.16953 6.54184 2.36899Z" fill="#12131A" />
-																	<path d="M8 13C7.44772 13 7 12.5523 7 12C7 11.4477 7.44772 11 8 11H16C16.5523 11 17 11.4477 17 12C17 12.5523 16.5523 13 16 13H8Z" fill="#12131A" />
-																</svg>
-															</span>
-															<!--end::Svg Icon-->
-															<!--begin::Svg Icon | path: icons/duotone/Interface/Plus-Square.svg-->
-															<span class="svg-icon toggle-off svg-icon-1">
-																<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-																	<path opacity="0.25" fill-rule="evenodd" clip-rule="evenodd" d="M6.54184 2.36899C4.34504 2.65912 2.65912 4.34504 2.36899 6.54184C2.16953 8.05208 2 9.94127 2 12C2 14.0587 2.16953 15.9479 2.36899 17.4582C2.65912 19.655 4.34504 21.3409 6.54184 21.631C8.05208 21.8305 9.94127 22 12 22C14.0587 22 15.9479 21.8305 17.4582 21.631C19.655 21.3409 21.3409 19.655 21.631 17.4582C21.8305 15.9479 22 14.0587 22 12C22 9.94127 21.8305 8.05208 21.631 6.54184C21.3409 4.34504 19.655 2.65912 17.4582 2.36899C15.9479 2.16953 14.0587 2 12 2C9.94127 2 8.05208 2.16953 6.54184 2.36899Z" fill="#12131A" />
-																	<path fill-rule="evenodd" clip-rule="evenodd" d="M12 17C12.5523 17 13 16.5523 13 16V13H16C16.5523 13 17 12.5523 17 12C17 11.4477 16.5523 11 16 11H13V8C13 7.44772 12.5523 7 12 7C11.4477 7 11 7.44772 11 8V11H8C7.44772 11 7 11.4477 7 12C7 12.5523 7.44771 13 8 13H11V16C11 16.5523 11.4477 17 12 17Z" fill="#12131A" />
-																</svg>
-															</span>
-															<!--end::Svg Icon-->
-														</div>
-														<!--end::Icon-->
-														<!--begin::Title-->
-														<h4 class="text-gray-700 fw-bolder cursor-pointer mb-0">Can I get an hostel for specific months?</h4>
-														<!--end::Title-->
-													</div>
-													<!--end::Heading-->
-													<!--begin::Body-->
-													<div id="kt_job_7_2" class="collapse fs-6 ms-1">
-														<!--begin::Text-->
-														<div class="mb-4 text-gray-600 fw-bold fs-6 ps-10">Yes, it depends, you should speak with the agent in charge to determine if you can get it or not.</div>
-														<!--end::Text-->
-													</div>
-													<!--end::Content-->
-													<!--begin::Separator-->
-													<div class="separator separator-dashed"></div>
-													<!--end::Separator-->
-												</div>
-												<!--end::Section-->
-												<!--begin::Section-->
-												<div class="m-0">
-													<!--begin::Heading-->
-													<div class="d-flex align-items-center collapsible py-3 toggle collapsed mb-0" data-bs-toggle="collapse" data-bs-target="#kt_job_7_3">
-														<!--begin::Icon-->
-														<div class="btn btn-sm btn-icon mw-20px btn-active-color-primary me-5">
-															<!--begin::Svg Icon | path: icons/duotone/Interface/Minus-Square.svg-->
-															<span class="svg-icon toggle-on svg-icon-primary svg-icon-1">
-																<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-																	<path opacity="0.25" d="M6.54184 2.36899C4.34504 2.65912 2.65912 4.34504 2.36899 6.54184C2.16953 8.05208 2 9.94127 2 12C2 14.0587 2.16953 15.9479 2.36899 17.4582C2.65912 19.655 4.34504 21.3409 6.54184 21.631C8.05208 21.8305 9.94127 22 12 22C14.0587 22 15.9479 21.8305 17.4582 21.631C19.655 21.3409 21.3409 19.655 21.631 17.4582C21.8305 15.9479 22 14.0587 22 12C22 9.94127 21.8305 8.05208 21.631 6.54184C21.3409 4.34504 19.655 2.65912 17.4582 2.36899C15.9479 2.16953 14.0587 2 12 2C9.94127 2 8.05208 2.16953 6.54184 2.36899Z" fill="#12131A" />
-																	<path d="M8 13C7.44772 13 7 12.5523 7 12C7 11.4477 7.44772 11 8 11H16C16.5523 11 17 11.4477 17 12C17 12.5523 16.5523 13 16 13H8Z" fill="#12131A" />
-																</svg>
-															</span>
-															<!--end::Svg Icon-->
-															<!--begin::Svg Icon | path: icons/duotone/Interface/Plus-Square.svg-->
-															<span class="svg-icon toggle-off svg-icon-1">
-																<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-																	<path opacity="0.25" fill-rule="evenodd" clip-rule="evenodd" d="M6.54184 2.36899C4.34504 2.65912 2.65912 4.34504 2.36899 6.54184C2.16953 8.05208 2 9.94127 2 12C2 14.0587 2.16953 15.9479 2.36899 17.4582C2.65912 19.655 4.34504 21.3409 6.54184 21.631C8.05208 21.8305 9.94127 22 12 22C14.0587 22 15.9479 21.8305 17.4582 21.631C19.655 21.3409 21.3409 19.655 21.631 17.4582C21.8305 15.9479 22 14.0587 22 12C22 9.94127 21.8305 8.05208 21.631 6.54184C21.3409 4.34504 19.655 2.65912 17.4582 2.36899C15.9479 2.16953 14.0587 2 12 2C9.94127 2 8.05208 2.16953 6.54184 2.36899Z" fill="#12131A" />
-																	<path fill-rule="evenodd" clip-rule="evenodd" d="M12 17C12.5523 17 13 16.5523 13 16V13H16C16.5523 13 17 12.5523 17 12C17 11.4477 16.5523 11 16 11H13V8C13 7.44772 12.5523 7 12 7C11.4477 7 11 7.44772 11 8V11H8C7.44772 11 7 11.4477 7 12C7 12.5523 7.44771 13 8 13H11V16C11 16.5523 11.4477 17 12 17Z" fill="#12131A" />
-																</svg>
-															</span>
-															<!--end::Svg Icon-->
-														</div>
-														<!--end::Icon-->
-														<!--begin::Title-->
-														<h4 class="text-gray-700 fw-bolder cursor-pointer mb-0">How can I get a room mate with CTHostel ?</h4>
-														<!--end::Title-->
-													</div>
-													<!--end::Heading-->
-													<!--begin::Body-->
-													<div id="kt_job_7_3" class="collapse fs-6 ms-1">
-														<!--begin::Text-->
-														<div class="mb-4 text-gray-600 fw-bold fs-6 ps-10">First, search the hostel name you are looking for a room mate for on our website, then click on request for roommate in the room mate section. You will be able to see list of students looking for room mates for that same hostel and you can either call or message them directly, or make a new request.</div>
-														<!--end::Text-->
-													</div>
-													<!--end::Content-->
-													<!--begin::Separator-->
-													<div class="separator separator-dashed"></div>
-													<!--end::Separator-->
-												</div>
-												<!--end::Section-->
-												<!--begin::Section-->
-												<div class="m-0">
-													<!--begin::Heading-->
-													<div class="d-flex align-items-center collapsible py-3 toggle collapsed mb-0" data-bs-toggle="collapse" data-bs-target="#kt_job_7_4">
-														<!--begin::Icon-->
-														<div class="btn btn-sm btn-icon mw-20px btn-active-color-primary me-5">
-															<!--begin::Svg Icon | path: icons/duotone/Interface/Minus-Square.svg-->
-															<span class="svg-icon toggle-on svg-icon-primary svg-icon-1">
-																<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-																	<path opacity="0.25" d="M6.54184 2.36899C4.34504 2.65912 2.65912 4.34504 2.36899 6.54184C2.16953 8.05208 2 9.94127 2 12C2 14.0587 2.16953 15.9479 2.36899 17.4582C2.65912 19.655 4.34504 21.3409 6.54184 21.631C8.05208 21.8305 9.94127 22 12 22C14.0587 22 15.9479 21.8305 17.4582 21.631C19.655 21.3409 21.3409 19.655 21.631 17.4582C21.8305 15.9479 22 14.0587 22 12C22 9.94127 21.8305 8.05208 21.631 6.54184C21.3409 4.34504 19.655 2.65912 17.4582 2.36899C15.9479 2.16953 14.0587 2 12 2C9.94127 2 8.05208 2.16953 6.54184 2.36899Z" fill="#12131A" />
-																	<path d="M8 13C7.44772 13 7 12.5523 7 12C7 11.4477 7.44772 11 8 11H16C16.5523 11 17 11.4477 17 12C17 12.5523 16.5523 13 16 13H8Z" fill="#12131A" />
-																</svg>
-															</span>
-															<!--end::Svg Icon-->
-															<!--begin::Svg Icon | path: icons/duotone/Interface/Plus-Square.svg-->
-															<span class="svg-icon toggle-off svg-icon-1">
-																<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-																	<path opacity="0.25" fill-rule="evenodd" clip-rule="evenodd" d="M6.54184 2.36899C4.34504 2.65912 2.65912 4.34504 2.36899 6.54184C2.16953 8.05208 2 9.94127 2 12C2 14.0587 2.16953 15.9479 2.36899 17.4582C2.65912 19.655 4.34504 21.3409 6.54184 21.631C8.05208 21.8305 9.94127 22 12 22C14.0587 22 15.9479 21.8305 17.4582 21.631C19.655 21.3409 21.3409 19.655 21.631 17.4582C21.8305 15.9479 22 14.0587 22 12C22 9.94127 21.8305 8.05208 21.631 6.54184C21.3409 4.34504 19.655 2.65912 17.4582 2.36899C15.9479 2.16953 14.0587 2 12 2C9.94127 2 8.05208 2.16953 6.54184 2.36899Z" fill="#12131A" />
-																	<path fill-rule="evenodd" clip-rule="evenodd" d="M12 17C12.5523 17 13 16.5523 13 16V13H16C16.5523 13 17 12.5523 17 12C17 11.4477 16.5523 11 16 11H13V8C13 7.44772 12.5523 7 12 7C11.4477 7 11 7.44772 11 8V11H8C7.44772 11 7 11.4477 7 12C7 12.5523 7.44771 13 8 13H11V16C11 16.5523 11.4477 17 12 17Z" fill="#12131A" />
-																</svg>
-															</span>
-															<!--end::Svg Icon-->
-														</div>
-														<!--end::Icon-->
-														<!--begin::Title-->
-														<h4 class="text-gray-700 fw-bolder cursor-pointer mb-0">Can I get an hostel for someone else in another school?</h4>
-														<!--end::Title-->
-													</div>
-													<!--end::Heading-->
-													<!--begin::Body-->
-													<div id="kt_job_7_4" class="collapse fs-6 ms-1">
-														<!--begin::Text-->
-														<div class="mb-4 text-gray-600 fw-bold fs-6 ps-10">Yes, just select the institution and you see all available hostels in that school.</div>
-														<!--end::Text-->
-													</div>
-													<!--end::Content-->
-												</div>
-												<!--end::Section-->
-												<!--end::Accordion-->
-											</div>
-											<!--end::Col-->
-										</div>
-										<!--end::Row-->
-									</div>
-									<!--end::Classic content-->
-									<!--begin::Section-->
-							
-									<!--end::Section-->
-									<!--begin::Card-->
-									<div class="card mb-4 bg-light text-center">
-										<!--begin::Body-->
-										<div class="card-body py-12">
-											<!--begin::Icon-->
-											<a href="#" class="mx-4">
-												<img src="../../assets/media/svg/brand-logos/facebook-4.svg" class="h-30px my-2" alt="" />
-											</a>
-											<!--end::Icon-->
-											<!--begin::Icon-->
-											<a href="#" class="mx-4">
-												<img src="../../assets/media/svg/brand-logos/instagram-2-1.svg" class="h-30px my-2" alt="" />
-											</a>
-											<!--end::Icon-->
-											<!--begin::Icon-->
-											<a href="#" class="mx-4">
-												<img src="../../assets/media/svg/brand-logos/github.svg" class="h-30px my-2" alt="" />
-											</a>
-											<!--end::Icon-->
-											<!--begin::Icon-->
-											<a href="#" class="mx-4">
-												<img src="../../assets/media/svg/brand-logos/behance.svg" class="h-30px my-2" alt="" />
-											</a>
-											<!--end::Icon-->
-											<!--begin::Icon-->
-											<a href="#" class="mx-4">
-												<img src="../../assets/media/svg/brand-logos/pinterest-p.svg" class="h-30px my-2" alt="" />
-											</a>
-											<!--end::Icon-->
-											<!--begin::Icon-->
-											<a href="#" class="mx-4">
-												<img src="../../assets/media/svg/brand-logos/twitter.svg" class="h-30px my-2" alt="" />
-											</a>
-											<!--end::Icon-->
-											<!--begin::Icon-->
-											<a href="#" class="mx-4">
-												<img src="../../assets/media/svg/brand-logos/dribbble-icon-1.svg" class="h-30px my-2" alt="" />
-											</a>
-											<!--end::Icon-->
-										</div>
-										<!--end::Body-->
-									</div>
-									<!--end::Card-->
-								</div>
-								<!--end::Body-->
-							</div>
 
-
-                    </div>
-                    <!--end::Container-->
-                </div>
-                <!--end::Content-->
-                <!--begin::Footer-->
-                <div class="footer py-4 d-flex flex-lg-column" id="kt_footer">
-                    <!--begin::Container-->
-                    <div
-                        class="container-fluid d-flex flex-column flex-md-row align-items-center justify-content-between">
-                        <!--begin::Copyright-->
-                        <div class="text-dark order-2 order-md-1">
-                            <span class="text-muted fw-bold me-1">Copyright © <?php echo Date('Y');?></span>
-                            <a target="_blank"
-                                class="text-gray-800 text-hover-primary">CTHostel</a>
+                        <div class="header-menu-column">
+                            <div class="header-menu" style="display: block;">
+                                <nav>
+                                    <div class="ltn__main-menu">
+                                        <ul class="ct-nav-list">
+                                            <li>
+                                                <a href="/" class="ct-nav-link">Home</a>
+                                            </li>
+                                            <li>
+                                                <a href="/#about" class="ct-nav-link">About</a>
+                                            </li>
+                                            <li>
+                                                <a href="/faq" class="ct-nav-link">FAQ</a>
+                                            </li>
+                                            <li>
+                                                <a href="/#contactus" class="ct-nav-link">Contact Us</a>
+                                            </li>
+                                            <li class="special-link">
+                                                <a href="/register" class="ct-register-btn">Register</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </nav>
+                            </div>
                         </div>
-                        <!--end::Copyright-->
-                       
+
+                        <div class="ltn__header-options">
+                            <!-- Mobile Menu Button -->
+                            <div class="mobile-menu-toggle">
+                                <a href="#ltn__utilize-mobile-menu" class="ltn__utilize-toggle" style="color: var(--brand-slate); font-size: 24px; padding: 4px; display: block; text-decoration: none;">
+                                    <i class="fas fa-bars"></i>
+                                </a>
+                            </div>
+                        </div>
                     </div>
-                    <!--end::Container-->
                 </div>
-                <!--end::Footer-->
             </div>
-            <!--end::Wrapper-->
+            <!-- ltn__header-middle-area end -->
+        </header>
+        <!-- HEADER AREA END -->
+
+        <!-- Utilize Mobile Menu Start -->
+        <div id="ltn__utilize-mobile-menu" class="ltn__utilize ltn__utilize-mobile-menu">
+            <div class="ltn__utilize-menu-inner ltn__scrollbar" style="display: flex; flex-direction: column; height: 100%; justify-content: space-between; padding: 30px 24px;">
+                <div>
+                    <div style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(255, 255, 255, 0.1); padding-bottom: 20px; margin-bottom: 30px;">
+                        <div class="site-logo">
+                            <a href="/cthostel"><img src="{{ asset('myimages/logo_header.png')}}" style="width: 130px; height: auto; filter: brightness(0) invert(1);" alt="CTHostel"></a>
+                        </div>
+                        <button class="ltn__utilize-close" style="background: none; border: none; color: rgba(255, 255, 255, 0.8); font-size: 30px; cursor: pointer;">&times;</button>
+                    </div>
+                    <div class="ltn__utilize-menu" style="margin-bottom: 30px;">
+                        <ul class="ct-mobile-nav-list">
+                            <li><a href="/cthostel">Home</a></li>
+                            <li><a href="/cthostel#about">About</a></li>
+                            <li><a href="/faq">FAQ</a></li>
+                            <li><a href="/cthostel#contactus">Contact Us</a></li>
+                            <li><a href="/login">Login</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div style="display: flex; flex-direction: column; gap: 24px;">
+                    <div class="ltn__utilize-buttons" style="border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 20px;">
+                        <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px;">
+                            <li>
+                                <a href="/register" class="ct-mobile-action-btn">
+                                    <span style="color: var(--brand-green);"><i class="far fa-user"></i></span>
+                                    Register As Agent
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/serviceregistration" class="ct-mobile-action-btn">
+                                    <span style="color: var(--brand-green);"><i class="far fa-user"></i></span>
+                                    Register As Technician
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/myroomie" class="ct-mobile-action-btn">
+                                    <span style="color: var(--brand-green);"><i class="fas fa-home"></i></span>
+                                    Get Roommate
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/services" class="ct-mobile-action-btn">
+                                    <span style="color: var(--brand-green);"><i class="fas fa-plus"></i></span>
+                                    Hire Technician
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div style="display: flex; justify-content: center; gap: 24px; padding-top: 16px; border-top: 1px solid rgba(255, 255, 255, 0.05);">
+                        <a href="https://x.com/ct_hostel" style="color: rgba(255, 255, 255, 0.6); font-size: 18px;"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/ct_hostel/" style="color: rgba(255, 255, 255, 0.6); font-size: 18px;"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
         </div>
-        <!--end::Page-->
+        <!-- Utilize Mobile Menu End -->
+
+        <!-- FAQ HERO START -->
+        <div class="ct-faq-hero">
+            <div class="ct-faq-glow-blob-1"></div>
+            <div class="ct-faq-glow-blob-2"></div>
+            <div class="ct-faq-hero-overlay"></div>
+            <div class="container ct-faq-hero-container">
+                <h1>Frequently Asked <span style="color: var(--brand-green);">Questions</span></h1>
+                <p>Find answers to common queries about off-campus student accommodation bookings, verified landlord listings, roommate pairing, and hiring technicians.</p>
+
+                <div class="ct-faq-search-wrap">
+                    <input type="text" id="faqSearchInput" class="ct-faq-search-input" placeholder="Have a question? Search here..." autocomplete="off">
+                    <span class="ct-faq-search-icon"><i class="fas fa-search"></i></span>
+                </div>
+            </div>
+        </div>
+        <!-- FAQ HERO END -->
+
+        <!-- FAQ MAIN SECTION START -->
+        <section class="ct-faq-section">
+            <div class="container">
+                <div class="ct-faq-layout">
+
+                    <!-- Sticky Sidebar Categories -->
+                    <div class="ct-faq-sidebar">
+                        <div class="ct-faq-sidebar-sticky">
+                            <div class="ct-faq-categories-card">
+                                <h3>FAQ Categories</h3>
+                                <ul class="ct-faq-categories-list">
+                                    <li>
+                                        <button class="ct-faq-cat-btn active" data-filter="all">
+                                            <span>All Questions</span>
+                                            <span class="ct-faq-cat-badge">11</span>
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button class="ct-faq-cat-btn" data-filter="general">
+                                            <span>General Platform</span>
+                                            <span class="ct-faq-cat-badge">3</span>
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button class="ct-faq-cat-btn" data-filter="students">
+                                            <span>For Students</span>
+                                            <span class="ct-faq-cat-badge">3</span>
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button class="ct-faq-cat-btn" data-filter="agents">
+                                            <span>Agents & Landlords</span>
+                                            <span class="ct-faq-cat-badge">3</span>
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button class="ct-faq-cat-btn" data-filter="roommates">
+                                            <span>Roommate Matching</span>
+                                            <span class="ct-faq-cat-badge">2</span>
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button class="ct-faq-cat-btn" data-filter="technicians">
+                                            <span>Technician Pro</span>
+                                            <span class="ct-faq-cat-badge">2</span>
+                                        </button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Accordion List -->
+                    <div>
+                        <div class="ct-faq-accordion" id="faqAccordionList">
+
+                            <!-- General Section -->
+                            <div class="ct-faq-item" data-category="general">
+                                <div class="ct-faq-question-wrap">
+                                    <h4 class="ct-faq-question">What is CTHostel?</h4>
+                                    <span class="ct-faq-toggle-icon"><i class="fas fa-plus"></i></span>
+                                </div>
+                                <div class="ct-faq-answer-container">
+                                    <div class="ct-faq-answer-inner">
+                                        <p class="ct-faq-answer">
+                                            CTHostel is a specialized digital ecosystem built to eliminate off-campus student accommodation challenges in Nigeria, while providing roommates pairing and utility maintenance services in a unified dashboard.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="ct-faq-item" data-category="general">
+                                <div class="ct-faq-question-wrap">
+                                    <h4 class="ct-faq-question">Is CTHostel safe and verified?</h4>
+                                    <span class="ct-faq-toggle-icon"><i class="fas fa-plus"></i></span>
+                                </div>
+                                <div class="ct-faq-answer-container">
+                                    <div class="ct-faq-answer-inner">
+                                        <p class="ct-faq-answer">
+                                            Absolutely. CTHostel verifies every agent, landlord, and housing list to protect students from off-campus housing fraud and accommodation scams.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="ct-faq-item" data-category="general">
+                                <div class="ct-faq-question-wrap">
+                                    <h4 class="ct-faq-question">Are there any agency fees?</h4>
+                                    <span class="ct-faq-toggle-icon"><i class="fas fa-plus"></i></span>
+                                </div>
+                                <div class="ct-faq-answer-container">
+                                    <div class="ct-faq-answer-inner">
+                                        <p class="ct-faq-answer">
+                                            Registration and searching on CTHostel is entirely free. A minor service processing charge may apply for automated utility matching and booking confirmations.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Students Section -->
+                            <div class="ct-faq-item" data-category="students">
+                                <div class="ct-faq-question-wrap">
+                                    <h4 class="ct-faq-question">How do I book a hostel on CTHostel?</h4>
+                                    <span class="ct-faq-toggle-icon"><i class="fas fa-plus"></i></span>
+                                </div>
+                                <div class="ct-faq-answer-container">
+                                    <div class="ct-faq-answer-inner">
+                                        <p class="ct-faq-answer">
+                                            Simply choose your school from our home search page, select from verified hostel listings matching your budget, review photos and specifications, and proceed to book securely through your student portal.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="ct-faq-item" data-category="students">
+                                <div class="ct-faq-question-wrap">
+                                    <h4 class="ct-faq-question">Can I inspect the hostel before making payments?</h4>
+                                    <span class="ct-faq-toggle-icon"><i class="fas fa-plus"></i></span>
+                                </div>
+                                <div class="ct-faq-answer-container">
+                                    <div class="ct-faq-answer-inner">
+                                        <p class="ct-faq-answer">
+                                            Yes! We encourage physical inspections. Through your CTHostel portal, you can request an inspection schedule with a verified agent before making any financial commitment.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="ct-faq-item" data-category="students">
+                                <div class="ct-faq-question-wrap">
+                                    <h4 class="ct-faq-question">What happens if I make payments and the hostel is not as advertised?</h4>
+                                    <span class="ct-faq-toggle-icon"><i class="fas fa-plus"></i></span>
+                                </div>
+                                <div class="ct-faq-answer-container">
+                                    <div class="ct-faq-answer-inner">
+                                        <p class="ct-faq-answer">
+                                            CTHostel provides payment protection. If you pay through the portal, funds are held securely and only disbursed to the landlord/agent after you inspect and confirm your satisfaction on arrival.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Agents Section -->
+                            <div class="ct-faq-item" data-category="agents">
+                                <div class="ct-faq-question-wrap">
+                                    <h4 class="ct-faq-question">How do I advertise my hostels on CTHostel?</h4>
+                                    <span class="ct-faq-toggle-icon"><i class="fas fa-plus"></i></span>
+                                </div>
+                                <div class="ct-faq-answer-container">
+                                    <div class="ct-faq-answer-inner">
+                                        <p class="ct-faq-answer">
+                                            Click "Register" at the top navigation, select the "Agent" option, fill in your details, and log into your agent dashboard. From there, you can upload unlimited hostel listings with photos, features, and prices for free.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="ct-faq-item" data-category="agents">
+                                <div class="ct-faq-question-wrap">
+                                    <h4 class="ct-faq-question">How long does it take for listing verification?</h4>
+                                    <span class="ct-faq-toggle-icon"><i class="fas fa-plus"></i></span>
+                                </div>
+                                <div class="ct-faq-answer-container">
+                                    <div class="ct-faq-answer-inner">
+                                        <p class="ct-faq-answer">
+                                            Once you upload a listing, our verification team reviews the building details within 24 to 48 hours. After successful verification, your listings immediately become public to students.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="ct-faq-item" data-category="agents">
+                                <div class="ct-faq-question-wrap">
+                                    <h4 class="ct-faq-question">Are there commissions on bookings?</h4>
+                                    <span class="ct-faq-toggle-icon"><i class="fas fa-plus"></i></span>
+                                </div>
+                                <div class="ct-faq-answer-container">
+                                    <div class="ct-faq-answer-inner">
+                                        <p class="ct-faq-answer">
+                                            CTHostel operates on a transparent, low-commission structure. Basic listing uploads are free, while premium booking tools carry a minimal commission upon successful student check-in.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Roommates Section -->
+                            <div class="ct-faq-item" data-category="roommates">
+                                <div class="ct-faq-question-wrap">
+                                    <h4 class="ct-faq-question">How does Roommate Matching work?</h4>
+                                    <span class="ct-faq-toggle-icon"><i class="fas fa-plus"></i></span>
+                                </div>
+                                <div class="ct-faq-answer-container">
+                                    <div class="ct-faq-answer-inner">
+                                        <p class="ct-faq-answer">
+                                            Click the "Match Roommates" tab, complete a short profile specifying your gender, level, school department, and living habits (e.g. studying preferences, cleanliness). Our algorithm will then display compatible students for you to connect with.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="ct-faq-item" data-category="roommates">
+                                <div class="ct-faq-question-wrap">
+                                    <h4 class="ct-faq-question">Is my personal contact information shared with potential roommates?</h4>
+                                    <span class="ct-faq-toggle-icon"><i class="fas fa-plus"></i></span>
+                                </div>
+                                <div class="ct-faq-answer-container">
+                                    <div class="ct-faq-answer-inner">
+                                        <p class="ct-faq-answer">
+                                            No. CTHostel values your privacy. Your phone number and email remain hidden until you review roommate profile suggestions and explicitly agree to share details.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Technicians Section -->
+                            <div class="ct-faq-item" data-category="technicians">
+                                <div class="ct-faq-question-wrap">
+                                    <h4 class="ct-faq-question">What are On-Demand Technicians?</h4>
+                                    <span class="ct-faq-toggle-icon"><i class="fas fa-plus"></i></span>
+                                </div>
+                                <div class="ct-faq-answer-container">
+                                    <div class="ct-faq-answer-inner">
+                                        <p class="ct-faq-answer">
+                                            On-Demand Technicians are verified local plumbers, electricians, laptop engineers, and locksmiths adjacent to your campus who can be hired directly from CTHostel to fix off-campus utility issues.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="ct-faq-item" data-category="technicians">
+                                <div class="ct-faq-question-wrap">
+                                    <h4 class="ct-faq-question">How are technician fees calculated?</h4>
+                                    <span class="ct-faq-toggle-icon"><i class="fas fa-plus"></i></span>
+                                </div>
+                                <div class="ct-faq-answer-container">
+                                    <div class="ct-faq-answer-inner">
+                                        <p class="ct-faq-answer">
+                                            Service fees are transparently estimated on your screen based on the category of repair. Final work validation and payouts are done directly from your student dashboard after the job is completed.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- FAQ No Results State -->
+                        <div id="faqNoResults" class="ct-faq-no-results">
+                            <i class="fas fa-search"></i>
+                            <h4>No matching questions found</h4>
+                            <p>Try searching for keywords like "hostel", "roommate", "verification", or "payment".</p>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <!-- FAQ MAIN SECTION END -->
+
+        <!-- CALL TO ACTION START -->
+        <div class="ct-cta-section">
+            <div class="container">
+                <div class="ct-cta-card">
+                    <div>
+                        <h2 class="ct-cta-title">Partner With Us!</h2>
+                        <p class="ct-cta-desc">
+                            Join the movement to simplify off-campus housing. Partner with us today and let's scale CTHostel together.
+                        </p>
+                    </div>
+                    <div>
+                        <a class="ct-btn-primary" href="https://wa.me/2349058744473?text=Hi%2C%20my%20name%20is%20%28(Input%20your%20name)%0aI%20will%20like%20to%20partner%20with%20CTHostel%20Management.%0a(Input%20other%20message%20here)%20">
+                            Partner Now <i class="fas fa-arrow-right" style="margin-left: 6px;"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- CALL TO ACTION END -->
+
+        <!-- FOOTER AREA START -->
+        <footer class="ct-footer" id="contactus">
+            <div class="container">
+                <div class="ct-footer-grid">
+                    <!-- Widget 1: Logo & Info -->
+                    <div>
+                        <div class="ct-footer-logo">
+                            <img src="{{ asset('myimages/logo_header.png')}}" alt="CTHostel">
+                        </div>
+                        <p class="ct-footer-desc">
+                            Your ultimate off-campus student accommodation and utilities finder app. Secure, convenient, and built for modern student living.
+                        </p>
+                        <div class="ct-footer-contact">
+                            <div class="ct-footer-contact-item">
+                                <span><i class="fas fa-map-marker-alt"></i></span>
+                                <span style="color: #cbd5e1;">Abeokuta, Ogun State</span>
+                            </div>
+                            <div class="ct-footer-contact-item">
+                                <span><i class="fas fa-phone"></i></span>
+                                <a href="tel:09058744473">+234 905 8744 473</a>,
+                                <a href="tel:08184798413">+234 818 479 8413</a>
+                            </div>
+                            <div class="ct-footer-contact-item">
+                                <span><i class="fas fa-envelope"></i></span>
+                                <a href="mailto:support@cthostel.com">support@cthostel.com</a>
+                            </div>
+                        </div>
+                        <div class="ct-footer-socials">
+                            <a href="https://www.instagram.com/ct_hostel/" title="Instagram" class="ct-footer-social-btn"><i class="fab fa-instagram"></i></a>
+                            <a href="https://x.com/ct_hostel" title="Twitter" class="ct-footer-social-btn"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Widget 2: Services -->
+                    <div>
+                        <h4 class="ct-footer-title">Services</h4>
+                        <ul class="ct-footer-links">
+                            <li><a href="#"><i class="fas fa-chevron-right"></i> Hostel Accommodation</a></li>
+                            <li><a href="/register"><i class="fas fa-chevron-right"></i> Agent Portal</a></li>
+                            <li><a href="/myroomie"><i class="fas fa-chevron-right"></i> Roommate Pairing</a></li>
+                            <li><a href="/services"><i class="fas fa-chevron-right"></i> Technician Services</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Widget 3: Links -->
+                    <div>
+                        <h4 class="ct-footer-title">Links</h4>
+                        <ul class="ct-footer-links">
+                            <li><a href="/register"><i class="fas fa-chevron-right"></i> Agent Signup</a></li>
+                            <li><a href="/serviceregistration"><i class="fas fa-chevron-right"></i> Technician Signup</a></li>
+                            <li><a href="/login"><i class="fas fa-chevron-right"></i> User Login</a></li>
+                            <li><a href="/faq"><i class="fas fa-chevron-right"></i> Support FAQ</a></li>
+                            <li><a href="tel:09058744473"><i class="fas fa-chevron-right"></i> Contact Support</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Widget 4: Newsletter -->
+                    <div>
+                        <h4 class="ct-footer-title">Newsletter</h4>
+                        <p class="ct-footer-newsletter-text">
+                            Subscribe to our weekly newsletter and receive instant updates in your inbox.
+                        </p>
+                        <div class="footer-newsletter">
+                            <form action="#" class="ct-newsletter-form">
+                                <input type="email" name="email" placeholder="Your email address" class="ct-newsletter-input" required>
+                                <button type="submit" class="ct-newsletter-submit">
+                                    <i class="fas fa-location-arrow"></i>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Copyright Bar -->
+            <div class="ct-copyright-bar">
+                <div class="container">
+                    <div class="ct-copyright-bar-inner">
+                        <div>
+                            <p style="margin: 0;">&copy; 2026 CTHostel. All rights reserved.</p>
+                        </div>
+                        <div>
+                            <ul class="ct-copyright-links">
+                                <li><a href="#">Terms of Service</a></li>
+                                <li><a href="#">Privacy Policy</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- FOOTER AREA END -->
+
     </div>
-    <!--end::Root-->
-    
-    <!--end::Modal - Select Location-->
-    <!--end::Modals-->
-    <!--begin::Scrolltop-->
-    <div id="kt_scrolltop" class="scrolltop" data-kt-scrolltop="true">
-        <!--begin::Svg Icon | path: icons/duotone/Navigation/Up-2.svg-->
-        <span class="svg-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
-                height="24px" viewBox="0 0 24 24" version="1.1">
-                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                    <polygon points="0 0 24 0 24 24 0 24" />
-                    <rect fill="#000000" opacity="0.5" x="11" y="10" width="2" height="10" rx="1" />
-                    <path
-                        d="M6.70710678,12.7071068 C6.31658249,13.0976311 5.68341751,13.0976311 5.29289322,12.7071068 C4.90236893,12.3165825 4.90236893,11.6834175 5.29289322,11.2928932 L11.2928932,5.29289322 C11.6714722,4.91431428 12.2810586,4.90106866 12.6757246,5.26284586 L18.6757246,10.7628459 C19.0828436,11.1360383 19.1103465,11.7686056 18.7371541,12.1757246 C18.3639617,12.5828436 17.7313944,12.6103465 17.3242754,12.2371541 L12.0300757,7.38413782 L6.70710678,12.7071068 Z"
-                        fill="#000000" fill-rule="nonzero" />
-                </g>
-            </svg>
-        </span>
-        <!--end::Svg Icon-->
-    </div>
-    <!--end::Scrolltop-->
-    <!--end::Main-->
-    <!--begin::Javascript-->
-    <!--begin::Global Javascript Bundle(used by all pages)-->
+    <!-- Body main wrapper end -->
 
+    <!-- All JS Plugins -->
+    <script src="{{ asset('welcomehome/js/plugins.js')}}"></script>
+    <!-- Main JS -->
+    <script src="{{ asset('welcomehome/js/main.js')}}"></script>
 
-    <script src="{{ asset('backend/plugins/global/plugins.bundle.js') }}"></script>
-    <script src="{{ asset('backend/js/scripts.bundle.js') }}"></script>
+    <!-- Interactive Accordion, Search & Category filtering script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // 1. Accordion Toggle Logic
+            const faqItems = document.querySelectorAll('.ct-faq-item');
 
-    <!--end::Global Javascript Bundle-->
-    <!--begin::Page Vendors Javascript(used by this page)-->
-    <script src="{{ asset('backend/plugins/custom/fullcalendar/fullcalendar.bundle.js') }}"></script>
-    <!--end::Page Vendors Javascript-->
-    <!--begin::Page Custom Javascript(used by this page)-->
-    <script src="{{ asset('backend/js/custom/widgets.js') }}"></script>
-    <script src="{{ asset('backend/js/custom/apps/chat/chat.js') }}"></script>
-    <script src="{{ asset('backend/js/custom/modals/create-app.js') }}"></script>
-    <script src="{{ asset('backend/js/custom/modals/upgrade-plan.js') }}"></script>
-    <script src="{{ asset('backend/js/custom/intro.js') }}"></script>
-   	<!--end::Global Javascript Bundle-->
-		<!--begin::Page Custom Javascript(used by this page)-->
-		<script src="{{ asset('backend/js/custom/apps/support-center/tickets/create.js')}}"></script>
-		<script src="{{ asset('backend/js/custom/documentation/documentation.js')}}"></script>
-	
-    <noscript>
-        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5FS8GGP" height="0" width="0"
-            style="display:none;visibility:hidden"></iframe>
-    </noscript>
-    <!--End::Google Tag Manager (noscript) -->
+            faqItems.forEach(item => {
+                const header = item.querySelector('.ct-faq-question-wrap');
+                header.addEventListener('click', function() {
+                    const isActive = item.classList.contains('active');
+
+                    // Close other opened accordion items
+                    faqItems.forEach(otherItem => {
+                        otherItem.classList.remove('active');
+                    });
+
+                    // Toggle current
+                    if (!isActive) {
+                        item.classList.add('active');
+                    }
+                });
+            });
+
+            // 2. Category Tab Filter Logic
+            const filterButtons = document.querySelectorAll('.ct-faq-cat-btn');
+            const faqList = document.getElementById('faqAccordionList');
+            const searchInput = document.getElementById('faqSearchInput');
+            const noResultsDiv = document.getElementById('faqNoResults');
+
+            filterButtons.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // Update active tab button style
+                    filterButtons.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+
+                    const activeFilter = this.getAttribute('data-filter');
+
+                    // Clear search bar when shifting categories to keep layout intuitive
+                    searchInput.value = '';
+
+                    // Filter FAQ Cards
+                    let visibleCount = 0;
+
+                    faqItems.forEach(item => {
+                        const itemCat = item.getAttribute('data-category');
+                        item.classList.remove('active'); // Close open accordion on filter shift
+
+                        if (activeFilter === 'all' || itemCat === activeFilter) {
+                            item.style.display = 'block';
+                            visibleCount++;
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+
+                    if (visibleCount === 0) {
+                        noResultsDiv.style.display = 'block';
+                    } else {
+                        noResultsDiv.style.display = 'none';
+                    }
+                });
+            });
+
+            // 3. Instant Search Filtering Logic
+            searchInput.addEventListener('input', function() {
+                const queryText = this.value.toLowerCase().trim();
+                const activeTab = document.querySelector('.ct-faq-cat-btn.active');
+                const activeFilter = activeTab.getAttribute('data-filter');
+
+                let visibleCount = 0;
+
+                faqItems.forEach(item => {
+                    const itemCat = item.getAttribute('data-category');
+                    const questionText = item.querySelector('.ct-faq-question').textContent.toLowerCase();
+                    const answerText = item.querySelector('.ct-faq-answer').textContent.toLowerCase();
+
+                    const matchesCategory = (activeFilter === 'all' || itemCat === activeFilter);
+                    const matchesQuery = (questionText.includes(queryText) || answerText.includes(queryText));
+
+                    if (matchesCategory && matchesQuery) {
+                        item.style.display = 'block';
+                        visibleCount++;
+                    } else {
+                        item.style.display = 'none';
+                        item.classList.remove('active'); // collapse if hidden
+                    }
+                });
+
+                // Handle no results display
+                if (visibleCount === 0) {
+                    noResultsDiv.style.display = 'block';
+                } else {
+                    noResultsDiv.style.display = 'none';
+                }
+            });
+        });
+    </script>
+
 </body>
-<!--end::Body-->
 
-<!-- Mirrored from preview.keenthemes.com/metronic8/demo6/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 20 Aug 2021 07:33:32 GMT -->
-
-</html> 
+</html>

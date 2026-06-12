@@ -1,7 +1,7 @@
-@extends('admin.master')
+@extends(auth()->user()->email == 'fasanyafemi@gmail.com' ? 'layouts.superadmin_master' : 'layouts.dashboard_master')
 
-@section('content')
-<div id="kt_content_container" class="container">
+@section('dashboard_content')
+<div id="kt_content_container" class="container-fluid px-0">
     <!--begin::Row-->
     <div class="g-5 gx-xxl-8">
         <!--begin::Tables Widget 10-->
@@ -46,42 +46,55 @@
             <!--begin::Table container-->
             <div class="table-responsive">
                 <!--begin::Table-->
-                <table id='datatable'
-                    class="table table-row-dashed dt-responsive nowrap table-row-gray-300 align-middle gs-0 gy-4">
-                    <!--begin::Table head-->
+                <table id='datatable' class="table table-custom align-middle gs-0 gy-4">
                     <thead>
-                        <tr class="border-0">
+                        <tr class="fw-bold text-muted bg-light">
                             @if(Auth::user()->email == 'fasanyafemi@gmail.com')
-                            <th><b>School</b></th>@endif
-
-                            <th><b>Agent Name</b></th>
-                            <th><b>Phone</b></th>
-                            <th><b>Email</b></th>
-                            <th><b>Phone</b></th>
-                            <th><b>Action</b></th>
+                            <th class="ps-4 min-w-150px rounded-start">School</th>
+                            @endif
+                            <th class="min-w-150px">Agent Name</th>
+                            <th class="min-w-125px">Phone</th>
+                            <th class="min-w-150px">Email</th>
+                            <th class="min-w-100px text-center">Requests</th>
+                            <th class="min-w-125px">Date Registered</th>
+                            <th class="min-w-125px text-end pe-4 rounded-end">Action</th>
                         </tr>
                     </thead>
-                    <!--end::Table head-->
-                    <!--begin::Table body-->
                     <tbody>
                         @foreach($agents as $user)
                         <tr>
                             @if(Auth::user()->email == 'fasanyafemi@gmail.com')
-                            <th>{{ $user->school->name ?? "" }}</th>@endif
-                            <td>{{$user->name}}</td>
+                            <td class="ps-4">{{ $user->school->name ?? "" }}</td>
+                            @endif
+                            <td>
+                                <div class="d-flex align-items-center">
+                                    <div class="symbol symbol-40px me-3">
+                                        <img src="{{ $user->profilePic ? $user->profilePic : 'https://cthostel.com/myimages/cbanner.jpg' }}" alt="" style="object-fit: cover; border-radius: 8px;" />
+                                    </div>
+                                    <div class="d-flex justify-content-start flex-column">
+                                        <span class="text-dark fw-bold text-hover-primary mb-1 fs-6">{{ $user->name }}</span>
+                                    </div>
+                                </div>
+                            </td>
                             <td>{{$user->phone}}</td>
                             <td>{{$user->email}}</td>
-                            <td>{{$user->phone}}</td>
-                            <td>
-                                <a class='btn btn-info' href='tel:{{$user->phone}}'>Call</a>
-                                <a class='btn btn-success' href='https://wa.me/234{{ substr($user->phone,1) }}'>Message</a>
-                                
+                            <td class="text-center">
+                                @php
+                                    $requestCount = \App\Models\saveUser::where('user_id', $user->id)->count();
+                                @endphp
+                                <span class="badge badge-light-primary fs-7 fw-bold">{{ $requestCount }}</span>
+                                @if(Auth::user()->email == 'fasanyafemi@gmail.com' && $requestCount > 0)
+                                <a href="{{ route('agent_requests_admin', $user->id) }}" class="btn btn-sm btn-light-info mt-1" style="font-size: 0.7rem; padding: 0.2rem 0.5rem;">View</a>
+                                @endif
+                            </td>
+                            <td data-date="{{ date('Y-m-d', strtotime($user->created_at)) }}">{{ date('jS \o\f F, Y', strtotime($user->created_at)) }}</td>
+                            <td class="text-end pe-4">
+                                <a class='btn btn-icon btn-light-info btn-sm me-1' href='tel:{{$user->phone}}'><i class="bi bi-telephone-fill"></i></a>
+                                <a class='btn btn-icon btn-light-success btn-sm' href='https://wa.me/234{{ substr($user->phone,1) }}'><i class="bi bi-whatsapp"></i></a>
                             </td>
                         </tr>
                         @endforeach
-
                     </tbody>
-                    <!--end::Table body-->
                 </table>
                 <!--end::Table-->
             </div>

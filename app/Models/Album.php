@@ -7,33 +7,45 @@ use App\Models\Category;
 use App\Models\Image;
 use App\Models\User;
 use App\Models\schools;
+
 class Album extends Model
 {
-    protected $guarded =[];
+    protected $guarded = [];
     // protected $fillable = [
     //     'name','description','price','image','category_id','user_id','slug'
     // ];
     protected $table = 'albums';
 
-    public function category(){
-    	return $this->hasOne(Category::class,'id','category_id');
-
+    public function category()
+    {
+        return $this->hasOne(Category::class, 'id', 'category_id');
     }
 
-    public function albumimages(){
-    	return $this->hasMany(Image::class,'album_id','id');
+    public function albumimages()
+    {
+        return $this->hasMany(Image::class, 'album_id', 'id');
     }
-    public function user(){
-    	return $this->belongsTo(User::class);
+    public function user()
+    {
+        return $this->belongsTo(User::class);
     }
 
-    public function school() {
+    public function school()
+    {
         return $this->belongsTo(schools::class);
     }
-   
 
-        
+    //get album/hostel image attributes 
+    public function getImageAttribute($value)
+    {
+        if (!$value) {
+            return null;
+        }
 
+        if (env('APP_ENV') == 'local') {
+            return asset('hostelimage/' . $value);
+        }
 
-    
+        return 'https://cthostel.com/cthostel_files/public/hostelimage/' . $value;
+    }
 }
