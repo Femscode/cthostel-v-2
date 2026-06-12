@@ -338,7 +338,7 @@ class AlbumController extends Controller
             ->latest()
             ->paginate(20);
 
-        return view('admin.hostel_requests', $data);
+        return view('admin.my_hostel_requests', $data);
     }
 
     public function myProfile()

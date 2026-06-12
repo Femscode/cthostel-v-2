@@ -2203,8 +2203,8 @@
             <ul class="ct-footer-links">
               <li><a href="#"><i class="fas fa-chevron-right"></i> Hostel Accommodation</a></li>
               <li><a href="/register"><i class="fas fa-chevron-right"></i> Agent Portal</a></li>
-              <li><a href="/myroomie"><i class="fas fa-chevron-right"></i> Roommate Pairing</a></li>
-              <li><a href="/services"><i class="fas fa-chevron-right"></i> Technician Services</a></li>
+              <!-- <li><a href="/myroomie"><i class="fas fa-chevron-right"></i> Roommate Pairing</a></li>
+              <li><a href="/services"><i class="fas fa-chevron-right"></i> Technician Services</a></li> -->
             </ul>
           </div>
 
