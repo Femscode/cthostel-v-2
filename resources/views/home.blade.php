@@ -1751,7 +1751,7 @@
                       Get Hostel
                     </a>
                     <a class="" data-bs-toggle="tab" href="#ltn__form_tab_1_2">
-                      Hire Pro
+                      Hire Pro <span class="badge" style="background-color: #f59e0b; font-size: 0.6rem; padding: 3px 6px; margin-left: 4px; vertical-align: middle; border-radius: 4px;">Soon</span>
                     </a>
                   </div>
 
@@ -1777,34 +1777,11 @@
 
                     <!-- Tab 2: Hire Pro -->
                     <div class="tab-pane fade" id="ltn__form_tab_1_2">
-                      <form action="/services" style="display: flex; flex-direction: column; gap: 20px;">
-                        <div>
-                          <label class="ct-search-label">Select Institution</label>
-                          <select required class="nice-select ct-custom-select" name="school_id" tabindex="0">
-                            <option value="">Choose school area...</option>
-                            @foreach($schools as $school)
-                            <option value="{{$school->id}}">{{$school->name}}</option>
-                            @endforeach
-                          </select>
-                        </div>
-                        <div>
-                          <label class="ct-search-label">Select Utility Service</label>
-                          <select required class="nice-select ct-custom-select" name="service_type" tabindex="0">
-                            <option value="Cleaning Service">Cleaning Service</option>
-                            <option value="Electrician">Electrician</option>
-                            <option value="Mechanic">Mechanic</option>
-                            <option value="Plumber">Plumber</option>
-                            <option value="A.C Technician">A.C Technician</option>
-                            <option value="Kitchen Technician">Kitchen Appliances</option>
-                            <option value="Painter">Painter</option>
-                            <option value="Phone">Phone/Laptop Engineer</option>
-                          </select>
-                        </div>
-
-                        <button type="submit" class="ct-search-submit">
-                          <i class="fas fa-search" style="margin-right: 6px;"></i> Search Service Pros
-                        </button>
-                      </form>
+                      <div class="text-center py-4" style="background: rgba(255,255,255,0.5); border-radius: 12px; border: 1px dashed rgba(0,0,0,0.1);">
+                        <i class="fas fa-hard-hat mb-3" style="font-size: 2.5rem; color: #10b981;"></i>
+                        <h4 style="color: #1e293b; font-weight: 700; font-size: 1.2rem; margin-bottom: 8px;">Coming Soon</h4>
+                        <p style="color: #64748b; font-size: 0.95rem; margin-bottom: 0;">We are preparing verified utility professionals for your convenience. Stay tuned!</p>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -1861,7 +1838,7 @@
 
               <div class="ct-stats-grid">
                 <div class="ct-stat-item">
-                  <span class="ct-stat-num">50+</span>
+                  <span class="ct-stat-num">10+</span>
                   <span class="ct-stat-label">Institutions Covered</span>
                 </div>
                 <div class="ct-stat-item">
@@ -1869,7 +1846,7 @@
                   <span class="ct-stat-label">Students Served</span>
                 </div>
                 <div class="ct-stat-item">
-                  <span class="ct-stat-num">500+</span>
+                  <span class="ct-stat-num">200+</span>
                   <span class="ct-stat-label">Verified Agents</span>
                 </div>
                 <div class="ct-stat-item">
